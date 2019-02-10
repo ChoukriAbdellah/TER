@@ -9,4 +9,4 @@ https://drive.google.com/drive/folders/18T_IAAWbjG27dejtAqIURLdGcKB1ulub?fbclid=
 https://balsamiq.cloud/s3k06zl/p1ofz87/r2278
 
 - Trello pour connaître l'avancée du projet :
-https://trello.com/b/VX3Yoar1/a-faire
+https://trello.com/b/VX3Yoar1/todolist
