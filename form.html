@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8"/>
+            <title>Estimation de votre projet</title>
+            <link rel="stylesheet" href="style/css/style.css" />
+            <meta charset="UTF-8">
+        </head>
+
+        <body>
+
+        <div>
+            <form action="index.php" method="post" enctype="multipart/form-data">
+                <fieldset id="formulaire">
+                    <legend>Votre projet</legend>
+                        <div>
+                            <label for="motClef"> Dans quel département comptez-vous construire votre maison ?</label>
+                            <select name="motClef" id="motClef">
+                                    <option value="01">01 - Ain</option>
+                                    <option value="02">02 - Aisne</option>
+                                    <option value="03">03 - Allier</option>
+                                    <option value="03">04 - Alpes-de-Haute-Provence</option>
+                                    <option value="03">05 - Hautes-alpes</option>
+                                    <option value="03">06 - Alpes-maritimes</option>
+                                    <option value="03">07 - Ardèche</option>
+                                    <option value="03">08 - Ardennes</option>
+                                    <option value="03">09 - Ariège</option>
+                                    <option value="03">10 - Aube</option>
+                                    <option value="03">11 - Aude</option>
+                                    <option value="03">12 - Aveyron</option>
+                                    <option value="03">13 - Bouches-du-Rhône</option>
+                                    <option value="03">14 - Calvados</option>
+                                    <option value="03">15 - Cantal</option>
+                                    <option value="03">16 - Charente</option>
+                                    <option value="03">17 - Charente-maritime</option>
+                                    <option value="03">18 - Cher</option>
+                                    <option value="03">19 - Corrèze</option>
+                                    <option value="03">2a - Corse-du-sud</option>
+                                    <option value="03">2b - Haute-Corse</option>
+                                    <option value="03">21 - Côte-d'Or</option>
+                                    <option value="03">22 - Côtes-d'Armor</option>
+                                    <option value="03">23 - Creuse</option>
+                                    <option value="03">24 - Dordogne</option>
+                                    <option value="03">25 - Doubs</option>
+                                    <option value="03">26 - Drôme</option>
+                                    <option value="03">27 - Eure</option>
+                                    <option value="03">28 - Eure-et-loir</option>
+                                    <option value="03">29 - Finistère</option>
+                                    <option value="03">30 - Gard </option>
+                                    <option value="03">31 - Haute-garonne</option>
+                                    <option value="03">32 - Gers</option>
+                                    <option value="03">33 - Gironde</option>
+                                    <option value="03">34 - Hérault</option>
+                                    <option value="03">35 - Ille-et-vilaine</option>
+                                    <option value="03">36 - Indre</option>
+                                    <option value="03">37 - Indre-et-loire</option>
+                                    <option value="03">38 - Isère</option>
+                                    <option value="03">39 - Jura</option>
+                                    <option value="03">40 - Landes</option>
+                                    <option value="03">41 - Loir-et-cher</option>
+                                    <option value="03">42 - Loire</option>
+                                    <option value="03">43 - Haute-loire</option>
+                                    <option value="03">44 - Loire-atlantique</option>
+                                    <option value="03">45 - Loiret</option>
+                                    <option value="03">46 - Lot</option>
+                                    <option value="03">47 - Lot-et-garonne</option>
+                                    <option value="03">48 - Lozère</option>
+                                    <option value="03">49 - Maine-et-loire</option>
+                                    <option value="03">50 - Manche</option>
+                                    <option value="03">51 - Marne</option>
+                                    <option value="03">52 - Haute-marne</option>
+                                    <option value="03">53 - Mayenne</option>
+                                    <option value="03">54 - Meurthe-et-moselle</option>
+                                    <option value="03">55 - Meuse</option>
+                                    <option value="03">56 - Morbihan</option>
+                                    <option value="03">57 - Moselle</option>
+                                    <option value="03">58 - Nièvre</option>
+                                    <option value="03">59 - Nord</option>
+                                    <option value="03">60 - Oise</option>
+                                    <option value="03">61 - Orne</option>
+                                    <option value="03">62 - Pas-de-calais</option>
+                                    <option value="03">63 - Puy-de-dôme</option>
+                                    <option value="03">64 - Pyrénées-atlantiques</option>
+                                    <option value="03">65 - Hautes-Pyrénées</option>
+                                    <option value="03">66 - Pyrénées-orientales</option>
+                                    <option value="03">67 - Bas-rhin</option>
+                                    <option value="03">68 - Haut-rhin</option>
+                                    <option value="03">69 - Rhône</option>
+                                    <option value="03">70 - Haute-saône</option>
+                                    <option value="03">71 - Saône-et-loire</option>
+                                    <option value="03">72 - Sarthe</option>
+                                    <option value="03">73 - Savoie</option>
+                                    <option value="03">74 - Haute-savoie</option>
+                                    <option value="03">75 - Paris</option>
+                                    <option value="03">76 - Seine-maritime</option>
+                                    <option value="03">77 - Seine-et-marne</option>
+                                    <option value="03">78 - Yvelines</option>
+                                    <option value="03">79 - Deux-sèvres</option>
+                                    <option value="03">80 - Somme </option>
+                                    <option value="03">81 - Tarn</option>
+                                    <option value="03">82 - Tarn-et-garonne </option>
+                                    <option value="03">83 - Var </option>
+                                    <option value="03">84 - Vaucluse</option>
+                                    <option value="03">85 - Vendée</option>
+                                    <option value="03">86 - Vienne</option>
+                                    <option value="03">87 - Haute-vienne </option>
+                                    <option value="03">88 - Vosges</option>
+                                    <option value="03">89 - Yonne</option>
+                                    <option value="03">90 - Territoire de belfort</option>
+                                    <option value="03">91 - Essonne</option>
+                                    <option value="03">92 - Hauts-de-seine</option>
+                                    <option value="03">93 - Seine-Saint-Denis</option>
+                                    <option value="03">94 - Val-de-marne</option>
+                                    <option value="03">95 - Val-d'oise</option>
+                                    <option value="03">97 - DOM </option>
+
+                            </select>
+                        </div>
+
+                    <input type="submit" value="Valider" />
+                
+                    
+    </fieldset>
+</form></div> 
+
+</body>
+ 
+</html>
