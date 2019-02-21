@@ -8,8 +8,6 @@ class DefaultController extends Controller
 {
     public function homeAction()
     {
-        return $this->render('TERSiteBundle:Default:home.html.twig', array(
-            'listAdverts' => array()
-        ));
+        return $this->render('TERSiteBundle:Default:home.html.twig');
     }
 }
