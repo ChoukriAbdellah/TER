@@ -110,7 +110,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text], input[type=email] {
+input[type=text], input[type=email], input[type=name] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -288,7 +288,7 @@ p {
 /* Links */
 
 a {
-  color: #3bc492;
+  color: #56baed;
   word-wrap: break-word;
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
   -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -429,7 +429,7 @@ hr {
 }
 
 .contact-form .form-send button {
-  background: #3bc492;
+  background: #56baed;
   border: 0;
   padding: 10px 30px;
   color: #fff;
