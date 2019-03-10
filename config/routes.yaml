@@ -1,0 +1,15 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+site_index:
+    path:       /
+    controller: App\Controller\AController::index
+
+site_login:
+    path:       /login/
+    controller: App\Controller\MembreController::login
+
+site_signup:
+    path:       /signup/
+    controller: App\Controller\MembreController::signup
