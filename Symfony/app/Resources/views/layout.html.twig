@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Estimation.com{% endblock %}</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  {% block stylesheets %}
+
+  <!-- Favicons -->
+  <link href="../web/Resources/img/favicon.png" rel="icon">
+  <link href="../web/Resources/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/Symfony/web/Resources/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/Symfony/web/Resources/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Pratt
+    Template URL: https://templatemag.com/pratt-app-landing-page-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+
+  {% endblock %}
+
+</head>
+
+        
+    
+
+
+<body data-spy="scroll" data-offset="0" data-target="#navigation">
+
+    {% block menu %}
+
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smothscroll" href="#home"><b>Estimation.com</b></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ path('ter_site_homepage') }}#home">Accueil</a></li>
+          <li><a href="{{ path('ter_site_homepage') }}#desc">Description</a></li>
+          <li><a href="{{ path('ter_site_homepage') }}#showcase">Photos</a></li>
+          <li><a href="{{ path('ter_site_login') }}" class="smothscroll">Connexion</a></li>
+          <li><a href="{{ path('ter_site_signup') }}">Inscription</a></li>
+          <li><a href="#contact" class="smothscroll">Contact</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+    {% endblock %}
+
+    {% block body %}
+
+    {% endblock %}
+
+
+  <section id="contact" name="contact">
+    <div id="footerwrap">
+      <div class="container">
+        <div class="col-lg-5">
+          <h3>Adresse</h3>
+          <p>
+            Faculté des Sciences de Montpellier,<br/> Place E. Bataillon,<br/> 34095<br/>
+            <br/> Montpellier, France
+          </p>
+        </div>
+
+        <div class="col-lg-7">
+          <h3>Envoyez-nous un message</h3>
+
+          <br>
+          <form class="contact-form php-mail-form" role="form" action="" method="POST">
+
+            <div class="form-group">
+              <label for="contact-name">Votre nom</label>
+              <input type="name" name="name" class="form-control" id="contact-name" placeholder="Votre nom" data-rule="minlen:4" data-msg="Veuillez entrer au moins 4 caractères">
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Votre adresse e-mail</label>
+              <input type="email" name="email" class="form-control" id="contact-email" placeholder="Votre adresse e-mail" data-rule="email" data-msg="L'adresse e-mail n'est pas valide">
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Sujet</label> <br/>
+              <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Sujet" data-rule="minlen:4" data-msg="Veuillez entrer au moins 8 caractères">
+              <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Votre Message</label>
+              <textarea class="form-control" name="message" id="contact-message" placeholder="Ecrivez votre message" rows="5" data-rule="required" data-msg="Ecrivez un message"></textarea>
+              <div class="validate"></div>
+            </div>
+
+            <div class="loading"><br>Votre message est en cours d'envoi.</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Votre message a bien été envoyé, merci !</div>
+
+            <div class="form-send">
+              <button type="submit" class="btn btn-large">Envoyer</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="copyrights">
+    <div class="container">
+      <p>
+        &copy; Copyrights <strong>Estimation.com</strong>. All Rights Reserved 
+      </p>
+      <div class="credits">
+        <!--
+          You are NOT allowed to delete the credit link to TemplateMag with free version.
+          You can delete the credit link only if you bought the pro version.
+          Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/pratt-app-landing-page-template/
+          Licensing information: https://templatemag.com/license/
+        -->
+        Created with Pratt template by <a href="https://templatemag.com/">TemplateMag</a>
+      </div>
+    </div>
+  </div>
+
+   {% block javascripts %}
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/php-mail-form/validate.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+    {% endblock %}
+
+</body>
+</html>

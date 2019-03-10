@@ -1,0 +1,13 @@
+ter_site_homepage:
+    path:     /
+    defaults: { _controller: TERSiteBundle:Default:home }
+
+ter_site_signup:
+    path:    /signup/
+    defaults:
+        {_controller: TERSiteBundle:Membre:signup }
+
+ter_site_login:
+    path:    /login/
+    defaults:
+        {_controller: TERSiteBundle:Membre:login }

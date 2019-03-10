@@ -1,0 +1,4 @@
+ter_site:
+    resource: "@TERSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
