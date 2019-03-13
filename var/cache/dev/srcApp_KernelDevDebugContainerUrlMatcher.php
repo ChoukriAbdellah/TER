@@ -20,9 +20,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
             '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-            '/' => [[['_route' => 'site_index', '_controller' => 'App\\Controller\\AController::index'], null, null, null, false, false, null]],
-            '/login' => [[['_route' => 'site_login', '_controller' => 'App\\Controller\\MembreController::login'], null, null, null, true, false, null]],
-            '/signup' => [[['_route' => 'site_signup', '_controller' => 'App\\Controller\\MembreController::signup'], null, null, null, true, false, null]],
+            '/Utilisateur' => [[['_route' => 'Utilisateur', '_controller' => 'App\\Controller\\UtilisateurController::index'], null, null, null, false, false, null]],
+            '/' => [[['_route' => 'site_index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+            '/login' => [[['_route' => 'site_login', '_controller' => 'App\\Controller\\UtilisateurController::login'], null, null, null, true, false, null]],
+            '/signup' => [[['_route' => 'site_signup', '_controller' => 'App\\Controller\\UtilisateurController::signup'], null, null, null, true, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'

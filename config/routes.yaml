@@ -4,12 +4,12 @@
 
 site_index:
     path:       /
-    controller: App\Controller\AController::index
+    controller: App\Controller\HomeController::index
 
 site_login:
     path:       /login/
-    controller: App\Controller\MembreController::login
+    controller: App\Controller\UtilisateurController::login
 
 site_signup:
     path:       /signup/
-    controller: App\Controller\MembreController::signup
+    controller: App\Controller\UtilisateurController::signup
