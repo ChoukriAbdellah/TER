@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerVGiU4Lf\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'VGiU4Lf',
-    'container.build_id' => '924c2807',
-    'container.build_time' => 1552332352,
+    'container.build_id' => 'bb9f6936',
+    'container.build_time' => 1552734100,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerVGiU4Lf');
