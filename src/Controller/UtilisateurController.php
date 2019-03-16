@@ -34,6 +34,13 @@ class UtilisateurController extends AbstractController
       return new Response($content);
     }
 
+    public function estimation(Environment $twig)
+    {
+      $content = $twig->render('Estimation/estimation.html.twig');
+  
+      return new Response($content);
+    }
+
 
     public function registerUser()
     {

@@ -13,3 +13,7 @@ site_login:
 site_signup:
     path:       /signup/
     controller: App\Controller\UtilisateurController::signup
+
+site_estimation:
+    path:       /estimation/
+    controller: App\Controller\UtilisateurController::estimation
