@@ -2419,13 +2419,15 @@
         <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
-    <service id=".service_locator.rpG5SU8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.xhiL1Bw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\UtilisateurController::estimation" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\UtilisateurController::login" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\UtilisateurController::signup" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\UtilisateurController:estimation" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\UtilisateurController:login" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\UtilisateurController:signup" type="service" id=".service_locator.oXHHcjB"/>
       </argument>
@@ -2668,7 +2670,7 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver" public="false"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver" public="false"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.rpG5SU8"/>
+      <argument type="service" id=".service_locator.xhiL1Bw"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -2895,7 +2897,7 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache" public="true"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache" public="true"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.rpG5SU8"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.xhiL1Bw"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

@@ -24,6 +24,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/' => [[['_route' => 'site_index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
             '/login' => [[['_route' => 'site_login', '_controller' => 'App\\Controller\\UtilisateurController::login'], null, null, null, true, false, null]],
             '/signup' => [[['_route' => 'site_signup', '_controller' => 'App\\Controller\\UtilisateurController::signup'], null, null, null, true, false, null]],
+            '/estimation' => [[['_route' => 'site_estimation', '_controller' => 'App\\Controller\\UtilisateurController::estimation'], null, null, null, true, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'
