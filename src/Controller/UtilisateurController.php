@@ -15,7 +15,7 @@ class UtilisateurController extends AbstractController
      */
     public function index()
     {
-        return $this->render('Utilisateur/index.html.twig', [
+        return $this->render('utilisateur/index.html.twig', [
             'controller_name' => 'UtilisateurController',
         ]);
     }
@@ -24,7 +24,7 @@ class UtilisateurController extends AbstractController
 
     public function estimation(Environment $twig)
     {
-      $content = $twig->render('Estimation/estimation.html.twig');
+      $content = $twig->render('estimation/estimation.html.twig');
   
       return new Response($content);
     }

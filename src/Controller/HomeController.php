@@ -10,7 +10,7 @@ class HomeController
 {
   public function index(Environment $twig)
   {
-    $content = $twig->render('Home/index.html.twig');
+    $content = $twig->render('home/index.html.twig');
 
     return new Response($content);
   }
