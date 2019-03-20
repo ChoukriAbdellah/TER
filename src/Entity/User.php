@@ -8,7 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields="email", message="Cet email est déjà enregistré en base.")
  * @UniqueEntity(fields="username", message="Cet identifiant est déjà enregistré en base")
  */
@@ -34,6 +34,12 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=64)
      */
     private $password;
+
+    /**
+     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
  
     /**
      * @ORM\Column(type="string", length=60, unique=true)
@@ -47,10 +53,16 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
+
+    /**
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles;
       
     public function __construct()
     {
         $this->isActive = true;
+        $this->roles = ['ROLE_USER'];
     }
      
     /*
@@ -82,6 +94,16 @@ class User implements UserInterface, \Serializable
     {
         $this->password = $password;
         return $this;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+ 
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
  
     /*
@@ -124,6 +146,27 @@ class User implements UserInterface, \Serializable
         // attention si vous utilisez une méthode d'encodage différente !
         // il faudra décommenter les lignes concernant le salt, créer la propriété correspondante, et renvoyer sa valeur dans cette méthode
         return null;
+    }
+
+    public function getRoles()
+    {
+        return $this->roles; 
+    }
+ 
+    public function setRoles(array $roles)
+    {
+        if (!in_array('ROLE_USER', $roles))
+        {
+            $roles[] = 'ROLE_USER';
+        }
+        foreach ($roles as $role)
+        {
+            if(substr($role, 0, 5) !== 'ROLE_') {
+                throw new InvalidArgumentException("Chaque rôle doit commencer par 'ROLE_'");
+            }
+        }
+        $this->roles = $roles;
+        return $this;
     }
  
     public function eraseCredentials()

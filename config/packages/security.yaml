@@ -1,20 +1,34 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    role_hierarchy:
+        # un membre avec le ROLE_ADMIN aura également le ROLE_USER
+        ROLE_ADMIN: ROLE_USER
+        # Le ROLE_SUPER_ADMIN avec le ROLE_ALLOWED_TO_SWITCH qui permet de s'authentifier en se faisant passer pour n'importe quel membre. Particulièrement utile pour débugger son code.
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
     providers:
-        in_memory:
-            memory:
-                users:
-                    test_user:
-                        password: test_password
-                        roles: 'ROLE_USER'
+        our_db_provider:
+            entity:
+                class: App\Entity\User
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+
+            switch_user: ~
+            # permet de profiter du ROLE_ALLOWED_TO_SWITCH du super admin
+            # https://symfony.com/doc/current/security/impersonating_user.html
 
             # activate different ways to authenticate
+
+            pattern:    ^/
+            user_checker: App\Security\UserChecker # activation du UserChecker créé précédemment
+            http_basic: ~
+            provider: our_db_provider
+            anonymous: true
 
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
@@ -34,3 +48,4 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }

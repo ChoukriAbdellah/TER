@@ -12,7 +12,7 @@ connexion:
 
 inscription:
     path:       /inscription/
-    controller: App\Controller\SecurityController::inscription
+    controller: App\Controller\Registration::register
 
 estimation:
     path:       /estimation/

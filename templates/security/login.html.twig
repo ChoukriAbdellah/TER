@@ -6,7 +6,42 @@
 
 {% endblock %}
 
+{% block menu %}
+
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smothscroll" href="{{ path('index') }}"><b>Estimation.com</b></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ path('index') }}">Accueil</a></li>
+          <li><a href="{{ path('index') }}#desc">Description</a></li>
+          <li><a href="{{ path('index') }}#showcase">Photos</a></li>
+          <li><a href="#contact" class="smothscroll">Contact</a></li>
+          <li><a href="#connexion" class="smothscroll">Connexion</a></li>
+          <li><a href="{{ path('inscription') }}">Inscription</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+{% endblock %}
+
 {% block body %}
+
+{% if error %}
+  <section id="erreur_connexion" name ="erreur_connexion"
+    <div class="row centered">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    </section>
+{% endif %}
 
    <section id="connexion" name="connexion">
     <!-- INTRO WRAP -->

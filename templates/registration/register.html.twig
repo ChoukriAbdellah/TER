@@ -1,0 +1,98 @@
+{% extends "layout.html.twig" %}
+
+
+{% block title %}
+
+  Inscription - {{ parent() }}
+
+{% endblock %}
+
+{% block menu %}
+
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smothscroll" href="{{ path('index') }}"><b>Estimation.com</b></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ path('index') }}">Accueil</a></li>
+          <li><a href="{{ path('index') }}#desc">Description</a></li>
+          <li><a href="{{ path('index') }}#showcase">Photos</a></li>
+          <li><a href="#contact" class="smothscroll">Contact</a></li>
+          <li><a href="{{ path('connexion') }}">Connexion</a></li>
+          <li><a href="#inscription" class="smothscroll">Inscription</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block body %}
+
+  <section id="inscription" name="inscription">
+    <!-- INTRO WRAP -->
+        <div class="row centered">
+          <h1>Inscription</h1>
+          <br>
+          <br>
+          <div class="wrapper fadeInDown zero-raduis">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+    
+              <!-- Icon -->
+              <div class="fadeIn first">
+                <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+                <h2 class="my-5">Inscrivez-vous</h2>
+              </div>
+    
+              <!-- Login Form -->
+
+
+              <!-- <form>
+				<input type="text" id="name" class="fadeIn second zero-raduis" name="name" placeholder="Nom">
+				
+                <input type="email" id="email" class="fadeIn second zero-raduis" name="email" placeholder="Adresse e-mail">
+                <input type="text" id="password" class="fadeIn third zero-raduis" name="login" placeholder="Mot de passe">
+				
+                  <div id="formFooter">
+                </div>
+                <input type="submit" class="fadeIn fourth zero-raduis" value="S'inscrire">
+
+                              </form>
+              <h2>Déjà inscrit ?</h2>
+              <form action="{{ path('connexion') }}">
+				        <input type="submit" class="fadeIn fourth zero-raduis pc" value="Connectez-vous">
+			        </form>
+              </form> -->
+
+              {{ form_start(form) }}
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.plainPassword.first) }}
+                {{ form_row(form.plainPassword.second) }}
+            
+                <button type="submit">S'inscrire!</button>
+            {{ form_end(form) }}
+              
+    
+            </div>
+      </div>
+        </div>
+        <br>
+        <hr>
+
+
+
+
+{% endblock %}
+
+

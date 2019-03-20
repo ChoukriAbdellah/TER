@@ -37,7 +37,7 @@
 
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
 
-    {% block menu %}
+  {% block menu %}
 
   <!-- Fixed navbar -->
   <div id="navigation" class="navbar navbar-default navbar-fixed-top">
@@ -48,22 +48,28 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand smothscroll" href="#home"><b>Estimation.com</b></a>
+        <a class="navbar-brand smothscroll" href="{{ path('index') }}"><b>Estimation.com</b></a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="{{ path('index') }}">Accueil</a></li>
+          <li class="active"><a href="#home" class="smothscroll">Accueil</a></li>
           <li><a class="smothscroll" href="{{ path('index') }}#desc">Description</a></li>
           <li><a class="smothscroll" href="{{ path('index') }}#showcase">Photos</a></li>
-          <li><a href="{{ path('connexion') }}">Connexion</a></li>
-          <li><a href="{{ path('inscription') }}">Inscription</a></li>
-          <li><a href="#contact" class="smothscroll">Contact</a></li>
+            <li><a href="#contact" class="smothscroll">Contact</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a>Mon profil ({{ app.user.username }})</a></li>
+
+          <li><a href="{{ path('logout') }}">Deconnexion</a></li>
+          {% else %}
+            <li><a href="{{ path('connexion') }}">Connexion</a></li>
+            <li><a href="{{ path('inscription') }}">Inscription</a></li>
+          {% endif %}
+          
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
-
     {% endblock %}
 
     {% block body %}

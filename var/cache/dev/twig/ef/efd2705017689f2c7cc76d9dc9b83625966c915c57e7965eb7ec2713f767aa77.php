@@ -54,15 +54,15 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
 <body data-spy=\"scroll\" data-offset=\"0\" data-target=\"#navigation\">
 
-    ";
+  ";
         // line 40
         $this->displayBlock('menu', $context, $blocks);
-        // line 68
+        // line 74
         echo "
     ";
-        // line 69
+        // line 75
         $this->displayBlock('body', $context, $blocks);
-        // line 72
+        // line 78
         echo "
 
   <section id=\"contact\" name=\"contact\">
@@ -137,9 +137,9 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
   </div>
 
    ";
-        // line 145
+        // line 151
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 157
+        // line 163
         echo "
 </body>
 </html>";
@@ -241,14 +241,14 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <span class=\"icon-bar\"></span>
           <span class=\"icon-bar\"></span>
         </button>
-        <a class=\"navbar-brand smothscroll\" href=\"#home\"><b>Estimation.com</b></a>
+        <a class=\"navbar-brand smothscroll\" href=\"";
+        // line 51
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "\"><b>Estimation.com</b></a>
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"";
-        // line 55
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\">Accueil</a></li>
+          <li class=\"active\"><a href=\"#home\" class=\"smothscroll\">Accueil</a></li>
           <li><a class=\"smothscroll\" href=\"";
         // line 56
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
@@ -257,21 +257,38 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "#showcase\">Photos</a></li>
-          <li><a href=\"";
-        // line 58
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
-        echo "\">Connexion</a></li>
-          <li><a href=\"";
+            <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
+          ";
         // line 59
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
-        echo "\">Inscription</a></li>
-          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 60
+            echo "          <li><a>Mon profil (";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 60, $this->source); })()), "user", []), "username", []), "html", null, true);
+            echo ")</a></li>
+
+          <li><a href=\"";
+            // line 62
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            echo "\">Deconnexion</a></li>
+          ";
+        } else {
+            // line 64
+            echo "            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+            echo "\">Connexion</a></li>
+            <li><a href=\"";
+            // line 65
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+            echo "\">Inscription</a></li>
+          ";
+        }
+        // line 67
+        echo "          
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
-
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -281,7 +298,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     }
 
-    // line 69
+    // line 75
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -290,7 +307,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 70
+        // line 76
         echo "
     ";
         
@@ -301,7 +318,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     }
 
-    // line 145
+    // line 151
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -310,29 +327,29 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 146
+        // line 152
         echo "
   <!-- JavaScript Libraries -->
   <script src=\"";
-        // line 148
+        // line 154
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 149
+        // line 155
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 150
+        // line 156
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/php-mail-form/validate.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 151
+        // line 157
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Template Main Javascript File -->
   <script src=\"";
-        // line 154
+        // line 160
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -352,7 +369,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     public function getDebugInfo()
     {
-        return array (  336 => 154,  330 => 151,  326 => 150,  322 => 149,  318 => 148,  314 => 146,  305 => 145,  294 => 70,  285 => 69,  266 => 59,  262 => 58,  258 => 57,  254 => 56,  250 => 55,  234 => 41,  225 => 40,  205 => 24,  199 => 21,  190 => 15,  186 => 14,  182 => 12,  173 => 11,  155 => 6,  143 => 157,  141 => 145,  66 => 72,  64 => 69,  61 => 68,  59 => 40,  51 => 34,  49 => 11,  41 => 6,  34 => 1,);
+        return array (  353 => 160,  347 => 157,  343 => 156,  339 => 155,  335 => 154,  331 => 152,  322 => 151,  311 => 76,  302 => 75,  286 => 67,  281 => 65,  276 => 64,  271 => 62,  265 => 60,  263 => 59,  258 => 57,  254 => 56,  246 => 51,  234 => 41,  225 => 40,  205 => 24,  199 => 21,  190 => 15,  186 => 14,  182 => 12,  173 => 11,  155 => 6,  143 => 163,  141 => 151,  66 => 78,  64 => 75,  61 => 74,  59 => 40,  51 => 34,  49 => 11,  41 => 6,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -396,7 +413,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
 <body data-spy=\"scroll\" data-offset=\"0\" data-target=\"#navigation\">
 
-    {% block menu %}
+  {% block menu %}
 
   <!-- Fixed navbar -->
   <div id=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\">
@@ -407,22 +424,28 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <span class=\"icon-bar\"></span>
           <span class=\"icon-bar\"></span>
         </button>
-        <a class=\"navbar-brand smothscroll\" href=\"#home\"><b>Estimation.com</b></a>
+        <a class=\"navbar-brand smothscroll\" href=\"{{ path('index') }}\"><b>Estimation.com</b></a>
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"{{ path('index') }}\">Accueil</a></li>
+          <li class=\"active\"><a href=\"#home\" class=\"smothscroll\">Accueil</a></li>
           <li><a class=\"smothscroll\" href=\"{{ path('index') }}#desc\">Description</a></li>
           <li><a class=\"smothscroll\" href=\"{{ path('index') }}#showcase\">Photos</a></li>
-          <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
-          <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
-          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
+            <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a>Mon profil ({{ app.user.username }})</a></li>
+
+          <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
+          {% else %}
+            <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
+            <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
+          {% endif %}
+          
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
-
     {% endblock %}
 
     {% block body %}
@@ -515,6 +538,6 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
     {% endblock %}
 
 </body>
-</html>", "layout.html.twig", "/var/www/TER-master/templates/layout.html.twig");
+</html>", "layout.html.twig", "/opt/lampp/htdocs/TER-master/templates/layout.html.twig");
     }
 }

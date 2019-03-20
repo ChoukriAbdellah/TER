@@ -92,20 +92,20 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
             <p>Texte à insérer plus tard...</p>
             <img class=\"hidden-xs hidden-sm hidden-md\" src=\"";
         // line 25
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/arrow1.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/arrow1.png"), "html", null, true);
         echo "\">
           </div>
           <div class=\"col-lg-8\">
             <img class=\"img-responsive\" src=\"";
         // line 28
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/app-bg.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/app-bg.png"), "html", null, true);
         echo "\" alt=\"\">
           </div>
           <div class=\"col-lg-2\">
             <br>
             <img class=\"hidden-xs hidden-sm hidden-md\" src=\"";
         // line 32
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/arrow2.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/arrow2.png"), "html", null, true);
         echo "\">
             <h5>Pratique et efficace</h5>
             <p>Texte à insérer plus tard...</p>
@@ -129,7 +129,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 53
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro01.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro01.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Echange</h3>
             <p>Discutez avec d'autres propriétaires si vous avez besoin de conseils.</p>
@@ -138,7 +138,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 59
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro02.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro02.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Date</h3>
             <p>Obtenez une fourchette d'estimation de la construction de votre maison.</p>
@@ -146,7 +146,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 64
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro03.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro03.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Précision</h3>
             <p>Nos estimations sont basées sur les données de plusieurs milliers de chantiers.</p>
@@ -154,7 +154,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 69
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro04.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro04.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Localisation</h3>
             <p>Obtenez une estimation ajustée par rapport au lieu de votre chantier.</p>
@@ -162,7 +162,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 74
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro05.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro05.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Professionnalisme</h3>
             <p>Nos estimations sont soutenues par toutes les branches des métiers de la construction immobilière.</p>
@@ -170,7 +170,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 79
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro06.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro06.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Classé n°1</h3>
             <p>En moyenne, les estimations faites sur notre site sont plus précises et moins chères qu'ailleurs.</p>
@@ -178,7 +178,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 84
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro07.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro07.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Gratuit</h3>
             <p>Vous n'avez rien à débourser pour profiter de notre service d'estimation.</p>
@@ -186,7 +186,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 89
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro08.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro08.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Instantané</h3>
             <p>Recevez directement votre résultat après avoir rempli notre formulaire.</p>
@@ -194,7 +194,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 94
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro09.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro09.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Sans engagement</h3>
             <p>L'estimation de votre chantier ne vous engage en rien.</p>
@@ -207,7 +207,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-4\">
             <img src=\"";
         // line 104
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/intro10.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro10.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Portable</h3>
             <p>Gardez un oeil sur votre projet où que vous soyez grâce à notre application web adaptée pour tout appareil.</p>
@@ -230,7 +230,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-6 centered\">
             <img class=\"centered\" src=\"";
         // line 124
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/arrow1.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/arrow1.png"), "html", null, true);
         echo "\" alt=\"\">
           </div>
 
@@ -321,37 +321,37 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
                 <div class=\"item active\">
                   <img src=\"";
         // line 209
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/item-01.png "), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-01.png "), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
         // line 212
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/item-02.png "), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-02.png "), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
         // line 215
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/item-03.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-03.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
         // line 218
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/item-04.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-04.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
         // line 221
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/item-05.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-05.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
         // line 224
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/resources/img/item-06.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-06.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
               </div>
@@ -417,14 +417,14 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-2\">
             <h5>Précision garantie</h5>
             <p>Texte à insérer plus tard...</p>
-            <img class=\"hidden-xs hidden-sm hidden-md\" src=\"{{ asset('/resources/img/arrow1.png') }}\">
+            <img class=\"hidden-xs hidden-sm hidden-md\" src=\"{{ asset('resources/img/arrow1.png') }}\">
           </div>
           <div class=\"col-lg-8\">
-            <img class=\"img-responsive\" src=\"{{ asset('/resources/img/app-bg.png') }}\" alt=\"\">
+            <img class=\"img-responsive\" src=\"{{ asset('resources/img/app-bg.png') }}\" alt=\"\">
           </div>
           <div class=\"col-lg-2\">
             <br>
-            <img class=\"hidden-xs hidden-sm hidden-md\" src=\"{{ asset('/resources/img/arrow2.png') }}\">
+            <img class=\"hidden-xs hidden-sm hidden-md\" src=\"{{ asset('resources/img/arrow2.png') }}\">
             <h5>Pratique et efficace</h5>
             <p>Texte à insérer plus tard...</p>
           </div>
@@ -445,48 +445,48 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <br>
           <br>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro01.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro01.png') }}\" alt=\"\">
             <h3>Echange</h3>
             <p>Discutez avec d'autres propriétaires si vous avez besoin de conseils.</p>
           </div>
 
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro02.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro02.png') }}\" alt=\"\">
             <h3>Date</h3>
             <p>Obtenez une fourchette d'estimation de la construction de votre maison.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro03.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro03.png') }}\" alt=\"\">
             <h3>Précision</h3>
             <p>Nos estimations sont basées sur les données de plusieurs milliers de chantiers.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro04.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro04.png') }}\" alt=\"\">
             <h3>Localisation</h3>
             <p>Obtenez une estimation ajustée par rapport au lieu de votre chantier.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro05.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro05.png') }}\" alt=\"\">
             <h3>Professionnalisme</h3>
             <p>Nos estimations sont soutenues par toutes les branches des métiers de la construction immobilière.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro06.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro06.png') }}\" alt=\"\">
             <h3>Classé n°1</h3>
             <p>En moyenne, les estimations faites sur notre site sont plus précises et moins chères qu'ailleurs.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro07.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro07.png') }}\" alt=\"\">
             <h3>Gratuit</h3>
             <p>Vous n'avez rien à débourser pour profiter de notre service d'estimation.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro08.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro08.png') }}\" alt=\"\">
             <h3>Instantané</h3>
             <p>Recevez directement votre résultat après avoir rempli notre formulaire.</p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro09.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro09.png') }}\" alt=\"\">
             <h3>Sans engagement</h3>
             <p>L'estimation de votre chantier ne vous engage en rien.</p>
           </div>
@@ -496,7 +496,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
             <p></p>
           </div>
           <div class=\"col-lg-4\">
-            <img src=\"{{ asset('/resources/img/intro10.png') }}\" alt=\"\">
+            <img src=\"{{ asset('resources/img/intro10.png') }}\" alt=\"\">
             <h3>Portable</h3>
             <p>Gardez un oeil sur votre projet où que vous soyez grâce à notre application web adaptée pour tout appareil.</p>
           </div>
@@ -516,7 +516,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <br>
           <br>
           <div class=\"col-lg-6 centered\">
-            <img class=\"centered\" src=\"{{ asset('/resources/img/arrow1.png') }}\" alt=\"\">
+            <img class=\"centered\" src=\"{{ asset('resources/img/arrow1.png') }}\" alt=\"\">
           </div>
 
           <div class=\"col-lg-6\">
@@ -601,22 +601,22 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
               <!-- Wrapper for slides -->
               <div class=\"carousel-inner\">
                 <div class=\"item active\">
-                  <img src=\"{{ asset('/resources/img/item-01.png ') }}\" alt=\"\">
+                  <img src=\"{{ asset('resources/img/item-01.png ') }}\" alt=\"\">
                 </div>
                 <div class=\"item\">
-                  <img src=\"{{ asset('/resources/img/item-02.png ') }}\" alt=\"\">
+                  <img src=\"{{ asset('resources/img/item-02.png ') }}\" alt=\"\">
                 </div>
                 <div class=\"item\">
-                  <img src=\"{{ asset('/resources/img/item-03.png') }}\" alt=\"\">
+                  <img src=\"{{ asset('resources/img/item-03.png') }}\" alt=\"\">
                 </div>
                 <div class=\"item\">
-                  <img src=\"{{ asset('/resources/img/item-04.png') }}\" alt=\"\">
+                  <img src=\"{{ asset('resources/img/item-04.png') }}\" alt=\"\">
                 </div>
                 <div class=\"item\">
-                  <img src=\"{{ asset('/resources/img/item-05.png') }}\" alt=\"\">
+                  <img src=\"{{ asset('resources/img/item-05.png') }}\" alt=\"\">
                 </div>
                 <div class=\"item\">
-                  <img src=\"{{ asset('/resources/img/item-06.png') }}\" alt=\"\">
+                  <img src=\"{{ asset('resources/img/item-06.png') }}\" alt=\"\">
                 </div>
               </div>
             </div>
@@ -631,6 +631,6 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
   </section>
 
 
-{% endblock %}", "home/index.html.twig", "/var/www/TER-master/templates/home/index.html.twig");
+{% endblock %}", "home/index.html.twig", "/opt/lampp/htdocs/TER-master/templates/home/index.html.twig");
     }
 }
