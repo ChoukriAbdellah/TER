@@ -7,6 +7,7 @@
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/apache-pack": "^1.0",
+        "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
         "symfony/debug-pack": "^1.0",
         "symfony/dotenv": "4.2.*",

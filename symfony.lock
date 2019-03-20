@@ -141,6 +141,9 @@
             "public/.htaccess"
         ]
     },
+    "symfony/asset": {
+        "version": "v4.2.4"
+    },
     "symfony/cache": {
         "version": "v4.2.4"
     },
