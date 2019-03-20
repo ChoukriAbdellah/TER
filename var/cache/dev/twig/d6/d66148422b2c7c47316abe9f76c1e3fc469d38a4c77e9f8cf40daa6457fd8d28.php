@@ -108,7 +108,7 @@ class __TwigTemplate_24fb558d08598e46bab540daa0f4010ebd9570b57eb35b6f585e6cf265b
               <h2>Déjà inscrit ?</h2>
               <form action=\"";
         // line 41
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_login");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
 \t\t\t        </form>
@@ -190,7 +190,7 @@ class __TwigTemplate_24fb558d08598e46bab540daa0f4010ebd9570b57eb35b6f585e6cf265b
 
                               </form>
               <h2>Déjà inscrit ?</h2>
-              <form action=\"{{ path('site_login') }}\">
+              <form action=\"{{ path('connexion') }}\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
 \t\t\t        </form>
               </form>
@@ -208,6 +208,6 @@ class __TwigTemplate_24fb558d08598e46bab540daa0f4010ebd9570b57eb35b6f585e6cf265b
 {% endblock %}
 
 
-", "security/signup.html.twig", "/opt/lampp/htdocs/Symfony/templates/security/signup.html.twig");
+", "security/signup.html.twig", "/var/www/TER-master/templates/security/signup.html.twig");
     }
 }

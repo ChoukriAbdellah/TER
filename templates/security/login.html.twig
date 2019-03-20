@@ -25,7 +25,7 @@
               </div>
     
               <!-- Login Form -->
-              <form action="{{ path('site_login') }}" method="post">
+              <form action="{{ path('connexion') }}" method="post">
               <input type="text" class="fadeIn second zero-raduis" id="username" name="_username" value="{{ last_username }}" placeholder="Adresse e-mail" />
               <input type="password" class="fadeIn third zero-raduis" id="password" name="_password" placeholder="Mot de passe" />
                               <div id="formFooter">
@@ -38,7 +38,7 @@
               
               </form>
               <h2>Vous n'avez pas encore de compte ?</h2>
-              <form action="{{ path('site_signup') }}">
+              <form action="{{ path('inscription') }}">
 				        <input type="submit" class="fadeIn fourth zero-raduis pc" value="Inscrivez-vous">
 			        </form>
               {#

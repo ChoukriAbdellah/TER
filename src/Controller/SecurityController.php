@@ -17,7 +17,7 @@ class SecurityController extends AbstractController
      * @Route("/security", name="security")
      */
     
-    public function login(Request $request, AuthenticationUtils $authUtils)
+    public function connexion(Request $request, AuthenticationUtils $authUtils)
     {
         // get the login error if there is one
         $error = $authUtils->getLastAuthenticationError();
@@ -31,7 +31,7 @@ class SecurityController extends AbstractController
         ));
     }
   
-    public function signup(Environment $twig)
+    public function inscription(Environment $twig)
     {
       $content = $twig->render('security/signup.html.twig');
   

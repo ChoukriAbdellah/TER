@@ -12,11 +12,11 @@ include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/Controller/Argume
 
 return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
     'App\\Controller\\HomeController::index' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
-    'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.d24Amjx', 'get_ServiceLocator_D24AmjxService.php', true],
-    'App\\Controller\\SecurityController::signup' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
+    'App\\Controller\\SecurityController::connexion' => ['privates', '.service_locator.d24Amjx', 'get_ServiceLocator_D24AmjxService.php', true],
+    'App\\Controller\\SecurityController::inscription' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
     'App\\Controller\\UtilisateurController::estimation' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
     'App\\Controller\\HomeController:index' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
-    'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.d24Amjx', 'get_ServiceLocator_D24AmjxService.php', true],
-    'App\\Controller\\SecurityController:signup' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
+    'App\\Controller\\SecurityController:connexion' => ['privates', '.service_locator.d24Amjx', 'get_ServiceLocator_D24AmjxService.php', true],
+    'App\\Controller\\SecurityController:inscription' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
     'App\\Controller\\UtilisateurController:estimation' => ['privates', '.service_locator.oXHHcjB', 'get_ServiceLocator_OXHHcjBService.php', true],
 ])), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));

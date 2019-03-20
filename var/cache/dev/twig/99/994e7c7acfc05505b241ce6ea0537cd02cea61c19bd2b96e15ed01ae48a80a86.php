@@ -96,7 +96,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               <!-- Login Form -->
               <form action=\"";
         // line 28
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_login");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\" method=\"post\">
               <input type=\"text\" class=\"fadeIn second zero-raduis\" id=\"username\" name=\"_username\" value=\"";
         // line 29
@@ -118,7 +118,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               <h2>Vous n'avez pas encore de compte ?</h2>
               <form action=\"";
         // line 41
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_signup");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Inscrivez-vous\">
 \t\t\t        </form>
@@ -191,7 +191,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               </div>
     
               <!-- Login Form -->
-              <form action=\"{{ path('site_login') }}\" method=\"post\">
+              <form action=\"{{ path('connexion') }}\" method=\"post\">
               <input type=\"text\" class=\"fadeIn second zero-raduis\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" placeholder=\"Adresse e-mail\" />
               <input type=\"password\" class=\"fadeIn third zero-raduis\" id=\"password\" name=\"_password\" placeholder=\"Mot de passe\" />
                               <div id=\"formFooter\">
@@ -204,7 +204,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               
               </form>
               <h2>Vous n'avez pas encore de compte ?</h2>
-              <form action=\"{{ path('site_signup') }}\">
+              <form action=\"{{ path('inscription') }}\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Inscrivez-vous\">
 \t\t\t        </form>
               {#
@@ -226,6 +226,6 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         
 
 
-{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/Symfony/templates/security/login.html.twig");
+{% endblock %}", "security/login.html.twig", "/var/www/TER-master/templates/security/login.html.twig");
     }
 }

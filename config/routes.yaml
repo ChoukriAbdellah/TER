@@ -2,19 +2,19 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-site_index:
+index:
     path:       /
     controller: App\Controller\HomeController::index
 
-site_login:
-    path:       /login/
-    controller: App\Controller\SecurityController::login
+connexion:
+    path:       /connexion/
+    controller: App\Controller\SecurityController::connexion
 
-site_signup:
-    path:       /signup/
-    controller: App\Controller\SecurityController::signup
+inscription:
+    path:       /inscription/
+    controller: App\Controller\SecurityController::inscription
 
-site_estimation:
+estimation:
     path:       /estimation/
     controller: App\Controller\UtilisateurController::estimation
 

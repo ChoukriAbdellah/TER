@@ -279,7 +279,7 @@ class __TwigTemplate_b9332b43e8778f7f5653715166fbd5db34f9d2cb4ee8f63b5b36c1ea64b
             <!-- Accordion -->
             <form action=\"";
         // line 170
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_signup");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\">
 \t\t\t\t      <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Je m'inscris\">
 \t\t\t      </form>
@@ -562,7 +562,7 @@ class __TwigTemplate_b9332b43e8778f7f5653715166fbd5db34f9d2cb4ee8f63b5b36c1ea64b
               <br>
             </div>
             <!-- Accordion -->
-            <form action=\"{{ path('site_signup') }}\">
+            <form action=\"{{ path('connexion') }}\">
 \t\t\t\t      <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Je m'inscris\">
 \t\t\t      </form>
               
@@ -631,6 +631,6 @@ class __TwigTemplate_b9332b43e8778f7f5653715166fbd5db34f9d2cb4ee8f63b5b36c1ea64b
   </section>
 
 
-{% endblock %}", "Home/index.html.twig", "/opt/lampp/htdocs/Symfony/templates/Home/index.html.twig");
+{% endblock %}", "Home/index.html.twig", "/var/www/TER-master/templates/Home/index.html.twig");
     }
 }

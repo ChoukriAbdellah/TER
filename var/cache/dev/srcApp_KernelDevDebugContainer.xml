@@ -3597,16 +3597,16 @@
         <argument key="authUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.YSzF3jB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.QzRCfFr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.oXHHcjB"/>
-        <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.d24Amjx"/>
-        <argument key="App\Controller\SecurityController::signup" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\SecurityController::connexion" type="service" id=".service_locator.d24Amjx"/>
+        <argument key="App\Controller\SecurityController::inscription" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\UtilisateurController::estimation" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.oXHHcjB"/>
-        <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.d24Amjx"/>
-        <argument key="App\Controller\SecurityController:signup" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\SecurityController:connexion" type="service" id=".service_locator.d24Amjx"/>
+        <argument key="App\Controller\SecurityController:inscription" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\UtilisateurController:estimation" type="service" id=".service_locator.oXHHcjB"/>
       </argument>
     </service>
@@ -3929,7 +3929,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.YSzF3jB"/>
+      <argument type="service" id=".service_locator.QzRCfFr"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4202,7 +4202,7 @@
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
     <service id="security.user_checker.main" alias="security.user_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YSzF3jB"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QzRCfFr"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

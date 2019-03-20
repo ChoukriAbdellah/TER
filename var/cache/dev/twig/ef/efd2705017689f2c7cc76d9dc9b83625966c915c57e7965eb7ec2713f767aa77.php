@@ -247,23 +247,23 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         <ul class=\"nav navbar-nav\">
           <li class=\"active\"><a href=\"";
         // line 55
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "\">Accueil</a></li>
           <li><a class=\"smothscroll\" href=\"";
         // line 56
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "#desc\">Description</a></li>
           <li><a class=\"smothscroll\" href=\"";
         // line 57
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "#showcase\">Photos</a></li>
           <li><a href=\"";
         // line 58
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_login");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\">Connexion</a></li>
           <li><a href=\"";
         // line 59
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_signup");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\">Inscription</a></li>
           <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
         </ul>
@@ -411,11 +411,11 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"{{ path('site_index') }}\">Accueil</a></li>
-          <li><a class=\"smothscroll\" href=\"{{ path('site_index') }}#desc\">Description</a></li>
-          <li><a class=\"smothscroll\" href=\"{{ path('site_index') }}#showcase\">Photos</a></li>
-          <li><a href=\"{{ path('site_login') }}\">Connexion</a></li>
-          <li><a href=\"{{ path('site_signup') }}\">Inscription</a></li>
+          <li class=\"active\"><a href=\"{{ path('index') }}\">Accueil</a></li>
+          <li><a class=\"smothscroll\" href=\"{{ path('index') }}#desc\">Description</a></li>
+          <li><a class=\"smothscroll\" href=\"{{ path('index') }}#showcase\">Photos</a></li>
+          <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
+          <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
           <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
         </ul>
       </div>
