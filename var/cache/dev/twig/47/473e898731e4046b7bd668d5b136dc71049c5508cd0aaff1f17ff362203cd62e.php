@@ -1194,6 +1194,6 @@ div.sf-toolbar .sf-toolbar-block a:hover {
         display: none;
     }
 }
-", "@WebProfiler/Profiler/toolbar.css.twig", "/opt/lampp/htdocs/TER/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.css.twig");
+", "@WebProfiler/Profiler/toolbar.css.twig", "/var/www/private/Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.css.twig");
     }
 }

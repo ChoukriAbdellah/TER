@@ -40,6 +40,7 @@ final class Versions
   'psr/log' => '1.1.0@6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd',
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'symfony/apache-pack' => 'v1.0.1@3aa5818d73ad2551281fc58a75afd9ca82622e6c',
+  'symfony/asset' => 'v4.2.4@7eee96a8630f9448304ae4f0e3b474ea4e033664',
   'symfony/cache' => 'v4.2.4@b5c650406953f2f44a37c4f3ac66152fafc22c66',
   'symfony/config' => 'v4.2.4@7f70d79c7a24a94f8e98abb988049403a53d7b31',
   'symfony/console' => 'v4.2.4@9dc2299a016497f9ee620be94524e6c0af0280a9',

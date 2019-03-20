@@ -11,17 +11,17 @@
   {% block stylesheets %}
 
   <!-- Favicons -->
-  <link href="/Symfony/resources/img/favicon.png" rel="icon">
-  <link href="/Symfony/resources/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('resources/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('resources/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="/Symfony/resources/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('resources/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="/Symfony/resources/css/style.css" rel="stylesheet">
+  <link href="{{ asset('resources/css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
     Template Name: Pratt
@@ -145,13 +145,13 @@
    {% block javascripts %}
 
   <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/php-mail-form/validate.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
+  <script src="{{ asset('resources/lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('resources/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('resources/lib/php-mail-form/validate.js') }}"></script>
+  <script src="{{ asset('resources/lib/easing/easing.min.js') }}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <script src="{{ asset('resources/js/main.js') }}"></script>
 
     {% endblock %}
 

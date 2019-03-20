@@ -181,17 +181,17 @@ class __TwigTemplate_d28bf1dab8a7504737d2ba1582d38a44fcd1aa3a19e665e286bdb3b642b
         // line 12
         echo "
   <!-- Favicons -->
-  <link href=\"/Symfony/resources/img/favicon.png\" rel=\"icon\">
-  <link href=\"/Symfony/resources/apple-touch-icon.png\" rel=\"apple-touch-icon\">
+  <link href=\"../resources/img/favicon.png\" rel=\"icon\">
+  <link href=\"../resources/apple-touch-icon.png\" rel=\"apple-touch-icon\">
 
   <!-- Google Fonts -->
   <link href=\"https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700\" rel=\"stylesheet\">
 
   <!-- Bootstrap CSS File -->
-  <link href=\"/Symfony/resources/lib/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">
+  <link href=\"../resources/lib/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">
 
   <!-- Main Stylesheet File -->
-  <link href=\"/Symfony/resources/css/style.css\" rel=\"stylesheet\">
+  <link href=\"../resources/css/style.css\" rel=\"stylesheet\">
 
   <!-- =======================================================
     Template Name: Pratt
@@ -343,17 +343,17 @@ class __TwigTemplate_d28bf1dab8a7504737d2ba1582d38a44fcd1aa3a19e665e286bdb3b642b
   {% block stylesheets %}
 
   <!-- Favicons -->
-  <link href=\"/Symfony/resources/img/favicon.png\" rel=\"icon\">
-  <link href=\"/Symfony/resources/apple-touch-icon.png\" rel=\"apple-touch-icon\">
+  <link href=\"../resources/img/favicon.png\" rel=\"icon\">
+  <link href=\"../resources/apple-touch-icon.png\" rel=\"apple-touch-icon\">
 
   <!-- Google Fonts -->
   <link href=\"https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700\" rel=\"stylesheet\">
 
   <!-- Bootstrap CSS File -->
-  <link href=\"/Symfony/resources/lib/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">
+  <link href=\"../resources/lib/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">
 
   <!-- Main Stylesheet File -->
-  <link href=\"/Symfony/resources/css/style.css\" rel=\"stylesheet\">
+  <link href=\"../resources/css/style.css\" rel=\"stylesheet\">
 
   <!-- =======================================================
     Template Name: Pratt
@@ -488,6 +488,6 @@ class __TwigTemplate_d28bf1dab8a7504737d2ba1582d38a44fcd1aa3a19e665e286bdb3b642b
     {% endblock %}
 
 </body>
-</html>", "layout.html.twig", "/opt/lampp/htdocs/TER/templates/layout.html.twig");
+</html>", "layout.html.twig", "/var/www/TER-master/templates/layout.html.twig");
     }
 }

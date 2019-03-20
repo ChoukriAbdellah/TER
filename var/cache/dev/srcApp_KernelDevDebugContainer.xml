@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/opt/lampp/htdocs/Symfony/src</parameter>
-    <parameter key="kernel.project_dir">/opt/lampp/htdocs/Symfony</parameter>
+    <parameter key="kernel.root_dir">/var/www/TER-master/src</parameter>
+    <parameter key="kernel.project_dir">/var/www/TER-master</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">src</parameter>
-    <parameter key="kernel.cache_dir">/opt/lampp/htdocs/Symfony/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/opt/lampp/htdocs/Symfony/var/log</parameter>
+    <parameter key="kernel.cache_dir">/var/www/TER-master/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/var/www/TER-master/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
@@ -21,39 +21,39 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/monolog-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/symfony/monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/twig-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/symfony/twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/symfony/web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/debug-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/symfony/debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="DoctrineCacheBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/doctrine/doctrine-cache-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/doctrine/doctrine-cache-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineCacheBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/doctrine/doctrine-migrations-bundle</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/doctrine/doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/maker-bundle/src</parameter>
+        <parameter key="path">/var/www/TER-master/vendor/symfony/maker-bundle/src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
     </parameter>
@@ -77,13 +77,15 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/opt/lampp/htdocs/Symfony/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">/var/www/TER-master/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
+    <parameter key="asset.request_context.base_path"></parameter>
+    <parameter key="asset.request_context.secure">false</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/opt/lampp/htdocs/Symfony/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:/var/www/TER-master/var/cache/dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/opt/lampp/htdocs/Symfony/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/var/www/TER-master/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -113,7 +115,7 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">/opt/lampp/htdocs/Symfony/templates</parameter>
+    <parameter key="twig.default_path">/var/www/TER-master/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
@@ -224,9 +226,9 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/opt/lampp/htdocs/Symfony/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/var/www/TER-master/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
-    <parameter key="doctrine_migrations.dir_name">/opt/lampp/htdocs/Symfony/src/Migrations</parameter>
+    <parameter key="doctrine_migrations.dir_name">/var/www/TER-master/src/Migrations</parameter>
     <parameter key="doctrine_migrations.namespace">DoctrineMigrations</parameter>
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
     <parameter key="doctrine_migrations.column_name">version</parameter>
@@ -310,7 +312,7 @@
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
-      <argument>/opt/lampp/htdocs/Symfony/var/log/dev.log</argument>
+      <argument>/var/www/TER-master/var/log/dev.log</argument>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -380,7 +382,7 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate" public="true">
       <argument type="tagged" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/var/www/TER-master/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <argument type="tagged" tag="kernel.cache_clearer"/>
@@ -389,9 +391,9 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem" public="true"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/opt/lampp/htdocs/Symfony/src/Resources</argument>
+      <argument>/var/www/TER-master/src/Resources</argument>
       <argument type="collection">
-        <argument>/opt/lampp/htdocs/Symfony/src</argument>
+        <argument>/var/www/TER-master/src</argument>
       </argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner" public="false">
@@ -569,7 +571,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -598,7 +600,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -681,8 +683,8 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
-    <service id=".1_NativeFileSessionHandler~1Xo06o0" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/sessions</argument>
+    <service id=".1_NativeFileSessionHandler~bc0OgGT" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+      <argument>/var/www/TER-master/var/cache/dev/sessions</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
@@ -705,12 +707,12 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/sessions</argument>
+      <argument>/var/www/TER-master/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler" public="false">
-      <argument type="service" id=".1_NativeFileSessionHandler~1Xo06o0"/>
+      <argument type="service" id=".1_NativeFileSessionHandler~bc0OgGT"/>
     </service>
     <service id="session_listener" class="Symfony\Component\HttpKernel\EventListener\SessionListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -721,6 +723,41 @@
     </service>
     <service id="session.save_listener" class="Symfony\Component\HttpKernel\EventListener\SaveSessionListener" public="false">
       <deprecated>The "%service_id%" service is deprecated since Symfony 4.1. Use the "session_listener" service instead.</deprecated>
+    </service>
+    <service id="assets.packages" class="Symfony\Component\Asset\Packages" public="false">
+      <argument type="service" id="assets._default_package"/>
+      <argument type="collection"/>
+    </service>
+    <service id="assets.empty_package" class="Symfony\Component\Asset\Package" public="false">
+      <argument type="service" id="assets.empty_version_strategy"/>
+    </service>
+    <service id="assets.context" class="Symfony\Component\Asset\Context\RequestStackContext" public="false">
+      <argument type="service" id="request_stack"/>
+      <argument></argument>
+      <argument>false</argument>
+    </service>
+    <service id="assets.path_package" class="Symfony\Component\Asset\PathPackage" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="assets.context"/>
+    </service>
+    <service id="assets.url_package" class="Symfony\Component\Asset\UrlPackage" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="assets.context"/>
+    </service>
+    <service id="assets.static_version_strategy" class="Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="assets.empty_version_strategy" class="Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy" public="false"/>
+    <service id="assets.json_manifest_version_strategy" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy" public="false" abstract="true">
+      <argument></argument>
+    </service>
+    <service id="assets._default_package" class="Symfony\Component\Asset\PathPackage" public="false">
+      <argument></argument>
+      <argument type="service" id="assets.empty_version_strategy"/>
+      <argument type="service" id="assets.context"/>
     </service>
     <service id="profiler" class="Symfony\Component\HttpKernel\Profiler\Profiler" public="true">
       <tag name="monolog.logger" channel="profiler"/>
@@ -769,7 +806,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-      <argument>file:/opt/lampp/htdocs/Symfony/var/cache/dev/profiler</argument>
+      <argument>file:/var/www/TER-master/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -806,7 +843,7 @@
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/srcApp_KernelDevDebugContainer</argument>
+      <argument>/var/www/TER-master/var/cache/dev/srcApp_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector" public="false">
@@ -874,7 +911,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <argument type="service" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -1033,6 +1070,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -1206,7 +1251,7 @@
       <argument type="service" id=".service_locator.MAfdX1A.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/opt/lampp/htdocs/Symfony/var/cache/dev</argument>
+        <argument key="cache_dir">/var/www/TER-master/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -1248,7 +1293,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1274,12 +1319,12 @@
       <argument type="service" id="file_locator"/>
       <argument type="service" id="routing.loader.annotation"/>
     </service>
-    <service id=".2_PhpArrayAdapter~JdLE.BT" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/annotations.php</argument>
+    <service id=".2_PhpArrayAdapter~dGujiJp" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>/var/www/TER-master/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
-    <service id=".1_ArrayCache~JdLE.BT" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
+    <service id=".1_ArrayCache~dGujiJp" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
     <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader" public="false">
       <call method="addGlobalIgnoredName">
         <argument>required</argument>
@@ -1294,7 +1339,7 @@
     <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\CachedReader" public="false">
       <tag name="annotations.cached_reader"/>
       <argument type="service" id="annotations.reader"/>
-      <argument type="service" id=".1_ArrayCache~JdLE.BT"/>
+      <argument type="service" id=".1_ArrayCache~dGujiJp"/>
       <argument>true</argument>
       <property name="cacheProviderBackup" type="service" id="annotations.cache"/>
     </service>
@@ -1304,12 +1349,12 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/annotations.php</argument>
+      <argument>/var/www/TER-master/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!AbstractController$|Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
-      <argument type="service" id=".2_PhpArrayAdapter~JdLE.BT"/>
+      <argument type="service" id=".2_PhpArrayAdapter~dGujiJp"/>
     </service>
     <service id="monolog.logger" class="Symfony\Bridge\Monolog\Logger" public="false">
       <argument>app</argument>
@@ -1348,7 +1393,7 @@
     </service>
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/opt/lampp/htdocs/Symfony/var/log/dev.log</argument>
+      <argument>/var/www/TER-master/var/log/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -1365,7 +1410,7 @@
     <service id="twig" class="Twig\Environment" public="true">
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="default_path">/opt/lampp/htdocs/Symfony/templates</argument>
+        <argument key="default_path">/var/www/TER-master/templates</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="exception_controller">twig.controller.exception::showAction</argument>
@@ -1373,7 +1418,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">/opt/lampp/htdocs/Symfony/var/cache/dev/twig</argument>
+        <argument key="cache">/var/www/TER-master/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -1392,6 +1437,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.trans"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.assets"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.code"/>
@@ -1449,9 +1497,9 @@
     </service>
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/opt/lampp/htdocs/Symfony/src</argument>
+      <argument>/var/www/TER-master/src</argument>
       <argument type="collection"/>
-      <argument>/opt/lampp/htdocs/Symfony/templates</argument>
+      <argument>/var/www/TER-master/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
@@ -1462,49 +1510,49 @@
     <service id="twig.loader.native_filesystem" class="Symfony\Bundle\TwigBundle\Loader\NativeFilesystemLoader" public="false">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/framework-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/framework-bundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/framework-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/framework-bundle/Resources/views</argument>
         <argument>!Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/twig-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/twig-bundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/twig-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/twig-bundle/Resources/views</argument>
         <argument>!Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>/var/www/TER-master/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/opt/lampp/htdocs/Symfony/templates</argument>
+        <argument>/var/www/TER-master/templates</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader" public="false"/>
@@ -1523,10 +1571,14 @@
       <tag name="twig.extension"/>
       <argument>null</argument>
     </service>
+    <service id="twig.extension.assets" class="Symfony\Bridge\Twig\Extension\AssetExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="assets.packages"/>
+    </service>
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
@@ -1586,10 +1638,10 @@
     <service id="twig.command.debug" class="Symfony\Bridge\Twig\Command\DebugCommand" public="false">
       <tag name="console.command" command="debug:twig"/>
       <argument type="service" id="twig"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>/opt/lampp/htdocs/Symfony/templates</argument>
-      <argument>/opt/lampp/htdocs/Symfony/src</argument>
+      <argument>/var/www/TER-master/templates</argument>
+      <argument>/var/www/TER-master/src</argument>
       <call method="setName">
         <argument>debug:twig</argument>
       </call>
@@ -1601,7 +1653,7 @@
         <argument>lint:twig</argument>
       </call>
     </service>
-    <service id=".2_HtmlDumper~9Sel5HN" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
+    <service id=".2_HtmlDumper~iSmhR1B" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
       <argument>null</argument>
       <argument>UTF-8</argument>
       <argument>1</argument>
@@ -1612,14 +1664,14 @@
         </argument>
       </call>
     </service>
-    <service id=".1_NonceGenerator~9Sel5HN" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
+    <service id=".1_NonceGenerator~iSmhR1B" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController" public="true">
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -1633,11 +1685,11 @@
       <argument type="service" id="debug.file_link_formatter"/>
     </service>
     <service id="web_profiler.csp.handler" class="Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler" public="false">
-      <argument type="service" id=".1_NonceGenerator~9Sel5HN"/>
+      <argument type="service" id=".1_NonceGenerator~iSmhR1B"/>
     </service>
     <service id="twig.extension.webprofiler" class="Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension" public="false">
       <tag name="twig.extension"/>
-      <argument type="service" id=".2_HtmlDumper~9Sel5HN"/>
+      <argument type="service" id=".2_HtmlDumper~iSmhR1B"/>
     </service>
     <service id="debug.file_link_formatter.url_format" class="string" public="false">
       <argument type="service" id="router.default"/>
@@ -1655,19 +1707,19 @@
       <argument>^/((index|app(_[\w]+)?)\.php/)?_wdt</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
     </service>
-    <service id=".5_HtmlDescriptor~1GBGOeH" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
+    <service id=".5_HtmlDescriptor~pD3lC8F" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
       <argument type="service" id="var_dumper.html_dumper"/>
     </service>
-    <service id=".4_CliDescriptor~1GBGOeH" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
+    <service id=".4_CliDescriptor~pD3lC8F" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
       <argument type="service" id="var_dumper.cli_dumper"/>
     </service>
-    <service id=".3_CliContextProvider~1GBGOeH" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
-    <service id=".2_RequestContextProvider~1GBGOeH" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
+    <service id=".3_CliContextProvider~pD3lC8F" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
+    <service id=".2_RequestContextProvider~pD3lC8F" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
       <argument type="service" id="request_stack"/>
     </service>
-    <service id=".1_SourceContextProvider~1GBGOeH" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
+    <service id=".1_SourceContextProvider~pD3lC8F" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
       <argument>UTF-8</argument>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
@@ -1718,9 +1770,9 @@
     <service id="var_dumper.server_connection" class="Symfony\Component\VarDumper\Server\Connection" public="false">
       <argument>tcp://%env(VAR_DUMPER_SERVER)%</argument>
       <argument type="collection">
-        <argument key="source" type="service" id=".1_SourceContextProvider~1GBGOeH"/>
-        <argument key="request" type="service" id=".2_RequestContextProvider~1GBGOeH"/>
-        <argument key="cli" type="service" id=".3_CliContextProvider~1GBGOeH"/>
+        <argument key="source" type="service" id=".1_SourceContextProvider~pD3lC8F"/>
+        <argument key="request" type="service" id=".2_RequestContextProvider~pD3lC8F"/>
+        <argument key="cli" type="service" id=".3_CliContextProvider~pD3lC8F"/>
       </argument>
     </service>
     <service id="var_dumper.dump_server" class="Symfony\Component\VarDumper\Server\DumpServer" public="false">
@@ -1732,8 +1784,8 @@
       <tag name="console.command" command="server:dump"/>
       <argument type="service" id="var_dumper.dump_server"/>
       <argument type="collection">
-        <argument key="cli" type="service" id=".4_CliDescriptor~1GBGOeH"/>
-        <argument key="html" type="service" id=".5_HtmlDescriptor~1GBGOeH"/>
+        <argument key="cli" type="service" id=".4_CliDescriptor~pD3lC8F"/>
+        <argument key="html" type="service" id=".5_HtmlDescriptor~pD3lC8F"/>
       </argument>
       <call method="setName">
         <argument>server:dump</argument>
@@ -2035,7 +2087,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>/var/www/TER-master/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -2065,7 +2117,7 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
-        <argument>/opt/lampp/htdocs/Symfony/src/Entity</argument>
+        <argument>/var/www/TER-master/src/Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -2076,17 +2128,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_021dc60be49287682f94e2330d36381c3232834e1414cfab2bb44e1282b19b8e</argument>
+        <argument>sf_orm_default_bdd41d59c2ce00c04003cc0b1cf5d147a41bac63e34fa5e80b75bf76e3ebd42c</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_021dc60be49287682f94e2330d36381c3232834e1414cfab2bb44e1282b19b8e</argument>
+        <argument>sf_orm_default_bdd41d59c2ce00c04003cc0b1cf5d147a41bac63e34fa5e80b75bf76e3ebd42c</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_021dc60be49287682f94e2330d36381c3232834e1414cfab2bb44e1282b19b8e</argument>
+        <argument>sf_orm_default_bdd41d59c2ce00c04003cc0b1cf5d147a41bac63e34fa5e80b75bf76e3ebd42c</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver">
@@ -2138,7 +2190,7 @@
     <service id="maker.file_manager" class="Symfony\Bundle\MakerBundle\FileManager" public="false">
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder" public="false"/>
     <service id="maker.autoloader_util" class="Symfony\Bundle\MakerBundle\Util\AutoloaderUtil" public="false">
@@ -2194,7 +2246,7 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
       <argument type="service" id="maker.generator"/>
     </service>
     <service id="maker.maker.make_fixtures" class="Symfony\Bundle\MakerBundle\Maker\MakeFixtures" public="false">
@@ -2244,7 +2296,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration" public="false">
       <tag name="maker.command"/>
-      <argument>/opt/lampp/htdocs/Symfony</argument>
+      <argument>/var/www/TER-master</argument>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UtilisateurController" class="App\Controller\UtilisateurController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UtilisateurController" class="App\Controller\UtilisateurController" autowire="true" abstract="true"/>
@@ -2797,43 +2849,43 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false">
-      <argument>x7l6lEpuSv</argument>
+      <argument>z7ReEQonK3</argument>
       <argument>0</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>blWdEzeE18</argument>
+      <argument>NCpfFcmMCS</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>F+8Zs71F7E</argument>
+      <argument>tB0YUKvuNH</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>QIsMgNzhmB</argument>
+      <argument>YFa5q7mcFF</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>zNb4eLrsjm</argument>
+      <argument>lQvOYymPd-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument>/var/www/TER-master/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2866,6 +2918,7 @@
     <service id="Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface" alias="session.flash_bag" public="false"/>
     <service id="session.storage.filesystem" alias="session.storage.mock_file" public="false"/>
     <service id="session.storage" alias="session.storage.native"/>
+    <service id="Symfony\Component\Asset\Packages" alias="assets.packages" public="false"/>
     <service id="cache.default_redis_provider" alias=".cache_connection.GD_MSZC" public="false"/>
     <service id="cache.default_memcached_provider" alias=".cache_connection.JKE6keX" public="false"/>
     <service id="cache.default_pdo_provider" alias="doctrine.dbal.default_connection" public="false"/>
