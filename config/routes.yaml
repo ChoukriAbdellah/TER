@@ -8,12 +8,15 @@ site_index:
 
 site_login:
     path:       /login/
-    controller: App\Controller\UtilisateurController::login
+    controller: App\Controller\SecurityController::login
 
 site_signup:
     path:       /signup/
-    controller: App\Controller\UtilisateurController::signup
+    controller: App\Controller\SecurityController::signup
 
 site_estimation:
     path:       /estimation/
     controller: App\Controller\UtilisateurController::estimation
+
+logout:
+    path: /deconnexion

@@ -1,0 +1,63 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+
+  Connexion - {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+
+   <section id="connexion" name="connexion">
+    <!-- INTRO WRAP -->
+        <div class="row centered">
+          <h1>Connexion</h1>
+          <br>
+          <br>
+          <div class="wrapper fadeInDown zero-raduis">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+    
+              <!-- Icon -->
+              <div class="fadeIn first">
+                <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+                <h2 class="my-5">Authentifiez-vous</h2>
+              </div>
+    
+              <!-- Login Form -->
+              <form action="{{ path('site_login') }}" method="post">
+              <input type="text" class="fadeIn second zero-raduis" id="username" name="_username" value="{{ last_username }}" placeholder="Adresse e-mail" />
+              <input type="password" class="fadeIn third zero-raduis" id="password" name="_password" placeholder="Mot de passe" />
+                              <div id="formFooter">
+              </div>
+
+              <input type="hidden" name="_csrf_token"
+                  value="{{ csrf_token('authenticate') }}">
+
+              <input type="submit" class="fadeIn fourth zero-raduis" value="Se connecter">
+              
+              </form>
+              <h2>Vous n'avez pas encore de compte ?</h2>
+              <form action="{{ path('site_signup') }}">
+				        <input type="submit" class="fadeIn fourth zero-raduis pc" value="Inscrivez-vous">
+			        </form>
+              {#
+              If you want to control the URL the user
+              is redirected to on success (more details below)
+              <input type="hidden" name="_target_path" value="/account" />
+              #}
+
+              
+          </form>
+              
+    
+            </div>
+      </div>
+        </div>
+        <br>
+        <hr>
+
+        
+
+
+{% endblock %}

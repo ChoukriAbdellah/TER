@@ -20,19 +20,7 @@ class UtilisateurController extends AbstractController
         ]);
     }
 
-    public function login(Environment $twig)
-    {
-      $content = $twig->render('Utilisateur/login.html.twig');
-  
-      return new Response($content);
-    }
-  
-    public function signup(Environment $twig)
-    {
-      $content = $twig->render('Utilisateur/signup.html.twig');
-  
-      return new Response($content);
-    }
+
 
     public function estimation(Environment $twig)
     {
