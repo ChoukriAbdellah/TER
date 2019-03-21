@@ -16,7 +16,11 @@ inscription:
 
 estimation:
     path:       /estimation/
-    controller: App\Controller\UtilisateurController::estimation
+    controller: App\Controller\DashboardController::estimation
+
+dashboard:
+    path:       /dashboard/
+    controller: App\Controller\DashboardController::index
 
 logout:
     path: /deconnexion

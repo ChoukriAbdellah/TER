@@ -34,11 +34,11 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         'user_registration' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/inscription']], [], []],
         'security' => [[], ['_controller' => 'App\\Controller\\SecurityController::connexion'], [], [['text', '/security']], [], []],
-        'Utilisateur' => [[], ['_controller' => 'App\\Controller\\UtilisateurController::index'], [], [['text', '/Utilisateur']], [], []],
         'index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
         'connexion' => [[], ['_controller' => 'App\\Controller\\SecurityController::connexion'], [], [['text', '/connexion/']], [], []],
         'inscription' => [[], ['_controller' => 'App\\Controller\\Registration::register'], [], [['text', '/inscription/']], [], []],
-        'estimation' => [[], ['_controller' => 'App\\Controller\\UtilisateurController::estimation'], [], [['text', '/estimation/']], [], []],
+        'estimation' => [[], ['_controller' => 'App\\Controller\\DashboardController::estimation'], [], [['text', '/estimation/']], [], []],
+        'dashboard' => [[], ['_controller' => 'App\\Controller\\DashboardController::index'], [], [['text', '/dashboard/']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }
