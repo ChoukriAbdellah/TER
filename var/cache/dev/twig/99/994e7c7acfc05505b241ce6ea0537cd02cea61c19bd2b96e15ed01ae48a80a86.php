@@ -187,18 +187,20 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
 
+                  <input type=\"hidden\" name=\"_target_path\" value=\"/dashboard\" />
+
               <input type=\"submit\" class=\"fadeIn fourth zero-raduis\" value=\"Se connecter\">
               
               </form>
               <h2>Vous n'avez pas encore de compte ?</h2>
               <form action=\"";
-        // line 76
+        // line 78
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Inscrivez-vous\">
 \t\t\t        </form>
               ";
-        // line 84
+        // line 86
         echo "
               
           </form>
@@ -234,7 +236,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
 
     public function getDebugInfo()
     {
-        return array (  202 => 84,  196 => 76,  187 => 70,  178 => 64,  174 => 63,  154 => 45,  148 => 42,  145 => 41,  143 => 40,  140 => 39,  131 => 38,  113 => 29,  107 => 26,  103 => 25,  99 => 24,  92 => 20,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
+        return array (  204 => 86,  198 => 78,  187 => 70,  178 => 64,  174 => 63,  154 => 45,  148 => 42,  145 => 41,  143 => 40,  140 => 39,  131 => 38,  113 => 29,  107 => 26,  103 => 25,  99 => 24,  92 => 20,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -310,6 +312,8 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               <input type=\"hidden\" name=\"_csrf_token\"
                   value=\"{{ csrf_token('authenticate') }}\">
 
+                  <input type=\"hidden\" name=\"_target_path\" value=\"/dashboard\" />
+
               <input type=\"submit\" class=\"fadeIn fourth zero-raduis\" value=\"Se connecter\">
               
               </form>
@@ -320,7 +324,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               {#
               If you want to control the URL the user
               is redirected to on success (more details below)
-              <input type=\"hidden\" name=\"_target_path\" value=\"/account\" />
+              
               #}
 
               
@@ -336,6 +340,6 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         
 
 
-{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/TER-master/templates/security/login.html.twig");
+{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/Symfony/templates/security/login.html.twig");
     }
 }

@@ -25,10 +25,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                 [['_route' => 'inscription', '_controller' => 'App\\Controller\\Registration::register'], null, null, null, true, false, null],
             ],
             '/security' => [[['_route' => 'security', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, false, false, null]],
-            '/Utilisateur' => [[['_route' => 'Utilisateur', '_controller' => 'App\\Controller\\UtilisateurController::index'], null, null, null, false, false, null]],
             '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
             '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, true, false, null]],
-            '/estimation' => [[['_route' => 'estimation', '_controller' => 'App\\Controller\\UtilisateurController::estimation'], null, null, null, true, false, null]],
+            '/estimation' => [[['_route' => 'estimation', '_controller' => 'App\\Controller\\DashboardController::estimation'], null, null, null, true, false, null]],
+            '/dashboard' => [[['_route' => 'dashboard', '_controller' => 'App\\Controller\\DashboardController::index'], null, null, null, true, false, null]],
             '/deconnexion' => [[['_route' => 'logout'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [

@@ -55,6 +55,6 @@ class __TwigTemplate_bd603a94cc8f5873ad336880a2064be769c5255cd691222e2f3116d48e4
     <path fill=\"#aaa\" d=\"M23.61,11.07L17.07,4.35A1.2,1.2,0,0,0,15,5.28V9H1.4A1.82,1.82,0,0,0,0,10.82v2.61A1.55,
         1.55,0,0,0,1.4,15H15v3.72a1.2,1.2,0,0,0,2.07.93l6.63-6.72A1.32,1.32,0,0,0,23.61,11.07Z\"/>
 </svg>
-", "@WebProfiler/Icon/forward.svg", "/var/www/TER-master/vendor/symfony/web-profiler-bundle/Resources/views/Icon/forward.svg");
+", "@WebProfiler/Icon/forward.svg", "/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Icon/forward.svg");
     }
 }
