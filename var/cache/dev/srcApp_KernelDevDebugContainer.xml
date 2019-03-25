@@ -381,6 +381,18 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ProjetRepository" class="App\Repository\ProjetRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\SecondOeuvreRepository" class="App\Repository\SecondOeuvreRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true"/>
     <service id="App\Security\UserChecker" class="App\Security\UserChecker" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
@@ -2369,7 +2381,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.9_yeNH1"/>
+      <argument type="service" id=".service_locator.DFkmJ_x"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3488,6 +3500,12 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProjetRepository" class="App\Repository\ProjetRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ProjetRepository" class="App\Repository\ProjetRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SecondOeuvreRepository" class="App\Repository\SecondOeuvreRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SecondOeuvreRepository" class="App\Repository\SecondOeuvreRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
       <tag name="console.command" command="make:auth"/>
       <argument type="service" id="maker.maker.make_authenticator"/>
@@ -3668,17 +3686,19 @@
         <argument key="authUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.sBAbVNd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.aAeicqB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\DashboardController::estimation" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\DashboardController::etudeSol" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\DashboardController::index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\DashboardController::newProject" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\SecurityController::connexion" type="service" id=".service_locator.d24Amjx"/>
         <argument key="App\Controller\SecurityController::inscription" type="service" id=".service_locator.oXHHcjB"/>
-        <argument key="App\Controller\DashboardController:estimation" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\DashboardController:etudeSol" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\DashboardController:index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\DashboardController:newProject" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\SecurityController:connexion" type="service" id=".service_locator.d24Amjx"/>
@@ -3865,9 +3885,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.9_yeNH1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.DFkmJ_x" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="App\Repository\GrosOeuvreRepository" type="service" id="App\Repository\GrosOeuvreRepository"/>
+        <argument key="App\Repository\ProjetRepository" type="service" id="App\Repository\ProjetRepository"/>
+        <argument key="App\Repository\SecondOeuvreRepository" type="service" id="App\Repository\SecondOeuvreRepository"/>
+      </argument>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
@@ -4003,7 +4027,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.sBAbVNd"/>
+      <argument type="service" id=".service_locator.aAeicqB"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4275,7 +4299,7 @@
     <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.our_db_provider"/>
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
     <service id="security.user_checker.main" alias="App\Security\UserChecker" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.sBAbVNd"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.aAeicqB"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

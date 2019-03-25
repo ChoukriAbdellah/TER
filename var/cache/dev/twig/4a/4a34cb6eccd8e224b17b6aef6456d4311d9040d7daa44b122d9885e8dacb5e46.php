@@ -505,10 +505,10 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t\t<li class=\"nav-active\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
         // line 281
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("estimation");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new-project");
         echo "\">
 \t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>
-\t\t\t\t\t\t\t\t\t\t\t<span>Nouvelle estimation</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Nouveau projet</span>
 \t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t
@@ -526,7 +526,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t<div class=\"widget-content\">
 \t\t\t\t\t\t\t\t\t<ul class=\"list-unstyled m-none\">
 \t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Maison 450m2</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...A faire</a></li>
 \t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
 \t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t</div>
@@ -1001,9 +1001,9 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li class=\"nav-active\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('estimation') }}\">
+\t\t\t\t\t\t\t\t\t\t<a href=\"{{ path('new-project') }}\">
 \t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>
-\t\t\t\t\t\t\t\t\t\t\t<span>Nouvelle estimation</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Nouveau projet</span>
 \t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t
@@ -1021,7 +1021,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t<div class=\"widget-content\">
 \t\t\t\t\t\t\t\t\t<ul class=\"list-unstyled m-none\">
 \t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Maison 450m2</a></li>
+\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...A faire</a></li>
 \t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
 \t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t</div>

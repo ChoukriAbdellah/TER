@@ -132,6 +132,8 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
         // line 20
         echo "
+\t\t\t\t\tA faire
+
 \t\t\t\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -141,7 +143,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
     }
 
-    // line 23
+    // line 25
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -150,107 +152,107 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 24
+        // line 26
         echo "
 \t\t<!-- Specific Page Vendor -->
 \t\t<script src=\"";
-        // line 26
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 27
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 28
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-appear/jquery.appear.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 29
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 30
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 31
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 32
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 33
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 34
+        // line 36
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.categories.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 35
+        // line 37
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.resize.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 36
+        // line 38
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-sparkline/jquery.sparkline.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 37
+        // line 39
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/raphael/raphael.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 38
+        // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/morris/morris.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 39
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/gauge/gauge.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 40
+        // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/snap-svg/snap.svg.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 41
+        // line 43
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/liquid-meter/liquid.meter.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 42
+        // line 44
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/jquery.vmap.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 43
+        // line 45
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 44
+        // line 46
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/jquery.vmap.world.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 45
+        // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 46
+        // line 48
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 47
+        // line 49
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 48
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 49
+        // line 51
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 50
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"), "html", null, true);
         echo "\"></script>
 
@@ -275,7 +277,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
     public function getDebugInfo()
     {
-        return array (  254 => 50,  250 => 49,  246 => 48,  242 => 47,  238 => 46,  234 => 45,  230 => 44,  226 => 43,  222 => 42,  218 => 41,  214 => 40,  210 => 39,  206 => 38,  202 => 37,  198 => 36,  194 => 35,  190 => 34,  186 => 33,  182 => 32,  178 => 31,  174 => 30,  170 => 29,  166 => 28,  162 => 27,  158 => 26,  154 => 24,  145 => 23,  134 => 20,  125 => 19,  107 => 17,  96 => 14,  87 => 13,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  256 => 52,  252 => 51,  248 => 50,  244 => 49,  240 => 48,  236 => 47,  232 => 46,  228 => 45,  224 => 44,  220 => 43,  216 => 42,  212 => 41,  208 => 40,  204 => 39,  200 => 38,  196 => 37,  192 => 36,  188 => 35,  184 => 34,  180 => 33,  176 => 32,  172 => 31,  168 => 30,  164 => 29,  160 => 28,  156 => 26,  147 => 25,  134 => 20,  125 => 19,  107 => 17,  96 => 14,  87 => 13,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -299,6 +301,8 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t\t\t{% block pageactuelle %} Tableau de bord {% endblock %}
 
 \t\t\t\t\t{% block body %}
+
+\t\t\t\t\tA faire
 
 \t\t\t\t\t{% endblock %}
 

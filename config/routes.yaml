@@ -14,13 +14,17 @@ inscription:
     path:       /inscription/
     controller: App\Controller\Registration::register
 
-estimation:
-    path:       /estimation/
-    controller: App\Controller\DashboardController::estimation
+new-project:
+    path:       /dashboard/new-project/
+    controller: App\Controller\DashboardController::newProject
 
 dashboard:
     path:       /dashboard/
     controller: App\Controller\DashboardController::index
+
+etude-sol:
+    path:       /dashboard/new-project/etude-sol
+    controller: App\Controller\DashboardController::etudeSol
 
 logout:
     path: /deconnexion

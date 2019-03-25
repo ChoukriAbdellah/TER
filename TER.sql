@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mer. 20 mars 2019 à 20:35
+-- Généré le :  lun. 25 mars 2019 à 23:07
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -39,7 +39,8 @@ CREATE TABLE `migration_versions` (
 
 INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190311184326', '2019-03-20 18:22:33'),
-('20190320182218', '2019-03-20 18:22:33');
+('20190320182218', '2019-03-20 18:22:33'),
+('20190325212809', '2019-03-25 21:28:58');
 
 -- --------------------------------------------------------
 

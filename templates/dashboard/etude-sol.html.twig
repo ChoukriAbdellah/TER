@@ -1,0 +1,29 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+		{% block head %}
+
+		{{ parent() }}
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css') }}" />
+		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css') }}" />
+		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/morris/morris.css') }}" />
+
+		{% endblock %}
+
+				{% block title %}<h2> Etude du sol</h2>{% endblock %}
+				{% block pageactuelle %}Etude du sol {% endblock %}
+
+					{% block body %}
+
+					<div id="questionnaire"></div>
+					
+						<script src="{{ asset('resources/static/js/app.js') }}" ></script>
+						<script src="{{ asset('resources/static/js/runtime.js') }}" ></script>
+						<script src="{{ asset('resources/static/js/app2.js') }}" ></script
+
+					{% endblock %}
+
+		{% block javascripts %}
+
+		{% endblock %}

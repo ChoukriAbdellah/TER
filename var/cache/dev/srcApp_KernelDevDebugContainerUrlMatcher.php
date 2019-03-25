@@ -27,8 +27,9 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/security' => [[['_route' => 'security', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, false, false, null]],
             '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
             '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, true, false, null]],
-            '/estimation' => [[['_route' => 'estimation', '_controller' => 'App\\Controller\\DashboardController::estimation'], null, null, null, true, false, null]],
+            '/dashboard/new-project' => [[['_route' => 'new-project', '_controller' => 'App\\Controller\\DashboardController::newProject'], null, null, null, true, false, null]],
             '/dashboard' => [[['_route' => 'dashboard', '_controller' => 'App\\Controller\\DashboardController::index'], null, null, null, true, false, null]],
+            '/dashboard/new-project/etude-sol' => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\DashboardController::etudeSol'], null, null, null, false, false, null]],
             '/deconnexion' => [[['_route' => 'logout'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
