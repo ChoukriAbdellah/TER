@@ -58,11 +58,17 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="roles", type="array")
      */
     private $roles;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $dateInscription;
       
     public function __construct()
     {
         $this->isActive = true;
         $this->roles = ['ROLE_USER'];
+        $this->dateInscription = new \Datetime();
     }
      
     /*
@@ -197,5 +203,17 @@ class User implements UserInterface, \Serializable
             // voir remarques sur salt plus haut
             // $this->salt
         ) = unserialize($serialized);
+    }
+
+    public function getDateInscription(): ?\DateTimeInterface
+    {
+        return $this->dateInscription;
+    }
+
+    public function setDateInscription(\DateTimeInterface $dateInscription): self
+    {
+        $this->dateInscription = $dateInscription;
+
+        return $this;
     }
 }

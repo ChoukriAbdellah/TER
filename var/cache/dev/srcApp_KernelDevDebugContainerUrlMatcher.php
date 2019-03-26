@@ -27,9 +27,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/security' => [[['_route' => 'security', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, false, false, null]],
             '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
             '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, true, false, null]],
-            '/dashboard/new-project' => [[['_route' => 'new-project', '_controller' => 'App\\Controller\\DashboardController::newProject'], null, null, null, true, false, null]],
             '/dashboard' => [[['_route' => 'dashboard', '_controller' => 'App\\Controller\\DashboardController::index'], null, null, null, true, false, null]],
-            '/dashboard/new-project/etude-sol' => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\DashboardController::etudeSol'], null, null, null, false, false, null]],
+            '/dashboard/new-project' => [[['_route' => 'new-project', '_controller' => 'App\\Controller\\ProjectController::newProject'], null, null, null, true, false, null]],
             '/deconnexion' => [[['_route' => 'logout'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
@@ -49,6 +48,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
+                    .'|/dashboard/my\\-project/(?'
+                        .'|([^/]++)(*:203)'
+                        .'|etude\\-sol(*:221)'
+                    .')'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -59,6 +62,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+            203 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, true, null]],
+            221 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\DashboardController::etudeSol'], [], null, null, false, false, null]],
         ];
     }
 }

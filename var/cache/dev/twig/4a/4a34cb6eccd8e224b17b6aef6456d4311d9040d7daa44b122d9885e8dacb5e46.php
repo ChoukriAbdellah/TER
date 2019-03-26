@@ -103,12 +103,12 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
     ";
         // line 42
         $this->displayBlock('menu', $context, $blocks);
-        // line 338
+        // line 333
         echo "
 \t\t\t\t\t";
-        // line 339
+        // line 334
         $this->displayBlock('body', $context, $blocks);
-        // line 342
+        // line 337
         echo "
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t
@@ -117,71 +117,71 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t</div>
 
             ";
-        // line 349
+        // line 344
         $this->displayBlock('aside', $context, $blocks);
-        // line 382
+        // line 377
         echo "\t\t</section>
 
 \t\t<!-- Vendor -->
 \t\t<script src=\"";
-        // line 385
+        // line 380
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery/jquery.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 386
+        // line 381
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 387
+        // line 382
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 388
+        // line 383
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/nanoscroller/nanoscroller.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 389
+        // line 384
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 390
+        // line 385
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/magnific-popup/magnific-popup.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 391
+        // line 386
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-placeholder/jquery.placeholder.js"), "html", null, true);
         echo "\"></script>
 \t\t
 \t\t
 \t\t<!-- Theme Base, Components and Settings -->
 \t\t<script src=\"";
-        // line 395
+        // line 390
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/javascripts/theme.js"), "html", null, true);
         echo "\"></script>
 \t\t
 \t\t<!-- Theme Custom -->
 \t\t<script src=\"";
-        // line 398
+        // line 393
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/javascripts/theme.custom.js"), "html", null, true);
         echo "\"></script>
 \t\t
 \t\t<!-- Theme Initialization Files -->
 \t\t<script src=\"";
-        // line 401
+        // line 396
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/javascripts/theme.init.js"), "html", null, true);
         echo "\"></script>
 
 
 \t\t<!-- Examples -->
 \t\t<script src=\"";
-        // line 405
+        // line 400
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/javascripts/dashboard/examples.dashboard.js"), "html", null, true);
         echo "\"></script>
 
 \t\t";
-        // line 407
+        // line 402
         $this->displayBlock('javascript', $context, $blocks);
-        // line 410
+        // line 405
         echo "
 \t</body>
 </html>";
@@ -430,7 +430,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/images/!logged-user.jpg"), "html", null, true);
         echo "\" />
 \t\t\t\t\t\t\t</figure>
-\t\t\t\t\t\t\t<div class=\"profile-info\" data-lock-name=\"John Doe\" data-lock-email=\"johndoe@JSOFT.com\">
+\t\t\t\t\t\t\t<div class=\"profile-info\">
 \t\t\t\t\t\t\t\t<span class=\"name\">";
         // line 231
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 231, $this->source); })()), "user", []), "username", []), "html", null, true);
@@ -460,11 +460,8 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t<ul class=\"list-unstyled\">
 \t\t\t\t\t\t\t\t<li class=\"divider\"></li>
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a role=\"menuitem\" tabindex=\"-1\" href=\"#\" data-lock-screen=\"true\"><i class=\"fa fa-lock\"></i> Verouiller l'écran</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a role=\"menuitem\" tabindex=\"-1\" href=\"";
-        // line 247
+        // line 244
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
         echo "\"><i class=\"fa fa-power-off\"></i> Se déconnecter</a>
 \t\t\t\t\t\t\t\t</li>
@@ -495,7 +492,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t<ul class=\"nav nav-main\">
 \t\t\t\t\t\t\t\t\t<li class=\"nav-active\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 275
+        // line 272
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
         echo "\">
 \t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-home\" aria-hidden=\"true\"></i>
@@ -504,7 +501,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li class=\"nav-active\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 281
+        // line 278
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new-project");
         echo "\">
 \t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>
@@ -525,9 +522,10 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"widget-content\">
 \t\t\t\t\t\t\t\t\t<ul class=\"list-unstyled m-none\">
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...A faire</a></li>
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
+\t\t\t\t\t\t\t\t\t\t";
+        // line 297
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\ProjectController::menu"));
+        echo "
 \t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -545,15 +543,15 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t<section role=\"main\" class=\"content-body\">
 \t\t\t\t\t<header class=\"page-header\">
 \t\t\t\t\t\t";
-        // line 319
+        // line 314
         $this->displayBlock('title', $context, $blocks);
-        // line 320
+        // line 315
         echo "\t\t\t\t\t
 \t\t\t\t\t\t<div class=\"right-wrapper pull-right\">
 \t\t\t\t\t\t\t<ol class=\"breadcrumbs\">
 \t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 324
+        // line 319
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
         echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-home\"></i>
@@ -561,7 +559,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
                                 <span> ";
-        // line 329
+        // line 324
         $this->displayBlock('pageactuelle', $context, $blocks);
         echo " </span>
 \t\t\t\t\t\t\t\t</li>
@@ -580,7 +578,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     }
 
-    // line 319
+    // line 314
     public function block_title($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -597,7 +595,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     }
 
-    // line 329
+    // line 324
     public function block_pageactuelle($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -614,7 +612,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     }
 
-    // line 339
+    // line 334
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -623,7 +621,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 340
+        // line 335
         echo "
 \t\t\t\t\t";
         
@@ -634,7 +632,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     }
 
-    // line 349
+    // line 344
     public function block_aside($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -643,7 +641,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "aside"));
 
-        // line 350
+        // line 345
         echo "
 \t\t\t<aside id=\"sidebar-right\" class=\"sidebar-right\">
 \t\t\t\t<div class=\"nano\">
@@ -684,7 +682,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     }
 
-    // line 407
+    // line 402
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -693,7 +691,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 408
+        // line 403
         echo "
 \t\t";
         
@@ -716,7 +714,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     public function getDebugInfo()
     {
-        return array (  697 => 408,  688 => 407,  647 => 350,  638 => 349,  627 => 340,  618 => 339,  601 => 329,  584 => 319,  565 => 329,  557 => 324,  551 => 320,  549 => 319,  508 => 281,  499 => 275,  468 => 247,  453 => 234,  444 => 233,  440 => 232,  436 => 231,  428 => 228,  351 => 154,  339 => 145,  327 => 136,  315 => 127,  235 => 50,  226 => 43,  217 => 42,  206 => 25,  197 => 24,  185 => 410,  183 => 407,  178 => 405,  171 => 401,  165 => 398,  159 => 395,  152 => 391,  148 => 390,  144 => 389,  140 => 388,  136 => 387,  132 => 386,  128 => 385,  123 => 382,  121 => 349,  112 => 342,  110 => 339,  107 => 338,  105 => 42,  98 => 38,  92 => 35,  86 => 32,  80 => 29,  75 => 26,  73 => 24,  68 => 22,  64 => 21,  60 => 20,  56 => 19,  36 => 1,);
+        return array (  695 => 403,  686 => 402,  645 => 345,  636 => 344,  625 => 335,  616 => 334,  599 => 324,  582 => 314,  563 => 324,  555 => 319,  549 => 315,  547 => 314,  527 => 297,  505 => 278,  496 => 272,  465 => 244,  453 => 234,  444 => 233,  440 => 232,  436 => 231,  428 => 228,  351 => 154,  339 => 145,  327 => 136,  315 => 127,  235 => 50,  226 => 43,  217 => 42,  206 => 25,  197 => 24,  185 => 405,  183 => 402,  178 => 400,  171 => 396,  165 => 393,  159 => 390,  152 => 386,  148 => 385,  144 => 384,  140 => 383,  136 => 382,  132 => 381,  128 => 380,  123 => 377,  121 => 344,  112 => 337,  110 => 334,  107 => 333,  105 => 42,  98 => 38,  92 => 35,  86 => 32,  80 => 29,  75 => 26,  73 => 24,  68 => 22,  64 => 21,  60 => 20,  56 => 19,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -950,7 +948,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t<figure class=\"profile-picture\">
 \t\t\t\t\t\t\t\t<img src=\"{{ asset('resources/assets/images/!logged-user.jpg') }}\" alt=\"Joseph Doe\" class=\"img-circle\" data-lock-picture=\"{{ asset('resources/assets/images/!logged-user.jpg') }}\" />
 \t\t\t\t\t\t\t</figure>
-\t\t\t\t\t\t\t<div class=\"profile-info\" data-lock-name=\"John Doe\" data-lock-email=\"johndoe@JSOFT.com\">
+\t\t\t\t\t\t\t<div class=\"profile-info\">
 \t\t\t\t\t\t\t\t<span class=\"name\">{{ app.user.username }}</span>
 \t\t\t\t\t\t\t\t<span class=\"role\">{% for role in app.user.roles %}
                                                     {{ role }}
@@ -963,9 +961,6 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t<div class=\"dropdown-menu\">
 \t\t\t\t\t\t\t<ul class=\"list-unstyled\">
 \t\t\t\t\t\t\t\t<li class=\"divider\"></li>
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a role=\"menuitem\" tabindex=\"-1\" href=\"#\" data-lock-screen=\"true\"><i class=\"fa fa-lock\"></i> Verouiller l'écran</a>
-\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a role=\"menuitem\" tabindex=\"-1\" href=\"{{ path('logout') }}\"><i class=\"fa fa-power-off\"></i> Se déconnecter</a>
 \t\t\t\t\t\t\t\t</li>
@@ -1020,9 +1015,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"widget-content\">
 \t\t\t\t\t\t\t\t\t<ul class=\"list-unstyled m-none\">
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...A faire</a></li>
-\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\">...</a></li>
+\t\t\t\t\t\t\t\t\t\t{{ render(controller('App\\\\Controller\\\\ProjectController::menu')) }}
 \t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>

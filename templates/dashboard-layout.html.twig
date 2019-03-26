@@ -227,7 +227,7 @@
 							<figure class="profile-picture">
 								<img src="{{ asset('resources/assets/images/!logged-user.jpg') }}" alt="Joseph Doe" class="img-circle" data-lock-picture="{{ asset('resources/assets/images/!logged-user.jpg') }}" />
 							</figure>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+							<div class="profile-info">
 								<span class="name">{{ app.user.username }}</span>
 								<span class="role">{% for role in app.user.roles %}
                                                     {{ role }}
@@ -240,9 +240,6 @@
 						<div class="dropdown-menu">
 							<ul class="list-unstyled">
 								<li class="divider"></li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Verouiller l'écran</a>
-								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="{{ path('logout') }}"><i class="fa fa-power-off"></i> Se déconnecter</a>
 								</li>
@@ -297,9 +294,7 @@
 								</div>
 								<div class="widget-content">
 									<ul class="list-unstyled m-none">
-										<li><a href="#">...</a></li>
-										<li><a href="#">...A faire</a></li>
-										<li><a href="#">...</a></li>
+										{{ render(controller('App\\Controller\\ProjectController::menu')) }}
 									</ul>
 								</div>
 							</div>

@@ -37,9 +37,10 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
         'connexion' => [[], ['_controller' => 'App\\Controller\\SecurityController::connexion'], [], [['text', '/connexion/']], [], []],
         'inscription' => [[], ['_controller' => 'App\\Controller\\Registration::register'], [], [['text', '/inscription/']], [], []],
-        'new-project' => [[], ['_controller' => 'App\\Controller\\DashboardController::newProject'], [], [['text', '/dashboard/new-project/']], [], []],
         'dashboard' => [[], ['_controller' => 'App\\Controller\\DashboardController::index'], [], [['text', '/dashboard/']], [], []],
-        'etude-sol' => [[], ['_controller' => 'App\\Controller\\DashboardController::etudeSol'], [], [['text', '/dashboard/new-project/etude-sol']], [], []],
+        'new-project' => [[], ['_controller' => 'App\\Controller\\ProjectController::newProject'], [], [['text', '/dashboard/new-project/']], [], []],
+        'my-project' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::view'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'etude-sol' => [[], ['_controller' => 'App\\Controller\\DashboardController::etudeSol'], [], [['text', '/dashboard/my-project/etude-sol']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

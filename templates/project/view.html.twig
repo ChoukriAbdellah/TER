@@ -1,0 +1,181 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+		{% block head %}
+
+		{{ parent() }}
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css') }}" />
+		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css') }}" />
+		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/morris/morris.css') }}" />
+
+		{% endblock %}
+
+				{% block title %}<h2>Votre projet : {{projet.nom}}</h2>{% endblock %}
+				{% block pageactuelle %}{{projet.nom}}{% endblock %}
+
+					{% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">{{projet.nom}}</h2>
+									</header>
+                                    <br>
+		<div class="row">
+						<div class="col-md-4" data-plugin-portlet id="portlet-1">
+							<section class="panel panel-primary" id="panel-1" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+								<a href="{{ path('etude-sol') }}"> <h2 class="panel-title">Etude du sol</h2> </a>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+							<section class="panel panel-secondary" id="panel-2" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">Préparation du terrain et l’accès</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+							<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">L'excavation</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+														<section class="panel panel-primary" id="panel-1" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">La toiture/tuiles</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4" data-plugin-portlet id="portlet-2">
+							<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">Les fondations</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+							<section class="panel panel-success" id="panel-5" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">Le soubassement</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+							<section class="panel panel-warning" id="panel-6" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">VRD (voirie et réseaux divers)</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+														<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">Les menuiseries extérieures</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4" data-plugin-portlet id="portlet-3">
+							<section class="panel panel-info" id="panel-7" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">Le Plancher</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+							<section class="panel panel-dark" id="panel-8" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">L'élévation</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+							<section class="panel panel-danger" id="panel-9" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+									</div>
+
+									<h2 class="panel-title">La charpente/couverture</h2>
+								</header>
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								</div>
+							</section>
+
+						</div>
+					</div>
+					<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="button">Valider</button>
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+					{% endblock %}
+
+		{% block javascripts %}
+
+		{% endblock %}

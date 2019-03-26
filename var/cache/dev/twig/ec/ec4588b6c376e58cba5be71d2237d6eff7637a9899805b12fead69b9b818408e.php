@@ -118,173 +118,34 @@ class __TwigTemplate_02ef5ddb5dc562a4b5a6ec381a18d0d5cadaf496613a1f438d6741e056f
         echo "
 \t<div class=\"row\">
 \t\t\t\t\t\t\t<div class=\"col-xs-12\">
-\t\t\t\t\t\t\t\t<section class=\"panel form-wizard\" id=\"w4\">
 \t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
-\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Nouveau projet</h2>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"col-sm-3 control-label\" for=\"w4-password\">Entrez un nom pour votre nouveau projet : </label>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" name=\"password\" placeholder=\"Villa 450m2\" id=\"w4-password\" required minlength=\"6\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-<div class=\"row\">
-\t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-1\">
-\t\t\t\t\t\t\t<section class=\"panel panel-primary\" id=\"panel-1\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br>
 
-\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 40
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etude-sol");
-        echo "\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-secondary\" id=\"panel-2\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Préparation du terrain et l’accès</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-tertiary\" id=\"panel-3\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">L'excavation</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"panel panel-primary\" id=\"panel-1\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La toiture/tuiles</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-2\">
-\t\t\t\t\t\t\t<section class=\"panel panel-quartenary\" id=\"panel-4\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Les fondations</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-success\" id=\"panel-5\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Le soubassement</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-warning\" id=\"panel-6\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">VRD (voirie et réseaux divers)</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"panel panel-quartenary\" id=\"panel-4\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Les menuiseries extérieures</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-3\">
-\t\t\t\t\t\t\t<section class=\"panel panel-info\" id=\"panel-7\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Le Plancher</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-dark\" id=\"panel-8\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">L'élévation</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-danger\" id=\"panel-9\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La charpente/couverture</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"button\">Valider</button>
+\t\t\t\t\t  ";
+        // line 32
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 32, $this->source); })()), 'form_start');
+        echo "
+                ";
+        // line 33
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 33, $this->source); })()), "nom", []), 'row');
+        echo "
+            
+                <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
+            ";
+        // line 36
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 36, $this->source); })()), 'form_end');
+        echo "
+\t\t
+\t\t\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
@@ -305,7 +166,7 @@ class __TwigTemplate_02ef5ddb5dc562a4b5a6ec381a18d0d5cadaf496613a1f438d6741e056f
 
     }
 
-    // line 197
+    // line 52
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -314,7 +175,7 @@ class __TwigTemplate_02ef5ddb5dc562a4b5a6ec381a18d0d5cadaf496613a1f438d6741e056f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 198
+        // line 53
         echo "\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
@@ -341,7 +202,7 @@ class __TwigTemplate_02ef5ddb5dc562a4b5a6ec381a18d0d5cadaf496613a1f438d6741e056f
 
     public function getDebugInfo()
     {
-        return array (  318 => 198,  309 => 197,  143 => 40,  118 => 17,  109 => 16,  91 => 14,  80 => 11,  71 => 10,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  179 => 53,  170 => 52,  145 => 36,  139 => 33,  135 => 32,  118 => 17,  109 => 16,  91 => 14,  80 => 11,  71 => 10,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -365,170 +226,25 @@ class __TwigTemplate_02ef5ddb5dc562a4b5a6ec381a18d0d5cadaf496613a1f438d6741e056f
 
 \t<div class=\"row\">
 \t\t\t\t\t\t\t<div class=\"col-xs-12\">
-\t\t\t\t\t\t\t\t<section class=\"panel form-wizard\" id=\"w4\">
 \t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
-\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Nouveau projet</h2>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"col-sm-3 control-label\" for=\"w4-password\">Entrez un nom pour votre nouveau projet : </label>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" name=\"password\" placeholder=\"Villa 450m2\" id=\"w4-password\" required minlength=\"6\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-<div class=\"row\">
-\t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-1\">
-\t\t\t\t\t\t\t<section class=\"panel panel-primary\" id=\"panel-1\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br>
 
-\t\t\t\t\t\t\t\t\t<a href=\"{{ path('etude-sol') }}\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-secondary\" id=\"panel-2\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Préparation du terrain et l’accès</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-tertiary\" id=\"panel-3\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">L'excavation</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"panel panel-primary\" id=\"panel-1\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La toiture/tuiles</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-2\">
-\t\t\t\t\t\t\t<section class=\"panel panel-quartenary\" id=\"panel-4\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Les fondations</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-success\" id=\"panel-5\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Le soubassement</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-warning\" id=\"panel-6\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">VRD (voirie et réseaux divers)</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"panel panel-quartenary\" id=\"panel-4\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Les menuiseries extérieures</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-3\">
-\t\t\t\t\t\t\t<section class=\"panel panel-info\" id=\"panel-7\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Le Plancher</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-dark\" id=\"panel-8\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">L'élévation</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t<section class=\"panel panel-danger\" id=\"panel-9\" data-portlet-item>
-\t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
-\t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-times\"></a>
-\t\t\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La charpente/couverture</h2>
-\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</section>
-
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"button\">Valider</button>
+\t\t\t\t\t  {{ form_start(form) }}
+                {{ form_row(form.nom) }}
+            
+                <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
+            {{ form_end(form) }}
+\t\t
+\t\t\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">

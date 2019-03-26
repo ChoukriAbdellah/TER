@@ -3,30 +3,23 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Twig\Environment;
+use Symfony\Component\HttpFoundation\Request;
+use App\Form\ProjetType;
+use App\Entity\Projet;
+use App\Entity\GrosOeuvre;
+use App\Entity\SecondOeuvre;
+use App\Repository\ProjetRepository;
 
-class DashboardController
+class DashboardController extends AbstractController
 {
   public function index(Environment $twig)
   {
+
     $content = $twig->render('dashboard/index.html.twig');
 
     return new Response($content);
   }
-
-  public function newProject(Environment $twig)
-  {
-    $content = $twig->render('dashboard/new-project.html.twig');
-
-    return new Response($content);
-  }
-
-  public function etudeSol(Environment $twig)
-  {
-    $content = $twig->render('dashboard/etude-sol.html.twig');
-
-    return new Response($content);
-  }
-
 
 }

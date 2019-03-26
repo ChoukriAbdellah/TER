@@ -14,16 +14,20 @@ inscription:
     path:       /inscription/
     controller: App\Controller\Registration::register
 
-new-project:
-    path:       /dashboard/new-project/
-    controller: App\Controller\DashboardController::newProject
-
 dashboard:
     path:       /dashboard/
     controller: App\Controller\DashboardController::index
 
+new-project:
+    path:       /dashboard/new-project/
+    controller: App\Controller\ProjectController::newProject
+
+my-project:
+    path:       /dashboard/my-project/{id}
+    controller: App\Controller\ProjectController::view
+
 etude-sol:
-    path:       /dashboard/new-project/etude-sol
+    path:       /dashboard/my-project/etude-sol
     controller: App\Controller\DashboardController::etudeSol
 
 logout:

@@ -1,5 +1,4 @@
 <?php
-// src/Repository/UserRepository.php
 namespace App\Repository;
  
 use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
