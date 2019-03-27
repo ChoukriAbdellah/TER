@@ -150,7 +150,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<a href=\"";
         // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etude-sol");
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etude-sol", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 32, $this->source); })()), "id", [])]), "html", null, true);
         echo "\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\">
@@ -373,7 +373,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
 \t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('etude-sol') }}\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('etude-sol', {'id': projet.id}) }}\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\">
 \t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.

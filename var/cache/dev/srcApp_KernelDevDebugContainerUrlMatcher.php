@@ -48,9 +48,9 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
-                    .'|/dashboard/my\\-project/(?'
-                        .'|([^/]++)(*:203)'
-                        .'|etude\\-sol(*:221)'
+                    .'|/dashboard/my\\-project/([^/]++)(?'
+                        .'|(*:203)'
+                        .'|/etude\\-sol(*:222)'
                     .')'
                 .')/?$}sDu',
         ];
@@ -63,7 +63,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
             203 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, true, null]],
-            221 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\DashboardController::etudeSol'], [], null, null, false, false, null]],
+            222 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
         ];
     }
 }

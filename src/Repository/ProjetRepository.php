@@ -35,6 +35,8 @@ class ProjetRepository extends ServiceEntityRepository
         ;
     }
 
+    /*
+
     public function findProjetById($value): ?Projet
     {
         return $this->createQueryBuilder('p')
@@ -44,4 +46,6 @@ class ProjetRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    */
 }

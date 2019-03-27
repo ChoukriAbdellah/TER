@@ -27,8 +27,8 @@ my-project:
     controller: App\Controller\ProjectController::view
 
 etude-sol:
-    path:       /dashboard/my-project/etude-sol
-    controller: App\Controller\DashboardController::etudeSol
+    path:       /dashboard/my-project/{id}/etude-sol
+    controller: App\Controller\ProjectController::etudeSol
 
 logout:
     path: /deconnexion

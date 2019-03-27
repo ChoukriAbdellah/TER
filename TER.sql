@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 26 mars 2019 à 19:15
+-- Généré le :  mer. 27 mars 2019 à 16:36
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `TER`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `etude_sol`
+--
+
+CREATE TABLE `etude_sol` (
+  `id` int(11) NOT NULL,
+  `type_sol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `etude_sol`
+--
+
+INSERT INTO `etude_sol` (`id`, `type_sol`) VALUES
+(5, 'ARGILEUX');
 
 -- --------------------------------------------------------
 
@@ -48,7 +66,8 @@ CREATE TABLE `gros_oeuvre` (
 --
 
 INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavation`, `id_fondations`, `id_soubassement`, `id_vrd`, `id_plancher`, `id_elevation`, `id_charpente`, `id_toiture`, `id_menuiseries_ext`) VALUES
-(7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -69,7 +88,8 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190311184326', '2019-03-20 18:22:33'),
 ('20190320182218', '2019-03-20 18:22:33'),
 ('20190325212809', '2019-03-25 21:28:58'),
-('20190326154752', '2019-03-26 15:48:14');
+('20190326154752', '2019-03-26 15:48:14'),
+('20190327144924', '2019-03-27 14:49:34');
 
 -- --------------------------------------------------------
 
@@ -90,7 +110,8 @@ CREATE TABLE `projet` (
 --
 
 INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, `nom`) VALUES
-(6, 5, 7, 7, 'Villa sur Montpellier');
+(6, 5, 7, 7, 'Villa sur Montpellier'),
+(7, 1, 8, 8, 'Villa Montpellier');
 
 -- --------------------------------------------------------
 
@@ -107,7 +128,8 @@ CREATE TABLE `second_oeuvre` (
 --
 
 INSERT INTO `second_oeuvre` (`id`) VALUES
-(7);
+(7),
+(8);
 
 -- --------------------------------------------------------
 
@@ -138,6 +160,12 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`,
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `etude_sol`
+--
+ALTER TABLE `etude_sol`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `gros_oeuvre`
@@ -176,22 +204,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `etude_sol`
+--
+ALTER TABLE `etude_sol`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT pour la table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `projet`
 --
 ALTER TABLE `projet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `user`

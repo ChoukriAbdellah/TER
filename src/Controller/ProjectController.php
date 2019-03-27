@@ -7,9 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ProjetType;
+use App\Form\EtudeSolType;
 use App\Entity\Projet;
 use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
+use App\Entity\EtudeSol;
 use App\Repository\ProjetRepository;
 
 class ProjectController extends AbstractController
@@ -63,18 +65,50 @@ class ProjectController extends AbstractController
                 'project/new-project.html.twig', array('form' => $form->createView()));
   }
 
-  public function etudeSol(Environment $twig)
+  public function etudeSol($id, Request $request)
   {
-    $content = $twig->render('project/etude-sol.html.twig');
+            // création du formulaire
+            $e = new EtudeSol();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(EtudeSolType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
 
-    return new Response($content);
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdEtudeSol($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
   }
+          
 
   public function view($id, Request $request)
     {
     $projet = $this->getDoctrine()
         ->getRepository(Projet::class)
-        ->findProjetById($id);
+        ->find($id);
     return $this->render(
         'project/view.html.twig',
         ['projet'  => $projet]
@@ -83,8 +117,7 @@ class ProjectController extends AbstractController
 
     public function menu()
     {
-        $user = $this->getUser();
-        $idUser = $user->getId();
+        $idUser = $this->getUser()->getId();
         $projets = $this->getDoctrine()
         ->getRepository(Projet::class)
         ->findProjetsByIdUser($idUser);
