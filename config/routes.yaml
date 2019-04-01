@@ -49,7 +49,7 @@ prep-terrain:
     path:       /dashboard/my-project/{id}/prep-terrain
     controller: App\Controller\ProjectController::PreparationEtAcces
 soubassement:
-    path:       /dashboard/my-project/{id}/soubassemnt
+    path:       /dashboard/my-project/{id}/soubassement
     controller: App\Controller\ProjectController::Soubassement
 elevation:
     path:       /dashboard/my-project/{id}/elevation
