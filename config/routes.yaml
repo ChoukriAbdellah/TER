@@ -45,6 +45,15 @@ fondation:
 plancher:
     path:       /dashboard/my-project/{id}/plancher
     controller: App\Controller\ProjectController::plancher
+prep-terrain:
+    path:       /dashboard/my-project/{id}/prep-terrain
+    controller: App\Controller\ProjectController::PreparationEtAcces
+soubassement:
+    path:       /dashboard/my-project/{id}/soubassemnt
+    controller: App\Controller\ProjectController::Soubassement
+elevation:
+    path:       /dashboard/my-project/{id}/elevation
+    controller: App\Controller\ProjectController::Elevation    
 
 logout:
     path: /deconnexion
