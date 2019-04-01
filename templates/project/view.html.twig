@@ -241,12 +241,13 @@
 
 						</div>
 					</div>
-					<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="button">Valider</button>
+					
 						
 									</div>
 									<div class="panel-footer">
 										<ul class="pager">
-
+										<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" {% if nbform == 11 %} disabled="false" {% else %} disabled="false" {% endif %} 
+										type="button">Passer au second oeuvre</button>
 										</ul>
 									</div>
 								</section>

@@ -46,7 +46,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'fondation' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::fondation'], [], [['text', '/fondation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'plancher' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::plancher'], [], [['text', '/plancher'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'prep-terrain' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], [], [['text', '/prep-terrain'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
-        'soubassement' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Soubassement'], [], [['text', '/soubassemnt'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'soubassement' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Soubassement'], [], [['text', '/soubassement'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'elevation' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Elevation'], [], [['text', '/elevation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'charpente' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::charpente'], [], [['text', '/charpente'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],

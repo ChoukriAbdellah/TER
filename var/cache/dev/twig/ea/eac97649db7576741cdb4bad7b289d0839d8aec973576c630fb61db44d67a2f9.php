@@ -626,12 +626,20 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"button\">Valider</button>
+\t\t\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
 \t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
-
+\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" ";
+        // line 249
+        if (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 249, $this->source); })()) == 11)) {
+            echo " disabled=\"false\" ";
+        } else {
+            echo " disabled=\"false\" ";
+        }
+        echo " 
+\t\t\t\t\t\t\t\t\t\ttype=\"button\">Passer au second oeuvre</button>
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</section>
@@ -647,7 +655,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
     }
 
-    // line 258
+    // line 259
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -656,7 +664,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 259
+        // line 260
         echo "
 \t\t";
         
@@ -679,7 +687,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
     public function getDebugInfo()
     {
-        return array (  660 => 259,  651 => 258,  624 => 239,  619 => 237,  615 => 236,  611 => 235,  607 => 233,  602 => 231,  597 => 229,  591 => 228,  579 => 223,  572 => 218,  566 => 215,  561 => 213,  556 => 211,  550 => 210,  538 => 205,  531 => 200,  525 => 197,  520 => 195,  515 => 193,  509 => 192,  497 => 187,  476 => 168,  470 => 165,  465 => 163,  460 => 161,  454 => 160,  442 => 155,  435 => 150,  429 => 147,  424 => 145,  419 => 143,  413 => 142,  401 => 137,  394 => 132,  388 => 129,  383 => 127,  378 => 125,  372 => 124,  360 => 119,  339 => 100,  333 => 97,  328 => 95,  323 => 93,  317 => 92,  305 => 87,  298 => 82,  292 => 79,  287 => 77,  282 => 75,  276 => 74,  264 => 69,  257 => 64,  252 => 62,  248 => 60,  243 => 58,  238 => 56,  232 => 55,  221 => 51,  214 => 46,  209 => 43,  203 => 42,  197 => 41,  194 => 40,  189 => 37,  183 => 36,  177 => 35,  174 => 34,  172 => 33,  168 => 31,  162 => 30,  156 => 29,  153 => 28,  151 => 27,  146 => 25,  140 => 22,  134 => 18,  125 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  668 => 260,  659 => 259,  636 => 249,  624 => 239,  619 => 237,  615 => 236,  611 => 235,  607 => 233,  602 => 231,  597 => 229,  591 => 228,  579 => 223,  572 => 218,  566 => 215,  561 => 213,  556 => 211,  550 => 210,  538 => 205,  531 => 200,  525 => 197,  520 => 195,  515 => 193,  509 => 192,  497 => 187,  476 => 168,  470 => 165,  465 => 163,  460 => 161,  454 => 160,  442 => 155,  435 => 150,  429 => 147,  424 => 145,  419 => 143,  413 => 142,  401 => 137,  394 => 132,  388 => 129,  383 => 127,  378 => 125,  372 => 124,  360 => 119,  339 => 100,  333 => 97,  328 => 95,  323 => 93,  317 => 92,  305 => 87,  298 => 82,  292 => 79,  287 => 77,  282 => 75,  276 => 74,  264 => 69,  257 => 64,  252 => 62,  248 => 60,  243 => 58,  238 => 56,  232 => 55,  221 => 51,  214 => 46,  209 => 43,  203 => 42,  197 => 41,  194 => 40,  189 => 37,  183 => 36,  177 => 35,  174 => 34,  172 => 33,  168 => 31,  162 => 30,  156 => 29,  153 => 28,  151 => 27,  146 => 25,  140 => 22,  134 => 18,  125 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -927,12 +935,13 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"button\">Valider</button>
+\t\t\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
 \t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
-
+\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" {% if nbform == 11 %} disabled=\"false\" {% else %} disabled=\"false\" {% endif %} 
+\t\t\t\t\t\t\t\t\t\ttype=\"button\">Passer au second oeuvre</button>
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</section>
