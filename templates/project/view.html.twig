@@ -22,17 +22,45 @@
 									<h2 class="panel-title">{{projet.nom}}</h2>
 									</header>
                                     <br>
+									<h4> Vous avez rempli {{nbform}} formulaires sur 11 pour le gros oeuvre de votre chantier. </h4>
 		<div class="row">
+			{% if (nbform/11)*100 < 25 %}
+									<div class="progress progress-striped light active m-md">
+										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
+											En cours
+										</div>
+									</div>
+			{% elseif (nbform/11)*100 > 25 and (nbform/11)*100 < 75 %}
+												<div class="progress progress-striped light active m-md">
+										<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
+											En cours
+										</div>
+									</div>
+			{% else %}
+												<div class="progress progress-striped light active m-md">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
+											En cours
+										</div>
+									</div>
+			{% endif %}
+			<br> <br>
 						<div class="col-md-4" data-plugin-portlet id="portlet-1">
 							<section class="panel panel-primary" id="panel-1" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if etudeSol == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
-								<a href="{{ path('etude-sol', {'id': projet.id}) }}"> <h2 class="panel-title">Etude du sol</h2> </a>
+								 <h2 class="panel-title">Etude du sol </h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								<div class="panel-body" {% if etudeSol != null %} style="display: none;" {% endif %}>
+									{% if etudeSol == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('etude-sol', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									Type du sol ({{etudeSol.typeSol}})
+									{% endif %}
 								</div>
 							</section>
 							<section class="panel panel-secondary" id="panel-2" data-portlet-item>

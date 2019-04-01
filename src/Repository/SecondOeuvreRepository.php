@@ -40,11 +40,13 @@ class SecondOeuvreRepository extends ServiceEntityRepository
     public function findOneBySomeField($value): ?SecondOeuvre
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
+            ->from('DeliveryMethods','m')
+            ->leftJoin('m.countries','c')
+            ->having('COUNT(c.id) = 0')
+            ->groupBy('m.id');
         ;
     }
+    $qb->select('m')
+
     */
 }

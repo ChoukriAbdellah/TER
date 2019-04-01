@@ -13,6 +13,7 @@ use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
 use App\Entity\EtudeSol;
 use App\Repository\ProjetRepository;
+use App\Repository\GrosOeuvreRepository;
 
 class ProjectController extends AbstractController
 {
@@ -98,6 +99,8 @@ class ProjectController extends AbstractController
      
                 return $this->redirectToRoute('dashboard');
             }
+
+
      
             return $this->render(
               'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
@@ -109,9 +112,28 @@ class ProjectController extends AbstractController
     $projet = $this->getDoctrine()
         ->getRepository(Projet::class)
         ->find($id);
+
+
+    $idGo = $projet->getIdGrosOeuvre();
+    $grosOeuvre = $this->getDoctrine()
+    ->getRepository(GrosOeuvre::class)
+    ->find($idGo);
+
+    $idEtudeSol = $grosOeuvre->getIdEtudeSol();
+    if($idEtudeSol != NULL){
+      $etudeSol = $this->getDoctrine()->getRepository(EtudeSol::class)->find($idEtudeSol);
+    }
+    else
+      $etudeSol = null;
+      
+    //$fondations = $this->getDoctrine()->getRepository(Fondations::class)->find($grosOeuvre->getIdFondations());
+
+    $nbform = $this->getDoctrine()
+    ->getRepository(GrosOeuvre::class)->findNbFormulairesByGrosOeuvre($idGo);
+
     return $this->render(
         'project/view.html.twig',
-        ['projet'  => $projet]
+        ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol]
     );
     }
 

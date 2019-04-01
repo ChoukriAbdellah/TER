@@ -36,6 +36,31 @@ class GrosOeuvreRepository extends ServiceEntityRepository
     }
     */
 
+    public function findNbFormulairesByGrosOeuvre($id)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'select 
+        sum(case WHEN `id_etude_sol` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_prep_terrain` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_excavation` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_fondations` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_soubassement` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_vrd` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_plancher` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_elevation` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_charpente` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_toiture` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_menuiseries_ext` IS NOT NULL THEN 1 ELSE 0 END)
+        AS notnulls from gros_oeuvre where id = :id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $tab = $stmt->fetch();
+        $nb = $tab['notnulls'];
+    
+        // returns an array of arrays (i.e. a raw data set)
+        return $nb;
+    }
+
    /* public function findById($value): ?Projet
     {
         return $this->createQueryBuilder('p')

@@ -141,21 +141,99 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
         echo "</h2>
 \t\t\t\t\t\t\t\t\t</header>
                                     <br>
+\t\t\t\t\t\t\t\t\t<h4> Vous avez rempli ";
+        // line 25
+        echo twig_escape_filter($this->env, (isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 25, $this->source); })()), "html", null, true);
+        echo " formulaires sur 11 pour le gros oeuvre de votre chantier. </h4>
 \t\t<div class=\"row\">
+\t\t\t";
+        // line 27
+        if (((((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 27, $this->source); })()) / 11) * 100) < 25)) {
+            // line 28
+            echo "\t\t\t\t\t\t\t\t\t<div class=\"progress progress-striped light active m-md\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-danger\" role=\"progressbar\" aria-valuenow=\"";
+            // line 29
+            echo twig_escape_filter($this->env, (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 29, $this->source); })()) / 11) * 100), "html", null, true);
+            echo "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
+            echo twig_escape_filter($this->env, (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 29, $this->source); })()) / 11) * 100), "html", null, true);
+            echo "%;\">
+\t\t\t\t\t\t\t\t\t\t\tEn cours
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t";
+        } elseif (((((        // line 33
+(isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 33, $this->source); })()) / 11) * 100) > 25) && ((((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 33, $this->source); })()) / 11) * 100) < 75))) {
+            // line 34
+            echo "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress progress-striped light active m-md\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-warning\" role=\"progressbar\" aria-valuenow=\"";
+            // line 35
+            echo twig_escape_filter($this->env, (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 35, $this->source); })()) / 11) * 100), "html", null, true);
+            echo "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
+            echo twig_escape_filter($this->env, (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 35, $this->source); })()) / 11) * 100), "html", null, true);
+            echo "%;\">
+\t\t\t\t\t\t\t\t\t\t\tEn cours
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t";
+        } else {
+            // line 40
+            echo "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress progress-striped light active m-md\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"";
+            // line 41
+            echo twig_escape_filter($this->env, (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 41, $this->source); })()) / 11) * 100), "html", null, true);
+            echo "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
+            echo twig_escape_filter($this->env, (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 41, $this->source); })()) / 11) * 100), "html", null, true);
+            echo "%;\">
+\t\t\t\t\t\t\t\t\t\t\tEn cours
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t";
+        }
+        // line 46
+        echo "\t\t\t<br> <br>
 \t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-1\">
 \t\t\t\t\t\t\t<section class=\"panel panel-primary\" id=\"panel-1\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
+        // line 51
+        if (((isset($context["etudeSol"]) || array_key_exists("etudeSol", $context) ? $context["etudeSol"] : (function () { throw new Twig_Error_Runtime('Variable "etudeSol" does not exist.', 51, $this->source); })()) == null)) {
+            echo " class=\"fa fa-caret-down\" ";
+        } else {
+            echo " class=\"fa fa-caret-up\" ";
+        }
+        echo "></a>
 \t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<a href=\"";
-        // line 32
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etude-sol", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 32, $this->source); })()), "id", [])]), "html", null, true);
-        echo "\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
+\t\t\t\t\t\t\t\t <h2 class=\"panel-title\">Etude du sol </h2>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
+        // line 55
+        if (((isset($context["etudeSol"]) || array_key_exists("etudeSol", $context) ? $context["etudeSol"] : (function () { throw new Twig_Error_Runtime('Variable "etudeSol" does not exist.', 55, $this->source); })()) != null)) {
+            echo " style=\"display: none;\" ";
+        }
+        echo ">
+\t\t\t\t\t\t\t\t\t";
+        // line 56
+        if (((isset($context["etudeSol"]) || array_key_exists("etudeSol", $context) ? $context["etudeSol"] : (function () { throw new Twig_Error_Runtime('Variable "etudeSol" does not exist.', 56, $this->source); })()) == null)) {
+            echo " 
+\t\t\t\t\t\t\t\t\tVous n'avez pas rencore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 58
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etude-sol", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 58, $this->source); })()), "id", [])]), "html", null, true);
+            echo "\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t";
+        } else {
+            // line 60
+            echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\tType du sol (";
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["etudeSol"]) || array_key_exists("etudeSol", $context) ? $context["etudeSol"] : (function () { throw new Twig_Error_Runtime('Variable "etudeSol" does not exist.', 62, $this->source); })()), "typeSol", []), "html", null, true);
+            echo ")
+\t\t\t\t\t\t\t\t\t";
+        }
+        // line 64
+        echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t<section class=\"panel panel-secondary\" id=\"panel-2\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
@@ -305,7 +383,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
     }
 
-    // line 179
+    // line 207
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -314,7 +392,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 180
+        // line 208
         echo "
 \t\t";
         
@@ -337,7 +415,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
     public function getDebugInfo()
     {
-        return array (  318 => 180,  309 => 179,  153 => 32,  140 => 22,  134 => 18,  125 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  396 => 208,  387 => 207,  236 => 64,  231 => 62,  227 => 60,  222 => 58,  217 => 56,  211 => 55,  200 => 51,  193 => 46,  183 => 41,  180 => 40,  170 => 35,  167 => 34,  165 => 33,  156 => 29,  153 => 28,  151 => 27,  146 => 25,  140 => 22,  134 => 18,  125 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -366,17 +444,45 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">{{projet.nom}}</h2>
 \t\t\t\t\t\t\t\t\t</header>
                                     <br>
+\t\t\t\t\t\t\t\t\t<h4> Vous avez rempli {{nbform}} formulaires sur 11 pour le gros oeuvre de votre chantier. </h4>
 \t\t<div class=\"row\">
+\t\t\t{% if (nbform/11)*100 < 25 %}
+\t\t\t\t\t\t\t\t\t<div class=\"progress progress-striped light active m-md\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-danger\" role=\"progressbar\" aria-valuenow=\"{{(nbform/11)*100}}\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: {{(nbform/11)*100}}%;\">
+\t\t\t\t\t\t\t\t\t\t\tEn cours
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t{% elseif (nbform/11)*100 > 25 and (nbform/11)*100 < 75 %}
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress progress-striped light active m-md\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-warning\" role=\"progressbar\" aria-valuenow=\"{{(nbform/11)*100}}\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: {{(nbform/11)*100}}%;\">
+\t\t\t\t\t\t\t\t\t\t\tEn cours
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress progress-striped light active m-md\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"{{(nbform/11)*100}}\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: {{(nbform/11)*100}}%;\">
+\t\t\t\t\t\t\t\t\t\t\tEn cours
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t{% endif %}
+\t\t\t<br> <br>
 \t\t\t\t\t\t<div class=\"col-md-4\" data-plugin-portlet id=\"portlet-1\">
 \t\t\t\t\t\t\t<section class=\"panel panel-primary\" id=\"panel-1\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
-\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-caret-down\"></a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"#\" {% if etudeSol == null %} class=\"fa fa-caret-down\" {% else %} class=\"fa fa-caret-up\" {% endif %}></a>
 \t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('etude-sol', {'id': projet.id}) }}\"> <h2 class=\"panel-title\">Etude du sol</h2> </a>
+\t\t\t\t\t\t\t\t <h2 class=\"panel-title\">Etude du sol </h2>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+\t\t\t\t\t\t\t\t<div class=\"panel-body\" {% if etudeSol != null %} style=\"display: none;\" {% endif %}>
+\t\t\t\t\t\t\t\t\t{% if etudeSol == null %} 
+\t\t\t\t\t\t\t\t\tVous n'avez pas rencore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('etude-sol', {'id': projet.id}) }}\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\tType du sol ({{etudeSol.typeSol}})
+\t\t\t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t<section class=\"panel panel-secondary\" id=\"panel-2\" data-portlet-item>
