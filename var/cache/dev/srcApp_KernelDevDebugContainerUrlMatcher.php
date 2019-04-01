@@ -51,8 +51,19 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                     .'|/dashboard/my\\-project/([^/]++)(?'
                         .'|(*:203)'
                         .'|/(?'
-                            .'|etude\\-sol(*:225)'
-                            .'|charpente(*:242)'
+                            .'|e(?'
+                                .'|tude\\-sol(*:228)'
+                                .'|xcavation(*:245)'
+                                .'|levation(*:261)'
+                            .')'
+                            .'|vrd(*:273)'
+                            .'|fondation(*:290)'
+                            .'|p(?'
+                                .'|lancher(*:309)'
+                                .'|rep\\-terrain(*:329)'
+                            .')'
+                            .'|soubassemnt(*:349)'
+                            .'|charpente(*:366)'
                         .')'
                     .')'
                 .')/?$}sDu',
@@ -66,8 +77,15 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
             203 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, true, null]],
-            225 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
-            242 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
+            228 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
+            245 => [[['_route' => 'excavation', '_controller' => 'App\\Controller\\ProjectController::excavation'], ['id'], null, null, false, false, null]],
+            261 => [[['_route' => 'elevation', '_controller' => 'App\\Controller\\ProjectController::Elevation'], ['id'], null, null, false, false, null]],
+            273 => [[['_route' => 'vrd', '_controller' => 'App\\Controller\\ProjectController::vrd'], ['id'], null, null, false, false, null]],
+            290 => [[['_route' => 'fondation', '_controller' => 'App\\Controller\\ProjectController::fondation'], ['id'], null, null, false, false, null]],
+            309 => [[['_route' => 'plancher', '_controller' => 'App\\Controller\\ProjectController::plancher'], ['id'], null, null, false, false, null]],
+            329 => [[['_route' => 'prep-terrain', '_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], ['id'], null, null, false, false, null]],
+            349 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\ProjectController::Soubassement'], ['id'], null, null, false, false, null]],
+            366 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
         ];
     }
 }

@@ -76,7 +76,7 @@ class ProjectController extends AbstractController
                 $em->persist($projet);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -114,7 +114,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
 
 
@@ -154,7 +154,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -191,7 +191,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -225,11 +225,11 @@ class ProjectController extends AbstractController
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
 
-                $grosOeuvre->getIdSoubassement($e->getId());
+                $grosOeuvre->setIdSoubassement($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
             
              $projet = $this->getDoctrine()
@@ -290,11 +290,11 @@ class ProjectController extends AbstractController
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
 
-                $grosOeuvre->getIdElevation($e->getId());
+                $grosOeuvre->setIdElevation($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -334,7 +334,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -372,7 +372,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -406,11 +406,11 @@ class ProjectController extends AbstractController
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
 
-                $grosOeuvre->setIdFondation($e->getId());
+                $grosOeuvre->setIdFondations($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -448,7 +448,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
@@ -483,15 +483,69 @@ class ProjectController extends AbstractController
       $charpente = null;
     }
 
-    
-    //$fondations = $this->getDoctrine()->getRepository(Fondations::class)->find($grosOeuvre->getIdFondations());
+    $idPrepTerrain = $grosOeuvre->getIdPrepTerrain();
+    if($idPrepTerrain != NULL){
+      $prepTerrain = $this->getDoctrine()->getRepository(PreparationEtAcces::class)->find($idPrepTerrain);
+    }
+    else{
+      $prepTerrain = null;
+    }
+
+    $idSoubassement = $grosOeuvre->getIdSoubassement();
+    if($idSoubassement != NULL){
+      $soubassement = $this->getDoctrine()->getRepository(Soubassement::class)->find($idSoubassement);
+    }
+    else{
+      $soubassement = null;
+    }
+
+    $idElevation = $grosOeuvre->getIdElevation();
+    if($idElevation != NULL){
+      $elevation = $this->getDoctrine()->getRepository(Elevation::class)->find($idElevation);
+    }
+    else{
+      $elevation = null;
+    }
+
+    $idExcavation = $grosOeuvre->getIdExcavation();
+    if($idExcavation != NULL){
+      $excavation = $this->getDoctrine()->getRepository(Excavation::class)->find($idExcavation);
+    }
+    else{
+      $excavation = null;
+    }
+
+    $idVRD = $grosOeuvre->getIdVRD();
+    if($idVRD != NULL){
+      $vrd = $this->getDoctrine()->getRepository(Vrd::class)->find($idVRD);
+    }
+    else{
+      $vrd = null;
+    }
+
+    $idFondations = $grosOeuvre->getIdFondations();
+    if($idFondations != NULL){
+      $fondations = $this->getDoctrine()->getRepository(Fondation::class)->find($idFondations);
+    }
+    else{
+      $fondations = null;
+    }
+
+    $idPlancher = $grosOeuvre->getIdPlancher();
+    if($idPlancher != NULL){
+      $plancher = $this->getDoctrine()->getRepository(Plancher::class)->find($idPlancher);
+    }
+    else{
+      $plancher = null;
+    }
 
     $nbform = $this->getDoctrine()
     ->getRepository(GrosOeuvre::class)->findNbFormulairesByGrosOeuvre($idGo);
 
     return $this->render(
         'project/view.html.twig',
-        ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente]
+        ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 'soubassement' => $soubassement,
+        'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher]
     );
     }
 

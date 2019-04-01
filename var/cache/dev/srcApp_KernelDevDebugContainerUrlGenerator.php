@@ -41,6 +41,13 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'new-project' => [[], ['_controller' => 'App\\Controller\\ProjectController::newProject'], [], [['text', '/dashboard/new-project/']], [], []],
         'my-project' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::view'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'etude-sol' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::etudeSol'], [], [['text', '/etude-sol'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'excavation' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::excavation'], [], [['text', '/excavation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'vrd' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::vrd'], [], [['text', '/vrd'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'fondation' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::fondation'], [], [['text', '/fondation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'plancher' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::plancher'], [], [['text', '/plancher'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'prep-terrain' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], [], [['text', '/prep-terrain'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'soubassement' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Soubassement'], [], [['text', '/soubassemnt'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'elevation' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Elevation'], [], [['text', '/elevation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'charpente' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::charpente'], [], [['text', '/charpente'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];

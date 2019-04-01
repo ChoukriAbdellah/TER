@@ -27,19 +27,19 @@
 			{% if (nbform/11)*100 < 25 %}
 									<div class="progress progress-striped light active m-md">
 										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
-											En cours
+											{% if nbform == 11 %} Terminé {% else %} En cours {% endif %}
 										</div>
 									</div>
 			{% elseif (nbform/11)*100 > 25 and (nbform/11)*100 < 75 %}
 												<div class="progress progress-striped light active m-md">
 										<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
-											En cours
+											{% if nbform == 11 %} Terminé {% else %} En cours {% endif %}
 										</div>
 									</div>
 			{% else %}
 												<div class="progress progress-striped light active m-md">
 										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
-											En cours
+											{% if nbform == 11 %} Terminé {% else %} En cours {% endif %}
 										</div>
 									</div>
 			{% endif %}
@@ -66,31 +66,43 @@
 							<section class="panel panel-secondary" id="panel-2" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if prepTerrain == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('prep-terrain', {'id': projet.id}) }}"><h2 class="panel-title">Préparation du terrain et l’accès</h2>
+									<h2 class="panel-title">Préparation du terrain et l’accès</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if prepTerrain != null %} style="display: none;" {% endif %}>
+									{% if prepTerrain == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('prep-terrain', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}								</div>
 							</section>
 							<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if excavation == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('excavation', {'id': projet.id}) }}"> <h2 class="panel-title">L'excavation</h2> </a>
+									<h2 class="panel-title">L'excavation</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if excavation != null %} style="display: none;" {% endif %}>
+									{% if excavation == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('excavation', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
-														<section class="panel panel-primary" id="panel-1" data-portlet-item>
+								<section class="panel panel-primary" id="panel-1" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-caret-down"class="fa fa-caret-up"></a>
 									</div>
 
 									<h2 class="panel-title">La toiture/tuiles</h2>
@@ -104,40 +116,58 @@
 							<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if fondations == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('fondation', {'id': projet.id}) }}"> <h2 class="panel-title">Les fondations</h2> </a>
+									<h2 class="panel-title">Les fondations</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if fondations != null %} style="display: none;" {% endif %}>
+									{% if fondations == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('fondation', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
 							<section class="panel panel-success" id="panel-5" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if soubassement == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('soubassement', {'id': projet.id}) }}"><h2 class="panel-title">Le soubassement</h2>
+									<h2 class="panel-title">Le soubassement</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if soubassement != null %} style="display: none;" {% endif %}>
+									{% if soubassement == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('soubassement', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
 							<section class="panel panel-warning" id="panel-6" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if vrd == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('vrd', {'id': projet.id}) }}"> <h2 class="panel-title">VRD (voirie et réseaux divers)</h2> </a>
+									<h2 class="panel-title">VRD (voirie et réseaux divers)</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if vrd != null %} style="display: none;" {% endif %}>
+									{% if vrd == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('vrd', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
-														<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
+								<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
 										<a href="#" class="fa fa-caret-down"></a>
@@ -154,26 +184,38 @@
 							<section class="panel panel-info" id="panel-7" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if plancher == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('plancher', {'id': projet.id}) }}"> <h2 class="panel-title">Le plancher</h2> </a>
+									<h2 class="panel-title">Le plancher</h2> </a>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if plancher != null %} style="display: none;" {% endif %}>
+									{% if plancher == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('plancher', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
 							<section class="panel panel-dark" id="panel-8" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if elevation == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<a href="{{ path('elevation', {'id': projet.id}) }}"><h2 class="panel-title">L'élévation</h2>
+									<h2 class="panel-title">L'élévation</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if elevation != null %} style="display: none;" {% endif %}>
+									{% if elevation == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('elevation', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
 							<section class="panel panel-danger" id="panel-9" data-portlet-item>
 								<header class="panel-heading portlet-handler">
