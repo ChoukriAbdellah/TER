@@ -12,6 +12,9 @@ use App\Form\VrdType;
 use App\Form\ExcavationType;
 use App\Form\FondationType;
 use App\Form\PlancherType;
+use App\Form\PreparationEtAccesType;
+use App\Form\SoubassementType;
+use App\Form\ElevationType;
 use App\Entity\Projet;
 use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
@@ -20,6 +23,10 @@ use App\Entity\Excavation;
 use App\Entity\Vrd;
 use App\Entity\Fondation;
 use App\Entity\Plancher;
+use App\Entity\PreparationEtAcces;
+use App\Entity\Soubassement;
+use App\Entity\Elevation;
+
 use App\Repository\ProjetRepository;
 use App\Repository\GrosOeuvreRepository;
 
@@ -113,6 +120,148 @@ class ProjectController extends AbstractController
             return $this->render(
               'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
   }
+
+  public function PreparationEtAcces($id, Request $request)
+  {
+            // création du formulaire
+            $e = new PreparationEtAcces();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(PreparationEtAccesType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdPrepTerrain($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/prep-terrain.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
+   
+  public function Soubassement($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Soubassement();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(SoubassementType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->getIdSoubassement($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+            
+             $projet = $this->getDoctrine()
+            ->getRepository(Projet::class)
+            ->find($id);
+                
+            $idGo = $projet->getIdGrosOeuvre();
+                
+            $grosOeuvre = $this->getDoctrine()
+            ->getRepository(GrosOeuvre::class)
+            ->find($idGo);
+                
+            /*$idPrepTerrain = $grosOeuvre->getIdPrepTerrain(); 
+            $PrepTerrain = $this->getDoctrine()
+            ->getRepository(PreparationEtAcces::class)
+            ->find($idPrepTerrain);
+            $positionTerrain = $PrepTerrain->getPositionTerrain();*/
+
+            $idPrepTerrain = $grosOeuvre->getIdPrepTerrain();
+            if($idPrepTerrain != NULL){
+              $PrepTerrain = $this->getDoctrine()->getRepository(PreparationEtAcces::class)->find($idPrepTerrain);
+              $positionTerrain = $PrepTerrain->getPositionTerrain();
+            }
+            else{
+              $PrepTerrain = null;
+              $positionTerrain = null;
+            }
+            
+            
+            return $this->render(
+              'project/soubassement.html.twig', array('form' => $form->createView(), 'positionTerrain' => $positionTerrain));
+              
+  } 
+  public function Elevation($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Elevation();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(ElevationType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->getIdElevation($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/elevation.html.twig', array('form' => $form->createView(), 'id' => $id));
+  } 
+
   
   
     public function excavation($id, Request $request)
