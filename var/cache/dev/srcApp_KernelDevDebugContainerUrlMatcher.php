@@ -50,7 +50,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                     .')'
                     .'|/dashboard/my\\-project/([^/]++)(?'
                         .'|(*:203)'
-                        .'|/etude\\-sol(*:222)'
+                        .'|/(?'
+                            .'|etude\\-sol(*:225)'
+                            .'|charpente(*:242)'
+                        .')'
                     .')'
                 .')/?$}sDu',
         ];
@@ -63,7 +66,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
             203 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, true, null]],
-            222 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
+            225 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
+            242 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
         ];
     }
 }

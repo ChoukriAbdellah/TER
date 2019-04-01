@@ -389,6 +389,9 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\EtudeSolType" class="App\Form\EtudeSolType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -397,6 +400,10 @@
     </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\CharpenteRepository" class="App\Repository\CharpenteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\EtudeSolRepository" class="App\Repository\EtudeSolRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -642,6 +649,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CharpenteType</argument>
         <argument>App\Form\EtudeSolType</argument>
         <argument>App\Form\ProjetType</argument>
         <argument>App\Form\UserType</argument>
@@ -883,7 +891,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.mXn3PA0"/>
+      <argument type="service" id=".service_locator.hV5v1a7"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2404,7 +2412,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.HI3MOZD"/>
+      <argument type="service" id=".service_locator.KuEggW1"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3527,12 +3535,16 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EtudeSolType" class="App\Form\EtudeSolType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EtudeSolType" class="App\Form\EtudeSolType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProjetType" class="App\Form\ProjetType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProjetType" class="App\Form\ProjetType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CharpenteRepository" class="App\Repository\CharpenteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CharpenteRepository" class="App\Repository\CharpenteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EtudeSolRepository" class="App\Repository\EtudeSolRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EtudeSolRepository" class="App\Repository\EtudeSolRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" abstract="true"/>
@@ -3789,9 +3801,10 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.mXn3PA0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.hV5v1a7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\CharpenteType" type="service" id="App\Form\CharpenteType"/>
         <argument key="App\Form\EtudeSolType" type="service" id="App\Form\EtudeSolType"/>
         <argument key="App\Form\ProjetType" type="service" id="App\Form\ProjetType"/>
         <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
@@ -3918,9 +3931,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.HI3MOZD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.KuEggW1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\CharpenteRepository" type="service" id="App\Repository\CharpenteRepository"/>
         <argument key="App\Repository\EtudeSolRepository" type="service" id="App\Repository\EtudeSolRepository"/>
         <argument key="App\Repository\GrosOeuvreRepository" type="service" id="App\Repository\GrosOeuvreRepository"/>
         <argument key="App\Repository\ProjetRepository" type="service" id="App\Repository\ProjetRepository"/>

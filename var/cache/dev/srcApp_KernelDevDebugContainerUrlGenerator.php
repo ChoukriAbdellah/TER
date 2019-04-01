@@ -41,6 +41,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'new-project' => [[], ['_controller' => 'App\\Controller\\ProjectController::newProject'], [], [['text', '/dashboard/new-project/']], [], []],
         'my-project' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::view'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'etude-sol' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::etudeSol'], [], [['text', '/etude-sol'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'charpente' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::charpente'], [], [['text', '/charpente'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

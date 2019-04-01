@@ -1,0 +1,95 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2> VRD (voirie et réseaux divers) </h2>
+				{% endblock %}
+
+				{% block pageactuelle %} VRD (voirie et réseaux divers) {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">VRD (voirie et réseaux divers)</h2>
+									</header>
+													<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+															{{ form_label(form.distanceEauPotable, "Quelle est la distance de la source eau potable ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.distanceEauPotable, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+														
+														{{ form_label(form.distanceElectricite, "Quelle est la distance de la source électricité ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.distanceElectricite, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+														
+														{{ form_label(form.distanceTelephonique, "Quelle est la distance de la source téléphonique ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.distanceTelephonique, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+														
+														{{ form_label(form.pompeRelevage, "Cochez les cases :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.pompeRelevage, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
+				
+														</div>
+														
+														{{ form_label(form.fosseSeptique, " ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.fosseSeptique, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
+														
+														</div>
+														
+														{{ form_label(form.microStation, " ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.microStation, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
+														
+														</div>
+														
+														{{ form_label(form.etudeHydrogeologique, " ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.etudeHydrogeologique, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
+														
+														</div>
+														
+														
+														
+														
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+									
+									
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}

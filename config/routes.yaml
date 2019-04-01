@@ -29,6 +29,31 @@ my-project:
 etude-sol:
     path:       /dashboard/my-project/{id}/etude-sol
     controller: App\Controller\ProjectController::etudeSol
+    
+excavation:
+    path:       /dashboard/my-project/{id}/excavation
+    controller: App\Controller\ProjectController::excavation
+    
+vrd:
+    path:       /dashboard/my-project/{id}/vrd
+    controller: App\Controller\ProjectController::vrd
+    
+fondation:
+    path:       /dashboard/my-project/{id}/fondation
+    controller: App\Controller\ProjectController::fondation
+    
+plancher:
+    path:       /dashboard/my-project/{id}/plancher
+    controller: App\Controller\ProjectController::plancher
+prep-terrain:
+    path:       /dashboard/my-project/{id}/prep-terrain
+    controller: App\Controller\ProjectController::PreparationEtAcces
+soubassement:
+    path:       /dashboard/my-project/{id}/soubassemnt
+    controller: App\Controller\ProjectController::Soubassement
+elevation:
+    path:       /dashboard/my-project/{id}/elevation
+    controller: App\Controller\ProjectController::Elevation    
 
 charpente:
     path:       /dashboard/my-project/{id}/charpente
