@@ -105,6 +105,159 @@ class ProjectController extends AbstractController
             return $this->render(
               'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
   }
+  
+  
+    public function excavation($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Excavation();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(ExcavationType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdExcavation($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/excavation.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
+  
+    public function vrd($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Vrd();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(VrdType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdVrd($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/vrd.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
+  
+  public function fondation($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Fondation();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(FondationType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdFondation($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/fondation.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
+  
+    public function plancher($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Plancher();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(PlancherType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdPlancher($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+     
+            return $this->render(
+              'project/plancher.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
           
 
   public function view($id, Request $request)
