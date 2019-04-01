@@ -1,0 +1,93 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2> Elévation </h2>
+				{% endblock %}
+
+				{% block pageactuelle %} Elévation des murs {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Elévation des murs</h2>
+									</header>
+                                 
+													<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+															{{ form_label(form.nb_poutres, "Indiquez le nombre de poutres. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.nb_poutres, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                        {{ form_label(form.LongueurPoutre, "Indiquez la longueure d'une  poutres. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.LongueurPoutre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                        {{ form_label(form.TaillePoutre, "Indiquez la taille d'une  poutres. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.TaillePoutre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                        {{ form_label(form.TypeMateriauxMur, "Type de matériaux pour les murs. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.TypeMateriauxMur, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                         {{ form_label(form.HauteurMur, "Indiquez la hauteur des murs. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.HauteurMur, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                         {{ form_label(form.NombreFenetre, "Indiquez le nombre de fenetre. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.NombreFenetre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                         {{ form_label(form.TypeFenetre, "Indiquez le type de fenetre. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.TypeFenetre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                        {{ form_label(form.TypeLinteaux, "Indiquez le type de type de linteaux. ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.TypeLinteaux, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														
+														</div>
+                                                        
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+					
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}
