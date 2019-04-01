@@ -178,13 +178,22 @@
 							<section class="panel panel-danger" id="panel-9" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if charpente == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
 									<h2 class="panel-title">La charpente/couverture</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+								<div class="panel-body" {% if charpente != null %} style="display: none;" {% endif %}>
+									{% if charpente == null %} 
+									Vous n'avez pas rencore rempli ce formulaire. <br>
+									<a href="{{ path('charpente', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									Type de votre charpente ({{charpente.typeCharpente}}) <br>
+									Forme de votre charpente ({{charpente.formeCharpente}}) <br>
+									Nombre de mètres carrés pour votre toiture ({{charpente.nbMC}})
+									{% endif %}
 								</div>
 							</section>
 

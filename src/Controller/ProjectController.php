@@ -8,10 +8,12 @@ use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ProjetType;
 use App\Form\EtudeSolType;
+use App\Form\CharpenteType;
 use App\Entity\Projet;
 use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
 use App\Entity\EtudeSol;
+use App\Entity\Charpente;
 use App\Repository\ProjetRepository;
 use App\Repository\GrosOeuvreRepository;
 
@@ -105,6 +107,46 @@ class ProjectController extends AbstractController
             return $this->render(
               'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
   }
+
+  public function charpente($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Charpente();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(CharpenteType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdCharpente($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+
+
+     
+            return $this->render(
+              'project/charpente.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
           
 
   public function view($id, Request $request)
@@ -112,7 +154,6 @@ class ProjectController extends AbstractController
     $projet = $this->getDoctrine()
         ->getRepository(Projet::class)
         ->find($id);
-
 
     $idGo = $projet->getIdGrosOeuvre();
     $grosOeuvre = $this->getDoctrine()
@@ -123,9 +164,19 @@ class ProjectController extends AbstractController
     if($idEtudeSol != NULL){
       $etudeSol = $this->getDoctrine()->getRepository(EtudeSol::class)->find($idEtudeSol);
     }
-    else
+    else{
       $etudeSol = null;
-      
+    }
+
+    $idCharpente = $grosOeuvre->getIdCharpente();
+    if($idCharpente != NULL){
+      $charpente = $this->getDoctrine()->getRepository(Charpente::class)->find($idCharpente);
+    }
+    else{
+      $charpente = null;
+    }
+
+    
     //$fondations = $this->getDoctrine()->getRepository(Fondations::class)->find($grosOeuvre->getIdFondations());
 
     $nbform = $this->getDoctrine()
@@ -133,7 +184,7 @@ class ProjectController extends AbstractController
 
     return $this->render(
         'project/view.html.twig',
-        ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol]
+        ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente]
     );
     }
 
