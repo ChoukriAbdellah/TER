@@ -8,10 +8,18 @@ use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ProjetType;
 use App\Form\EtudeSolType;
+use App\Form\VrdType;
+use App\Form\ExcavationType;
+use App\Form\FondationType;
+use App\Form\PlancherType;
 use App\Entity\Projet;
 use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
 use App\Entity\EtudeSol;
+use App\Entity\Excavation;
+use App\Entity\Vrd;
+use App\Entity\Fondation;
+use App\Entity\Plancher;
 use App\Repository\ProjetRepository;
 use App\Repository\GrosOeuvreRepository;
 
