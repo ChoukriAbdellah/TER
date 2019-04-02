@@ -22,7 +22,9 @@
 									<h2 class="panel-title">{{projet.nom}}</h2>
 									</header>
                                     <br>
-									<h4> Vous avez rempli {{nbform}} formulaires sur 11 pour le gros oeuvre de votre chantier. </h4>
+									<h4> {% if nbform < 11 %} Vous avez rempli {{nbform}} formulaire(s) sur 11 pour le gros oeuvre de votre chantier. 
+										{% else %} Vous avez renseigné toutes les informations nécessaires pour le gros oeuvre.
+										 {% endif %} </h4>
 		<div class="row">
 			{% if (nbform/11)*100 < 25 %}
 									<div class="progress progress-striped light active m-md">
@@ -246,7 +248,7 @@
 									</div>
 									<div class="panel-footer">
 										<ul class="pager">
-										<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" {% if nbform == 11 %} disabled="false" {% else %} disabled="false" {% endif %} 
+										<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" {% if nbform == 11 %} disabled="false" {% else %} disabled="true" {% endif %} 
 										type="button">Passer au second oeuvre</button>
 										</ul>
 									</div>
