@@ -76,7 +76,7 @@ class ProjectController extends AbstractController
                 $em->persist($projet);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('dashboard');
             }
      
             return $this->render(
