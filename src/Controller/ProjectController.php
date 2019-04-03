@@ -16,6 +16,8 @@ use App\Form\PlancherType;
 use App\Form\PreparationEtAccesType;
 use App\Form\SoubassementType;
 use App\Form\ElevationType;
+use App\Form\MenuiserieType;
+use App\Form\ToitureType;
 use App\Entity\Projet;
 use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
@@ -28,6 +30,8 @@ use App\Entity\Plancher;
 use App\Entity\PreparationEtAcces;
 use App\Entity\Soubassement;
 use App\Entity\Elevation;
+use App\Entity\Menuiserie;
+use App\Entity\Toiture;
 
 use App\Repository\ProjetRepository;
 use App\Repository\GrosOeuvreRepository;
@@ -122,7 +126,85 @@ class ProjectController extends AbstractController
             return $this->render(
               'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
   }
+  public function toiture($id, Request $request)
+  {
+            // création du formulaire
+            $e = new Toiture();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(ToitureType::class, $e);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
 
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+               // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+                
+                $grosOeuvre->setIdToiture($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+
+
+     
+            return $this->render(
+              'project/toiture.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
+          
+  public function menuiserie($id, Request $request)
+  {
+            // création du formulaire
+            $elem = new Menuiserie();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(MenuiserieType::class, $elem);        
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+
+                // Enregistre l'étude de sol en base
+
+                $em->persist($e);
+                $em->flush();
+
+               // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+                
+                $grosOeuvre->setIdMenuiseriesExt($e->getId());
+                $em->persist($grosOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('dashboard');
+            }
+
+
+     
+            return $this->render(
+              'project/menuiserie.html.twig', array('form' => $form->createView(), 'id' => $id));
+  }
   public function charpente($id, Request $request)
   {
             // création du formulaire
