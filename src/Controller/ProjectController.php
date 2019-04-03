@@ -126,46 +126,55 @@ class ProjectController extends AbstractController
             return $this->render(
               'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
   }
-  public function toiture($id, Request $request)
+ 
+ 
+ public function toiture($id, Request $request)
   {
             // création du formulaire
             $e = new Toiture();
             // instancie le formulaire avec les contraintes par défaut
             $form = $this->createForm(ToitureType::class, $e);        
             $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-
-                $em->persist($e);
-                $em->flush();
-
-               // Met à jour le projet avec l'id de l'étude de sol créée
-
-                $projet = $this->getDoctrine()
+			$projet = $this->getDoctrine()
                 ->getRepository(Projet::class)
                 ->find($id);
-
                 $idGo = $projet->getIdGrosOeuvre();
-
                 $grosOeuvre = $this->getDoctrine()
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
+			$idCharpente = $grosOeuvre->getIdCharpente();
+			if($idCharpente == NULL){
+				 // création du formulaire
+					$e = new Charpente();
+					// instancie le formulaire avec les contraintes par défaut
+					$form = $this->createForm(CharpenteType::class, $e);        
+					$form->handleRequest($request);
+			  return $this->redirectToRoute(
+					  'charpente', ['id'=>$id]);
+			}
+			else{
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                // Enregistre l'étude de sol en base
+                $em->persist($e);
+                $em->flush();
+               // Met à jour le projet avec l'id de l'étude de sol créée
+                
                 
                 $grosOeuvre->setIdToiture($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
                 return $this->redirectToRoute('dashboard');
-            }
-
-
-     
+            
+		}
             return $this->render(
               'project/toiture.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
   }
-          
+  }
+  
+  
   public function menuiserie($id, Request $request)
   {
             // création du formulaire
@@ -245,9 +254,34 @@ class ProjectController extends AbstractController
 
   public function PreparationEtAcces($id, Request $request)
   {
+	  
+	  
+	  
             // création du formulaire
             $e = new PreparationEtAcces();
             // instancie le formulaire avec les contraintes par défaut
+			$projet = $this->getDoctrine()
+				->getRepository(Projet::class)
+				->find($id);
+		
+			$idGo = $projet->getIdGrosOeuvre();
+			$grosOeuvre = $this->getDoctrine()
+				->getRepository(GrosOeuvre::class)
+				->find($idGo);
+
+	$idEtudeSol = $grosOeuvre->getIdEtudeSol();
+    if($idEtudeSol == NULL){
+		 // création du formulaire
+            $e = new EtudeSol();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(EtudeSolType::class, $e);        
+            $form->handleRequest($request);
+	  return $this->redirectToRoute(
+              'etude-sol', ['id'=>$id]);
+    }
+    else{
+      
+       
             $form = $this->createForm(PreparationEtAccesType::class, $e);        
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {  
@@ -264,20 +298,16 @@ class ProjectController extends AbstractController
                 ->getRepository(Projet::class)
                 ->find($id);
 
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-                $grosOeuvre->setIdPrepTerrain($e->getId());
+                
                 $em->persist($grosOeuvre);
                 $em->flush();
      
                 return $this->redirectToRoute('my-project', array('id' => $id));
             }
-     
+	
             return $this->render(
               'project/prep-terrain.html.twig', array('form' => $form->createView(), 'id' => $id));
+	}
   }
    
   public function Soubassement($id, Request $request)
@@ -392,6 +422,26 @@ class ProjectController extends AbstractController
             // instancie le formulaire avec les contraintes par défaut
             $form = $this->createForm(ExcavationType::class, $e);        
             $form->handleRequest($request);
+			  $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+				$idEtudeSol = $grosOeuvre->getIdEtudeSol();
+			if($idEtudeSol == NULL){
+				 // création du formulaire
+					$e = new EtudeSol();
+					// instancie le formulaire avec les contraintes par défaut
+					$form = $this->createForm(EtudeSolType::class, $e);        
+					$form->handleRequest($request);
+			  return $this->redirectToRoute(
+					  'etude-sol', ['id'=>$id]);
+			}
+			else{
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
 
@@ -402,16 +452,7 @@ class ProjectController extends AbstractController
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
-                $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-
+              
                 $grosOeuvre->setIdExcavation($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
@@ -421,6 +462,7 @@ class ProjectController extends AbstractController
      
             return $this->render(
               'project/excavation.html.twig', array('form' => $form->createView(), 'id' => $id));
+			}
   }
   
     public function vrd($id, Request $request)
@@ -468,6 +510,29 @@ class ProjectController extends AbstractController
             // instancie le formulaire avec les contraintes par défaut
             $form = $this->createForm(FondationType::class, $e);        
             $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+				
+			$idExcavation = $grosOeuvre->getIdExcavation();
+			if($idExcavation == NULL){
+				 // création du formulaire
+					$e = new Excavation();
+					// instancie le formulaire avec les contraintes par défaut
+					$form = $this->createForm(ExcavationType::class, $e);        
+					$form->handleRequest($request);
+			  return $this->redirectToRoute(
+					  'excavation', ['id'=>$id]);
+			}
+			else{
+				
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
 
@@ -478,15 +543,7 @@ class ProjectController extends AbstractController
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
-                $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
+                
 
                 $grosOeuvre->setIdFondations($e->getId());
                 $em->persist($grosOeuvre);
@@ -497,6 +554,7 @@ class ProjectController extends AbstractController
      
             return $this->render(
               'project/fondation.html.twig', array('form' => $form->createView(), 'id' => $id));
+			}
   }
   
     public function plancher($id, Request $request)
@@ -506,6 +564,28 @@ class ProjectController extends AbstractController
             // instancie le formulaire avec les contraintes par défaut
             $form = $this->createForm(PlancherType::class, $e);        
             $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+				
+			$idExcavation = $grosOeuvre->getIdExcavation();
+			if($idExcavation == NULL){
+				 // création du formulaire
+					$e = new Excavation();
+					// instancie le formulaire avec les contraintes par défaut
+					$form = $this->createForm(ExcavationType::class, $e);        
+					$form->handleRequest($request);
+			  return $this->redirectToRoute(
+					  'excavation', ['id'=>$id]);
+			}
+			else{
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
 
@@ -516,15 +596,7 @@ class ProjectController extends AbstractController
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
-                $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
+                
 
                 $grosOeuvre->setIdPlancher($e->getId());
                 $em->persist($grosOeuvre);
@@ -535,6 +607,7 @@ class ProjectController extends AbstractController
      
             return $this->render(
               'project/plancher.html.twig', array('form' => $form->createView(), 'id' => $id));
+			}
   }
           
 
@@ -604,6 +677,15 @@ class ProjectController extends AbstractController
     else{
       $vrd = null;
     }
+	
+	$idToiture = $grosOeuvre->getIdToiture();
+    if($idToiture != NULL){
+      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($IdToiture);
+    }
+    else{
+      $toiture = null;
+    }
+
 
     $idFondations = $grosOeuvre->getIdFondations();
     if($idFondations != NULL){
@@ -627,7 +709,7 @@ class ProjectController extends AbstractController
     return $this->render(
         'project/view.html.twig',
         ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 'soubassement' => $soubassement,
-        'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher]
+        'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 'toiture'=>$toiture]
     );
     }
 

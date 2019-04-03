@@ -104,14 +104,20 @@
 								<section class="panel panel-primary" id="panel-1" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"class="fa fa-caret-up"></a>
+										<a href="#" {% if toiture == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
-									<h2 class="panel-title">La toiture/tuiles</h2>
+									<h2 class="panel-title">Toiture</h2>
 								</header>
-								<div class="panel-body">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
-								</div>
+								<div class="panel-body" {% if toiture != null %} style="display: none;" {% endif %}>
+									{% if toiture == null %} 
+									Vous n'avez pas encore rempli ce formulaire. <br>
+									<a href="{{ path('toiture', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									
+									{% endif %}									</div>
 							</section>
 						</div>
 						<div class="col-md-4" data-plugin-portlet id="portlet-2">
