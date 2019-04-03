@@ -58,6 +58,11 @@ elevation:
 charpente:
     path:       /dashboard/my-project/{id}/charpente
     controller: App\Controller\ProjectController::charpente
-
+toiture:
+    path:       /dashboard/my-project/{id}/toiture
+    controller: App\Controller\ProjectController::toiture
+menuiserie:
+    path:       /dashboard/my-project/{id}/menuiserie
+    controller: App\Controller\ProjectController::menuiserie
 logout:
     path: /deconnexion
