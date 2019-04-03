@@ -64,6 +64,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .')'
                             .'|soubassement(*:350)'
                             .'|charpente(*:367)'
+                            .'|toiture(*:382)'
+                            .'|menuiserie(*:400)'
                         .')'
                     .')'
                 .')/?$}sDu',
@@ -86,6 +88,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             329 => [[['_route' => 'prep-terrain', '_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], ['id'], null, null, false, false, null]],
             350 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\ProjectController::Soubassement'], ['id'], null, null, false, false, null]],
             367 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
+            382 => [[['_route' => 'toiture', '_controller' => 'App\\Controller\\ProjectController::toiture'], ['id'], null, null, false, false, null]],
+            400 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\ProjectController::menuiserie'], ['id'], null, null, false, false, null]],
         ];
     }
 }

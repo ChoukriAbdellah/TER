@@ -49,6 +49,8 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'soubassement' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Soubassement'], [], [['text', '/soubassement'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'elevation' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::Elevation'], [], [['text', '/elevation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'charpente' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::charpente'], [], [['text', '/charpente'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'toiture' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::toiture'], [], [['text', '/toiture'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'menuiserie' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::menuiserie'], [], [['text', '/menuiserie'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

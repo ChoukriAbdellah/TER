@@ -17,36 +17,60 @@ class Menuiserie// vasi essaye
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer", nullable=true)
      */
-        private $dimensionCuivre;
-        private $dimensionBois;
+    private $dimensionsBoisRouge;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $dimensionsBoisHetre;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $dimensionsAluminium;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDimCuivre(): ?string
+    public function getDimensionsBoisRouge(): ?int
     {
-        return $this->dimensionCuivre; 
+        return $this->dimensionsBoisRouge;
     }
 
-    public function setDimCuivre(string $DimCuivre): self
+    public function setDimensionsBoisRouge(?int $dimensionsBoisRouge): self
     {
-        $this->dimensionCuivre = $DimCuivre;
-
-        return $this;
-    }
-    public function getDimBois(): ?string
-    {
-        return $this->dimensionBois; 
-    }
-
-    public function setDimBois(string $DimBois): self
-    {
-        $this->dimensionBois = $DimBois;
+        $this->dimensionsBoisRouge = $dimensionsBoisRouge;
 
         return $this;
     }
+
+    public function getDimensionsBoisHetre(): ?int
+    {
+        return $this->dimensionsBoisHetre;
+    }
+
+    public function setDimensionsBoisHetre(?int $dimensionsBoisHetre): self
+    {
+        $this->dimensionsBoisHetre = $dimensionsBoisHetre;
+
+        return $this;
+    }
+
+    public function getDimensionsAluminium(): ?int
+    {
+        return $this->dimensionsAluminium;
+    }
+
+    public function setDimensionsAluminium(?int $dimensionsAluminium): self
+    {
+        $this->dimensionsAluminium = $dimensionsAluminium;
+
+        return $this;
+    }
+
 }

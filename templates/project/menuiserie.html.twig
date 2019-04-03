@@ -23,14 +23,19 @@
 													<div class="form-group">
 													{{ form_start(form) }}
 													<br><br>
-															{{ form_label(form.DimBois, "Dimension du Bois ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+															{{ form_label(form.dimensionsBoisRouge, "Dimensions du bois rouge : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
-															{{ form_row(form.DimBois, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+															{{ form_row(form.dimensionsBoisRouge, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}   
+															</div>        
 													<br><br>
-															{{ form_label(form.DimCuivre, "Dimension du Cuivre ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+															{{ form_label(form.dimensionsAluminium, "Dimensions de l'aluminium : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
-															{{ form_row(form.DimCuivre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        	
+															{{ form_row(form.dimensionsAluminium, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        	
 														</div>
+															{{ form_label(form.dimensionsBoisHetre, "Dimensions du bois hêtre : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.dimensionsBoisHetre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}   
+															</div>   
 														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
 														   {{ form_end(form) }}
 													</div>
