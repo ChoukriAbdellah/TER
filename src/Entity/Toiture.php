@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EtudeSolRepository")
  */
-class Toiture // vasi essaye
+class Toiture 
 {
     /**
      * @ORM\Id()
@@ -20,8 +20,18 @@ class Toiture // vasi essaye
      * @ORM\Column(type="string", length=255)
      */
     private $typeToit;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $degPente;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
     private $renforcement;
+
+    
     public function getId(): ?int
     {
         return $this->id;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 04 avr. 2019 à 14:40
+-- Généré le :  jeu. 04 avr. 2019 à 14:49
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -200,7 +200,8 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190401154204', '2019-04-01 15:42:12'),
 ('20190401205752', '2019-04-01 20:57:58'),
 ('20190401211857', '2019-04-01 21:19:01'),
-('20190404121751', '2019-04-04 12:18:46');
+('20190404121751', '2019-04-04 12:18:46'),
+('20190404124857', '2019-04-04 12:49:09');
 
 -- --------------------------------------------------------
 
@@ -414,7 +415,9 @@ INSERT INTO `soubassement` (`id`, `type_soubassement`) VALUES
 
 CREATE TABLE `toiture` (
   `id` int(11) NOT NULL,
-  `type_toit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `type_toit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deg_pente` int(11) NOT NULL,
+  `renforcement` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

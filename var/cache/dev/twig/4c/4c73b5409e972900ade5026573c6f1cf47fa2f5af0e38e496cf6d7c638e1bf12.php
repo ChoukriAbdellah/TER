@@ -135,35 +135,37 @@ class __TwigTemplate_abea6eba85d441ee3de7090e0dfbf208162795a170825e8f10bf9b34ec1
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         // line 28
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 28, $this->source); })()), "typetoit", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
-        echo "           
+        echo "        
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>  
 \t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 31
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 31, $this->source); })()), "degPente", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Quel est le degré de la pente ? "]);
+        // line 32
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 32, $this->source); })()), "degPente", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Quel est le degré de la pente ? "]);
         echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 33
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 33, $this->source); })()), "degPente", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        // line 34
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 34, $this->source); })()), "degPente", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
         echo " 
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>  
 \t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 36
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 36, $this->source); })()), "renforcement", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "votre toit est-t-il renforcé ? "]);
-        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         // line 38
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 38, $this->source); })()), "renforcement", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 38, $this->source); })()), "renforcement", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Votre toit est-il renforcé ? "]);
+        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 40, $this->source); })()), "renforcement", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
         echo " 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t  <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
-        // line 42
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), 'form_end');
+        // line 44
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), 'form_end');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br>
@@ -188,7 +190,7 @@ class __TwigTemplate_abea6eba85d441ee3de7090e0dfbf208162795a170825e8f10bf9b34ec1
 
     }
 
-    // line 59
+    // line 61
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -197,7 +199,7 @@ class __TwigTemplate_abea6eba85d441ee3de7090e0dfbf208162795a170825e8f10bf9b34ec1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 60
+        // line 62
         echo "\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
@@ -224,7 +226,7 @@ class __TwigTemplate_abea6eba85d441ee3de7090e0dfbf208162795a170825e8f10bf9b34ec1
 
     public function getDebugInfo()
     {
-        return array (  201 => 60,  192 => 59,  166 => 42,  159 => 38,  154 => 36,  148 => 33,  143 => 31,  137 => 28,  132 => 26,  127 => 24,  109 => 16,  91 => 14,  80 => 11,  71 => 10,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  203 => 62,  194 => 61,  168 => 44,  161 => 40,  156 => 38,  149 => 34,  144 => 32,  137 => 28,  132 => 26,  127 => 24,  109 => 16,  91 => 14,  80 => 11,  71 => 10,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -256,15 +258,17 @@ class __TwigTemplate_abea6eba85d441ee3de7090e0dfbf208162795a170825e8f10bf9b34ec1
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.typetoit, \"Quel est le type de votre toit ? \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.typetoit, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.typetoit, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>  
 \t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.degPente, \"Quel est le degré de la pente ? \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.degPente, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>  
 \t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.renforcement, \"votre toit est-t-il renforcé ? \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.renforcement, \"Votre toit est-il renforcé ? \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.renforcement, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t

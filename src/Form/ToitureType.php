@@ -17,18 +17,18 @@ class ToitureType extends AbstractType
         $builder
             ->add('typetoit', ChoiceType::class,[
                 'choices' => [
-                'toit moderne' => 'MODERNE',
-                'toit classique' => 'CLASSIQUE',
+                'Toit moderne' => 'MODERNE',
+                'Toit classique' => 'CLASSIQUE',
                 
                 ],
                 'label' => false
             ]
         )
-            ->add('degPente', NumberType::class)
+            ->add('degPente', NumberType::class, ['label' => false])
             ->add('renforcement', ChoiceType::class,[
             'choices' => [
-            'oui' => 'oui',
-            'non' => 'non',
+            'Oui' => true,
+            'Non' => false,
             
             ],
             'label' => false
