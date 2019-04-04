@@ -33,6 +33,8 @@ use App\Entity\Elevation;
 use App\Entity\Menuiserie;
 use App\Entity\Toiture;
 
+use App\Entity\Prix;
+
 use App\Repository\ProjetRepository;
 use App\Repository\GrosOeuvreRepository;
 
@@ -98,7 +100,38 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+                $prix = 0;
+                if($e->getTypeSol() == 'ARGILEUX'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("sol_argileux");
+                }
 
+                if($e->getTypeSol() == 'CALCAIRE'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("sol_calcaire");
+                }
+
+                if($e->getTypeSol() == 'HUMIFERE'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("sol_humifere");
+                }
+
+                if($e->getTypeSol() == 'LIMONEUX'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("sol_limoneux");
+                }
+
+                if($e->getTypeSol() == 'SABLEUX'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("sol_sableux");
+                }
+                
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
@@ -703,13 +736,22 @@ class ProjectController extends AbstractController
       $plancher = null;
     }
 
+
+    $idMenuiserie = $grosOeuvre->getIdMenuiseriesExt();
+    if($idMenuiserie != NULL){
+      $menuiserie = $this->getDoctrine()->getRepository(Plancher::class)->find($idMenuiserie);
+    }
+    else{
+      $menuiserie = null;
+    }
+
     $nbform = $this->getDoctrine()
     ->getRepository(GrosOeuvre::class)->findNbFormulairesByGrosOeuvre($idGo);
 
     return $this->render(
         'project/view.html.twig',
         ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 'soubassement' => $soubassement,
-        'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 'toiture'=>$toiture]
+        'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 'toiture' => $toiture, 'menuiserie' => $menuiserie]
     );
     }
 

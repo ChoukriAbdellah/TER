@@ -36,15 +36,16 @@ class PrixRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Prix
+    public function findPrixByNom($value)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'select montant from prix where nom = :nom';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['nom' => $value]);
+        $tab = $stmt->fetch();
+        $prix = $tab['montant'];
+    
+        // returns an array of arrays (i.e. a raw data set)
+        return $prix;
     }
-    */
 }

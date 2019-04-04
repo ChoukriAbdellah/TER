@@ -21,6 +21,11 @@ class EtudeSol
      */
     private $typeSol;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,18 @@ class EtudeSol
     public function setTypeSol(string $typeSol): self
     {
         $this->typeSol = $typeSol;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }
