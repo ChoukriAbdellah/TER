@@ -137,6 +137,8 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									Zone sismique ({% if fondations.sismicite == 1 %}Oui{% else %}Non{% endif %}) <br>
+									<b> Sous-total : </b> {{fondations.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
