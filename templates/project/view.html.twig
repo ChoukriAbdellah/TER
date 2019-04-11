@@ -11,15 +11,15 @@
 
 		{% endblock %}
 
-				{% block title %}<h2>Votre projet : {{projet.nom}}</h2>{% endblock %}
-				{% block pageactuelle %}{{projet.nom}}{% endblock %}
+				{% block title %}<h2>Votre projet : {{projet.nom}} </h2>{% endblock %}
+				{% block pageactuelle %}{{projet.nom}} - Gros oeuvre{% endblock %}
 
 					{% block body %}
 
 	<div class="row">
 							<div class="col-xs-12">
 									<header class="panel-heading">
-									<h2 class="panel-title">{{projet.nom}}</h2>
+									<h2 class="panel-title">{{projet.nom}} - Gros oeuvre</h2>
 									</header>
                                     <br>
 									<h4> {% if nbform < 11 %} Vous avez rempli {{nbform}} formulaire(s) sur 11 pour le gros oeuvre de votre chantier. 
@@ -263,8 +263,8 @@
 									</div>
 									<div class="panel-footer">
 										<ul class="pager">
-										<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" {% if nbform == 11 %} disabled="false" {% else %} disabled="true" {% endif %} 
-										type="button">Passer au second oeuvre</button>
+										<a href="{{path('second-oeuvre', {'id': projet.id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
+										type="button">Passer au second oeuvre</button></a>
 										</ul>
 									</div>
 								</section>

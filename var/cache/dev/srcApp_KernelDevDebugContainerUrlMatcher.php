@@ -48,25 +48,26 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
-                    .'|/dashboard/my\\-project/([^/]++)(?'
-                        .'|(*:203)'
-                        .'|/(?'
-                            .'|e(?'
-                                .'|tude\\-sol(*:228)'
-                                .'|xcavation(*:245)'
-                                .'|levation(*:261)'
-                            .')'
-                            .'|vrd(*:273)'
-                            .'|fondation(*:290)'
-                            .'|p(?'
-                                .'|lancher(*:309)'
-                                .'|rep\\-terrain(*:329)'
-                            .')'
-                            .'|soubassement(*:350)'
-                            .'|charpente(*:367)'
-                            .'|toiture(*:382)'
-                            .'|menuiserie(*:400)'
+                    .'|/dashboard/my\\-project/([^/]++)/(?'
+                        .'|gros\\-oeuvre(*:216)'
+                        .'|s(?'
+                            .'|econd\\-oeuvre(*:241)'
+                            .'|oubassement(*:260)'
                         .')'
+                        .'|e(?'
+                            .'|tude\\-sol(*:282)'
+                            .'|xcavation(*:299)'
+                            .'|levation(*:315)'
+                        .')'
+                        .'|vrd(*:327)'
+                        .'|fondation(*:344)'
+                        .'|p(?'
+                            .'|lancher(*:363)'
+                            .'|rep\\-terrain(*:383)'
+                        .')'
+                        .'|charpente(*:401)'
+                        .'|toiture(*:416)'
+                        .'|menuiserie(*:434)'
                     .')'
                 .')/?$}sDu',
         ];
@@ -78,18 +79,19 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            203 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, true, null]],
-            228 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
-            245 => [[['_route' => 'excavation', '_controller' => 'App\\Controller\\ProjectController::excavation'], ['id'], null, null, false, false, null]],
-            261 => [[['_route' => 'elevation', '_controller' => 'App\\Controller\\ProjectController::Elevation'], ['id'], null, null, false, false, null]],
-            273 => [[['_route' => 'vrd', '_controller' => 'App\\Controller\\ProjectController::vrd'], ['id'], null, null, false, false, null]],
-            290 => [[['_route' => 'fondation', '_controller' => 'App\\Controller\\ProjectController::fondation'], ['id'], null, null, false, false, null]],
-            309 => [[['_route' => 'plancher', '_controller' => 'App\\Controller\\ProjectController::plancher'], ['id'], null, null, false, false, null]],
-            329 => [[['_route' => 'prep-terrain', '_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], ['id'], null, null, false, false, null]],
-            350 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\ProjectController::Soubassement'], ['id'], null, null, false, false, null]],
-            367 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
-            382 => [[['_route' => 'toiture', '_controller' => 'App\\Controller\\ProjectController::toiture'], ['id'], null, null, false, false, null]],
-            400 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\ProjectController::menuiserie'], ['id'], null, null, false, false, null]],
+            216 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, false, null]],
+            241 => [[['_route' => 'second-oeuvre', '_controller' => 'App\\Controller\\SecondOeuvreController::view'], ['id'], null, null, false, false, null]],
+            260 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\ProjectController::Soubassement'], ['id'], null, null, false, false, null]],
+            282 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
+            299 => [[['_route' => 'excavation', '_controller' => 'App\\Controller\\ProjectController::excavation'], ['id'], null, null, false, false, null]],
+            315 => [[['_route' => 'elevation', '_controller' => 'App\\Controller\\ProjectController::Elevation'], ['id'], null, null, false, false, null]],
+            327 => [[['_route' => 'vrd', '_controller' => 'App\\Controller\\ProjectController::vrd'], ['id'], null, null, false, false, null]],
+            344 => [[['_route' => 'fondation', '_controller' => 'App\\Controller\\ProjectController::fondation'], ['id'], null, null, false, false, null]],
+            363 => [[['_route' => 'plancher', '_controller' => 'App\\Controller\\ProjectController::plancher'], ['id'], null, null, false, false, null]],
+            383 => [[['_route' => 'prep-terrain', '_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], ['id'], null, null, false, false, null]],
+            401 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
+            416 => [[['_route' => 'toiture', '_controller' => 'App\\Controller\\ProjectController::toiture'], ['id'], null, null, false, false, null]],
+            434 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\ProjectController::menuiserie'], ['id'], null, null, false, false, null]],
         ];
     }
 }
