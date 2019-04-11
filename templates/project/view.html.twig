@@ -99,7 +99,13 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
-									
+									Type de terassement :  ({{excavation.typeTerrassement}}) <br>
+									Murs péripherique :  ({{excavation.mursPeripherique}} m) <br>
+									Murs refont :  ({{excavation.mursRefont}} m) <br>
+									Profondeur des fouilles :  ({{excavation.profondeurFouille}} m) <br>
+									Largeur des fouilles :  ({{excavation.largeurFouille}} m) <br>
+
+									<b> Sous-total : </b> {{excavation.prix}} </b> €
 									{% endif %}									</div>
 							</section>
 								<section class="panel panel-primary" id="panel-1" data-portlet-item>
@@ -173,6 +179,34 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									{% if vrd.pompeRelevage == true %} 
+									Pompe de relevage : oui <br>
+									{% else %}
+									Pompe de relevage : non <br>
+									{% endif %}	
+
+									{% if vrd.fosseSeptique == true %} 
+									Fosse septique : oui <br>
+									{% else %}
+									Fosse septique : non <br>
+									{% endif %}	
+
+									{% if vrd.microStation == true %} 
+									Micro station : oui <br>
+									{% else %}
+									Micro station : non <br>
+									{% endif %}	
+
+									{% if vrd.etudeHydrogeologique == true %} 
+									Etude hydrogeologique : oui <br>
+									{% else %}
+									Etude hydrogeologique : non <br>
+									{% endif %}	
+									Distance de raccord à l'eau potable :  ({{vrd.distanceEauPotable}} m) <br>
+									Distance de raccord à l'électricité :  ({{vrd.distanceElectricite}} m) <br>
+									Distance de raccord téléphonie :  ({{vrd.distanceTelephonique}} m) <br>
+
+									<b> Sous-total : </b> {{vrd.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>

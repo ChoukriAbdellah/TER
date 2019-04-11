@@ -22,6 +22,11 @@ class Excavation
     private $typeTerrassement;
 
     /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $materielUtilise;
@@ -141,6 +146,18 @@ class Excavation
     public function setLargeurFouille(?float $largeurFouille): self
     {
         $this->largeurFouille = $largeurFouille;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

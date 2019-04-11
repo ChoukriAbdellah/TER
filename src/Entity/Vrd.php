@@ -17,6 +17,11 @@ class Vrd
     private $id;
 
     /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
+    /**
      * @ORM\Column(type="float", nullable=true)
      */
     private $distanceEauPotable;
@@ -136,6 +141,18 @@ class Vrd
     public function setDistanceTelephonique(float $distanceTelephonique): self
     {
         $this->distanceTelephonique = $distanceTelephonique;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }
