@@ -124,20 +124,10 @@ class SecondOeuvreController extends AbstractController
 
     return $this->render(
         'project/second-oeuvre-view.html.twig', ['projet' => $projet, 'nbform' => $nbform]);
-        //,['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 'soubassement' => $soubassement,'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 'toiture' => $toiture, 'menuiserie' => $menuiserie]);
+        /*,['etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 
+	  'soubassement' => $soubassement,'elevation' => $elevation, 'excavation' => $excavation, 
+	  'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 
+	  'toiture' => $toiture, 'menuiserie' => $menuiserie]);*/
     }
-
-    public function menu()
-    {
-        $idUser = $this->getUser()->getId();
-        $projets = $this->getDoctrine()
-        ->getRepository(Projet::class)
-        ->findProjetsByIdUser($idUser);
-  
-      return $this->render('project/liste-projets.html.twig', array(
-        'projets' => $projets
-      ));
-    }
-
 
 }
