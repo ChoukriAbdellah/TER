@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 09 avr. 2019 à 11:51
+-- Généré le :  jeu. 11 avr. 2019 à 14:10
 -- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.2.16
+-- Version de PHP :  7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -204,7 +204,8 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190401211857', '2019-04-01 21:19:01'),
 ('20190404121751', '2019-04-04 12:18:46'),
 ('20190404124857', '2019-04-04 12:49:09'),
-('20190409091353', '2019-04-09 09:14:04');
+('20190409091353', '2019-04-09 09:14:04'),
+('20190411115111', '2019-04-11 11:51:28');
 
 -- --------------------------------------------------------
 
@@ -386,19 +387,31 @@ INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, 
 --
 
 CREATE TABLE `second_oeuvre` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `id_enduit_facade` int(11) DEFAULT NULL,
+  `id_isolation` int(11) DEFAULT NULL,
+  `id_revetement` int(11) DEFAULT NULL,
+  `id_cloisons` int(11) DEFAULT NULL,
+  `id_evacuation` int(11) DEFAULT NULL,
+  `id_menuiseries_int` int(11) DEFAULT NULL,
+  `id_escaliers` int(11) DEFAULT NULL,
+  `id_plomberie` int(11) DEFAULT NULL,
+  `id_electricite` int(11) DEFAULT NULL,
+  `id_ventilation` int(11) DEFAULT NULL,
+  `id_climatisation` int(11) DEFAULT NULL,
+  `id_domotique` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `second_oeuvre`
 --
 
-INSERT INTO `second_oeuvre` (`id`) VALUES
-(1),
-(7),
-(8),
-(9),
-(10);
+INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revetement`, `id_cloisons`, `id_evacuation`, `id_menuiseries_int`, `id_escaliers`, `id_plomberie`, `id_electricite`, `id_ventilation`, `id_climatisation`, `id_domotique`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
