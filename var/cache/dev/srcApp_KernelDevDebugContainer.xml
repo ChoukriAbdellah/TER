@@ -452,6 +452,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\MenuiserieRepository" class="App\Repository\MenuiserieRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\PlancherRepository" class="App\Repository\PlancherRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -473,6 +477,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\SoubassementRepository" class="App\Repository\SoubassementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ToitureRepository" class="App\Repository\ToitureRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -2480,7 +2488,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.DYLqSqY"/>
+      <argument type="service" id=".service_locator.xFVX1TU"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3641,6 +3649,8 @@
     <service id=".abstract.instanceof.App\Repository\FondationRepository" class="App\Repository\FondationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MenuiserieRepository" class="App\Repository\MenuiserieRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MenuiserieRepository" class="App\Repository\MenuiserieRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PlancherRepository" class="App\Repository\PlancherRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PlancherRepository" class="App\Repository\PlancherRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PreparationEtAccesRepository" class="App\Repository\PreparationEtAccesRepository" autowire="true" abstract="true"/>
@@ -3653,6 +3663,8 @@
     <service id=".abstract.instanceof.App\Repository\SecondOeuvreRepository" class="App\Repository\SecondOeuvreRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SoubassementRepository" class="App\Repository\SoubassementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SoubassementRepository" class="App\Repository\SoubassementRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ToitureRepository" class="App\Repository\ToitureRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ToitureRepository" class="App\Repository\ToitureRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VrdRepository" class="App\Repository\VrdRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\VrdRepository" class="App\Repository\VrdRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
@@ -4042,7 +4054,7 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.DYLqSqY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.xFVX1TU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CharpenteRepository" type="service" id="App\Repository\CharpenteRepository"/>
@@ -4051,12 +4063,14 @@
         <argument key="App\Repository\ExcavationRepository" type="service" id="App\Repository\ExcavationRepository"/>
         <argument key="App\Repository\FondationRepository" type="service" id="App\Repository\FondationRepository"/>
         <argument key="App\Repository\GrosOeuvreRepository" type="service" id="App\Repository\GrosOeuvreRepository"/>
+        <argument key="App\Repository\MenuiserieRepository" type="service" id="App\Repository\MenuiserieRepository"/>
         <argument key="App\Repository\PlancherRepository" type="service" id="App\Repository\PlancherRepository"/>
         <argument key="App\Repository\PreparationEtAccesRepository" type="service" id="App\Repository\PreparationEtAccesRepository"/>
         <argument key="App\Repository\PrixRepository" type="service" id="App\Repository\PrixRepository"/>
         <argument key="App\Repository\ProjetRepository" type="service" id="App\Repository\ProjetRepository"/>
         <argument key="App\Repository\SecondOeuvreRepository" type="service" id="App\Repository\SecondOeuvreRepository"/>
         <argument key="App\Repository\SoubassementRepository" type="service" id="App\Repository\SoubassementRepository"/>
+        <argument key="App\Repository\ToitureRepository" type="service" id="App\Repository\ToitureRepository"/>
         <argument key="App\Repository\VrdRepository" type="service" id="App\Repository\VrdRepository"/>
       </argument>
     </service>

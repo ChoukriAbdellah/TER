@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EtudeSolRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MenuiserieRepository")
  */
-class Menuiserie// vasi essaye
+class Menuiserie
 {
     /**
      * @ORM\Id()
@@ -17,60 +17,58 @@ class Menuiserie// vasi essaye
     private $id;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $dimensionsBoisRouge;
+    private $dimensionBoisRouge;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $dimensionsBoisHetre;
+    private $dimensionBoisHetre;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $dimensionsAluminium;
-
+    private $dimensionAluminium;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDimensionsBoisRouge(): ?int
+    public function getDimensionBoisRouge(): ?int
     {
-        return $this->dimensionsBoisRouge;
+        return $this->dimensionBoisRouge;
     }
 
-    public function setDimensionsBoisRouge(?int $dimensionsBoisRouge): self
+    public function setDimensionBoisRouge(int $dimensionBoisRouge): self
     {
-        $this->dimensionsBoisRouge = $dimensionsBoisRouge;
+        $this->dimensionBoisRouge = $dimensionBoisRouge;
 
         return $this;
     }
 
-    public function getDimensionsBoisHetre(): ?int
+    public function getDimensionBoisHetre(): ?int
     {
-        return $this->dimensionsBoisHetre;
+        return $this->dimensionBoisHetre;
     }
 
-    public function setDimensionsBoisHetre(?int $dimensionsBoisHetre): self
+    public function setDimensionBoisHetre(int $dimensionBoisHetre): self
     {
-        $this->dimensionsBoisHetre = $dimensionsBoisHetre;
+        $this->dimensionBoisHetre = $dimensionBoisHetre;
 
         return $this;
     }
 
-    public function getDimensionsAluminium(): ?int
+    public function getDimensionAluminium(): ?int
     {
-        return $this->dimensionsAluminium;
+        return $this->dimensionAluminium;
     }
 
-    public function setDimensionsAluminium(?int $dimensionsAluminium): self
+    public function setDimensionAluminium(int $dimensionAluminium): self
     {
-        $this->dimensionsAluminium = $dimensionsAluminium;
+        $this->dimensionAluminium = $dimensionAluminium;
 
         return $this;
     }
-
 }

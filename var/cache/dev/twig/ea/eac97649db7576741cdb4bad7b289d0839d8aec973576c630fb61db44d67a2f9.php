@@ -387,10 +387,26 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
             // line 118
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\tType de toit (";
+            // line 120
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["toiture"]) || array_key_exists("toiture", $context) ? $context["toiture"] : (function () { throw new Twig_Error_Runtime('Variable "toiture" does not exist.', 120, $this->source); })()), "typeToit", []), "html", null, true);
+            echo ") <br>
+\t\t\t\t\t\t\t\t\tvotre pente est de : (";
+            // line 121
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["toiture"]) || array_key_exists("toiture", $context) ? $context["toiture"] : (function () { throw new Twig_Error_Runtime('Variable "toiture" does not exist.', 121, $this->source); })()), "degPente", []), "html", null, true);
+            echo ") degres <br>
+\t\t\t\t\t\t\t\t\tvotre toit est-il renforcé ? : (";
+            // line 122
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["toiture"]) || array_key_exists("toiture", $context) ? $context["toiture"] : (function () { throw new Twig_Error_Runtime('Variable "toiture" does not exist.', 122, $this->source); })()), "renforcement", []), "html", null, true);
+            echo ")<br>
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> ";
+            // line 123
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["toiture"]) || array_key_exists("toiture", $context) ? $context["toiture"] : (function () { throw new Twig_Error_Runtime('Variable "toiture" does not exist.', 123, $this->source); })()), "prix", []), "html", null, true);
+            echo " </b> €
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 121
+        // line 125
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t</div>
@@ -399,8 +415,8 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 128
-        if (((isset($context["fondations"]) || array_key_exists("fondations", $context) ? $context["fondations"] : (function () { throw new Twig_Error_Runtime('Variable "fondations" does not exist.', 128, $this->source); })()) == null)) {
+        // line 132
+        if (((isset($context["fondations"]) || array_key_exists("fondations", $context) ? $context["fondations"] : (function () { throw new Twig_Error_Runtime('Variable "fondations" does not exist.', 132, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -411,37 +427,37 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Les fondations</h2>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 133
-        if (((isset($context["fondations"]) || array_key_exists("fondations", $context) ? $context["fondations"] : (function () { throw new Twig_Error_Runtime('Variable "fondations" does not exist.', 133, $this->source); })()) != null)) {
+        // line 137
+        if (((isset($context["fondations"]) || array_key_exists("fondations", $context) ? $context["fondations"] : (function () { throw new Twig_Error_Runtime('Variable "fondations" does not exist.', 137, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 134
-        if (((isset($context["fondations"]) || array_key_exists("fondations", $context) ? $context["fondations"] : (function () { throw new Twig_Error_Runtime('Variable "fondations" does not exist.', 134, $this->source); })()) == null)) {
+        // line 138
+        if (((isset($context["fondations"]) || array_key_exists("fondations", $context) ? $context["fondations"] : (function () { throw new Twig_Error_Runtime('Variable "fondations" does not exist.', 138, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 136
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fondation", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 136, $this->source); })()), "id", [])]), "html", null, true);
+            // line 140
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fondation", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 140, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 138
+            // line 142
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 141
+        // line 145
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t<section class=\"panel panel-success\" id=\"panel-5\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 146
-        if (((isset($context["soubassement"]) || array_key_exists("soubassement", $context) ? $context["soubassement"] : (function () { throw new Twig_Error_Runtime('Variable "soubassement" does not exist.', 146, $this->source); })()) == null)) {
+        // line 150
+        if (((isset($context["soubassement"]) || array_key_exists("soubassement", $context) ? $context["soubassement"] : (function () { throw new Twig_Error_Runtime('Variable "soubassement" does not exist.', 150, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -452,37 +468,37 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Le soubassement</h2>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 151
-        if (((isset($context["soubassement"]) || array_key_exists("soubassement", $context) ? $context["soubassement"] : (function () { throw new Twig_Error_Runtime('Variable "soubassement" does not exist.', 151, $this->source); })()) != null)) {
+        // line 155
+        if (((isset($context["soubassement"]) || array_key_exists("soubassement", $context) ? $context["soubassement"] : (function () { throw new Twig_Error_Runtime('Variable "soubassement" does not exist.', 155, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 152
-        if (((isset($context["soubassement"]) || array_key_exists("soubassement", $context) ? $context["soubassement"] : (function () { throw new Twig_Error_Runtime('Variable "soubassement" does not exist.', 152, $this->source); })()) == null)) {
+        // line 156
+        if (((isset($context["soubassement"]) || array_key_exists("soubassement", $context) ? $context["soubassement"] : (function () { throw new Twig_Error_Runtime('Variable "soubassement" does not exist.', 156, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 154
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("soubassement", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 154, $this->source); })()), "id", [])]), "html", null, true);
+            // line 158
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("soubassement", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 158, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 156
+            // line 160
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 159
+        // line 163
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t<section class=\"panel panel-warning\" id=\"panel-6\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 164
-        if (((isset($context["vrd"]) || array_key_exists("vrd", $context) ? $context["vrd"] : (function () { throw new Twig_Error_Runtime('Variable "vrd" does not exist.', 164, $this->source); })()) == null)) {
+        // line 168
+        if (((isset($context["vrd"]) || array_key_exists("vrd", $context) ? $context["vrd"] : (function () { throw new Twig_Error_Runtime('Variable "vrd" does not exist.', 168, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -493,37 +509,37 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">VRD (voirie et réseaux divers)</h2>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 169
-        if (((isset($context["vrd"]) || array_key_exists("vrd", $context) ? $context["vrd"] : (function () { throw new Twig_Error_Runtime('Variable "vrd" does not exist.', 169, $this->source); })()) != null)) {
+        // line 173
+        if (((isset($context["vrd"]) || array_key_exists("vrd", $context) ? $context["vrd"] : (function () { throw new Twig_Error_Runtime('Variable "vrd" does not exist.', 173, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 170
-        if (((isset($context["vrd"]) || array_key_exists("vrd", $context) ? $context["vrd"] : (function () { throw new Twig_Error_Runtime('Variable "vrd" does not exist.', 170, $this->source); })()) == null)) {
+        // line 174
+        if (((isset($context["vrd"]) || array_key_exists("vrd", $context) ? $context["vrd"] : (function () { throw new Twig_Error_Runtime('Variable "vrd" does not exist.', 174, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 172
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vrd", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 172, $this->source); })()), "id", [])]), "html", null, true);
+            // line 176
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vrd", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 176, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 174
+            // line 178
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 177
+        // line 181
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t\t<section class=\"panel panel-quartenary\" id=\"panel-4\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 182
-        if (((isset($context["menuiserie"]) || array_key_exists("menuiserie", $context) ? $context["menuiserie"] : (function () { throw new Twig_Error_Runtime('Variable "menuiserie" does not exist.', 182, $this->source); })()) == null)) {
+        // line 186
+        if (((isset($context["menuiserie"]) || array_key_exists("menuiserie", $context) ? $context["menuiserie"] : (function () { throw new Twig_Error_Runtime('Variable "menuiserie" does not exist.', 186, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -534,29 +550,29 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Les menuiseries extérieures</h2>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 187
-        if (((isset($context["menuiserie"]) || array_key_exists("menuiserie", $context) ? $context["menuiserie"] : (function () { throw new Twig_Error_Runtime('Variable "menuiserie" does not exist.', 187, $this->source); })()) != null)) {
+        // line 191
+        if (((isset($context["menuiserie"]) || array_key_exists("menuiserie", $context) ? $context["menuiserie"] : (function () { throw new Twig_Error_Runtime('Variable "menuiserie" does not exist.', 191, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 188
-        if (((isset($context["menuiserie"]) || array_key_exists("menuiserie", $context) ? $context["menuiserie"] : (function () { throw new Twig_Error_Runtime('Variable "menuiserie" does not exist.', 188, $this->source); })()) == null)) {
+        // line 192
+        if (((isset($context["menuiserie"]) || array_key_exists("menuiserie", $context) ? $context["menuiserie"] : (function () { throw new Twig_Error_Runtime('Variable "menuiserie" does not exist.', 192, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 190
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("menuiserie", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 190, $this->source); })()), "id", [])]), "html", null, true);
+            // line 194
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("menuiserie", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 194, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 192
+            // line 196
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 195
+        // line 199
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t</div>
@@ -565,8 +581,8 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 202
-        if (((isset($context["plancher"]) || array_key_exists("plancher", $context) ? $context["plancher"] : (function () { throw new Twig_Error_Runtime('Variable "plancher" does not exist.', 202, $this->source); })()) == null)) {
+        // line 206
+        if (((isset($context["plancher"]) || array_key_exists("plancher", $context) ? $context["plancher"] : (function () { throw new Twig_Error_Runtime('Variable "plancher" does not exist.', 206, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -577,37 +593,37 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Le plancher</h2> </a>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 207
-        if (((isset($context["plancher"]) || array_key_exists("plancher", $context) ? $context["plancher"] : (function () { throw new Twig_Error_Runtime('Variable "plancher" does not exist.', 207, $this->source); })()) != null)) {
+        // line 211
+        if (((isset($context["plancher"]) || array_key_exists("plancher", $context) ? $context["plancher"] : (function () { throw new Twig_Error_Runtime('Variable "plancher" does not exist.', 211, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 208
-        if (((isset($context["plancher"]) || array_key_exists("plancher", $context) ? $context["plancher"] : (function () { throw new Twig_Error_Runtime('Variable "plancher" does not exist.', 208, $this->source); })()) == null)) {
+        // line 212
+        if (((isset($context["plancher"]) || array_key_exists("plancher", $context) ? $context["plancher"] : (function () { throw new Twig_Error_Runtime('Variable "plancher" does not exist.', 212, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 210
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("plancher", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 210, $this->source); })()), "id", [])]), "html", null, true);
+            // line 214
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("plancher", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 214, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 212
+            // line 216
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 215
+        // line 219
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t<section class=\"panel panel-dark\" id=\"panel-8\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 220
-        if (((isset($context["elevation"]) || array_key_exists("elevation", $context) ? $context["elevation"] : (function () { throw new Twig_Error_Runtime('Variable "elevation" does not exist.', 220, $this->source); })()) == null)) {
+        // line 224
+        if (((isset($context["elevation"]) || array_key_exists("elevation", $context) ? $context["elevation"] : (function () { throw new Twig_Error_Runtime('Variable "elevation" does not exist.', 224, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -618,37 +634,37 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">L'élévation</h2>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 225
-        if (((isset($context["elevation"]) || array_key_exists("elevation", $context) ? $context["elevation"] : (function () { throw new Twig_Error_Runtime('Variable "elevation" does not exist.', 225, $this->source); })()) != null)) {
+        // line 229
+        if (((isset($context["elevation"]) || array_key_exists("elevation", $context) ? $context["elevation"] : (function () { throw new Twig_Error_Runtime('Variable "elevation" does not exist.', 229, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 226
-        if (((isset($context["elevation"]) || array_key_exists("elevation", $context) ? $context["elevation"] : (function () { throw new Twig_Error_Runtime('Variable "elevation" does not exist.', 226, $this->source); })()) == null)) {
+        // line 230
+        if (((isset($context["elevation"]) || array_key_exists("elevation", $context) ? $context["elevation"] : (function () { throw new Twig_Error_Runtime('Variable "elevation" does not exist.', 230, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 228
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("elevation", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 228, $this->source); })()), "id", [])]), "html", null, true);
+            // line 232
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("elevation", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 232, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 230
+            // line 234
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 233
+        // line 237
         echo "\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t<section class=\"panel panel-danger\" id=\"panel-9\" data-portlet-item>
 \t\t\t\t\t\t\t\t<header class=\"panel-heading portlet-handler\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel-actions\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" ";
-        // line 238
-        if (((isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 238, $this->source); })()) == null)) {
+        // line 242
+        if (((isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 242, $this->source); })()) == null)) {
             echo " class=\"fa fa-caret-down\" ";
         } else {
             echo " class=\"fa fa-caret-up\" ";
@@ -659,40 +675,40 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La charpente/couverture</h2>
 \t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
-        // line 243
-        if (((isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 243, $this->source); })()) != null)) {
+        // line 247
+        if (((isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 247, $this->source); })()) != null)) {
             echo " style=\"display: none;\" ";
         }
         echo ">
 \t\t\t\t\t\t\t\t\t";
-        // line 244
-        if (((isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 244, $this->source); })()) == null)) {
+        // line 248
+        if (((isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 248, $this->source); })()) == null)) {
             echo " 
 \t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 246
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("charpente", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 246, $this->source); })()), "id", [])]), "html", null, true);
+            // line 250
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("charpente", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 250, $this->source); })()), "id", [])]), "html", null, true);
             echo "\"> Cliquez ici pour le remplir.</a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 248
+            // line 252
             echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
 \t\t\t\t\t\t\t\t\tType de votre charpente (";
-            // line 250
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 250, $this->source); })()), "typeCharpente", []), "html", null, true);
+            // line 254
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 254, $this->source); })()), "typeCharpente", []), "html", null, true);
             echo ") <br>
 \t\t\t\t\t\t\t\t\tForme de votre charpente (";
-            // line 251
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 251, $this->source); })()), "formeCharpente", []), "html", null, true);
+            // line 255
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 255, $this->source); })()), "formeCharpente", []), "html", null, true);
             echo ") <br>
 \t\t\t\t\t\t\t\t\tNombre de mètres carrés pour votre toiture (";
-            // line 252
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 252, $this->source); })()), "nbMC", []), "html", null, true);
+            // line 256
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["charpente"]) || array_key_exists("charpente", $context) ? $context["charpente"] : (function () { throw new Twig_Error_Runtime('Variable "charpente" does not exist.', 256, $this->source); })()), "nbMC", []), "html", null, true);
             echo ")
 \t\t\t\t\t\t\t\t\t";
         }
-        // line 254
+        // line 258
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
@@ -704,8 +720,8 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
 \t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
 \t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" ";
-        // line 264
-        if (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 264, $this->source); })()) == 11)) {
+        // line 268
+        if (((isset($context["nbform"]) || array_key_exists("nbform", $context) ? $context["nbform"] : (function () { throw new Twig_Error_Runtime('Variable "nbform" does not exist.', 268, $this->source); })()) == 11)) {
             echo " disabled=\"false\" ";
         } else {
             echo " disabled=\"true\" ";
@@ -727,7 +743,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
     }
 
-    // line 274
+    // line 278
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -736,7 +752,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 275
+        // line 279
         echo "
 \t\t";
         
@@ -759,7 +775,7 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 
     public function getDebugInfo()
     {
-        return array (  740 => 275,  731 => 274,  708 => 264,  696 => 254,  691 => 252,  687 => 251,  683 => 250,  679 => 248,  674 => 246,  669 => 244,  663 => 243,  651 => 238,  644 => 233,  638 => 230,  633 => 228,  628 => 226,  622 => 225,  610 => 220,  603 => 215,  597 => 212,  592 => 210,  587 => 208,  581 => 207,  569 => 202,  560 => 195,  554 => 192,  549 => 190,  544 => 188,  538 => 187,  526 => 182,  519 => 177,  513 => 174,  508 => 172,  503 => 170,  497 => 169,  485 => 164,  478 => 159,  472 => 156,  467 => 154,  462 => 152,  456 => 151,  444 => 146,  437 => 141,  431 => 138,  426 => 136,  421 => 134,  415 => 133,  403 => 128,  394 => 121,  388 => 118,  383 => 116,  378 => 114,  372 => 113,  360 => 108,  353 => 103,  347 => 100,  342 => 98,  337 => 96,  331 => 95,  319 => 90,  312 => 85,  306 => 82,  301 => 80,  296 => 78,  290 => 77,  278 => 72,  271 => 67,  266 => 65,  262 => 64,  258 => 62,  253 => 60,  248 => 58,  242 => 57,  231 => 53,  224 => 48,  219 => 45,  213 => 44,  207 => 43,  204 => 42,  199 => 39,  193 => 38,  187 => 37,  184 => 36,  182 => 35,  178 => 33,  172 => 32,  166 => 31,  163 => 30,  161 => 29,  157 => 27,  153 => 26,  146 => 25,  140 => 22,  134 => 18,  125 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  756 => 279,  747 => 278,  724 => 268,  712 => 258,  707 => 256,  703 => 255,  699 => 254,  695 => 252,  690 => 250,  685 => 248,  679 => 247,  667 => 242,  660 => 237,  654 => 234,  649 => 232,  644 => 230,  638 => 229,  626 => 224,  619 => 219,  613 => 216,  608 => 214,  603 => 212,  597 => 211,  585 => 206,  576 => 199,  570 => 196,  565 => 194,  560 => 192,  554 => 191,  542 => 186,  535 => 181,  529 => 178,  524 => 176,  519 => 174,  513 => 173,  501 => 168,  494 => 163,  488 => 160,  483 => 158,  478 => 156,  472 => 155,  460 => 150,  453 => 145,  447 => 142,  442 => 140,  437 => 138,  431 => 137,  419 => 132,  410 => 125,  404 => 123,  400 => 122,  396 => 121,  392 => 120,  388 => 118,  383 => 116,  378 => 114,  372 => 113,  360 => 108,  353 => 103,  347 => 100,  342 => 98,  337 => 96,  331 => 95,  319 => 90,  312 => 85,  306 => 82,  301 => 80,  296 => 78,  290 => 77,  278 => 72,  271 => 67,  266 => 65,  262 => 64,  258 => 62,  253 => 60,  248 => 58,  242 => 57,  231 => 53,  224 => 48,  219 => 45,  213 => 44,  207 => 43,  204 => 42,  199 => 39,  193 => 38,  187 => 37,  184 => 36,  182 => 35,  178 => 33,  172 => 32,  166 => 31,  163 => 30,  161 => 29,  157 => 27,  153 => 26,  146 => 25,  140 => 22,  134 => 18,  125 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -883,6 +899,10 @@ class __TwigTemplate_d1a8efdcaf4947e427121c099bb24548591a884924b3548f9cfa5417a56
 \t\t\t\t\t\t\t\t\t{% else %}
 \t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
 \t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\tType de toit ({{toiture.typeToit}}) <br>
+\t\t\t\t\t\t\t\t\tvotre pente est de : ({{toiture.degPente}}) degres <br>
+\t\t\t\t\t\t\t\t\tvotre toit est-il renforcé ? : ({{toiture.renforcement}})<br>
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> {{toiture.prix}} </b> €
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t{% endif %}\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>

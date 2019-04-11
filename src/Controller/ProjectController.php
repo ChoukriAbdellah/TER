@@ -168,43 +168,69 @@ class ProjectController extends AbstractController
             // instancie le formulaire avec les contraintes par défaut
             $form = $this->createForm(ToitureType::class, $e);        
             $form->handleRequest($request);
-			$projet = $this->getDoctrine()
+			        $projet = $this->getDoctrine()
                 ->getRepository(Projet::class)
                 ->find($id);
                 $idGo = $projet->getIdGrosOeuvre();
                 $grosOeuvre = $this->getDoctrine()
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
-			$idCharpente = $grosOeuvre->getIdCharpente();
-			if($idCharpente == NULL){
-				 // création du formulaire
-					$e = new Charpente();
-					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(CharpenteType::class, $e);        
-					$form->handleRequest($request);
-			  return $this->redirectToRoute(
-					  'charpente', ['id'=>$id]);
-			}
-			else{
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-                // Enregistre l'étude de sol en base
-                $em->persist($e);
-                $em->flush();
-               // Met à jour le projet avec l'id de l'étude de sol créée
+			          $idCharpente = $grosOeuvre->getIdCharpente();
+			            if($idCharpente == NULL){
+                // création du formulaire
+                  $e = new Charpente();
+                  // instancie le formulaire avec les contraintes par défaut
+                  $form = $this->createForm(CharpenteType::class, $e);        
+                  $form->handleRequest($request);
+                return $this->redirectToRoute(
+                    'charpente', ['id'=>$id]);
+                   }
+                  
+                  if ($form->isSubmitted() && $form->isValid()) {  
+                        $em = $this->getDoctrine()->getManager();
+                        /* le prix */
+                        $prix=0;
+                        
+                        if($e->getTypeToit()== 'MODERNE'){
+                          $prix=$this->getDoctrine()
+                          ->getRepository(Prix::class)
+                          ->findPrixByNom("tuile_moderne");
+                        }
+                        if($e->getTypeToit()== 'CLASSIQUE'){
+                          $prix=$this->getDoctrine()
+                          ->getRepository(Prix::class)
+                          ->findPrixByNom("tuile_classique");
+                        }
+                        $p_deg=0;
+                        if($e->getrenforcement() == 'true'){
+                        $p_deg=$this->getDoctrine()
+                        ->getRepository(Prix::class)
+                        ->findPrixByNom("tuile_degre");
+                        }
+                        $renf=$this->getDoctrine()
+                        ->getRepository(Prix::class)
+                        ->findPrixByNom("tuile_renforcement");
+                        $a=$e->getdegPente();
+                        $prix=$prix+$renf+($a*$p_deg);
+                       
+                        // Enregistre l'étude de sol en base
+                        $e->setPrix($prix);
+                        $em->persist($e);
+                        $em->flush();
+                      // Met à jour le projet avec l'id de l'étude de sol créée
+                      
                 
-                
-                $grosOeuvre->setIdToiture($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
+                        $grosOeuvre->setIdToiture($e->getId());
+                        $em->persist($grosOeuvre);
+                        $em->flush();
      
                 return $this->redirectToRoute('dashboard');
-            
+                      
 		}
             return $this->render(
               'project/toiture.html.twig', array('form' => $form->createView(), 'id' => $id));
 			
-  }
+  
   }
   
   
@@ -713,7 +739,7 @@ class ProjectController extends AbstractController
 	
 	$idToiture = $grosOeuvre->getIdToiture();
     if($idToiture != NULL){
-      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($IdToiture);
+      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($idToiture);
     }
     else{
       $toiture = null;

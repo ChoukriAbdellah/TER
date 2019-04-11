@@ -8,7 +8,7 @@
         [
             'stdClass' => [
                 'repositoryClass' => [
-                    'App\\Repository\\EtudeSolRepository',
+                    'App\\Repository\\MenuiserieRepository',
                 ],
             ],
         ],
