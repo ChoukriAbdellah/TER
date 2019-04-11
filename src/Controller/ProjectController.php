@@ -639,14 +639,37 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+                $prix = 0;
 
+                $coutFeraillage = 0;
+                if ($e->getSismicite() == true)
+                  $coutFeraillage += $this->getDoctrine()->getRepository(Prix::class)->findPrixByNom("sismicite");;
+
+                $idEtudeSol = $grosOeuvre->getIdEtudeSol();
+                $etudeSol = $this->getDoctrine()
+                ->getRepository(EtudeSol::class)
+                ->find($idEtudeSol);
+                $coutFeraillage += $etudeSol->getPrix();
+
+                $quantiteFeraillage = 0;
+
+                $idExcavation = $grosOeuvre->getIdExcavation();
+                $excavation = $this->getDoctrine()
+                ->getRepository(Excavation::class)
+                ->find($idExcavation);
+                // les mètres linéaires sont récupérés à partir de l'excavation
+                $metresLineaires = $excavation->getMursPeripherique() + $excavation->getMursRefont();
+
+                $quantiteFerraillage = $metresLineaires * (3 / 5); 
+
+                $prix = $coutFeraillage * $quantiteFerraillage;
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
                 
-
                 $grosOeuvre->setIdFondations($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();

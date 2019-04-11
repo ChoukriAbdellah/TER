@@ -38,7 +38,7 @@ class PreparationEtAccesType extends AbstractType
             'Relief montant' => 'RELIEF MONTANT',
             'Relief descendant' => 'RELIEF DESCENDANT',
             'Dénivelé montant' => 'DENIVELE MONTANT',
-            'Dénivelé descendant' => 'DENIVELE MONTANT',
+            'Dénivelé descendant' => 'DENIVELE DESCENDANT',
             'Terrain plat' => 'TERRAIN PLAT'
             ],
             'label' => false

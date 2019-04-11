@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 04 avr. 2019 à 14:49
+-- Généré le :  jeu. 11 avr. 2019 à 14:10
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -111,7 +111,8 @@ CREATE TABLE `excavation` (
 --
 
 INSERT INTO `excavation` (`id`, `type_terrassement`, `materiel_utilise`, `cout_sol_plan`, `murs_peripherique`, `murs_refont`, `profondeur_fouille`, `largeur_fouille`) VALUES
-(1, 'FILANTE', NULL, NULL, 10, 10, 10, 10);
+(1, 'FILANTE', NULL, NULL, 10, 10, 10, 10),
+(2, 'LONGRINES', NULL, NULL, 10, 10, 10, 10);
 
 -- --------------------------------------------------------
 
@@ -121,15 +122,16 @@ INSERT INTO `excavation` (`id`, `type_terrassement`, `materiel_utilise`, `cout_s
 
 CREATE TABLE `fondation` (
   `id` int(11) NOT NULL,
-  `sismicite` tinyint(1) NOT NULL
+  `sismicite` tinyint(1) NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `fondation`
 --
 
-INSERT INTO `fondation` (`id`, `sismicite`) VALUES
-(3, 1);
+INSERT INTO `fondation` (`id`, `sismicite`, `prix`) VALUES
+(3, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,7 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
 (9, 6, 1, 1, 3, 3, 1, 1, 2, 2, NULL, NULL),
-(10, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(10, 7, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,9 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190401205752', '2019-04-01 20:57:58'),
 ('20190401211857', '2019-04-01 21:19:01'),
 ('20190404121751', '2019-04-04 12:18:46'),
-('20190404124857', '2019-04-04 12:49:09');
+('20190404124857', '2019-04-04 12:49:09'),
+('20190409091353', '2019-04-09 09:14:04'),
+('20190411115111', '2019-04-11 11:51:28');
 
 -- --------------------------------------------------------
 
@@ -341,7 +345,15 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (65, 'tuile_renforcement', 40),
 (66, 'materiau_bois_rouge', 8),
 (68, 'materiau_bois_hetre', 15),
-(69, 'materiau_aluminium', 12);
+(69, 'materiau_aluminium', 12),
+(70, 'sismicite', 100),
+(71, 'PENTE MONTANTE', 150),
+(72, 'PENTE DESCENDANTE', 140),
+(73, 'RELIEF MONTANT', 180),
+(76, 'RELIEF DESCENDANT', 175),
+(77, 'DENIVELE MONTANT', 170),
+(78, 'DENIVELE DESCENDANT', 190),
+(79, 'TERRAIN PLAT', 100);
 
 -- --------------------------------------------------------
 
@@ -375,19 +387,31 @@ INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, 
 --
 
 CREATE TABLE `second_oeuvre` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `id_enduit_facade` int(11) DEFAULT NULL,
+  `id_isolation` int(11) DEFAULT NULL,
+  `id_revetement` int(11) DEFAULT NULL,
+  `id_cloisons` int(11) DEFAULT NULL,
+  `id_evacuation` int(11) DEFAULT NULL,
+  `id_menuiseries_int` int(11) DEFAULT NULL,
+  `id_escaliers` int(11) DEFAULT NULL,
+  `id_plomberie` int(11) DEFAULT NULL,
+  `id_electricite` int(11) DEFAULT NULL,
+  `id_ventilation` int(11) DEFAULT NULL,
+  `id_climatisation` int(11) DEFAULT NULL,
+  `id_domotique` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `second_oeuvre`
 --
 
-INSERT INTO `second_oeuvre` (`id`) VALUES
-(1),
-(7),
-(8),
-(9),
-(10);
+INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revetement`, `id_cloisons`, `id_evacuation`, `id_menuiseries_int`, `id_escaliers`, `id_plomberie`, `id_electricite`, `id_ventilation`, `id_climatisation`, `id_domotique`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -598,13 +622,13 @@ ALTER TABLE `elevation`
 -- AUTO_INCREMENT pour la table `etude_sol`
 --
 ALTER TABLE `etude_sol`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `excavation`
 --
 ALTER TABLE `excavation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `fondation`
@@ -616,7 +640,7 @@ ALTER TABLE `fondation`
 -- AUTO_INCREMENT pour la table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `menuiserie`
@@ -640,19 +664,19 @@ ALTER TABLE `preparation_et_acces`
 -- AUTO_INCREMENT pour la table `prix`
 --
 ALTER TABLE `prix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT pour la table `projet`
 --
 ALTER TABLE `projet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `soubassement`

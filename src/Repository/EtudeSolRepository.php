@@ -36,13 +36,15 @@ class EtudeSolRepository extends ServiceEntityRepository
     }
     */
 
-    public function findPrixByNom($value): ?EtudeSol
+    /*
+    public function findOneBySomeField($value): ?EtudeSol
     {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.nom = :val')
+            ->andWhere('e.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
+    */
 }
