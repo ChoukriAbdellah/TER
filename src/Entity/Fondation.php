@@ -22,6 +22,11 @@ class Fondation
      */
     private $sismicite;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
 
     public function getId(): ?int
     {
@@ -37,6 +42,18 @@ class Fondation
     public function setSismicite(bool $sismicite): self
     {
         $this->sismicite = $sismicite;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

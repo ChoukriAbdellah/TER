@@ -23,8 +23,12 @@ new-project:
     controller: App\Controller\ProjectController::newProject
 
 my-project:
-    path:       /dashboard/my-project/{id}
+    path:       /dashboard/my-project/{id}/gros-oeuvre
     controller: App\Controller\ProjectController::view
+
+second-oeuvre:
+    path:       /dashboard/my-project/{id}/second-oeuvre
+    controller: App\Controller\SecondOeuvreController::view
 
 etude-sol:
     path:       /dashboard/my-project/{id}/etude-sol

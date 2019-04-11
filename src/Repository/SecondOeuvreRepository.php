@@ -36,17 +36,29 @@ class SecondOeuvreRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?SecondOeuvre
+    public function findNbFormulairesByGrosOeuvre($id)
     {
-        return $this->createQueryBuilder('s')
-            ->from('DeliveryMethods','m')
-            ->leftJoin('m.countries','c')
-            ->having('COUNT(c.id) = 0')
-            ->groupBy('m.id');
-        ;
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'select 
+        sum(case WHEN `id_enduit_facade` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_isolation` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_revetement` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_cloisons` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_evacuation` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_menuiseries_int` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_escaliers` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_plomberie` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_electricite` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_ventilation` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_climatisation` IS NOT NULL THEN 1 ELSE 0 END)+
+        sum(case WHEN `id_domotique` IS NOT NULL THEN 1 ELSE 0 END)
+        AS notnulls from second_oeuvre where id = :id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $tab = $stmt->fetch();
+        $nb = $tab['notnulls'];
+    
+        // returns an array of arrays (i.e. a raw data set)
+        return $nb;
     }
-    $qb->select('m')
-
-    */
 }
