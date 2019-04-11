@@ -39,6 +39,22 @@
 															{{ form_label(form.type_soubassement, "Quel est le type de soubassement voulez vous ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
 															{{ form_row(form.type_soubassement, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+														</div>
+														
+														{{ form_label(form.tractopelle, "cochez les matériaux utilisés  :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.tractopelle, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
+				
+														</div>
+														
+														{{ form_label(form.camion_benne, " ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.camion_benne, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
+														
+														</div>
+														{{ form_label(form.betonniere, " ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.betonniere, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
 														
 														</div>
 														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>

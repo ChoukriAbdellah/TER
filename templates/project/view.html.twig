@@ -81,6 +81,8 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									Type de terrain ({{prepTerrain.positionTerrain}}) <br>
+									<b> Sous-total : </b> {{prepTerrain.prix}} </b> €
 									
 									{% endif %}								</div>
 							</section>
@@ -157,6 +159,8 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									soubassement choisi {{ soubassement.typeSoubassement}} <br>
+									<b> Sous-total : </b> {{soubassement.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -231,6 +235,9 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									Mur en  {{ elevation.TypeMateriauxMur}} <br>
+									Fenetre de type {{elevation.typeFenetre}}
+									<b> Sous-total : </b> {{elevation.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
