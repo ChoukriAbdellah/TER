@@ -31,6 +31,13 @@ class Menuiserie
      */
     private $dimensionAluminium;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,4 +78,17 @@ class Menuiserie
 
         return $this;
     }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+    
 }

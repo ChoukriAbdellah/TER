@@ -245,8 +245,27 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+               
+                        
+                        
+                  $p_br=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_bois_rouge");
+                  $p_bh=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_bois_hetre");
+                  $p_a=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_aluminium");
+                  $p_br= $p_br * $elem->getDimensionBoisRouge();
+                  $p_bh=$p_bh * $elem->getDimensionBoisHetre();
+                  $p_a=$p_a *$elem->getDimensionAluminium();
 
-                $em->persist($e);
+                  $prix=$p_br + $p_bh +$p_a;
+                        
+                        /****** */
+                        $elem->setPrix($prix);
+                $em->persist($elem);
                 $em->flush();
 
                // Met à jour le projet avec l'id de l'étude de sol créée
@@ -261,7 +280,7 @@ class ProjectController extends AbstractController
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
                 
-                $grosOeuvre->setIdMenuiseriesExt($e->getId());
+                $grosOeuvre->setIdMenuiseriesExt($elem->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
@@ -282,9 +301,22 @@ class ProjectController extends AbstractController
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
-
+                /*$p_a=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_aluminium");
+                  $p_br= $p_br * $elem->getDimensionBoisRouge();*/
                 // Enregistre l'étude de sol en base
+                $p_tcharp =$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getTypeCharpente());
+                $p_fcharp =$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getFormeCharpente());
+                 $prix= $p_tcharp * $e->getNbMC() + $p_fcharp ;
 
+
+
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
@@ -765,8 +797,9 @@ class ProjectController extends AbstractController
 
     $idMenuiserie = $grosOeuvre->getIdMenuiseriesExt();
     if($idMenuiserie != NULL){
-      $menuiserie = $this->getDoctrine()->getRepository(Plancher::class)->find($idMenuiserie);
+      $menuiserie = $this->getDoctrine()->getRepository(Menuiserie::class)->find($idMenuiserie);
     }
+
     else{
       $menuiserie = null;
     }

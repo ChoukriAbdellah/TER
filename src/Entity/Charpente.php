@@ -31,6 +31,11 @@ class Charpente
      */
     private $nbMC;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class Charpente
     public function setNbMC(float $nbMC): self
     {
         $this->nbMC = $nbMC;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }
