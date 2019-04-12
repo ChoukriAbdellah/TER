@@ -353,7 +353,9 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (76, 'RELIEF DESCENDANT', 175),
 (77, 'DENIVELE MONTANT', 170),
 (78, 'DENIVELE DESCENDANT', 190),
-(79, 'TERRAIN PLAT', 100);
+(79, 'TERRAIN PLAT', 100),
+(82, 'poutreCategotieA', 30),
+(83, 'poutreCategotieB', 60);
 
 -- --------------------------------------------------------
 
