@@ -11,15 +11,15 @@
 
 		{% endblock %}
 
-				{% block title %}<h2>Votre projet : {{projet.nom}}</h2>{% endblock %}
-				{% block pageactuelle %}{{projet.nom}}{% endblock %}
+				{% block title %}<h2>Votre projet : {{projet.nom}} </h2>{% endblock %}
+				{% block pageactuelle %}{{projet.nom}} - Gros oeuvre{% endblock %}
 
 					{% block body %}
 
 	<div class="row">
 							<div class="col-xs-12">
 									<header class="panel-heading">
-									<h2 class="panel-title">{{projet.nom}}</h2>
+									<h2 class="panel-title">{{projet.nom}} - Gros oeuvre</h2>
 									</header>
                                     <br>
 									<h4> {% if nbform < 11 %} Vous avez rempli {{nbform}} formulaire(s) sur 11 pour le gros oeuvre de votre chantier. 
@@ -81,6 +81,8 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									Type de terrain ({{prepTerrain.positionTerrain}}) <br>
+									<b> Sous-total : </b> {{prepTerrain.prix}} </b> €
 									
 									{% endif %}								</div>
 							</section>
@@ -99,7 +101,13 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
-									
+									Type de terassement :  ({{excavation.typeTerrassement}}) <br>
+									Murs péripherique :  ({{excavation.mursPeripherique}} m) <br>
+									Murs refont :  ({{excavation.mursRefont}} m) <br>
+									Profondeur des fouilles :  ({{excavation.profondeurFouille}} m) <br>
+									Largeur des fouilles :  ({{excavation.largeurFouille}} m) <br>
+
+									<b> Sous-total : </b> {{excavation.prix}} </b> €
 									{% endif %}									</div>
 							</section>
 								<section class="panel panel-primary" id="panel-1" data-portlet-item>
@@ -117,6 +125,10 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									Type de toit ({{toiture.typeToit}}) <br>
+									votre pente est de : ({{toiture.degPente}}) degres <br>
+									votre toit est-il renforcé ? : ({{toiture.renforcement}})<br>
+									<b> Sous-total : </b> {{toiture.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -157,6 +169,8 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									soubassement choisi {{ soubassement.typeSoubassement}} <br>
+									<b> Sous-total : </b> {{soubassement.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -175,6 +189,34 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									{% if vrd.pompeRelevage == true %} 
+									Pompe de relevage : oui <br>
+									{% else %}
+									Pompe de relevage : non <br>
+									{% endif %}	
+
+									{% if vrd.fosseSeptique == true %} 
+									Fosse septique : oui <br>
+									{% else %}
+									Fosse septique : non <br>
+									{% endif %}	
+
+									{% if vrd.microStation == true %} 
+									Micro station : oui <br>
+									{% else %}
+									Micro station : non <br>
+									{% endif %}	
+
+									{% if vrd.etudeHydrogeologique == true %} 
+									Etude hydrogeologique : oui <br>
+									{% else %}
+									Etude hydrogeologique : non <br>
+									{% endif %}	
+									Distance de raccord à l'eau potable :  ({{vrd.distanceEauPotable}} m) <br>
+									Distance de raccord à l'électricité :  ({{vrd.distanceElectricite}} m) <br>
+									Distance de raccord téléphonie :  ({{vrd.distanceTelephonique}} m) <br>
+
+									<b> Sous-total : </b> {{vrd.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -193,6 +235,7 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									cout totale : {{menuiserie.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -236,6 +279,9 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
+									Mur en  {{ elevation.TypeMateriauxMur}} <br>
+									Fenetre de type {{elevation.typeFenetre}}
+									<b> Sous-total : </b> {{elevation.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -256,7 +302,8 @@
 									Récapitulatif : <br>
 									Type de votre charpente ({{charpente.typeCharpente}}) <br>
 									Forme de votre charpente ({{charpente.formeCharpente}}) <br>
-									Nombre de mètres carrés pour votre toiture ({{charpente.nbMC}})
+									Nombre de mètres carrés pour votre toiture ({{charpente.nbMC}}) <br>
+									cout totale : {{charpente.prix}} </b> €
 									{% endif %}
 								</div>
 							</section>
@@ -268,8 +315,8 @@
 									</div>
 									<div class="panel-footer">
 										<ul class="pager">
-										<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" {% if nbform == 11 %} disabled="false" {% else %} disabled="true" {% endif %} 
-										type="button">Passer au second oeuvre</button>
+										<a href="{{path('second-oeuvre', {'id': projet.id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
+										type="button">Passer au second oeuvre</button></a>
 										</ul>
 									</div>
 								</section>

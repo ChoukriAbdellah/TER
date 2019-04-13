@@ -23,8 +23,12 @@ new-project:
     controller: App\Controller\ProjectController::newProject
 
 my-project:
-    path:       /dashboard/my-project/{id}
+    path:       /dashboard/my-project/{id}/gros-oeuvre
     controller: App\Controller\ProjectController::view
+
+second-oeuvre:
+    path:       /dashboard/my-project/{id}/second-oeuvre
+    controller: App\Controller\SecondOeuvreController::view
 
 etude-sol:
     path:       /dashboard/my-project/{id}/etude-sol
@@ -64,5 +68,14 @@ toiture:
 menuiserie:
     path:       /dashboard/my-project/{id}/menuiserie
     controller: App\Controller\ProjectController::menuiserie
+ventilation:
+    path:       /dashboard/my-project/{id}/ventilation
+    controller: App\Controller\SecondOeuvreController::ventilation
+climatisation:
+    path:       /dashboard/my-project/{id}/climatisation
+    controller: App\Controller\SecondOeuvreController::climatisation
+domotique:
+    path:       /dashboard/my-project/{id}/domotique
+    controller: App\Controller\SecondOeuvreController::domotique    
 logout:
     path: /deconnexion

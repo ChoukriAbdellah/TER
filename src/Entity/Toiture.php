@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EtudeSolRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ToitureRepository")
  */
-class Toiture 
+class Toiture
 {
     /**
      * @ORM\Id()
@@ -31,7 +31,11 @@ class Toiture
      */
     private $renforcement;
 
-    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -39,7 +43,7 @@ class Toiture
 
     public function getTypeToit(): ?string
     {
-        return $this->typeToit; 
+        return $this->typeToit;
     }
 
     public function setTypeToit(string $typeToit): self
@@ -48,25 +52,39 @@ class Toiture
 
         return $this;
     }
-    public function getdegPente(): ?int
+
+    public function getDegPente(): ?int
     {
-        return $this->degPente; 
+        return $this->degPente;
     }
 
-    public function setdegPente(int $degPente): self
+    public function setDegPente(int $degPente): self
     {
         $this->degPente = $degPente;
 
         return $this;
     }
-    public function getrenforcement(): ?boolean
+
+    public function getRenforcement(): ?bool
     {
-        return $this->renforcement; 
+        return $this->renforcement;
     }
 
-    public function setrenforcement(boolean $renforcement): self
+    public function setRenforcement(bool $renforcement): self
     {
         $this->renforcement = $renforcement;
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

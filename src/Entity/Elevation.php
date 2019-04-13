@@ -56,6 +56,11 @@ class Elevation
      */
     private $TypeLinteaux;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +158,18 @@ class Elevation
     public function setTypeLinteaux(string $TypeLinteaux): self
     {
         $this->TypeLinteaux = $TypeLinteaux;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

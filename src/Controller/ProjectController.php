@@ -168,13 +168,14 @@ class ProjectController extends AbstractController
             // instancie le formulaire avec les contraintes par défaut
             $form = $this->createForm(ToitureType::class, $e);        
             $form->handleRequest($request);
-			$projet = $this->getDoctrine()
+			        $projet = $this->getDoctrine()
                 ->getRepository(Projet::class)
                 ->find($id);
                 $idGo = $projet->getIdGrosOeuvre();
                 $grosOeuvre = $this->getDoctrine()
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
+<<<<<<< HEAD
 			$idCharpente = $grosOeuvre->getIdCharpente();
 			if($idCharpente == NULL){
 				 // création du formulaire
@@ -193,18 +194,64 @@ class ProjectController extends AbstractController
                 $em->flush();
                // Met à jour le projet avec l'id de l'étude de sol créée
                 
+=======
+			          $idCharpente = $grosOeuvre->getIdCharpente();
+			            if($idCharpente == NULL){
+                // création du formulaire
+                  $e = new Charpente();
+                  // instancie le formulaire avec les contraintes par défaut
+                  $form = $this->createForm(CharpenteType::class, $e);        
+                  $form->handleRequest($request);
+                return $this->redirectToRoute(
+                    'charpente', ['id'=>$id]);
+                   }
+                  
+                  if ($form->isSubmitted() && $form->isValid()) {  
+                        $em = $this->getDoctrine()->getManager();
+                        /* le prix */
+                        $prix=0;
+                        
+                        if($e->getTypeToit()== 'MODERNE'){
+                          $prix=$this->getDoctrine()
+                          ->getRepository(Prix::class)
+                          ->findPrixByNom("tuile_moderne");
+                        }
+                        if($e->getTypeToit()== 'CLASSIQUE'){
+                          $prix=$this->getDoctrine()
+                          ->getRepository(Prix::class)
+                          ->findPrixByNom("tuile_classique");
+                        }
+                        $p_deg=0;
+                        if($e->getrenforcement() == 'true'){
+                        $p_deg=$this->getDoctrine()
+                        ->getRepository(Prix::class)
+                        ->findPrixByNom("tuile_degre");
+                        }
+                        $renf=$this->getDoctrine()
+                        ->getRepository(Prix::class)
+                        ->findPrixByNom("tuile_renforcement");
+                        $a=$e->getdegPente();
+                        $prix=$prix+$renf+($a*$p_deg);
+                       
+                        // Enregistre l'étude de sol en base
+                        $e->setPrix($prix);
+                        $em->persist($e);
+                        $em->flush();
+                      // Met à jour le projet avec l'id de l'étude de sol créée
+                      
+>>>>>>> 98f114167133ac556fb5db8a75040ab9dd9930a3
                 
-                $grosOeuvre->setIdToiture($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
+                        $grosOeuvre->setIdToiture($e->getId());
+                        $em->persist($grosOeuvre);
+                        $em->flush();
      
                 return $this->redirectToRoute('dashboard');
-            
+                      
 		}
             return $this->render(
               'project/toiture.html.twig', array('form' => $form->createView(), 'id' => $id));
 			
-  }
+  
   }
   
   
@@ -219,8 +266,27 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+               
+                        
+                        
+                  $p_br=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_bois_rouge");
+                  $p_bh=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_bois_hetre");
+                  $p_a=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_aluminium");
+                  $p_br= $p_br * $elem->getDimensionBoisRouge();
+                  $p_bh=$p_bh * $elem->getDimensionBoisHetre();
+                  $p_a=$p_a *$elem->getDimensionAluminium();
 
-                $em->persist($e);
+                  $prix=$p_br + $p_bh +$p_a;
+                        
+                        /****** */
+                        $elem->setPrix($prix);
+                $em->persist($elem);
                 $em->flush();
 
                // Met à jour le projet avec l'id de l'étude de sol créée
@@ -235,7 +301,7 @@ class ProjectController extends AbstractController
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
                 
-                $grosOeuvre->setIdMenuiseriesExt($e->getId());
+                $grosOeuvre->setIdMenuiseriesExt($elem->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
@@ -256,9 +322,22 @@ class ProjectController extends AbstractController
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
-
+                /*$p_a=$this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("materiau_aluminium");
+                  $p_br= $p_br * $elem->getDimensionBoisRouge();*/
                 // Enregistre l'étude de sol en base
+                $p_tcharp =$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getTypeCharpente());
+                $p_fcharp =$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getFormeCharpente());
+                 $prix= $p_tcharp * $e->getNbMC() + $p_fcharp ;
 
+
+
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
@@ -322,9 +401,7 @@ class ProjectController extends AbstractController
 
                 // Enregistre l'étude de sol en base
 
-                $em->persist($e);
-                $em->flush();
-
+                
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
                 $projet = $this->getDoctrine()
@@ -332,9 +409,129 @@ class ProjectController extends AbstractController
                 ->find($id);
 
                 
+               
+
+                $prixPins = 0;
+                $prixSapins=0;
+                $prixBouleaux=0;
+                $prixChenes=0;
+                $prixErables=0;
+                $prixFrenes=0;
+                $prixNoyers=0;
+                $prixAutres=0;
+                $prixPositionTerrain=0;
+                $FinalPrice=0;
+                if($e->getNbPins() !=0 ){
+                  $numberPins=$e->getNbPins();
+                  $prixPins = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_pin");
+                  $taillePins = $e->getTaillePins();
+                  $prixPins= $numberPins * $taillePins ;
+                }
+                if($e->getNbSapins() !=0 ){
+                  $numberSapins=$e->getNbSapins();
+                  $prixPins = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_sapin");
+                  $tailleSapins = $e->getTailleSapins();
+                  $prixSapins= $numberSapins * $tailleSapins ;
+                }
+                if($e->getNbBouleaux() !=0 ){
+                  $numberBouleaux=$e->getNbBouleaux();
+                  $prixBouleaux = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_bouleaux");
+                  $tailleBouleaux = $e->getTailleBouleaux();
+                  $prixBouleaux= $numberBouleaux * $tailleBouleaux ;
+                }
+                if($e->getNbChenes() !=0 ){
+                  $numberChenes=$e->getNbChenes();
+                  $prixChenes = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_chene");
+                  $tailleChenes = $e->getTailleChenes();
+                  $prixChenes= $numberChenes * $tailleChenes ;
+                }
+                if($e->getNbErables() !=0 ){
+                  $numberErables=$e->getNbErables();
+                  $prixErables = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_erable");
+                  $tailleErables = $e->getTailleErables();
+                  $prixErables= $numberErables * $tailleErables ;
+                }
+                if($e->getNbFrenes() !=0 ){
+                  $numberFrenes=$e->getNbFrenes();
+                  $prixFrenes= $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_frene");
+                  $tailleFrenes= $e->getTailleFrenes();
+                  $prixErables= $numberFrenes* $tailleFrenes;
+                }
+                if($e->getNbNoyers() !=0 ){
+                  $numberNoyers=$e->getNbNoyers();
+                  $prixNoyers= $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_noyer");
+                  $tailleNoyers= $e->getTailleNoyers();
+                  $prixErables= $numberNoyers* $tailleNoyers;
+                }
+                if($e->getNbAutres() !=0 ){
+                  $numberAutres=$e->getNbAutres();
+                  $prixAutres= $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_couper_noyer");
+                  $tailleAutres= $e->getTailleAutres();
+                  $prixAutres= $numberAutres* $tailleAutres;
+                }
+              
+                  $prixPositionTerrain = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom($e->getPositionTerrain());
+                  $prixAcces = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_acces");
+                  $prixEmblai = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("terrain_emblai");
+
+               
+              $etudeSol = $this->getDoctrine()->getRepository(etudeSol::class)->find($idEtudeSol);
+              $typeSol = $etudeSol->getPrix();
+            
+          
+                $finalPrice=  2*$typeSol + 2.5*$prixPositionTerrain  +
+                            $prixEmblai+
+                            $prixAcces+
+                            $prixPins +
+                            $prixSapins+
+                            $prixBouleaux+
+                            $prixChenes+
+                            $prixErables+ 
+                            $prixFrenes+
+                            $prixNoyers;
+                            
+                $e->setPrix($finalPrice);
+                $em->persist($e);
+                $em->flush();
+
+                
+                $projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idGo = $projet->getIdGrosOeuvre();
+
+                $grosOeuvre = $this->getDoctrine()
+                ->getRepository(GrosOeuvre::class)
+                ->find($idGo);
+
+                $grosOeuvre->setIdPrepTerrain($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
      
+
                 return $this->redirectToRoute('my-project', array('id' => $id));
             }
 	
@@ -354,10 +551,35 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+                $prix = 0;
+                if($e->getMaterielUtilise() == 'tractopelle'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("tractopelle");
+                }
 
+                if($e->getMaterielUtilise() == 'camion_benne'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("camion_benne");
+                }
+
+                if($e->getMaterielUtilise() == 'betonniere'){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("betonniere");
+                }
+
+               
+                
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
+
+
+               
+                
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
                 $projet = $this->getDoctrine()
@@ -387,11 +609,7 @@ class ProjectController extends AbstractController
             ->getRepository(GrosOeuvre::class)
             ->find($idGo);
                 
-            /*$idPrepTerrain = $grosOeuvre->getIdPrepTerrain(); 
-            $PrepTerrain = $this->getDoctrine()
-            ->getRepository(PreparationEtAcces::class)
-            ->find($idPrepTerrain);
-            $positionTerrain = $PrepTerrain->getPositionTerrain();*/
+            
 
             $idPrepTerrain = $grosOeuvre->getIdPrepTerrain();
             if($idPrepTerrain != NULL){
@@ -419,9 +637,87 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+                $prixPoutre=0;
+                $prixMur=0;
+                $prixFenetre=0;
+                $prixLinteau=0;
+                $finalPrice = 0;
+                if($e->getLongueurPoutre() < 2){
+                  $prixPoutre= $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("poutreCategorieA");
+                }
+                else{
+                  $prixPoutre= $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("poutreCategorieB");
+                }
+                $prixPoutre= $prixPoutre * $e->getNbPoutres();
 
+                if($e->getTypeMateriauxMur() == 'mur_agglo'){
+                  $prixMur  = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_agglo");
+                }
+
+                if($e->getTypeMateriauxMur() == 'mur_brique'){
+                  $prixMur = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_brique");
+                }
+                if($e->getTypeMateriauxMur() == 'mur_bloc_pense'){
+                  $prixMur = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_bloc_pense");
+                }
+
+                if($e->getTypeMateriauxMur() == 'mur_stuporeux'){
+                  $prixMur = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_stuporeux");
+                }
+                if($e->getTypeMateriauxMur() == 'mur_bois'){
+                  $prixMur = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_bois");
+                }
+                $prixMur= $prixMur+ $e->getHauteurMur()*$prixMur;
+
+                if($e->getTypeFenetre() == 'fenetre_fixe'){
+                  $prixFenetre = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("fenetre_fixe");
+                }
+
+                if($e->getTypeFenetre() == 'fenetre_soufflet'){
+                  $prixFenetre = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("fenetre_soufflet");
+                }
+                if($e->getTypeFenetre() == 'fenetre_battante'){
+                  $prixFenetre = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("fenetre_battante");
+                }
+                $prixLinteau=$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("linteau");
+                $prixLinteau= $prixLinteau *  $e->getNombreFenetre();
+              
+               $prixFenetre= $prixFenetre* $e->getNombreFenetre();
+                
+               
+               $finalPrice= $prixPoutre+
+                $prixMur+
+                $prixFenetre+
+                $prixLinteau;
+
+                $e->setPrix($finalPrice);
                 $em->persist($e);
                 $em->flush();
+
+
+                
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
@@ -479,7 +775,35 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+                $prix = 0;
+                if($e->getTypeTerrassement() == 'FILANTE'){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("type_terrassement_semelle_filante
+");
+                }
 
+                if($e->getTypeTerrassement() == 'LONGRINES'){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("type_terrassement_longrines");
+                }
+
+                $prixMurs = ($e->getMursPeripherique() * $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_peripherique")) + ($e->getMursRefont() * $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("mur_refont"));
+
+                $prixProfondeur = ( $e->getProfondeurFouille() * $this->getDoctrine()
+                  	->getRepository(Prix::class)
+                  	->findPrixByNom("profondeur_fouille")) 
+                	+ ( $e->getLargeurFouille() * $this->getDoctrine()
+                 	->getRepository(Prix::class)
+                 	 ->findPrixByNom("largeur_fouille"));
+
+                $prix += $prixMurs + $prixProfondeur;
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
@@ -510,8 +834,8 @@ class ProjectController extends AbstractController
 
                 // Enregistre l'étude de sol en base
 
-                $em->persist($e);
-                $em->flush();
+                
+
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
@@ -520,10 +844,51 @@ class ProjectController extends AbstractController
                 ->find($id);
 
                 $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
+                                $grosOeuvre = $this->getDoctrine()
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
+
+                $prix = 0;
+                if($e->getPompeRelevage() == true){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("pompe_relevage");
+                }
+
+                if($e->getFosseSeptique() == true){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("fosse_septique");
+                }
+
+                if($e->getMicroStation() == true){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("micro_station");
+                }
+
+                if($e->getEtudeHydrogeologique() == true){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("etude_hydro");
+                }
+
+
+                $prix+= $e->getDistanceEauPotable() * $this->getDoctrine()
+                  	->getRepository(Prix::class)
+                  	->findPrixByNom("reseau_eau");
+
+                $prix+= $e->getDistanceElectricite() * $this->getDoctrine()
+                  	->getRepository(Prix::class)
+                  	->findPrixByNom("reseau_electricite");
+
+                $prix+= $e->getDistanceTelephonique() * $this->getDoctrine()
+                  	->getRepository(Prix::class)
+                  	->findPrixByNom("reseau_telephonique");
+
+                $e->setPrix($prix);
+                $em->persist($e);
+                $em->flush();
 
                 $grosOeuvre->setIdVrd($e->getId());
                 $em->persist($grosOeuvre);
@@ -570,37 +935,14 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
-                $prix = 0;
 
-                $coutFeraillage = 0;
-                if ($e->getSismicite() == true)
-                  $coutFeraillage += $this->getDoctrine()->getRepository(Prix::class)->findPrixByNom("sismicite");;
-
-                $idEtudeSol = $grosOeuvre->getIdEtudeSol();
-                $etudeSol = $this->getDoctrine()
-                ->getRepository(EtudeSol::class)
-                ->find($idEtudeSol);
-                $coutFeraillage += $etudeSol->getPrix();
-
-                $quantiteFeraillage = 0;
-
-                $idExcavation = $grosOeuvre->getIdExcavation();
-                $excavation = $this->getDoctrine()
-                ->getRepository(Excavation::class)
-                ->find($idExcavation);
-                // les mètres linéaires sont récupérés à partir de l'excavation
-                $metresLineaires = $excavation->getMursPeripherique() + $excavation->getMursRefont();
-
-                $quantiteFerraillage = $metresLineaires * (3 / 5); 
-
-                $prix = $coutFeraillage * $quantiteFerraillage;
-                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
                 
+
                 $grosOeuvre->setIdFondations($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
@@ -764,7 +1106,7 @@ class ProjectController extends AbstractController
 	
 	$idToiture = $grosOeuvre->getIdToiture();
     if($idToiture != NULL){
-      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($IdToiture);
+      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($idToiture);
     }
     else{
       $toiture = null;
@@ -790,8 +1132,9 @@ class ProjectController extends AbstractController
 
     $idMenuiserie = $grosOeuvre->getIdMenuiseriesExt();
     if($idMenuiserie != NULL){
-      $menuiserie = $this->getDoctrine()->getRepository(Plancher::class)->find($idMenuiserie);
+      $menuiserie = $this->getDoctrine()->getRepository(Menuiserie::class)->find($idMenuiserie);
     }
+
     else{
       $menuiserie = null;
     }
