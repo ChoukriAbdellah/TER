@@ -295,15 +295,4 @@ class SecondOeuvreController extends AbstractController
 }
 
 
-    $nbform = $this->getDoctrine()
-    ->getRepository(SecondOeuvre::class)->findNbFormulairesByGrosOeuvre($idSo);
-
-    return $this->render(
-        'project/second-oeuvre-view.html.twig', ['projet' => $projet, 'nbform' => $nbform]);
-        /*,['etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 
-	  'soubassement' => $soubassement,'elevation' => $elevation, 'excavation' => $excavation, 
-	  'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 
-	  'toiture' => $toiture, 'menuiserie' => $menuiserie]);*/
-    }
-
-}
+    
