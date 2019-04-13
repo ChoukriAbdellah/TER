@@ -183,7 +183,7 @@ class ProjectController extends AbstractController
 					$form = $this->createForm(CharpenteType::class, $e);        
 					$form->handleRequest($request);
 			  return $this->redirectToRoute(
-					  'charpente', ['id'=>$id]);
+					  'charpente', ['id'=>$id, 'message'=>"Test"]);
 			}
 			else{
             if ($form->isSubmitted() && $form->isValid()) {  
@@ -646,13 +646,41 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
+                $prix = 0;
 
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("plancher_VS") * $e->getPlancherVs();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("plancher_etage") * $e->getPlancherEtage();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("plancher_tt") * $e->getPlancherTerrasse();
+
+
+                // Prix des poutrelles
+                $excavation = $this->getDoctrine()
+                ->getRepository(Excavation::class)
+                ->find($idExcavation);
+                $nombrePoutrelles = $excavation->getMursRefont();
+                $prix += $nombrePoutrelles * $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("poutrelle");
+
+
+                // Prix des entrevous
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("entrevous") * $e->getLongueurEntrevous();
+
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
-
-                
 
                 $grosOeuvre->setIdPlancher($e->getId());
                 $em->persist($grosOeuvre);
