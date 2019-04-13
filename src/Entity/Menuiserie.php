@@ -19,17 +19,17 @@ class Menuiserie
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimensionBoisRouge;
+    private $dimensionsBoisRouge;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimensionBoisHetre;
+    private $dimensionsBoisHetre;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimensionAluminium;
+    private $dimensionsAluminium;
 
     /**
      * @ORM\Column(type="integer")
@@ -43,38 +43,38 @@ class Menuiserie
         return $this->id;
     }
 
-    public function getDimensionBoisRouge(): ?int
+    public function getDimensionsBoisRouge(): ?int
     {
-        return $this->dimensionBoisRouge;
+        return $this->dimensionsBoisRouge;
     }
 
-    public function setDimensionBoisRouge(int $dimensionBoisRouge): self
+    public function setDimensionsBoisRouge(int $dimensionsBoisRouge): self
     {
-        $this->dimensionBoisRouge = $dimensionBoisRouge;
+        $this->dimensionsBoisRouge = $dimensionsBoisRouge;
 
         return $this;
     }
 
-    public function getDimensionBoisHetre(): ?int
+    public function getDimensionsBoisHetre(): ?int
     {
-        return $this->dimensionBoisHetre;
+        return $this->dimensionsBoisHetre;
     }
 
-    public function setDimensionBoisHetre(int $dimensionBoisHetre): self
+    public function setDimensionsBoisHetre(int $dimensionsBoisHetre): self
     {
-        $this->dimensionBoisHetre = $dimensionBoisHetre;
+        $this->dimensionsBoisHetre = $dimensionsBoisHetre;
 
         return $this;
     }
 
-    public function getDimensionAluminium(): ?int
+    public function getDimensionsAluminium(): ?int
     {
-        return $this->dimensionAluminium;
+        return $this->dimensionsAluminium;
     }
 
-    public function setDimensionAluminium(int $dimensionAluminium): self
+    public function setDimensionsAluminium(int $dimensionsAluminium): self
     {
-        $this->dimensionAluminium = $dimensionAluminium;
+        $this->dimensionsAluminium = $dimensionsAluminium;
 
         return $this;
     }

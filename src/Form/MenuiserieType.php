@@ -14,9 +14,9 @@ class MenuiserieType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('dimensionBoisRouge', NumberType::class, ['label' => false])
-            ->add('dimensionBoisHetre', NumberType::class, ['label' => false])
-            ->add('dimensionAluminium', NumberType::class, ['label' => false])
+            ->add('dimensionsBoisRouge', NumberType::class, ['label' => false])
+            ->add('dimensionsBoisHetre', NumberType::class, ['label' => false])
+            ->add('dimensionsAluminium', NumberType::class, ['label' => false])
             ;
 
     }

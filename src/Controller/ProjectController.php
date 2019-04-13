@@ -175,26 +175,6 @@ class ProjectController extends AbstractController
                 $grosOeuvre = $this->getDoctrine()
                 ->getRepository(GrosOeuvre::class)
                 ->find($idGo);
-<<<<<<< HEAD
-			$idCharpente = $grosOeuvre->getIdCharpente();
-			if($idCharpente == NULL){
-				 // création du formulaire
-					$e = new Charpente();
-					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(CharpenteType::class, $e);        
-					$form->handleRequest($request);
-			  return $this->redirectToRoute(
-					  'charpente', ['id'=>$id, 'message'=>"Test"]);
-			}
-			else{
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-                // Enregistre l'étude de sol en base
-                $em->persist($e);
-                $em->flush();
-               // Met à jour le projet avec l'id de l'étude de sol créée
-                
-=======
 			          $idCharpente = $grosOeuvre->getIdCharpente();
 			            if($idCharpente == NULL){
                 // création du formulaire
@@ -239,13 +219,12 @@ class ProjectController extends AbstractController
                         $em->flush();
                       // Met à jour le projet avec l'id de l'étude de sol créée
                       
->>>>>>> 98f114167133ac556fb5db8a75040ab9dd9930a3
                 
                         $grosOeuvre->setIdToiture($e->getId());
                         $em->persist($grosOeuvre);
                         $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
                       
 		}
             return $this->render(
@@ -278,9 +257,9 @@ class ProjectController extends AbstractController
                   $p_a=$this->getDoctrine()
                   ->getRepository(Prix::class)
                   ->findPrixByNom("materiau_aluminium");
-                  $p_br= $p_br * $elem->getDimensionBoisRouge();
-                  $p_bh=$p_bh * $elem->getDimensionBoisHetre();
-                  $p_a=$p_a *$elem->getDimensionAluminium();
+                  $p_br= $p_br * $elem->getDimensionsBoisRouge();
+                  $p_bh=$p_bh * $elem->getDimensionsBoisHetre();
+                  $p_a=$p_a *$elem->getDimensionsAluminium();
 
                   $prix=$p_br + $p_bh +$p_a;
                         
@@ -305,7 +284,7 @@ class ProjectController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('dashboard');
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
 
 
@@ -571,7 +550,7 @@ class ProjectController extends AbstractController
                 }
 
                
-                
+  
                 $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
