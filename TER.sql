@@ -355,7 +355,22 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (78, 'DENIVELE DESCENDANT', 190),
 (79, 'TERRAIN PLAT', 100),
 (82, 'poutreCategotieA', 30),
-(83, 'poutreCategotieB', 60);
+(83, 'poutreCategotieB', 60),
+(84, 'ventilation_simple_flux', 500),
+(85, 'ventilation_double_flux', 1000),
+(86, 'puits_climatique', 1200),
+(87, 'Monobloc_mobile', 500),
+(88, 'Monobloc_fixe', 800),
+(89, 'Monobloc_windows', 600),
+(90, 'Split_mobile', 1200),
+(91, 'split_mural', 1000),
+(92, 'Split_console', 1000),
+(93, 'Split_gainable', 1500),
+(94, 'regularisationChauffage', 300),
+(95, 'eclairageAuto', 700),
+(96, 'ouvertureFermetureAuto', 1500),
+(97, 'autonomieEau', 800),
+(98, 'detecteurEtAlarme', 1699);
 
 -- --------------------------------------------------------
 
