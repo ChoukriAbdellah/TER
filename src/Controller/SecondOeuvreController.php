@@ -271,7 +271,7 @@ class SecondOeuvreController extends AbstractController
       $climatisation = $this->getDoctrine()->getRepository(Climatisation::class)->find($idClimatisation);
     }
     else{
-      $climatisationlation = null;
+      $climatisation = null;
     }
     $idDomotique= $secondOeuvre->getIdDomotique();
     if($idDomotique != NULL){
