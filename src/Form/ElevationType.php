@@ -31,7 +31,15 @@ class ElevationType extends AbstractType
     )
     ->add('HauteurMur', NumberType::class, ['label' => false])
     ->add('NombreFenetre', IntegerType::class, ['label' => false])
-    ->add('TypeFenetre', TextType::class, ['label' => false])
+    ->add('TypeFenetre',  ChoiceType::class,[
+        'choices' => [
+        'Fenetre soufflet ' => 'fenetre_soufflet',
+        'fenetre battante' => 'fenetre_battante',
+        'fenetre fixe' => 'fenetre_fixe'
+        ],
+        'label' => false
+    ]
+)
     ->add('TypeLinteaux', TextType::class, ['label' => false]);
         
        

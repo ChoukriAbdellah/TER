@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class SoubassementType extends AbstractType
 {
@@ -27,7 +28,30 @@ class SoubassementType extends AbstractType
                 ],
                 'label' => false
             ]
-        );
+        
+            );
+       
+            
+    
+        
+        
+    $builder
+    ->add('tractopelle', CheckboxType::class, [
+    'label'    => 'Tractopelle',
+    'required' => false,
+        ]);
+
+    $builder
+    ->add('camion_benne', CheckboxType::class, [
+    'label'    => 'Camion benne',
+    'required' => false,
+        ]);
+    $builder
+    ->add('betonniere', CheckboxType::class, [
+    'label'    => 'Betonnière',
+    'required' => false,
+            ]);
+        
     }
  
     public function configureOptions(OptionsResolver $resolver)

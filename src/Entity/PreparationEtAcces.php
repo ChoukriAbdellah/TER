@@ -101,6 +101,11 @@ class PreparationEtAcces
      */
     private $positionTerrain;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
 
     public function getId(): ?int
     {
@@ -307,6 +312,18 @@ class PreparationEtAcces
     public function setPositionTerrain(string $positionTerrain): self
     {
         $this->positionTerrain = $positionTerrain;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

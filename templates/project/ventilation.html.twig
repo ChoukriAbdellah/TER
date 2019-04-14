@@ -1,5 +1,6 @@
 {% extends "/dashboard-layout.html.twig" %}
 
+
 	{% block head %}
 
 	<!-- Specific Page Vendor CSS -->
@@ -8,36 +9,39 @@
 	{% endblock %}
 
 				{% block title %}
-				<h2> Toiture </h2>
+				<h2>Ventilation </h2>
 				{% endblock %}
 
-				{% block pageactuelle %} Toiture {% endblock %}
+				{% block pageactuelle %}Ventilation {% endblock %}
 
-    {% block body %} 
+    {% block body %}
 
 	<div class="row">
 							<div class="col-xs-12">
 									<header class="panel-heading">
-									<h2 class="panel-title">Toiture</h2>
+									<h2 class="panel-title">Ventilation</h2>
 									</header>
-													<div class="form-group">
+
+                                    
+								
+														<div class="form-group">
 													{{ form_start(form) }}
 													<br><br>
-															{{ form_label(form.typetoit, "Quel est le type de votre toit ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+															{{ form_label(form.typeVentilation, "Quel est le type de votre ventilation ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
-															{{ form_row(form.typetoit, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
+															{{ form_row(form.typeVentilation, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
 															</div>  
 													
 													<br><br>
-															{{ form_label(form.degPente, "Quel est le degré de la pente ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+															{{ form_label(form.surfaceChambreSalon, "Indiquez la surface totale à ventiler(chambre + cuisine). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
-															{{ form_row(form.degPente, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															{{ form_row(form.surfaceChambreSalon, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
 															</div>  
 													
 													<br><br>
-															{{ form_label(form.renforcement, "Votre toit est-il renforcé ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+															{{ form_label(form.surfaceCuisineWc, "Indiquez la surface totale retante (Wc + cuisine). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
-															{{ form_row(form.renforcement, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															{{ form_row(form.surfaceCuisineWc, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
 														
 														</div>
 														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
