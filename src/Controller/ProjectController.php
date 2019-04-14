@@ -433,7 +433,7 @@ class ProjectController extends AbstractController
                 $em->flush();
      
                 return $this->redirectToRoute('my-project', array('id' => $id));
-            }
+            } 
             
              $projet = $this->getDoctrine()
             ->getRepository(Projet::class)
