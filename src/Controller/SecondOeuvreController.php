@@ -17,6 +17,8 @@ use App\Repository\SecondOeuvreRepository;
 
 use App\Entity\Ventilation;
 use App\Form\VentilationType;
+use App\Entity\Cloison;
+use App\Form\CloisonsType;
 use App\Entity\Climatisation;
 use App\Form\ClimatisationType;
 use App\Entity\Domotique;
@@ -24,7 +26,76 @@ use App\Form\DomotiqueType;
 
 class SecondOeuvreController extends AbstractController
 {   
-    public function ventilation($id, Request $request)
+ public function cloison($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new cloison();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(cloisonsType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                $finalePrice;
+                $prixCloison;
+                $prixTotal;
+                if($e->getTypeCloisons() == 'cloison_platre'){
+                  $prixCloison  = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_platre");
+                }
+
+                if($e->getTypeCloisons() == 'cloison_alveolaire'){
+                  $prixCloison = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_alveolaire");
+                }
+                if($e->getTypeCloisons() == 'cloison_beton'){
+                  $prixCloison = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_beton");
+                }
+                if($e->getTypeCloisons() == 'cloison_bois'){
+                  $prixCloison = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_bois");
+                }
+                //10euros le mètre carré 
+                $prixTotal = $e->getSurfaceTotale();
+                // Enregistre l'étude de sol en base
+                $finalePrice=$prixCloison + $prixTotal;
+                $e->setPrix($finalePrice);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->getIdCloisons($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('my-project', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/cloison.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }    
+    
+	
+	public function ventilation($id, Request $request)
   {
     
             // création du formulaire
