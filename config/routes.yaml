@@ -24,58 +24,58 @@ new-project:
 
 my-project:
     path:       /dashboard/my-project/{id}/gros-oeuvre
-    controller: App\Controller\ProjectController::view
+    controller: App\Controller\GrosOeuvreController::view
 
 second-oeuvre:
     path:       /dashboard/my-project/{id}/second-oeuvre
     controller: App\Controller\SecondOeuvreController::view
 
 etude-sol:
-    path:       /dashboard/my-project/{id}/etude-sol
-    controller: App\Controller\ProjectController::etudeSol
+    path:       /dashboard/my-project/{id}/gros-oeuvre/etude-sol
+    controller: App\Controller\GrosOeuvreController::etudeSol
     
 excavation:
-    path:       /dashboard/my-project/{id}/excavation
-    controller: App\Controller\ProjectController::excavation
+    path:       /dashboard/my-project/{id}/gros-oeuvre/excavation
+    controller: App\Controller\GrosOeuvreController::excavation
     
 vrd:
-    path:       /dashboard/my-project/{id}/vrd
-    controller: App\Controller\ProjectController::vrd
+    path:       /dashboard/my-project/{id}/gros-oeuvre/vrd
+    controller: App\Controller\GrosOeuvreController::vrd
     
 fondation:
-    path:       /dashboard/my-project/{id}/fondation
-    controller: App\Controller\ProjectController::fondation
+    path:       /dashboard/my-project/{id}/gros-oeuvre/fondations
+    controller: App\Controller\GrosOeuvreController::fondation
     
 plancher:
-    path:       /dashboard/my-project/{id}/plancher
-    controller: App\Controller\ProjectController::plancher
+    path:       /dashboard/my-project/{id}/gros-oeuvre/plancher
+    controller: App\Controller\GrosOeuvreController::plancher
 prep-terrain:
-    path:       /dashboard/my-project/{id}/prep-terrain
-    controller: App\Controller\ProjectController::PreparationEtAcces
+    path:       /dashboard/my-project/{id}/gros-oeuvre/prep-terrain
+    controller: App\Controller\GrosOeuvreController::PreparationEtAcces
 soubassement:
-    path:       /dashboard/my-project/{id}/soubassement
-    controller: App\Controller\ProjectController::Soubassement
+    path:       /dashboard/my-project/{id}/gros-oeuvre/soubassement
+    controller: App\Controller\GrosOeuvreController::Soubassement
 elevation:
-    path:       /dashboard/my-project/{id}/elevation
-    controller: App\Controller\ProjectController::Elevation    
+    path:       /dashboard/my-project/{id}/gros-oeuvre/elevation
+    controller: App\Controller\GrosOeuvreController::Elevation    
 
 charpente:
-    path:       /dashboard/my-project/{id}/charpente
-    controller: App\Controller\ProjectController::charpente
+    path:       /dashboard/my-project/{id}/gros-oeuvre/charpente
+    controller: App\Controller\GrosOeuvreController::charpente
 toiture:
-    path:       /dashboard/my-project/{id}/toiture
-    controller: App\Controller\ProjectController::toiture
+    path:       /dashboard/my-project/{id}/gros-oeuvre/toiture
+    controller: App\Controller\GrosOeuvreController::toiture
 menuiserie:
-    path:       /dashboard/my-project/{id}/menuiserie
-    controller: App\Controller\ProjectController::menuiserie
+    path:       /dashboard/my-project/{id}/gros-oeuvre/menuiseries
+    controller: App\Controller\GrosOeuvreController::menuiserie
 ventilation:
-    path:       /dashboard/my-project/{id}/ventilation
+    path:       /dashboard/my-project/{id}/second-oeuvre/ventilation
     controller: App\Controller\SecondOeuvreController::ventilation
 climatisation:
-    path:       /dashboard/my-project/{id}/climatisation
+    path:       /dashboard/my-project/{id}/second-oeuvre/climatisation
     controller: App\Controller\SecondOeuvreController::climatisation
 domotique:
-    path:       /dashboard/my-project/{id}/domotique
+    path:       /dashboard/my-project/{id}/second-oeuvre/domotique
     controller: App\Controller\SecondOeuvreController::domotique    
 logout:
     path: /deconnexion

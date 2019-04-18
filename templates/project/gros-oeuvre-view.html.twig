@@ -235,7 +235,7 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
-									cout totale : {{menuiserie.prix}} </b> €
+									<b> Sous-total : </b> {{menuiserie.prix}} </b> €
 									
 									{% endif %}									</div>
 							</section>
@@ -303,7 +303,7 @@
 									Type de votre charpente ({{charpente.typeCharpente}}) <br>
 									Forme de votre charpente ({{charpente.formeCharpente}}) <br>
 									Nombre de mètres carrés pour votre toiture ({{charpente.nbMC}}) <br>
-									cout totale : {{charpente.prix}} </b> €
+									<b> Sous-total : </b> {{charpente.prix}} </b> €
 									{% endif %}
 								</div>
 							</section>
@@ -314,6 +314,10 @@
 						
 									</div>
 									<div class="panel-footer">
+									{% if nbform == 11 %} 
+									<b> Prix total : </b> {{etudeSol.prix + charpente.prix + prepTerrain.prix + soubassement.prix + elevation.prix 
+									+ excavation.prix + vrd.prix + fondations.prix + plancher.prix + toiture.prix + menuiserie.prix}} €
+									{% endif %}
 										<ul class="pager">
 										<a href="{{path('second-oeuvre', {'id': projet.id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
 										type="button">Passer au second oeuvre</button></a>
