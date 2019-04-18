@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  sam. 13 avr. 2019 à 20:57
+-- Généré le :  jeu. 18 avr. 2019 à 23:30
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -138,7 +138,8 @@ CREATE TABLE `fondation` (
 --
 
 INSERT INTO `fondation` (`id`, `sismicite`, `prix`) VALUES
-(3, 1, 0);
+(3, 1, 0),
+(4, 1, 1380);
 
 -- --------------------------------------------------------
 
@@ -171,7 +172,7 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 (8, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
 (9, 6, 1, 1, 3, 3, 1, 1, 2, 2, NULL, NULL),
 (10, 7, NULL, 2, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
-(11, 8, 2, 3, NULL, 4, 2, 3, 3, 3, 1, 1);
+(11, 8, 2, 3, 4, 4, 2, 3, 3, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -300,11 +301,11 @@ CREATE TABLE `prix` (
 --
 
 INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
-(1, 'sol_argileux', 1000),
-(2, 'sol_calcaire', 1200),
-(3, 'sol_humifere', 1100),
-(4, 'sol_limoneux', 1300),
-(5, 'sol_sableux', 950),
+(1, 'ARGILEUX', 1000),
+(2, 'CALCAIRE', 1200),
+(3, 'HUMIFERE', 1100),
+(4, 'LIMONEUX', 1300),
+(5, 'SABLEUX', 950),
 (6, 'terrain_couper_pin', 25),
 (7, 'terrain_couper_sapin', 26),
 (8, 'terrain_couper_bouleaux', 15),
@@ -391,7 +392,12 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (95, 'eclairageAuto', 700),
 (96, 'ouvertureFermetureAuto', 1500),
 (97, 'autonomieEau', 800),
-(98, 'detecteurEtAlarme', 1699);
+(98, 'detecteurEtAlarme', 1699),
+(99, 'feraillage_sol_argileux', 100),
+(100, 'feraillage_sol_calcaire', 125),
+(101, 'feraillage_sol_humifere', 115),
+(102, 'feraillage_sol_limoneux', 110),
+(103, 'feraillage_sol_sableux', 90);
 
 -- --------------------------------------------------------
 
@@ -689,7 +695,7 @@ ALTER TABLE `excavation`
 -- AUTO_INCREMENT pour la table `fondation`
 --
 ALTER TABLE `fondation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `gros_oeuvre`
@@ -719,7 +725,7 @@ ALTER TABLE `preparation_et_acces`
 -- AUTO_INCREMENT pour la table `prix`
 --
 ALTER TABLE `prix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT pour la table `projet`
