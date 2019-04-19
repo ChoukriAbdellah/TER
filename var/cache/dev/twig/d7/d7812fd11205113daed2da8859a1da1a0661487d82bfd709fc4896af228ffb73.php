@@ -197,8 +197,16 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
         // line 81
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 81, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Confirmer le mot de passe"]]);
         echo "  
+                ";
+        // line 82
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 82, $this->source); })()), "_token", []), 'row');
+        echo "
             
                 <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"S'inscrire\">
+                 ";
+        // line 85
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 85, $this->source); })()), 'form_end');
+        echo "
 
               
     
@@ -232,7 +240,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
 
     public function getDebugInfo()
     {
-        return array (  198 => 81,  194 => 80,  190 => 79,  186 => 78,  182 => 77,  174 => 72,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  208 => 85,  202 => 82,  198 => 81,  194 => 80,  190 => 79,  186 => 78,  182 => 77,  174 => 72,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -318,8 +326,10 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
                 {{ form_row(form.email, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Adresse e-mail'}} ) }}  
                 {{ form_row(form.plainPassword.first, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Mot de passe'}} ) }}  
                 {{ form_row(form.plainPassword.second, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Confirmer le mot de passe'}} ) }}  
+                {{ form_row(form._token) }}
             
                 <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"S'inscrire\">
+                 {{ form_end(form) }}
 
               
     

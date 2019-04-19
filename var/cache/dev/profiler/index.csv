@@ -1310,3 +1310,17 @@ a617e7,127.0.0.1,GET,http://localhost/Symfony/public/dashboard/new-project/asset
 ee55aa,127.0.0.1,GET,http://localhost/Symfony/public/dashboard/new-project/assets/vendor/store-js/store.js,1555691775,,404
 92d816,127.0.0.1,GET,http://localhost/Symfony/public/deconnexion,1555691780,,302
 76d339,127.0.0.1,GET,http://localhost/Symfony/public/,1555691780,,200
+22b1f8,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555691851,,200
+4b0994,127.0.0.1,GET,http://localhost/Symfony/public/inscription/,1555691853,,301
+e81afb,127.0.0.1,GET,http://localhost/Symfony/public/inscription,1555691854,,200
+0cacc7,127.0.0.1,POST,http://localhost/Symfony/public/inscription,1555691864,,200
+743c8c,127.0.0.1,GET,http://localhost/Symfony/public/Symfony/public/_profiler/open?file=src%2FForm%2FUserType.php&line=13,1555691875,ca268a,200
+ca268a,127.0.0.1,GET,http://localhost/Symfony/public/Symfony/public/_profiler/open?file=src%2FForm%2FUserType.php&line=13,1555691875,,404
+bb858a,127.0.0.1,POST,http://localhost/Symfony/public/inscription,1555691965,,200
+2e1f18,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555692123,,200
+ccb73f,127.0.0.1,GET,http://localhost/Symfony/public/inscription/,1555692124,,301
+ab783c,127.0.0.1,GET,http://localhost/Symfony/public/inscription,1555692124,,200
+46cedb,127.0.0.1,GET,http://localhost/Symfony/public/inscription,1555692166,,200
+5aefa0,127.0.0.1,GET,http://localhost/Symfony/public/inscription,1555692196,,200
+7f9d73,127.0.0.1,POST,http://localhost/Symfony/public/inscription,1555692201,,302
+b30258,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555692201,,200
