@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190411115111 extends AbstractMigration
+final class Version20190413174322 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,7 @@ final class Version20190411115111 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE second_oeuvre ADD id_enduit_facade INT DEFAULT NULL, ADD id_isolation INT DEFAULT NULL, ADD id_revetement INT DEFAULT NULL, ADD id_cloisons INT DEFAULT NULL, ADD id_evacuation INT DEFAULT NULL, ADD id_menuiseries_int INT DEFAULT NULL, ADD id_escaliers INT DEFAULT NULL, ADD id_plomberie INT DEFAULT NULL, ADD id_electricite INT DEFAULT NULL, ADD id_ventilation INT DEFAULT NULL, ADD id_climatisation INT DEFAULT NULL, ADD id_domotique INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE escaliers ADD materiaux VARCHAR(255) DEFAULT NULL, DROP bois_tendres, DROP bois_exotiques, DROP beton');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20190411115111 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE second_oeuvre DROP id_enduit_facade, DROP id_isolation, DROP id_revetement, DROP id_cloisons, DROP id_evacuation, DROP id_menuiseries_int, DROP id_escaliers, DROP id_plomberie, DROP id_electricite, DROP id_ventilation, DROP id_climatisation, DROP id_domotique');
+        $this->addSql('ALTER TABLE escaliers ADD bois_tendres TINYINT(1) NOT NULL, ADD bois_exotiques TINYINT(1) NOT NULL, ADD beton TINYINT(1) NOT NULL, DROP materiaux');
     }
 }

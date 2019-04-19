@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190410214730 extends AbstractMigration
+final class Version20190413134638 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,7 @@ final class Version20190410214730 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE vrd ADD prix DOUBLE PRECISION NOT NULL');
+        $this->addSql('ALTER TABLE escaliers ADD type_escalier VARCHAR(255) DEFAULT NULL, DROP escalier_droit, DROP escalier_helicoidal, DROP escalier_tournant');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20190410214730 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE vrd DROP prix');
+        $this->addSql('ALTER TABLE escaliers ADD escalier_droit TINYINT(1) NOT NULL, ADD escalier_helicoidal TINYINT(1) NOT NULL, ADD escalier_tournant TINYINT(1) NOT NULL, DROP type_escalier');
     }
 }

@@ -1,0 +1,96 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2> L'électricite </h2>
+				{% endblock %}
+
+				{% block pageactuelle %} L'électricite {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">L'électricite</h2>
+									</header>
+													<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+															{{ form_label(form.dimensionCable, "Quelle est la dimension du cable (en mètres) ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.dimensionCable, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+														
+														</div>
+
+														{{ form_label(form.nbChauffage, "Quel est le nombre de chauffage ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbChauffage, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+
+														{{ form_label(form.nbInterrupteur, "Quel est le nombre d'interrupteurs ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbInterrupteur, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbSortieLumieres, "Quel est le nombre de sortie de lumières ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbSortieLumieres, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbPriseElectrique, "Quel est le nombre de prises électrique ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbPriseElectrique, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbVoletRoulant, "Quel est le nombre de volets roulant ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbVoletRoulant, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+														
+
+
+
+
+														</div>
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+									
+									
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+		<!--
+		<script src="assets/public/js/app.js"></script>
+		<script src="assets/public/js/runtime.js"></script>
+		-->
+
+    {% endblock %}

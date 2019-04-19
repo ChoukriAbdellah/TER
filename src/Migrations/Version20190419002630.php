@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190404124857 extends AbstractMigration
+final class Version20190419002630 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,7 @@ final class Version20190404124857 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE toiture ADD deg_pente INT NOT NULL, ADD renforcement TINYINT(1) NOT NULL');
+        $this->addSql('CREATE TABLE electricite (id INT AUTO_INCREMENT NOT NULL, nb_chauffage INT NOT NULL, nb_interrupteur INT NOT NULL, nb_sortie_lumieres INT NOT NULL, nb_prises INT NOT NULL, nb_prise_electrique INT NOT NULL, nb_volet_roulant INT NOT NULL, dimension_cable DOUBLE PRECISION NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20190404124857 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE toiture DROP deg_pente, DROP renforcement');
+        $this->addSql('DROP TABLE electricite');
     }
 }

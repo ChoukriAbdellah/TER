@@ -660,6 +660,7 @@ class ProjectController extends AbstractController
                 // les mètres linéaires sont récupérés à partir de l'excavation
                 $metresLineaires = $excavation->getMursPeripherique() + $excavation->getMursRefont();
 
+
                 $quantiteFerraillage = $metresLineaires * (3 / 5); 
 
                 $prix = $coutFeraillage * $quantiteFerraillage;

@@ -122,37 +122,81 @@
 							<section class="panel panel-warning" id="panel-6" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if escaliers == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
 									<h2 class="panel-title">Les escaliers</h2>
 								</header>
-								<div class="panel-body">
-								...								</div>
+								<div class="panel-body" {% if escaliers != null %} style="display: none;" {% endif %}>
+									{% if escaliers == null %}
+										Vous n'avez pas encore rempli ce formulaire. <br>
+										<a href="{{ path('escaliers', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+										Vous avez déjà rempli ce formulaire. <br>
+										Récapitulatif : <br>
+										Type d'escalier :  {{escaliers.typeEscalier}} <br>
+										Dimensions :  {{escaliers.dimensions}} m <br>
+										Materiel :  {{escaliers.materiaux}} <br>
+
+										<b> Sous-total : </b> {{escaliers.prix}} </b> €
+
+									{% endif %}									</div>
 							</section>
 								<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if plomberie == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
 									<h2 class="panel-title">La plomberie</h2>
 								</header>
-								<div class="panel-body">
-								...							</div>
+									<div class="panel-body" {% if plomberie != null %} style="display: none;" {% endif %}>
+										{% if plomberie == null %}
+											Vous n'avez pas encore rempli ce formulaire. <br>
+											<a href="{{ path('plomberie', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+										{% else %}
+											Vous avez déjà rempli ce formulaire. <br>
+											Récapitulatif : <br>
+											Dimensions tuyau :  {{plomberie.nbMetreTuyau}} m <br>
+											Type tuyau :  {{plomberie.typeTuyau}} <br>
+											Nombre de robinets :  {{plomberie.nbRobinets}} <br>
+											Nombre de WC :  {{plomberie.nbWC}} <br>
+											Type chauffage eau :  {{plomberie.typeChauffageEau}} <br>
+											Type compteur :  {{plomberie.typeCompteur}} <br>
+											Nombre de baignoires :  {{plomberie.nbBaignoire}} <br>
+											Nombre de douches :  {{plomberie.nbDouche}} <br>
+
+											<b> Sous-total : </b> {{plomberie.prix}} </b> €
+
+										{% endif %}									</div>
 							</section>
 						</div>
 						<div class="col-md-4" data-plugin-portlet id="portlet-3">
 							<section class="panel panel-info" id="panel-7" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down" ></a>
+										<a href="#" {% if electricite == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
 									<h2 class="panel-title">L’électricité</h2> </a>
 								</header>
-								<div class="panel-body" >
-								...								</div>
+								<div class="panel-body" {% if electricite != null %} style="display: none;" {% endif %}>
+									{% if electricite == null %}
+										Vous n'avez pas encore rempli ce formulaire. <br>
+										<a href="{{ path('electricite', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+										Vous avez déjà rempli ce formulaire. <br>
+										Récapitulatif : <br>
+										Dimension cable :  {{electricite.dimensionCable}} m <br>
+										Nombre de chauffage :  {{electricite.nbChauffage}} <br>
+										Nombre d'interrupteurs :  {{electricite.nbInterrupteur}} <br>
+										Nombre de sortie de lumières:  {{electricite.nbSortieLumieres}} <br>
+										Nombre de prises électriques :  {{electricite.nbPriseElectrique}} <br>
+										Nombre de volets roulant :  {{electricite.nbVoletRoulant}} <br>
+
+										<b> Sous-total : </b> {{electricite.prix}} </b> €
+
+									{% endif %}									</div>
 							</section>
 							<section class="panel panel-dark" id="panel-8" data-portlet-item>
 								<header class="panel-heading portlet-handler">
