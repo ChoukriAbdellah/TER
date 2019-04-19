@@ -57,6 +57,9 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'ventilation' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::ventilation'], [], [['text', '/second-oeuvre/ventilation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'climatisation' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::climatisation'], [], [['text', '/second-oeuvre/climatisation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'domotique' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::domotique'], [], [['text', '/second-oeuvre/domotique'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'escaliers' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::escaliers'], [], [['text', '/second-oeuvre/escaliers'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'plomberie' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::plomberie'], [], [['text', '/second-oeuvre/plomberie'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'electricite' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::electricite'], [], [['text', '/second-oeuvre/electricite'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

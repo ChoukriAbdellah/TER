@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 18 avr. 2019 à 23:30
+-- Généré le :  ven. 19 avr. 2019 à 18:36
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -48,6 +48,64 @@ INSERT INTO `charpente` (`id`, `type_charpente`, `forme_charpente`, `nb_mc`, `pr
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `climatisation`
+--
+
+CREATE TABLE `climatisation` (
+  `id` int(11) NOT NULL,
+  `type_climatisation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cloison`
+--
+
+CREATE TABLE `cloison` (
+  `id` int(11) NOT NULL,
+  `type_cloisons` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surface_totale` double NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `domotique`
+--
+
+CREATE TABLE `domotique` (
+  `id` int(11) NOT NULL,
+  `regularisation_chauffage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `eclairage_auto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ouverture_fermeture_auto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `autonomie_eau` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prix` double NOT NULL,
+  `detecteur_et_alarme` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `electricite`
+--
+
+CREATE TABLE `electricite` (
+  `id` int(11) NOT NULL,
+  `prix` double NOT NULL,
+  `nb_chauffage` int(11) NOT NULL,
+  `nb_interrupteur` int(11) NOT NULL,
+  `nb_sortie_lumieres` int(11) NOT NULL,
+  `nb_prise_electrique` int(11) NOT NULL,
+  `nb_volet_roulant` int(11) NOT NULL,
+  `dimension_cable` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `elevation`
 --
 
@@ -71,6 +129,20 @@ CREATE TABLE `elevation` (
 INSERT INTO `elevation` (`id`, `nb_poutres`, `longueur_poutre`, `taille_poutre`, `type_materiaux_mur`, `hauteur_mur`, `nombre_fenetre`, `type_fenetre`, `type_linteaux`, `prix`) VALUES
 (2, 10, 10, 10, 'Stuporeux', 10, 4, 'fgfdgfd', 'gdfgfdg', 0),
 (3, 15, 10, 10, 'Bloc_pense', 10, 4, 'fenetre_battante', '3', 268);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `escaliers`
+--
+
+CREATE TABLE `escaliers` (
+  `id` int(11) NOT NULL,
+  `type_escalier` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `materiaux` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dimensions` double NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -182,10 +254,10 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 
 CREATE TABLE `menuiserie` (
   `id` int(11) NOT NULL,
-  `dimensions_bois_rouge` int(11) DEFAULT NULL,
-  `dimensions_bois_hetre` int(11) DEFAULT NULL,
-  `dimensions_aluminium` int(11) DEFAULT NULL,
-  `prix` float NOT NULL
+  `dimensions_bois_rouge` int(11) NOT NULL,
+  `dimensions_bois_hetre` int(11) NOT NULL,
+  `dimensions_aluminium` int(11) NOT NULL,
+  `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -222,7 +294,9 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190404121751', '2019-04-04 12:18:46'),
 ('20190404124857', '2019-04-04 12:49:09'),
 ('20190409091353', '2019-04-09 09:14:04'),
-('20190411115111', '2019-04-11 11:51:28');
+('20190411115111', '2019-04-11 11:51:28'),
+('20190419135946', '2019-04-19 16:34:29'),
+('20190419163540', '2019-04-19 16:35:44');
 
 -- --------------------------------------------------------
 
@@ -247,6 +321,25 @@ INSERT INTO `plancher` (`id`, `plancher_vs`, `plancher_etage`, `plancher_terrass
 (1, 20, 40, 10, 4, 0),
 (2, 20, 20, 20, 4, 0),
 (3, 25, 25, 25, 10, 4950);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `plomberie`
+--
+
+CREATE TABLE `plomberie` (
+  `id` int(11) NOT NULL,
+  `nb_metre_tuyau` double NOT NULL,
+  `type_tuyau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nb_robinets` int(11) NOT NULL,
+  `nb_wc` int(11) NOT NULL,
+  `type_chauffage_eau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_compteur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nb_baignoire` int(11) NOT NULL,
+  `nb_douche` int(11) NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -405,7 +498,7 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (108, 'escalier_tournant', 1.4),
 (109, 'bois_tendre', 50),
 (110, 'bois_exotique', 70),
-(111 , 'escalier_beton', 60),
+(111, 'escalier_beton', 60),
 (112, 'pvc', 7),
 (113, 'cuivre', 9),
 (114, 'acier', 9),
@@ -525,7 +618,7 @@ CREATE TABLE `toiture` (
   `type_toit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deg_pente` int(11) NOT NULL,
   `renforcement` tinyint(1) NOT NULL,
-  `prix` float NOT NULL
+  `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -548,18 +641,34 @@ CREATE TABLE `user` (
   `email` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL,
   `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
-  `date_inscription` datetime NOT NULL
+  `date_inscription` datetime NOT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`, `date_inscription`) VALUES
-(1, 'anaschetouan', '$2y$13$gzlfwUvz6k3FGTE4oAcsjeiFbuLZl4PZsZx1.XzUhMiMsLwo05dQS', 'anas.chetouan@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00'),
-(2, 'cr7', '$2y$13$TQKjgNT8ixAoBAeXowqnfOIU841JFIVW6NAZ1WNwvLlIJQH36ojUS', 'cronaldo@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00'),
-(4, 'test', '$2y$13$p0a4.oDf2cLtTitSFNbER.rs9WiIWf4r57h.bb7gP.uoiVo1ElQA6', 'test@mail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 16:49:28'),
-(5, 'CHK-34', '$2y$13$CH7AEoG7v7Jv.VonXVv12Ox0Dn5/6ZKLh9V2/NWv73n9yHWMn785W', 'choukri@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 18:57:39');
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`, `date_inscription`, `password_requested_at`, `token`) VALUES
+(1, 'anaschetouan', '$2y$13$gzlfwUvz6k3FGTE4oAcsjeiFbuLZl4PZsZx1.XzUhMiMsLwo05dQS', 'anas.chetouan@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00', NULL, NULL),
+(2, 'cr7', '$2y$13$TQKjgNT8ixAoBAeXowqnfOIU841JFIVW6NAZ1WNwvLlIJQH36ojUS', 'cronaldo@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00', NULL, NULL),
+(4, 'test', '$2y$13$p0a4.oDf2cLtTitSFNbER.rs9WiIWf4r57h.bb7gP.uoiVo1ElQA6', 'test@mail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 16:49:28', NULL, NULL),
+(5, 'CHK-34', '$2y$13$CH7AEoG7v7Jv.VonXVv12Ox0Dn5/6ZKLh9V2/NWv73n9yHWMn785W', 'choukri@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 18:57:39', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ventilation`
+--
+
+CREATE TABLE `ventilation` (
+  `id` int(11) NOT NULL,
+  `type_ventilation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surface_chambre_salon` int(11) NOT NULL,
+  `surface_cuisine_wc` int(11) NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -598,9 +707,39 @@ ALTER TABLE `charpente`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `climatisation`
+--
+ALTER TABLE `climatisation`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `cloison`
+--
+ALTER TABLE `cloison`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `domotique`
+--
+ALTER TABLE `domotique`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `electricite`
+--
+ALTER TABLE `electricite`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `elevation`
 --
 ALTER TABLE `elevation`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `escaliers`
+--
+ALTER TABLE `escaliers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -643,6 +782,12 @@ ALTER TABLE `migration_versions`
 -- Index pour la table `plancher`
 --
 ALTER TABLE `plancher`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `plomberie`
+--
+ALTER TABLE `plomberie`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -690,6 +835,12 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
+-- Index pour la table `ventilation`
+--
+ALTER TABLE `ventilation`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `vrd`
 --
 ALTER TABLE `vrd`
@@ -706,10 +857,40 @@ ALTER TABLE `charpente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT pour la table `climatisation`
+--
+ALTER TABLE `climatisation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `cloison`
+--
+ALTER TABLE `cloison`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `domotique`
+--
+ALTER TABLE `domotique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `electricite`
+--
+ALTER TABLE `electricite`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `elevation`
 --
 ALTER TABLE `elevation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `escaliers`
+--
+ALTER TABLE `escaliers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `etude_sol`
@@ -748,6 +929,12 @@ ALTER TABLE `plancher`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT pour la table `plomberie`
+--
+ALTER TABLE `plomberie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `preparation_et_acces`
 --
 ALTER TABLE `preparation_et_acces`
@@ -757,7 +944,7 @@ ALTER TABLE `preparation_et_acces`
 -- AUTO_INCREMENT pour la table `prix`
 --
 ALTER TABLE `prix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT pour la table `projet`
@@ -788,6 +975,12 @@ ALTER TABLE `toiture`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `ventilation`
+--
+ALTER TABLE `ventilation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `vrd`
