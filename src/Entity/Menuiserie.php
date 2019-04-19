@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EtudeSolRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MenuiserieRepository")
  */
-class Menuiserie// vasi essaye
+class Menuiserie
 {
     /**
      * @ORM\Id()
@@ -17,20 +17,26 @@ class Menuiserie// vasi essaye
     private $id;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $dimensionsBoisRouge;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $dimensionsBoisHetre;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $dimensionsAluminium;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
+    
 
     public function getId(): ?int
     {
@@ -42,7 +48,7 @@ class Menuiserie// vasi essaye
         return $this->dimensionsBoisRouge;
     }
 
-    public function setDimensionsBoisRouge(?int $dimensionsBoisRouge): self
+    public function setDimensionsBoisRouge(int $dimensionsBoisRouge): self
     {
         $this->dimensionsBoisRouge = $dimensionsBoisRouge;
 
@@ -54,7 +60,7 @@ class Menuiserie// vasi essaye
         return $this->dimensionsBoisHetre;
     }
 
-    public function setDimensionsBoisHetre(?int $dimensionsBoisHetre): self
+    public function setDimensionsBoisHetre(int $dimensionsBoisHetre): self
     {
         $this->dimensionsBoisHetre = $dimensionsBoisHetre;
 
@@ -66,11 +72,23 @@ class Menuiserie// vasi essaye
         return $this->dimensionsAluminium;
     }
 
-    public function setDimensionsAluminium(?int $dimensionsAluminium): self
+    public function setDimensionsAluminium(int $dimensionsAluminium): self
     {
         $this->dimensionsAluminium = $dimensionsAluminium;
 
         return $this;
     }
 
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+    
 }

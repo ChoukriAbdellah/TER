@@ -22,7 +22,17 @@ use App\Entity\Prix;
 use App\Repository\ProjetRepository;
 use App\Repository\SecondOeuvreRepository;
 
+use App\Entity\Ventilation;
+use App\Form\VentilationType;
+use App\Entity\Cloison;
+use App\Form\CloisonsType;
+use App\Entity\Climatisation;
+use App\Form\ClimatisationType;
+use App\Entity\Domotique;
+use App\Form\DomotiqueType;
+
 class SecondOeuvreController extends AbstractController
+<<<<<<< HEAD
 {
 
     public function escaliers($id, Request $request)
@@ -100,11 +110,66 @@ class SecondOeuvreController extends AbstractController
 
                 $e->setPrix($prix);
 
+=======
+{   
+ public function cloison($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new cloison();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(cloisonsType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                $finalePrice;
+                $prixCloison;
+                $prixTotal;
+                if($e->getTypeCloisons() == 'cloison_platre'){
+                  $prixCloison  = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_platre");
+                }
+
+                if($e->getTypeCloisons() == 'cloison_alveolaire'){
+                  $prixCloison = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_alveolaire");
+                }
+                if($e->getTypeCloisons() == 'cloison_beton'){
+                  $prixCloison = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_beton");
+                }
+                if($e->getTypeCloisons() == 'cloison_bois'){
+                  $prixCloison = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("cloison_bois");
+                }
+                //10euros le mètre carré 
+                $prixTotal = $e->getSurfaceTotale();
+                // Enregistre l'étude de sol en base
+                $finalePrice=$prixCloison + $prixTotal;
+                $e->setPrix($finalePrice);
+>>>>>>> 13abe4321870dd35e39569426ee5c5a921d5223a
                 $em->persist($e);
                 $em->flush();
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
+<<<<<<< HEAD
                 $projet = $this->getDoctrine()
                     ->getRepository(Projet::class)
                     ->find($id);
@@ -327,6 +392,244 @@ class SecondOeuvreController extends AbstractController
         return $this->render(
             'project/electricite.html.twig', array('form' => $form->createView(), 'id' => $id));
     }
+=======
+                $secondOeuvre->getIdCloisons($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('my-project', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/cloison.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }    
+    
+	
+	public function ventilation($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new ventilation();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(VentilationType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                $finalePrice;
+                $prixVentilation;
+                $prixSurface1;
+                $prixSurface2;
+                if($e->getTypeVentilation() == 'ventilation_simple_flux'){
+                  $prixVentilation  = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("ventilation_simple_flux");
+                }
+
+                if($e->getTypeVentilation() == 'ventilation_double_flux'){
+                  $prixVentilation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("ventilation_double_flux");
+                }
+                if($e->getTypeVentilation() == 'puits_climatique'){
+                  $prixVentilation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("puits_climatique");
+                }
+                //10euros le mètre carré 
+                $prixSurface1 = $e->getSurfaceChambreSalon()*10;
+                $prixSurface2= $e->getSurfaceCuisineWc()*10;
+                // Enregistre l'étude de sol en base
+                $finalePrice=$prixVentilation + $prixSurface1 + $prixSurface2;
+                $e->setPrix($finalePrice);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdVentilation($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('my-project', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/ventilation.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
+
+  public function climatisation($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new climatisation();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(ClimatisationType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                $prixClimatisation;
+                if($e->getTypeClimatisation() == 'Monobloc_mobile'){
+                  $prixClimatisation  = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("Monobloc_mobile");
+                }
+
+                if($e->getTypeClimatisation() == 'Monobloc_fixe'){
+                  $prixClimatisation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("Monobloc_fixe");
+                }
+                if($e->getTypeClimatisation() == 'Monobloc_windows'){
+                  $prixClimatisation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("Monobloc_windows");
+                }
+                if($e->getTypeClimatisation() == 'Split_mobile'){
+                  $prixClimatisation  = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("Split_mobile");
+                }
+
+                if($e->getTypeClimatisation() == 'split_mural'){
+                  $prixClimatisation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("split_mural");
+                }
+                if($e->getTypeClimatisation() == 'Split_console'){
+                  $prixClimatisation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("Split_console");
+                }
+                if($e->getTypeClimatisation() == 'Split_gainable'){
+                  $prixClimatisation = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("Split_gainable");
+                }
+                
+               
+                $finalePrice = $prixClimatisation;
+                // Enregistre l'étude de sol en base
+                $e->setPrix($finalePrice);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdClimatisation($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('my-project', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/climatisation.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
+  public function domotique($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new domotique();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(DomotiqueType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                
+                $finalePrice=0;
+                
+                if($e->getRegularisationChauffage() != NULL){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("regularisationChauffage");
+                  $finalePrice+= $prix;
+                }
+
+                if($e->getEclairageAuto() != NULL){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("eclairageAuto");
+                  $finalePrice+= $prix;
+                }
+                if($e->getOuvertureFermetureAuto() != NULL){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("ouvertureFermetureAuto");
+                  $finalePrice+= $prix;
+                }
+                if($e->getAutonomieEau() != NULL){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("autonomieEau");
+                  $finalePrice+= $prix;
+                }
+                if($e->getDetecteurEtAlarme() != NULL){
+                  $prix = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("detecteurEtAlarme");
+                  $finalePrice+= $prix;
+                }
+               
+                
+                // Enregistre l'étude de sol en base
+                $e->setPrix($finalePrice);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdDomotique($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('my-project', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/domotique.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
+     
+>>>>>>> 13abe4321870dd35e39569426ee5c5a921d5223a
 
   public function view($id, Request $request)
     {
@@ -339,6 +642,7 @@ class SecondOeuvreController extends AbstractController
     ->getRepository(SecondOeuvre::class)
     ->find($idSo);
 
+<<<<<<< HEAD
     $idEscaliers = $secondOeuvre->getIdEscaliers();
     if($idEscaliers != NULL){
       $escaliers = $this->getDoctrine()->getRepository(Escaliers::class)->find($idEscaliers);
@@ -366,105 +670,47 @@ class SecondOeuvreController extends AbstractController
     /*$idCharpente = $grosOeuvre->getIdCharpente();
     if($idCharpente != NULL){
       $charpente = $this->getDoctrine()->getRepository(Charpente::class)->find($idCharpente);
+=======
+    $idVentilation = $secondOeuvre->getIdVentilation();
+    if($idVentilation != NULL){
+      $ventilation = $this->getDoctrine()->getRepository(Ventilation::class)->find($idVentilation);
     }
     else{
-      $charpente = null;
+      $ventilation = null;
     }
-
-    $idPrepTerrain = $grosOeuvre->getIdPrepTerrain();
-    if($idPrepTerrain != NULL){
-      $prepTerrain = $this->getDoctrine()->getRepository(PreparationEtAcces::class)->find($idPrepTerrain);
-    }
-    else{
-      $prepTerrain = null;
-    }
-
-    $idSoubassement = $grosOeuvre->getIdSoubassement();
-    if($idSoubassement != NULL){
-      $soubassement = $this->getDoctrine()->getRepository(Soubassement::class)->find($idSoubassement);
+    $idClimatisation = $secondOeuvre->getIdClimatisation();
+    if($idClimatisation != NULL){
+      $climatisation = $this->getDoctrine()->getRepository(Climatisation::class)->find($idClimatisation);
+>>>>>>> 13abe4321870dd35e39569426ee5c5a921d5223a
     }
     else{
-      $soubassement = null;
+      $climatisation = null;
     }
-
-    $idElevation = $grosOeuvre->getIdElevation();
-    if($idElevation != NULL){
-      $elevation = $this->getDoctrine()->getRepository(Elevation::class)->find($idElevation);
-    }
-    else{
-      $elevation = null;
-    }
-
-    $idExcavation = $grosOeuvre->getIdExcavation();
-    if($idExcavation != NULL){
-      $excavation = $this->getDoctrine()->getRepository(Excavation::class)->find($idExcavation);
+    $idDomotique= $secondOeuvre->getIdDomotique();
+    if($idDomotique != NULL){
+      $domotique = $this->getDoctrine()->getRepository(Domotique::class)->find($idDomotique);
     }
     else{
-      $excavation = null;
+      $domotique = null;
     }
 
-    $idVRD = $grosOeuvre->getIdVRD();
-    if($idVRD != NULL){
-      $vrd = $this->getDoctrine()->getRepository(Vrd::class)->find($idVRD);
-    }
-    else{
-      $vrd = null;
-    }
-	
-	$idToiture = $grosOeuvre->getIdToiture();
-    if($idToiture != NULL){
-      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($IdToiture);
-    }
-    else{
-      $toiture = null;
-    }
-
-
-    $idFondations = $grosOeuvre->getIdFondations();
-    if($idFondations != NULL){
-      $fondations = $this->getDoctrine()->getRepository(Fondation::class)->find($idFondations);
-    }
-    else{
-      $fondations = null;
-    }
-
-    $idPlancher = $grosOeuvre->getIdPlancher();
-    if($idPlancher != NULL){
-      $plancher = $this->getDoctrine()->getRepository(Plancher::class)->find($idPlancher);
-    }
-    else{
-      $plancher = null;
-    }
-
-
-    $idMenuiserie = $grosOeuvre->getIdMenuiseriesExt();
-    if($idMenuiserie != NULL){
-      $menuiserie = $this->getDoctrine()->getRepository(Plancher::class)->find($idMenuiserie);
-    }
-    else{
-      $menuiserie = null;
-    }*/
 
     $nbform = $this->getDoctrine()
     ->getRepository(SecondOeuvre::class)->findNbFormulairesByGrosOeuvre($idSo);
 
     return $this->render(
         'project/second-oeuvre-view.html.twig', ['projet' => $projet, 'nbform' => $nbform,
+<<<<<<< HEAD
         'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite ]);
         //,['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 'soubassement' => $soubassement,'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 'toiture' => $toiture, 'menuiserie' => $menuiserie]);
+=======
+        'ventilation' => $ventilation, 'climatisation' => $climatisation, 'domotique' => $domotique
+        ]);
+        
+>>>>>>> 13abe4321870dd35e39569426ee5c5a921d5223a
     }
-
-    public function menu()
-    {
-        $idUser = $this->getUser()->getId();
-        $projets = $this->getDoctrine()
-        ->getRepository(Projet::class)
-        ->findProjetsByIdUser($idUser);
-  
-      return $this->render('project/liste-projets.html.twig', array(
-        'projets' => $projets
-      ));
-    }
-
 
 }
+
+
+    

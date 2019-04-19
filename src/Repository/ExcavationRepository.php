@@ -21,7 +21,7 @@ class ExcavationRepository extends ServiceEntityRepository
 
     // /**
     //  * @return Excavation[] Returns an array of Excavation objects
-    //  */
+    //  *
     /*
     public function findByExampleField($value)
     {

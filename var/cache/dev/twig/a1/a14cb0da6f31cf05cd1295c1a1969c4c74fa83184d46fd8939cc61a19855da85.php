@@ -339,8 +339,39 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La ventilation</h2>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t...\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
+        // line 165
+        if (((isset($context["ventilation"]) || array_key_exists("ventilation", $context) ? $context["ventilation"] : (function () { throw new Twig_Error_Runtime('Variable "ventilation" does not exist.', 165, $this->source); })()) != null)) {
+            echo " style=\"display: none;\" ";
+        }
+        echo ">
+\t\t\t\t\t\t\t\t\t";
+        // line 166
+        if (((isset($context["ventilation"]) || array_key_exists("ventilation", $context) ? $context["ventilation"] : (function () { throw new Twig_Error_Runtime('Variable "ventilation" does not exist.', 166, $this->source); })()) == null)) {
+            echo " 
+\t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 168
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ventilation", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 168, $this->source); })()), "id", [])]), "html", null, true);
+            echo "\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t";
+        } else {
+            // line 170
+            echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\tType de Ventilation : <b>";
+            // line 172
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ventilation"]) || array_key_exists("ventilation", $context) ? $context["ventilation"] : (function () { throw new Twig_Error_Runtime('Variable "ventilation" does not exist.', 172, $this->source); })()), "typeVentilation", []), "html", null, true);
+            echo " <b/><br>
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> ";
+            // line 173
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ventilation"]) || array_key_exists("ventilation", $context) ? $context["ventilation"] : (function () { throw new Twig_Error_Runtime('Variable "ventilation" does not exist.', 173, $this->source); })()), "prix", []), "html", null, true);
+            echo " </b> €
+\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+        }
+        // line 175
+        echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t\t<section class=\"panel panel-danger\" id=\"panel-9\" data-portlet-item>
@@ -351,9 +382,39 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La climatisation</h2>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t...
-\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
+        // line 186
+        if (((isset($context["climatisation"]) || array_key_exists("climatisation", $context) ? $context["climatisation"] : (function () { throw new Twig_Error_Runtime('Variable "climatisation" does not exist.', 186, $this->source); })()) != null)) {
+            echo " style=\"display: none;\" ";
+        }
+        echo ">
+\t\t\t\t\t\t\t\t\t";
+        // line 187
+        if (((isset($context["climatisation"]) || array_key_exists("climatisation", $context) ? $context["climatisation"] : (function () { throw new Twig_Error_Runtime('Variable "climatisation" does not exist.', 187, $this->source); })()) == null)) {
+            echo " 
+\t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 189
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("climatisation", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 189, $this->source); })()), "id", [])]), "html", null, true);
+            echo "\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t";
+        } else {
+            // line 191
+            echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\t<b>Type de climatisation : ";
+            // line 193
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["climatisation"]) || array_key_exists("climatisation", $context) ? $context["climatisation"] : (function () { throw new Twig_Error_Runtime('Variable "climatisation" does not exist.', 193, $this->source); })()), "typeClimatisation", []), "html", null, true);
+            echo "</b> <br>
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> ";
+            // line 194
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["climatisation"]) || array_key_exists("climatisation", $context) ? $context["climatisation"] : (function () { throw new Twig_Error_Runtime('Variable "climatisation" does not exist.', 194, $this->source); })()), "prix", []), "html", null, true);
+            echo " </b> €
+\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+        }
+        // line 196
+        echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t\t<section class=\"panel panel-info\" id=\"panel-7\" data-portlet-item>
@@ -364,8 +425,75 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La domotique</h2> </a>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\" >
-\t\t\t\t\t\t\t\t...\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"panel-body\" ";
+        // line 207
+        if (((isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 207, $this->source); })()) != null)) {
+            echo " style=\"display: none;\" ";
+        }
+        echo ">
+\t\t\t\t\t\t\t\t\t";
+        // line 208
+        if (((isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 208, $this->source); })()) == null)) {
+            echo " 
+\t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 210
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("domotique", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 210, $this->source); })()), "id", [])]), "html", null, true);
+            echo "\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t";
+        } else {
+            // line 212
+            echo "\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\t";
+            // line 214
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 214, $this->source); })()), "regularisationChauffage", []) != null)) {
+                // line 215
+                echo "\t\t\t\t\t\t\t\t\t<b>Option Chauffage autonome<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 218
+            echo "\t\t\t\t\t\t\t\t\t";
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 218, $this->source); })()), "eclairageAuto", []) != null)) {
+                // line 219
+                echo "\t\t\t\t\t\t\t\t\t<b>Option Eclairage automatique<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 222
+            echo "\t\t\t\t\t\t\t\t\t";
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 222, $this->source); })()), "ouvertureFermetureAuto", []) != null)) {
+                // line 223
+                echo "\t\t\t\t\t\t\t\t\t<b>Option ouverture et fermeture automatique des fenêtre<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 226
+            echo "\t\t\t\t\t\t\t\t\t";
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 226, $this->source); })()), "autonomieEau", []) != null)) {
+                // line 227
+                echo "\t\t\t\t\t\t\t\t\t<b>Option Autonomie du débit d'eau<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 230
+            echo "\t\t\t\t\t\t\t\t\t";
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 230, $this->source); })()), "detecteurEtAlarme", []) != null)) {
+                // line 231
+                echo "\t\t\t\t\t\t\t\t\t<b>Option alarme et détecteurs<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 234
+            echo "\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["domotique"]) || array_key_exists("domotique", $context) ? $context["domotique"] : (function () { throw new Twig_Error_Runtime('Variable "domotique" does not exist.', 234, $this->source); })()), "prix", []), "html", null, true);
+            echo " </b> €
+\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+        }
+        // line 236
+        echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t</div>
@@ -376,10 +504,10 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
 \t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 201
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("my-project", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 201, $this->source); })()), "id", [])]), "html", null, true);
+        // line 246
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("my-project", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["projet"]) || array_key_exists("projet", $context) ? $context["projet"] : (function () { throw new Twig_Error_Runtime('Variable "projet" does not exist.', 246, $this->source); })()), "id", [])]), "html", null, true);
         echo "\"> <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\"
-\t\t\t\t\t\t\t\t\t\ttype=\"button\">Passer au gros oeuvre</button></a>
+\t\t\t\t\t\t\t\t\t\ttype=\"button\">Revenir au gros oeuvre</button></a>
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</section>
@@ -395,7 +523,7 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
     }
 
-    // line 211
+    // line 256
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -404,7 +532,7 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 212
+        // line 257
         echo "
 \t\t";
         
@@ -427,7 +555,7 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
     public function getDebugInfo()
     {
-        return array (  408 => 212,  399 => 211,  380 => 201,  225 => 48,  220 => 45,  214 => 44,  208 => 43,  205 => 42,  200 => 39,  194 => 38,  188 => 37,  185 => 36,  183 => 35,  179 => 33,  173 => 32,  167 => 31,  164 => 30,  162 => 29,  158 => 27,  154 => 26,  147 => 25,  141 => 22,  135 => 18,  126 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  536 => 257,  527 => 256,  508 => 246,  496 => 236,  489 => 234,  484 => 231,  481 => 230,  476 => 227,  473 => 226,  468 => 223,  465 => 222,  460 => 219,  457 => 218,  452 => 215,  450 => 214,  446 => 212,  441 => 210,  436 => 208,  430 => 207,  417 => 196,  411 => 194,  407 => 193,  403 => 191,  398 => 189,  393 => 187,  387 => 186,  374 => 175,  368 => 173,  364 => 172,  360 => 170,  355 => 168,  350 => 166,  344 => 165,  225 => 48,  220 => 45,  214 => 44,  208 => 43,  205 => 42,  200 => 39,  194 => 38,  188 => 37,  185 => 36,  183 => 35,  179 => 33,  173 => 32,  167 => 31,  164 => 30,  162 => 29,  158 => 27,  154 => 26,  147 => 25,  141 => 22,  135 => 18,  126 => 17,  107 => 15,  87 => 14,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -596,8 +724,17 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La ventilation</h2>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t...\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"panel-body\" {% if ventilation != null %} style=\"display: none;\" {% endif %}>
+\t\t\t\t\t\t\t\t\t{% if ventilation == null %} 
+\t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('ventilation', {'id': projet.id}) }}\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\tType de Ventilation : <b>{{ventilation.typeVentilation}} <b/><br>
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> {{ventilation.prix}} </b> €
+\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t{% endif %}\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t\t<section class=\"panel panel-danger\" id=\"panel-9\" data-portlet-item>
@@ -608,9 +745,17 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La climatisation</h2>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\">
-\t\t\t\t\t\t\t\t...
-\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"panel-body\" {% if climatisation != null %} style=\"display: none;\" {% endif %}>
+\t\t\t\t\t\t\t\t\t{% if climatisation == null %} 
+\t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('climatisation', {'id': projet.id}) }}\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\t<b>Type de climatisation : {{climatisation.typeClimatisation}}</b> <br>
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> {{climatisation.prix}} </b> €
+\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t{% endif %}\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t\t<section class=\"panel panel-info\" id=\"panel-7\" data-portlet-item>
@@ -621,8 +766,36 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 
 \t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">La domotique</h2> </a>
 \t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t<div class=\"panel-body\" >
-\t\t\t\t\t\t\t\t...\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"panel-body\" {% if domotique != null %} style=\"display: none;\" {% endif %}>
+\t\t\t\t\t\t\t\t\t{% if domotique == null %} 
+\t\t\t\t\t\t\t\t\tVous n'avez pas encore rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('domotique', {'id': projet.id}) }}\"> Cliquez ici pour le remplir.</a>
+\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\tVous avez déjà rempli ce formulaire. <br>
+\t\t\t\t\t\t\t\t\tRécapitulatif : <br>
+\t\t\t\t\t\t\t\t\t{% if domotique.regularisationChauffage != null %}
+\t\t\t\t\t\t\t\t\t<b>Option Chauffage autonome<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t{% if domotique.eclairageAuto != null %}
+\t\t\t\t\t\t\t\t\t<b>Option Eclairage automatique<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t{% if domotique.ouvertureFermetureAuto != null %}
+\t\t\t\t\t\t\t\t\t<b>Option ouverture et fermeture automatique des fenêtre<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t{% if domotique.autonomieEau != null %}
+\t\t\t\t\t\t\t\t\t<b>Option Autonomie du débit d'eau<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t{% if domotique.detecteurEtAlarme != null %}
+\t\t\t\t\t\t\t\t\t<b>Option alarme et détecteurs<b>
+\t\t\t\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t<b> Sous-total : </b> {{domotique.prix}} </b> €
+\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t{% endif %}\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t</div>
@@ -633,7 +806,7 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 \t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
 \t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
 \t\t\t\t\t\t\t\t\t\t<a href=\"{{path('my-project', {'id': projet.id}) }}\"> <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\"
-\t\t\t\t\t\t\t\t\t\ttype=\"button\">Passer au gros oeuvre</button></a>
+\t\t\t\t\t\t\t\t\t\ttype=\"button\">Revenir au gros oeuvre</button></a>
 \t\t\t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</section>

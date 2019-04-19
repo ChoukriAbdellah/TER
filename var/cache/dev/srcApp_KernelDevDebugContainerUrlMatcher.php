@@ -49,25 +49,34 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                         .')'
                     .')'
                     .'|/dashboard/my\\-project/([^/]++)/(?'
-                        .'|gros\\-oeuvre(*:216)'
-                        .'|s(?'
-                            .'|econd\\-oeuvre(*:241)'
-                            .'|oubassement(*:260)'
+                        .'|gros\\-oeuvre(?'
+                            .'|(*:219)'
+                            .'|/(?'
+                                .'|e(?'
+                                    .'|tude\\-sol(*:244)'
+                                    .'|xcavation(*:261)'
+                                    .'|levation(*:277)'
+                                .')'
+                                .'|vrd(*:289)'
+                                .'|fondations(*:307)'
+                                .'|p(?'
+                                    .'|lancher(*:326)'
+                                    .'|rep\\-terrain(*:346)'
+                                .')'
+                                .'|soubassement(*:367)'
+                                .'|charpente(*:384)'
+                                .'|toiture(*:399)'
+                                .'|menuiseries(*:418)'
+                            .')'
                         .')'
-                        .'|e(?'
-                            .'|tude\\-sol(*:282)'
-                            .'|xcavation(*:299)'
-                            .'|levation(*:315)'
+                        .'|second\\-oeuvre(?'
+                            .'|(*:445)'
+                            .'|/(?'
+                                .'|ventilation(*:468)'
+                                .'|climatisation(*:489)'
+                                .'|domotique(*:506)'
+                            .')'
                         .')'
-                        .'|vrd(*:327)'
-                        .'|fondation(*:344)'
-                        .'|p(?'
-                            .'|lancher(*:363)'
-                            .'|rep\\-terrain(*:383)'
-                        .')'
-                        .'|charpente(*:401)'
-                        .'|toiture(*:416)'
-                        .'|menuiserie(*:434)'
                     .')'
                 .')/?$}sDu',
         ];
@@ -79,19 +88,22 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            216 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\ProjectController::view'], ['id'], null, null, false, false, null]],
-            241 => [[['_route' => 'second-oeuvre', '_controller' => 'App\\Controller\\SecondOeuvreController::view'], ['id'], null, null, false, false, null]],
-            260 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\ProjectController::Soubassement'], ['id'], null, null, false, false, null]],
-            282 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\ProjectController::etudeSol'], ['id'], null, null, false, false, null]],
-            299 => [[['_route' => 'excavation', '_controller' => 'App\\Controller\\ProjectController::excavation'], ['id'], null, null, false, false, null]],
-            315 => [[['_route' => 'elevation', '_controller' => 'App\\Controller\\ProjectController::Elevation'], ['id'], null, null, false, false, null]],
-            327 => [[['_route' => 'vrd', '_controller' => 'App\\Controller\\ProjectController::vrd'], ['id'], null, null, false, false, null]],
-            344 => [[['_route' => 'fondation', '_controller' => 'App\\Controller\\ProjectController::fondation'], ['id'], null, null, false, false, null]],
-            363 => [[['_route' => 'plancher', '_controller' => 'App\\Controller\\ProjectController::plancher'], ['id'], null, null, false, false, null]],
-            383 => [[['_route' => 'prep-terrain', '_controller' => 'App\\Controller\\ProjectController::PreparationEtAcces'], ['id'], null, null, false, false, null]],
-            401 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\ProjectController::charpente'], ['id'], null, null, false, false, null]],
-            416 => [[['_route' => 'toiture', '_controller' => 'App\\Controller\\ProjectController::toiture'], ['id'], null, null, false, false, null]],
-            434 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\ProjectController::menuiserie'], ['id'], null, null, false, false, null]],
+            219 => [[['_route' => 'my-project', '_controller' => 'App\\Controller\\GrosOeuvreController::view'], ['id'], null, null, false, false, null]],
+            244 => [[['_route' => 'etude-sol', '_controller' => 'App\\Controller\\GrosOeuvreController::etudeSol'], ['id'], null, null, false, false, null]],
+            261 => [[['_route' => 'excavation', '_controller' => 'App\\Controller\\GrosOeuvreController::excavation'], ['id'], null, null, false, false, null]],
+            277 => [[['_route' => 'elevation', '_controller' => 'App\\Controller\\GrosOeuvreController::Elevation'], ['id'], null, null, false, false, null]],
+            289 => [[['_route' => 'vrd', '_controller' => 'App\\Controller\\GrosOeuvreController::vrd'], ['id'], null, null, false, false, null]],
+            307 => [[['_route' => 'fondation', '_controller' => 'App\\Controller\\GrosOeuvreController::fondation'], ['id'], null, null, false, false, null]],
+            326 => [[['_route' => 'plancher', '_controller' => 'App\\Controller\\GrosOeuvreController::plancher'], ['id'], null, null, false, false, null]],
+            346 => [[['_route' => 'prep-terrain', '_controller' => 'App\\Controller\\GrosOeuvreController::PreparationEtAcces'], ['id'], null, null, false, false, null]],
+            367 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\GrosOeuvreController::Soubassement'], ['id'], null, null, false, false, null]],
+            384 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\GrosOeuvreController::charpente'], ['id'], null, null, false, false, null]],
+            399 => [[['_route' => 'toiture', '_controller' => 'App\\Controller\\GrosOeuvreController::toiture'], ['id'], null, null, false, false, null]],
+            418 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\GrosOeuvreController::menuiserie'], ['id'], null, null, false, false, null]],
+            445 => [[['_route' => 'second-oeuvre', '_controller' => 'App\\Controller\\SecondOeuvreController::view'], ['id'], null, null, false, false, null]],
+            468 => [[['_route' => 'ventilation', '_controller' => 'App\\Controller\\SecondOeuvreController::ventilation'], ['id'], null, null, false, false, null]],
+            489 => [[['_route' => 'climatisation', '_controller' => 'App\\Controller\\SecondOeuvreController::climatisation'], ['id'], null, null, false, false, null]],
+            506 => [[['_route' => 'domotique', '_controller' => 'App\\Controller\\SecondOeuvreController::domotique'], ['id'], null, null, false, false, null]],
         ];
     }
 }

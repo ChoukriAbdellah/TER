@@ -36,6 +36,11 @@ class Plancher
      */
     private $longueurEntrevous;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,18 @@ class Plancher
     public function setLongueurEntrevous(float $longueurEntrevous): self
     {
         $this->longueurEntrevous = $longueurEntrevous;
+
+        return $this;
+    }
+
+    public function getPrix(): ?float
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(float $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

@@ -16,10 +16,10 @@ class CharpenteType extends AbstractType
         $builder
             ->add('typeCharpente', ChoiceType::class,[
                 'choices' => [
-                'Charpente traditionnelle' => 'TRADITIONNELLE',
-                'Charpente industrielle (fermette)' => 'INDUSTRIELLE',
-                'Charpente métallique' => 'METALLIQUE',
-                'Charpente maçonnée' => 'MACONNEE'
+                'Charpente traditionnelle' => 'charpente_traditionnelle',
+                'Charpente industrielle (fermette)' => 'charpente_industrielle',
+                'Charpente métallique' => 'charpente_metallique',
+                'Charpente maçonnée' => 'charpente_maconnee'
                 ],
                 'label' => false
             ]
@@ -28,10 +28,10 @@ class CharpenteType extends AbstractType
         $builder
         ->add('formeCharpente', ChoiceType::class,[
             'choices' => [
-            'En 2 pentes' => '2 PENTES',
-            'En 3 pentes' => '3 PENTES',
-            'En 4 pentes' => '4 PENTES',
-            'En L' => 'L'
+            'En 2 pentes' => 'charpente_2_pentes',
+            'En 3 pentes' => 'charpente_3_pentes',
+            'En 4 pentes' => 'charpente_4_pentes',
+            'En L' => 'charpente_L'
             ],
             'label' => false
         ]
