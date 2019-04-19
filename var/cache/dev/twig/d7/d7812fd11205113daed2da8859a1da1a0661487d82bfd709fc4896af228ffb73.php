@@ -210,6 +210,22 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
 \t\t\t        </form>
+
+              <h2>Mot de passe oublié ?</h2>
+
+              ";
+        // line 92
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 92, $this->source); })()), 'form_start');
+        echo "
+                  ";
+        // line 93
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 93, $this->source); })()), "email", []), 'row');
+        echo "
+                  <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Envoyer\">
+              ";
+        // line 95
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 95, $this->source); })()), 'form_end');
+        echo "
   
               
     
@@ -243,7 +259,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
 
     public function getDebugInfo()
     {
-        return array (  209 => 86,  204 => 84,  198 => 81,  194 => 80,  190 => 79,  186 => 78,  182 => 77,  174 => 72,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  227 => 95,  222 => 93,  218 => 92,  209 => 86,  204 => 84,  198 => 81,  194 => 80,  190 => 79,  186 => 78,  182 => 77,  174 => 72,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -336,6 +352,13 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
                 <form action=\"{{ path('connexion') }}\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
 \t\t\t        </form>
+
+              <h2>Mot de passe oublié ?</h2>
+
+              {{form_start(form)}}
+                  {{form_row(form.email)}}
+                  <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Envoyer\">
+              {{form_end(form)}}
   
               
     

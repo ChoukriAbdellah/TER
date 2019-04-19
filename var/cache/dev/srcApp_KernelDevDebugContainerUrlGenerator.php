@@ -33,6 +33,8 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         'user_registration' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/inscription']], [], []],
+        'request_resetting' => [[], ['_controller' => 'App\\Controller\\ResettingController::request'], [], [['text', '/renouvellement-mot-de-passe/requete']], [], []],
+        'resetting' => [['id', 'token'], ['_controller' => 'App\\Controller\\ResettingController::resetting'], [], [['variable', '/', '[^/]++', 'token', true], ['variable', '/', '[^/]++', 'id', true], ['text', '/renouvellement-mot-de-passe']], [], []],
         'security' => [[], ['_controller' => 'App\\Controller\\SecurityController::connexion'], [], [['text', '/security']], [], []],
         'index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
         'connexion' => [[], ['_controller' => 'App\\Controller\\SecurityController::connexion'], [], [['text', '/connexion/']], [], []],

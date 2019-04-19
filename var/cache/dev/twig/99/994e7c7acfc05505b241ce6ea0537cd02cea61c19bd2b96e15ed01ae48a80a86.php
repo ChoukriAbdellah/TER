@@ -199,8 +199,16 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Inscrivez-vous\">
 \t\t\t        </form>
+
+              <a href=\"";
+        // line 82
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("request_resetting");
+        echo "\"> <h2>Mot de passe oublié ?</h2> </a>
+              <br>
+              <br>
+              
               ";
-        // line 86
+        // line 91
         echo "
               
           </form>
@@ -236,7 +244,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
 
     public function getDebugInfo()
     {
-        return array (  204 => 86,  198 => 78,  187 => 70,  178 => 64,  174 => 63,  154 => 45,  148 => 42,  145 => 41,  143 => 40,  140 => 39,  131 => 38,  113 => 29,  107 => 26,  103 => 25,  99 => 24,  92 => 20,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
+        return array (  212 => 91,  205 => 82,  198 => 78,  187 => 70,  178 => 64,  174 => 63,  154 => 45,  148 => 42,  145 => 41,  143 => 40,  140 => 39,  131 => 38,  113 => 29,  107 => 26,  103 => 25,  99 => 24,  92 => 20,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -321,6 +329,11 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               <form action=\"{{ path('inscription') }}\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Inscrivez-vous\">
 \t\t\t        </form>
+
+              <a href=\"{{ path('request_resetting') }}\"> <h2>Mot de passe oublié ?</h2> </a>
+              <br>
+              <br>
+              
               {#
               If you want to control the URL the user
               is redirected to on success (more details below)
