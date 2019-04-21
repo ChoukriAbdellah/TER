@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerUVRCcxv\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'UVRCcxv',
-    'container.build_id' => '7c5a97f5',
-    'container.build_time' => 1555692196,
+    'container.build_id' => '33c0678e',
+    'container.build_time' => 1555875193,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerUVRCcxv');

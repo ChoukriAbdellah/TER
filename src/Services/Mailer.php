@@ -5,9 +5,6 @@ namespace App\Services;
 use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 
-/**
- * Class Mailer
- */
 class Mailer
 {
     private $engine;

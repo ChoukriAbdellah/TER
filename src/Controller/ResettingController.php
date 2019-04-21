@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +29,7 @@ class ResettingController extends AbstractController
                 'constraints' => [
                     new Email(),
                     new NotBlank()
-                ]
+                ], 'label' => false
             ])
             ->getForm();
         $form->handleRequest($request);
@@ -51,7 +51,7 @@ class ResettingController extends AbstractController
             $bodyMail = $mailer->createBodyMail('resetting/mail.html.twig', [
                 'user' => $user
             ]);
-            $mailer->sendMessage('from@email.com', $user->getEmail(), 'renouvellement du mot de passe', $bodyMail);
+            $mailer->sendMessage('ter.fds.2019@gmail.com', $user->getEmail(), 'renouvellement du mot de passe', $bodyMail);
             $request->getSession()->getFlashBag()->add('success', "Un mail va vous être envoyé afin que vous puissiez renouveller votre mot de passe. Le lien que vous recevrez sera valide 24h.");
             return $this->redirectToRoute("connexion");
         }
