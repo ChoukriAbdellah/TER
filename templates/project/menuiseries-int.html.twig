@@ -1,0 +1,112 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2>Menuiseries intérieures </h2>
+				{% endblock %}
+
+				{% block pageactuelle %}Menuiseries intérieures {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Menuiseries intérieures</h2>
+									</header>
+
+                                    
+								
+														<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+													
+															{{ form_label(form.portesPleines, "Indiquez le nombre de portes pleines à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesPleines, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
+															</div>  
+										
+															{{ form_label(form.portesVitrees, "Indiquez le nombre de portes vitrées à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesVitrees, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.portesBattantes, "Indiquez le nombre de portes battantes à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesBattantes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.portesCoulissantes, "Indiquez le nombre de portes coulissantes à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesCoulissantes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.portesPlacardPliantes, "Indiquez le nombre de portes de placard pliantes à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesPlacardPliantes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.portesPlacardBattantes, "Indiquez le nombre de portes de placard battantes à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesPlacardBattantes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.portesPlacardCoulissantes, "Indiquez le nombre de portes de placard coulissantes à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.portesPlacardCoulissantes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.materieauRampes, "Quel matérieau voulez-vous pour la rampe de vos escaliers ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.materieauRampes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div> 
+
+															{{ form_label(form.tailleRampes, "Indiquez la taille (en mètres carrés) de rampes à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.tailleRampes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div> 
+
+															{{ form_label(form.materieauBalustrades, "Quel matérieau voulez-vous pour vos balustrades ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.materieauBalustrades, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div> 
+
+															{{ form_label(form.tailleBalustrades, "Indiquez la taille (en mètres carrés) de balustrades à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.tailleBalustrades, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div> 
+													
+													<br><br>
+														
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+					
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}

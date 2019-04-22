@@ -89,7 +89,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <form class=\"contact-form php-mail-form\" role=\"form\" action=\"\" method=\"POST\">
 
             <div class=\"form-group\">
-              <label for=\"contact-name\">Votre nom</label>
+              <label for=\"contact-name\">Votre nom</label><br>
               <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
               <div class=\"validate\"></div>
             </div>
@@ -503,7 +503,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <form class=\"contact-form php-mail-form\" role=\"form\" action=\"\" method=\"POST\">
 
             <div class=\"form-group\">
-              <label for=\"contact-name\">Votre nom</label>
+              <label for=\"contact-name\">Votre nom</label><br>
               <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
               <div class=\"validate\"></div>
             </div>

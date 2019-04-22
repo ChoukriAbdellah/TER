@@ -12,21 +12,45 @@ class CloisonType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-        ->add('typeCloisons', ChoiceType::class,[
-            'choices' => [
-            'La cloison en plâtre' => 'cloison_platre',
-            'La cloison en panneaux alvéolaires' => 'cloison_alveolaire',
-            'La cloison en béton cellulaire' => 'cloison_beton',
-            'La cloison en bois' => 'cloison_bois'
-            
-            ],
-            'label' => false
-        ]
-    )
-    ->add('surfaceTotale', NumberType::class, ['label' => false]);
- 
-        
+		$builder 
+			->add('cloisonsAmovibles', NumberType::class,[
+                'label' => false
+            ]);
+			
+		$builder 
+			->add('cloisonsSeches', NumberType::class,[
+                'label' => false
+            ]);
+		
+		$builder 
+			->add('cloisonsPiecesHumides', NumberType::class,[
+                'label' => false
+            ]);
+			
+		$builder 
+			->add('cloisonsVerre', NumberType::class,[
+                'label' => false
+            ]);
+
+            $builder 
+			->add('cloisonsJaponaises', NumberType::class,[
+                'label' => false
+            ]);
+
+            $builder 
+			->add('claustraInterieur', NumberType::class,[
+                'label' => false
+            ]);
+
+            $builder 
+			->add('cloisonsVitreesStyleAtelier', NumberType::class,[
+                'label' => false
+            ]);
+
+            $builder 
+			->add('cloisonsVegetales', NumberType::class,[
+                'label' => false
+            ]);
        
     }
  

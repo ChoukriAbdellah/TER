@@ -99,7 +99,16 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
-									Type de cloison: {{cloisons.typeCloisons}} <br>
+									Nombre de mètres carrés de cloisons amovibles ({{cloisons.cloisonsAmovibles}}) <br>
+									Nombre de mètres carrés de cloisons sèches ({{cloisons.cloisonsSeches}}) <br>
+									Nombre de mètres carrés de cloisons pour pièces humides ({{cloisons.cloisonsPiecesHumides}}) <br>
+									Nombre de mètres carrés de cloisons en verre ({{cloisons.cloisonsVerre}}) <br>
+									Nombre de mètres carrés de cloisons japonaises ({{cloisons.cloisonsJaponaises}}) <br>
+									Nombre de mètres carrés de claustras intérieur ({{cloisons.claustraInterieur}}) <br>
+									Nombre de mètres carrés de cloisons vitrées style atelier ({{cloisons.cloisonsVitreesStyleAtelier}}) <br>
+									Nombre de mètres carrés de cloisons végétales ({{cloisons.cloisonsVegetales}}) <br>
+					
+									 <br>
 									<b> Sous-total : </b> {{cloisons.prix}} €
 									
 									{% endif %}							</div>
@@ -109,24 +118,57 @@
 							<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if evacuation == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
 									<h2 class="panel-title">Evacuation des fumées</h2>
 								</header>
-								<div class="panel-body">
-								...								</div>
+								<div class="panel-body" {% if evacuation != null %} style="display: none;" {% endif %}>
+								{% if evacuation == null %} 
+									Vous n'avez pas encore rempli ce formulaire. <br>
+									<a href="{{ path('evacuation', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									Matérieau utilisé pour votre cheminée :  ({{evacuation.materieauUtilise}}) <br>
+									Forme de votre cheminée :  ({{evacuation.forme}}) <br>
+									Type de votre cheminée :  ({{evacuation.typeCheminee}}) <br>
+									<br>
+									<b> Sous-total : </b> {{evacuation.prix}} €
+									
+									{% endif %}								</div>
 							</section>
 							<section class="panel panel-success" id="panel-5" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" {% if menuiseriesInt == null %} class="fa fa-caret-down" {% else %} class="fa fa-caret-up" {% endif %}></a>
 									</div>
 
 									<h2 class="panel-title">Les menuiseries intérieures</h2>
 								</header>
-								<div class="panel-body">
-								...								</div>
+								<div class="panel-body" {% if menuiseriesInt != null %} style="display: none;" {% endif %}>
+								{% if menuiseriesInt == null %} 
+									Vous n'avez pas encore rempli ce formulaire. <br>
+									<a href="{{ path('menuiseriesInt', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									Nombre de portes pleines ({{menuiseriesInt.portesPleines}}) <br>
+									Nombre de portes vitrées ({{menuiseriesInt.portesVitrees}})  <br>
+									Nombre de portes battantes ({{menuiseriesInt.portesBattantes}})  <br>
+									Nombre de portes coulissantes ({{menuiseriesInt.portesCoulissantes}})  <br>
+									Nombre de portes de placard pliantes ({{menuiseriesInt.portesPlacardPliantes}})  <br>
+									Nombre de portes de placard battantes ({{menuiseriesInt.portesPlacardBattantes}})  <br>
+									Nombre de portes de placard coulissantes ({{menuiseriesInt.portesPlacardCoulissantes}})  <br>
+									Matérieau choisi pour vos rampes ({{menuiseriesInt.materieauRampes}})  <br>
+									Nombre de rampes à poser ({{menuiseriesInt.tailleRampes}} m2)  <br>
+									Matérieau choisi pour vos balustrades ({{menuiseriesInt.materieauBalustrades}})  <br>
+									Nombre de balustrades à poser ({{menuiseriesInt.tailleBalustrades}} m2)  <br>
+
+									<br>
+									<b> Sous-total : </b> {{menuiseriesInt.prix}} €
+									
+									{% endif %}									</div>
 							</section>
 							<section class="panel panel-warning" id="panel-6" data-portlet-item>
 								<header class="panel-heading portlet-handler">

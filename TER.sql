@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 21 avr. 2019 à 22:06
+-- Généré le :  mar. 23 avr. 2019 à 00:26
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -57,6 +57,13 @@ CREATE TABLE `climatisation` (
   `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `climatisation`
+--
+
+INSERT INTO `climatisation` (`id`, `type_climatisation`, `prix`) VALUES
+(1, 'Monobloc_windows', 600);
+
 -- --------------------------------------------------------
 
 --
@@ -65,10 +72,24 @@ CREATE TABLE `climatisation` (
 
 CREATE TABLE `cloison` (
   `id` int(11) NOT NULL,
-  `type_cloisons` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `surface_totale` double NOT NULL,
-  `prix` double NOT NULL
+  `prix` double NOT NULL,
+  `cloisons_amovibles` double DEFAULT NULL,
+  `cloisons_seches` double DEFAULT NULL,
+  `cloisons_pieces_humides` double DEFAULT NULL,
+  `cloisons_verre` double DEFAULT NULL,
+  `cloisons_japonaises` double DEFAULT NULL,
+  `claustra_interieur` double DEFAULT NULL,
+  `cloisons_vitrees_style_atelier` double DEFAULT NULL,
+  `cloisons_vegetales` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `cloison`
+--
+
+INSERT INTO `cloison` (`id`, `prix`, `cloisons_amovibles`, `cloisons_seches`, `cloisons_pieces_humides`, `cloisons_verre`, `cloisons_japonaises`, `claustra_interieur`, `cloisons_vitrees_style_atelier`, `cloisons_vegetales`) VALUES
+(4, 4180.05, 5, 14, 18, 17, 25, 0, 0, 0),
+(5, 3451.35, 0, 8, 0, 20, 15, 0, 17, 0);
 
 -- --------------------------------------------------------
 
@@ -86,6 +107,13 @@ CREATE TABLE `domotique` (
   `detecteur_et_alarme` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `domotique`
+--
+
+INSERT INTO `domotique` (`id`, `regularisation_chauffage`, `eclairage_auto`, `ouverture_fermeture_auto`, `autonomie_eau`, `prix`, `detecteur_et_alarme`) VALUES
+(1, '', '1', '1', '', 3899, '1');
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +130,13 @@ CREATE TABLE `electricite` (
   `nb_volet_roulant` int(11) NOT NULL,
   `dimension_cable` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `electricite`
+--
+
+INSERT INTO `electricite` (`id`, `prix`, `nb_chauffage`, `nb_interrupteur`, `nb_sortie_lumieres`, `nb_prise_electrique`, `nb_volet_roulant`, `dimension_cable`) VALUES
+(1, 5853, 2, 15, 8, 4, 10, 15);
 
 -- --------------------------------------------------------
 
@@ -144,6 +179,13 @@ CREATE TABLE `escaliers` (
   `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `escaliers`
+--
+
+INSERT INTO `escaliers` (`id`, `type_escalier`, `materiaux`, `dimensions`, `prix`) VALUES
+(1, 'DROIT', 'BOISTENDRE', 10, 510);
+
 -- --------------------------------------------------------
 
 --
@@ -165,6 +207,27 @@ INSERT INTO `etude_sol` (`id`, `type_sol`, `prix`) VALUES
 (6, 'ARGILEUX', 1000),
 (7, 'ARGILEUX', 1000),
 (8, 'HUMIFERE', 1100);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `evacuation_fumees`
+--
+
+CREATE TABLE `evacuation_fumees` (
+  `id` int(11) NOT NULL,
+  `materieau_utilise` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `forme` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_cheminee` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `evacuation_fumees`
+--
+
+INSERT INTO `evacuation_fumees` (`id`, `materieau_utilise`, `forme`, `type_cheminee`, `prix`) VALUES
+(2, 'CHEMINEE_CERAMIQUE', 'CHEMINEE_SUSPENDUE', 'CHEMINEE_4_FACES', 3310);
 
 -- --------------------------------------------------------
 
@@ -242,7 +305,7 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
-(9, 6, 1, 1, 3, 3, 1, 1, 2, 2, NULL, NULL),
+(9, 6, 1, 1, 3, 5, 1, 1, 2, 2, 2, 2),
 (10, 7, NULL, 2, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
 (11, 8, 2, 3, 4, 4, 2, 3, 3, 3, 1, 1);
 
@@ -265,7 +328,37 @@ CREATE TABLE `menuiserie` (
 --
 
 INSERT INTO `menuiserie` (`id`, `dimensions_bois_rouge`, `dimensions_bois_hetre`, `dimensions_aluminium`, `prix`) VALUES
-(1, 15, 15, 15, 525);
+(1, 15, 15, 15, 525),
+(2, 10, 20, 15, 560);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `menuiseries_int`
+--
+
+CREATE TABLE `menuiseries_int` (
+  `id` int(11) NOT NULL,
+  `portes_pleines` int(11) NOT NULL,
+  `portes_vitrees` int(11) NOT NULL,
+  `portes_battantes` int(11) NOT NULL,
+  `portes_coulissantes` int(11) NOT NULL,
+  `portes_placard_pliantes` int(11) NOT NULL,
+  `portes_placard_battantes` int(11) NOT NULL,
+  `portes_placard_coulissantes` int(11) NOT NULL,
+  `materieau_rampes` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `taille_rampes` double NOT NULL,
+  `materieau_balustrades` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `taille_balustrades` double NOT NULL,
+  `prix` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `menuiseries_int`
+--
+
+INSERT INTO `menuiseries_int` (`id`, `portes_pleines`, `portes_vitrees`, `portes_battantes`, `portes_coulissantes`, `portes_placard_pliantes`, `portes_placard_battantes`, `portes_placard_coulissantes`, `materieau_rampes`, `taille_rampes`, `materieau_balustrades`, `taille_balustrades`, `prix`) VALUES
+(1, 4, 2, 1, 1, 0, 0, 4, 'RAMPE_CERAMIQUE', 12, 'BALUSTRADE_CERAMIQUE', 6, 6910);
 
 -- --------------------------------------------------------
 
@@ -296,7 +389,11 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190409091353', '2019-04-09 09:14:04'),
 ('20190411115111', '2019-04-11 11:51:28'),
 ('20190419135946', '2019-04-19 16:34:29'),
-('20190419163540', '2019-04-19 16:35:44');
+('20190419163540', '2019-04-19 16:35:44'),
+('20190422201011', '2019-04-22 20:10:19'),
+('20190422213152', '2019-04-22 21:31:55'),
+('20190422215229', '2019-04-22 21:52:32'),
+('20190422220302', '2019-04-22 22:03:04');
 
 -- --------------------------------------------------------
 
@@ -340,6 +437,13 @@ CREATE TABLE `plomberie` (
   `nb_douche` int(11) NOT NULL,
   `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `plomberie`
+--
+
+INSERT INTO `plomberie` (`id`, `nb_metre_tuyau`, `type_tuyau`, `nb_robinets`, `nb_wc`, `type_chauffage_eau`, `type_compteur`, `nb_baignoire`, `nb_douche`, `prix`) VALUES
+(1, 10, 'CUIVRE', 3, 3, 'BALLONEAU', 'VOLUMETRIQUE', 1, 2, 7290);
 
 -- --------------------------------------------------------
 
@@ -424,12 +528,12 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (28, 'coup_herisson', 90),
 (29, 'agglo', 22),
 (30, 'grille', 40),
-(32, 'pompe_relevage', 300),
-(33, 'fosse_septique', 350),
-(34, 'micro_station', 500),
-(35, 'etude_hydro', 800),
+(32, 'pompe_relevage', 3500),
+(33, 'fosse_septique', 2890),
+(34, 'micro_station', 1789),
+(35, 'etude_hydro', 960),
 (36, 'reseau_electricite', 18),
-(37, 'reseau_telephonique', 1000),
+(37, 'reseau_telephonique', 25),
 (38, 'plancher_VS', 50),
 (39, 'plancher_etage', 75),
 (40, 'plancher_tt', 55),
@@ -522,7 +626,45 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (132, 'chauffage_electrique', 800),
 (133, 'compteur_electrique', 250),
 (134, 'pose_chauffage', 250),
-(135, 'volets_roulant', 100);
+(135, 'volets_roulant', 100),
+(136, 'cloisonsAmovibles', 40),
+(137, 'cloisonsSeches', 35),
+(138, 'cloisonsPiecesHumides', 45),
+(139, 'cloisonsVerre', 45.9),
+(140, 'cloisonsJaponaises', 75.99),
+(141, 'claustraInterieur', 39.95),
+(142, 'cloisonsVitreesStyleAtelier', 65.5),
+(143, 'cloisonsVegetales', 37.5),
+(144, 'CHEMINEE_BOIS', 1200),
+(145, 'CHEMINEE_PIERRE', 800),
+(146, 'CHEMINEE_MARBRE', 3200),
+(147, 'CHEMINEE_BRIQUE', 1400),
+(148, 'CHEMINEE_BETON', 1500),
+(149, 'CHEMINEE_METAL', 1890),
+(150, 'CHEMINEE_CERAMIQUE', 2480),
+(151, 'CHEMINEE_CENTRALE', 200),
+(152, 'CHEMINEE_MURALE', 350),
+(153, 'CHEMINEE_SUSPENDUE', 180),
+(154, 'CHEMINEE_ANGLE', 199),
+(155, 'CHEMINEE_DOUBLE', 450),
+(156, 'CHEMINEE_3_FACES', 600),
+(157, 'CHEMINEE_4_FACES', 650),
+(158, 'CHEMINEE_PANORAMIQUE', 700),
+(159, 'portesPleines', 150),
+(160, 'portesVitrees', 300),
+(161, 'portesBattantes', 250),
+(162, 'portesCoulissantes', 400),
+(163, 'portesPlacardPliantes', 600),
+(164, 'portesPlacardBattantes', 750),
+(165, 'portesPlacardCoulissantes', 800),
+(166, 'RAMPE_BOIS', 60),
+(167, 'RAMPE_MARBRE', 140),
+(168, 'RAMPE_METAL', 90),
+(169, 'RAMPE_CERAMIQUE', 110),
+(170, 'BALUSTRADE_BOIS', 40),
+(171, 'BALUSTRADE_MARBRE', 120),
+(172, 'BALUSTRADE_METAL', 70),
+(173, 'BALUSTRADE_CERAMIQUE', 90);
 
 -- --------------------------------------------------------
 
@@ -580,9 +722,9 @@ INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revet
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(9, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, 1, 1),
+(10, NULL, NULL, NULL, 5, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -605,7 +747,8 @@ CREATE TABLE `soubassement` (
 --
 
 INSERT INTO `soubassement` (`id`, `type_soubassement`, `materiel_utilise`, `prix`, `tractopelle`, `camion_benne`, `betonniere`) VALUES
-(4, 'sous-sol', NULL, 0, '1', '1', '');
+(4, 'sous-sol', NULL, 0, '1', '1', ''),
+(5, 'vide-sanitaire', NULL, 0, '1', '1', '');
 
 -- --------------------------------------------------------
 
@@ -626,7 +769,8 @@ CREATE TABLE `toiture` (
 --
 
 INSERT INTO `toiture` (`id`, `type_toit`, `deg_pente`, `renforcement`, `prix`) VALUES
-(1, 'CLASSIQUE', 15, 1, 100);
+(1, 'CLASSIQUE', 15, 1, 100),
+(2, 'CLASSIQUE', 20, 1, 115);
 
 -- --------------------------------------------------------
 
@@ -669,6 +813,13 @@ CREATE TABLE `ventilation` (
   `surface_cuisine_wc` int(11) NOT NULL,
   `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `ventilation`
+--
+
+INSERT INTO `ventilation` (`id`, `type_ventilation`, `surface_chambre_salon`, `surface_cuisine_wc`, `prix`) VALUES
+(1, 'ventilation_double_flux', 25, 30, 1550);
 
 -- --------------------------------------------------------
 
@@ -749,6 +900,12 @@ ALTER TABLE `etude_sol`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `evacuation_fumees`
+--
+ALTER TABLE `evacuation_fumees`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `excavation`
 --
 ALTER TABLE `excavation`
@@ -770,6 +927,12 @@ ALTER TABLE `gros_oeuvre`
 -- Index pour la table `menuiserie`
 --
 ALTER TABLE `menuiserie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `menuiseries_int`
+--
+ALTER TABLE `menuiseries_int`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -860,25 +1023,25 @@ ALTER TABLE `charpente`
 -- AUTO_INCREMENT pour la table `climatisation`
 --
 ALTER TABLE `climatisation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `cloison`
 --
 ALTER TABLE `cloison`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `domotique`
 --
 ALTER TABLE `domotique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `electricite`
 --
 ALTER TABLE `electricite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `elevation`
@@ -890,13 +1053,19 @@ ALTER TABLE `elevation`
 -- AUTO_INCREMENT pour la table `escaliers`
 --
 ALTER TABLE `escaliers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `etude_sol`
 --
 ALTER TABLE `etude_sol`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pour la table `evacuation_fumees`
+--
+ALTER TABLE `evacuation_fumees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `excavation`
@@ -920,6 +1089,12 @@ ALTER TABLE `gros_oeuvre`
 -- AUTO_INCREMENT pour la table `menuiserie`
 --
 ALTER TABLE `menuiserie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `menuiseries_int`
+--
+ALTER TABLE `menuiseries_int`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -932,7 +1107,7 @@ ALTER TABLE `plancher`
 -- AUTO_INCREMENT pour la table `plomberie`
 --
 ALTER TABLE `plomberie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `preparation_et_acces`
@@ -944,7 +1119,7 @@ ALTER TABLE `preparation_et_acces`
 -- AUTO_INCREMENT pour la table `prix`
 --
 ALTER TABLE `prix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT pour la table `projet`
@@ -962,13 +1137,13 @@ ALTER TABLE `second_oeuvre`
 -- AUTO_INCREMENT pour la table `soubassement`
 --
 ALTER TABLE `soubassement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `toiture`
 --
 ALTER TABLE `toiture`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `user`
@@ -980,7 +1155,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `ventilation`
 --
 ALTER TABLE `ventilation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `vrd`

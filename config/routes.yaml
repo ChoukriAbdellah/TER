@@ -81,6 +81,14 @@ domotique:
 cloisons:
     path:       /dashboard/my-project/{id}/second-oeuvre/cloisons
     controller: App\Controller\SecondOeuvreController::cloison   
+
+evacuation:
+    path:       /dashboard/my-project/{id}/second-oeuvre/evacuation-fumees
+    controller: App\Controller\SecondOeuvreController::evacuation   
+
+menuiseriesInt:
+    path:       /dashboard/my-project/{id}/second-oeuvre/menuiseries-interieures
+    controller: App\Controller\SecondOeuvreController::menuiseriesInt
     
 escaliers:
     path:       /dashboard/my-project/{id}/second-oeuvre/escaliers

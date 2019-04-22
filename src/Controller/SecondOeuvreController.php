@@ -18,7 +18,14 @@ use App\Repository\SecondOeuvreRepository;
 use App\Entity\Ventilation;
 use App\Form\VentilationType;
 use App\Entity\Cloison;
-use App\Form\CloisonsType;
+use App\Form\CloisonType;
+
+use App\Entity\EvacuationFumees;
+use App\Form\EvacuationFumeesType;
+
+use App\Entity\MenuiseriesInt;
+use App\Form\MenuiseriesIntType;
+
 use App\Entity\Climatisation;
 use App\Form\ClimatisationType;
 use App\Entity\Domotique;
@@ -33,13 +40,14 @@ use App\Form\PlomberieType;
 
 class SecondOeuvreController extends AbstractController
 {   
+
  public function cloison($id, Request $request)
   {
     
             // création du formulaire
             $e = new cloison();
             // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(cloisonsType::class, $e);        
+            $form = $this->createForm(CloisonType::class, $e);        
             $form->handleRequest($request);
 			
 			$projet = $this->getDoctrine()
@@ -55,35 +63,41 @@ class SecondOeuvreController extends AbstractController
 		
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
-                $finalePrice;
-                $prixCloison;
-                $prixTotal;
-                if($e->getTypeCloisons() == 'cloison_platre'){
-                  $prixCloison  = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("cloison_platre");
-                }
+                $prix = 0;
 
-                if($e->getTypeCloisons() == 'cloison_alveolaire'){
-                  $prixCloison = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("cloison_alveolaire");
-                }
-                if($e->getTypeCloisons() == 'cloison_beton'){
-                  $prixCloison = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("cloison_beton");
-                }
-                if($e->getTypeCloisons() == 'cloison_bois'){
-                  $prixCloison = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("cloison_bois");
-                }
-                //10euros le mètre carré 
-                $prixTotal = $e->getSurfaceTotale();
-                // Enregistre l'étude de sol en base
-                $finalePrice=$prixCloison + $prixTotal;
-                $e->setPrix($finalePrice);
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsAmovibles") * $e->getCloisonsAmovibles();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsSeches") * $e->getCloisonsSeches();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsPiecesHumides") * $e->getCloisonsPiecesHumides();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsVerre") * $e->getCloisonsVerre();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsJaponaises") * $e->getCloisonsJaponaises();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("claustraInterieur") * $e->getClaustraInterieur();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsVitreesStyleAtelier") * $e->getCloisonsVitreesStyleAtelier();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("cloisonsVegetales") * $e->getCloisonsVegetales();
+
+                $e->setPrix($prix);
                 $em->persist($e);
                 $em->flush();
 
@@ -99,7 +113,139 @@ class SecondOeuvreController extends AbstractController
             return $this->render(
               'project/cloison.html.twig', array('form' => $form->createView(), 'id' => $id));
 			
-  }    
+  }   
+  
+  public function evacuation($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new EvacuationFumees();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(EvacuationFumeesType::class, $e);        
+            $form->handleRequest($request);
+			
+		      	$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                $prix = 0;
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getMaterieauUtilise());
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getForme());
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getTypeCheminee());
+
+                $e->setPrix($prix);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdEvacuation($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/evacuation-fumees.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
+  
+  public function menuiseriesInt($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new MenuiseriesInt();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(MenuiseriesIntType::class, $e);        
+            $form->handleRequest($request);
+			
+		      	$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                $prix = 0;
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesPleines") * $e->getPortesPleines();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesVitrees") * $e->getPortesVitrees();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesBattantes") * $e->getPortesBattantes();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesCoulissantes") * $e->getPortesCoulissantes();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesPlacardPliantes") * $e->getPortesPlacardPliantes();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesPlacardBattantes") * $e->getPortesPlacardBattantes();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("portesPlacardCoulissantes") * $e->getPortesPlacardCoulissantes();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getMaterieauRampes()) * $e->getTailleRampes();
+
+                $prix += $this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom($e->getMaterieauBalustrades()) * $e->getTailleBalustrades();
+
+                $e->setPrix($prix);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdMenuiseriesInt($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+     
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/menuiseries-int.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
   
   public function escaliers($id, Request $request)
     {
@@ -492,44 +638,11 @@ class SecondOeuvreController extends AbstractController
 		
             if ($form->isSubmitted() && $form->isValid()) {  
                 $em = $this->getDoctrine()->getManager();
-                $prixClimatisation;
-                if($e->getTypeClimatisation() == 'Monobloc_mobile'){
-                  $prixClimatisation  = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("Monobloc_mobile");
-                }
-
-                if($e->getTypeClimatisation() == 'Monobloc_fixe'){
+                $prixClimatisation = 0;
                   $prixClimatisation = $this->getDoctrine()
                   ->getRepository(Prix::class)
-                  ->findPrixByNom("Monobloc_fixe");
-                }
-                if($e->getTypeClimatisation() == 'Monobloc_windows'){
-                  $prixClimatisation = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("Monobloc_windows");
-                }
-                if($e->getTypeClimatisation() == 'Split_mobile'){
-                  $prixClimatisation  = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("Split_mobile");
-                }
-
-                if($e->getTypeClimatisation() == 'split_mural'){
-                  $prixClimatisation = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("split_mural");
-                }
-                if($e->getTypeClimatisation() == 'Split_console'){
-                  $prixClimatisation = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("Split_console");
-                }
-                if($e->getTypeClimatisation() == 'Split_gainable'){
-                  $prixClimatisation = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("Split_gainable");
-                }
+                  ->findPrixByNom($e->getTypeClimatisation());
+                
                 
                
                 $finalePrice = $prixClimatisation;
@@ -694,6 +807,23 @@ class SecondOeuvreController extends AbstractController
         $cloisons = null;
     }
 
+    $idEvacuation = $secondOeuvre->getIdEvacuation();
+    if($idEvacuation != NULL){
+        $evacuation = $this->getDoctrine()->getRepository(EvacuationFumees::class)->find($idEvacuation);
+    }
+    else{
+        $evacuation = null;
+    }
+
+    $idMenuiseriesInt = $secondOeuvre->getIdMenuiseriesInt();
+    if($idMenuiseriesInt != NULL){
+        $menuiseriesInt = $this->getDoctrine()->getRepository(MenuiseriesInt::class)->find($idMenuiseriesInt);
+    }
+    else{
+        $menuiseriesInt = null;
+    }
+
+
 
     $nbform = $this->getDoctrine()
     ->getRepository(SecondOeuvre::class)->findNbFormulairesByGrosOeuvre($idSo);
@@ -701,7 +831,7 @@ class SecondOeuvreController extends AbstractController
     return $this->render(
         'project/second-oeuvre-view.html.twig', ['projet' => $projet, 'nbform' => $nbform,
         'ventilation' => $ventilation, 'climatisation' => $climatisation, 'domotique' => $domotique,
-		'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite, 'cloisons' => $cloisons
+		'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite, 'cloisons' => $cloisons, 'evacuation' => $evacuation, 'menuiseriesInt' => $menuiseriesInt
         ]);
         
     }

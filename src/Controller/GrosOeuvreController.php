@@ -982,7 +982,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
+                return $this->redirectToRoute('my-project', array('id' => $id));
             }
      
             return $this->render(
