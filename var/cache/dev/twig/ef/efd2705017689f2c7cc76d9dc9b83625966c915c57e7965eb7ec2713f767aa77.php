@@ -268,7 +268,9 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         // line 59
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 60
-            echo "          <li><a>Mon profil (";
+            echo "          <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
+            echo "\">Mon profil (";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 60, $this->source); })()), "user", []), "username", []), "html", null, true);
             echo ")</a></li>
 
@@ -397,7 +399,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     public function getDebugInfo()
     {
-        return array (  381 => 164,  375 => 161,  371 => 160,  367 => 159,  363 => 158,  359 => 156,  350 => 155,  339 => 80,  330 => 79,  317 => 76,  308 => 75,  292 => 67,  287 => 65,  282 => 64,  277 => 62,  271 => 60,  269 => 59,  264 => 57,  260 => 56,  252 => 51,  240 => 41,  231 => 40,  211 => 24,  205 => 21,  196 => 15,  192 => 14,  188 => 12,  179 => 11,  161 => 6,  149 => 167,  147 => 155,  72 => 82,  70 => 79,  67 => 78,  65 => 75,  62 => 74,  60 => 40,  52 => 34,  50 => 11,  42 => 6,  35 => 1,);
+        return array (  383 => 164,  377 => 161,  373 => 160,  369 => 159,  365 => 158,  361 => 156,  352 => 155,  341 => 80,  332 => 79,  319 => 76,  310 => 75,  294 => 67,  289 => 65,  284 => 64,  279 => 62,  271 => 60,  269 => 59,  264 => 57,  260 => 56,  252 => 51,  240 => 41,  231 => 40,  211 => 24,  205 => 21,  196 => 15,  192 => 14,  188 => 12,  179 => 11,  161 => 6,  149 => 167,  147 => 155,  72 => 82,  70 => 79,  67 => 78,  65 => 75,  62 => 74,  60 => 40,  52 => 34,  50 => 11,  42 => 6,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -461,7 +463,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <li><a class=\"smothscroll\" href=\"{{ path('index') }}#showcase\">Photos</a></li>
             <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a>Mon profil ({{ app.user.username }})</a></li>
+          <li><a href=\"{{ path('dashboard') }}\">Mon profil ({{ app.user.username }})</a></li>
 
           <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
           {% else %}

@@ -57,7 +57,7 @@
           <li><a class="smothscroll" href="{{ path('index') }}#showcase">Photos</a></li>
             <li><a href="#contact" class="smothscroll">Contact</a></li>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a>Mon profil ({{ app.user.username }})</a></li>
+          <li><a href="{{ path('dashboard') }}">Mon profil ({{ app.user.username }})</a></li>
 
           <li><a href="{{ path('logout') }}">Deconnexion</a></li>
           {% else %}
