@@ -89,11 +89,11 @@ class SecondOeuvreController extends AbstractController
 
                 // Met à jour le projet avec l'id de l'étude de sol créée
 
-                $secondOeuvre->getIdCloisons($e->getId());
+                $secondOeuvre->setIdCloisons($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -195,7 +195,7 @@ class SecondOeuvreController extends AbstractController
 				$em->persist($secondOeuvre);
 				$em->flush();
 
-				return $this->redirectToRoute('my-project', array('id' => $id));
+				return $this->redirectToRoute('second-oeuvre', array('id' => $id));
 			}
 
 			return $this->render(
@@ -293,7 +293,7 @@ class SecondOeuvreController extends AbstractController
             $em->persist($secondOeuvre);
             $em->flush();
 
-            return $this->redirectToRoute('my-project', array('id' => $id));
+            return $this->redirectToRoute('second-oeuvre', array('id' => $id));
         }
 
         return $this->render(
@@ -396,7 +396,7 @@ class SecondOeuvreController extends AbstractController
             $em->persist($secondOeuvre);
             $em->flush();
 
-            return $this->redirectToRoute('my-project', array('id' => $id));
+            return $this->redirectToRoute('second-oeuvre', array('id' => $id));
         }
 
         return $this->render(
@@ -462,7 +462,7 @@ class SecondOeuvreController extends AbstractController
                 $em->persist($secondOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -544,7 +544,7 @@ class SecondOeuvreController extends AbstractController
                 $em->persist($secondOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -620,7 +620,7 @@ class SecondOeuvreController extends AbstractController
                 $em->persist($secondOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -686,6 +686,14 @@ class SecondOeuvreController extends AbstractController
         $electricite = null;
     }
 
+    $idCloisons = $secondOeuvre->getIdCloisons();
+    if($idCloisons != NULL){
+        $cloisons = $this->getDoctrine()->getRepository(Cloison::class)->find($idCloisons);
+    }
+    else{
+        $cloisons = null;
+    }
+
 
     $nbform = $this->getDoctrine()
     ->getRepository(SecondOeuvre::class)->findNbFormulairesByGrosOeuvre($idSo);
@@ -693,7 +701,7 @@ class SecondOeuvreController extends AbstractController
     return $this->render(
         'project/second-oeuvre-view.html.twig', ['projet' => $projet, 'nbform' => $nbform,
         'ventilation' => $ventilation, 'climatisation' => $climatisation, 'domotique' => $domotique,
-		'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite
+		'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite, 'cloisons' => $cloisons
         ]);
         
     }

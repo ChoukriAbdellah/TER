@@ -22,7 +22,7 @@ new-project:
     path:       /dashboard/new-project/
     controller: App\Controller\ProjectController::newProject
 
-my-project:
+gros-oeuvre:
     path:       /dashboard/my-project/{id}/gros-oeuvre
     controller: App\Controller\GrosOeuvreController::view
 
@@ -77,6 +77,10 @@ climatisation:
 domotique:
     path:       /dashboard/my-project/{id}/second-oeuvre/domotique
     controller: App\Controller\SecondOeuvreController::domotique    
+
+cloisons:
+    path:       /dashboard/my-project/{id}/second-oeuvre/cloisons
+    controller: App\Controller\SecondOeuvreController::cloison   
     
 escaliers:
     path:       /dashboard/my-project/{id}/second-oeuvre/escaliers

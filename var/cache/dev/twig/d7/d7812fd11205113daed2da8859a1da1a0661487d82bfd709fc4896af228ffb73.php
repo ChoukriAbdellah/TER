@@ -162,7 +162,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
         echo "
                 ";
         // line 60
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Nom"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Identifiant"]]);
         echo "  
                 ";
         // line 61
@@ -292,7 +292,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
               <!-- Register Form -->
 
               {{ form_start(form) }}
-                {{ form_row(form.username, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Nom'}} ) }}  
+                {{ form_row(form.username, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Identifiant'}} ) }}  
                 {{ form_row(form.email, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Adresse e-mail'}} ) }}  
                 {{ form_row(form.plainPassword.first, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Mot de passe'}} ) }}  
                 {{ form_row(form.plainPassword.second, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Confirmer le mot de passe'}} ) }}  

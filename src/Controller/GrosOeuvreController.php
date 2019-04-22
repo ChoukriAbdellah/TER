@@ -76,7 +76,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
 
 
@@ -149,7 +149,7 @@ class GrosOeuvreController extends AbstractController
                         $em->persist($grosOeuvre);
                         $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
                       
 		}
             return $this->render(
@@ -209,7 +209,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
 
 
@@ -261,7 +261,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -436,7 +436,7 @@ class GrosOeuvreController extends AbstractController
                 $em->flush();
      
 
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
 	
             return $this->render(
@@ -500,7 +500,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
             
              $projet = $this->getDoctrine()
@@ -639,7 +639,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -717,7 +717,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -797,7 +797,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -901,7 +901,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
      
             return $this->render(
@@ -982,7 +982,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
      
             return $this->render(

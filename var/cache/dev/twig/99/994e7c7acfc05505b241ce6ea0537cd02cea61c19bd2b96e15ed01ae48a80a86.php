@@ -176,7 +176,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               <input type=\"text\" class=\"fadeIn second zero-raduis\" id=\"username\" name=\"_username\" value=\"";
         // line 64
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 64, $this->source); })()), "html", null, true);
-        echo "\" placeholder=\"Adresse e-mail\" />
+        echo "\" placeholder=\"Adresse e-mail ou login\" />
               <input type=\"password\" class=\"fadeIn third zero-raduis\" id=\"password\" name=\"_password\" placeholder=\"Mot de passe\" />
                               <div id=\"formFooter\">
               </div>
@@ -312,7 +312,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
     
               <!-- Login Form -->
               <form action=\"{{ path('connexion') }}\" method=\"post\">
-              <input type=\"text\" class=\"fadeIn second zero-raduis\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" placeholder=\"Adresse e-mail\" />
+              <input type=\"text\" class=\"fadeIn second zero-raduis\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" placeholder=\"Adresse e-mail ou login\" />
               <input type=\"password\" class=\"fadeIn third zero-raduis\" id=\"password\" name=\"_password\" placeholder=\"Mot de passe\" />
                               <div id=\"formFooter\">
               </div>

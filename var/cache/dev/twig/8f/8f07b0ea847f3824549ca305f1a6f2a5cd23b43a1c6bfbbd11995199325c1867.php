@@ -31,7 +31,7 @@ class __TwigTemplate_9a0d567352760529b7799ec02a18096beac2a8a3f6c760bea9cf046713f
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
             // line 2
             echo "    <li><a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("my-project", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [])]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("gros-oeuvre", ["id" => twig_get_attribute($this->env, $this->source, $context["p"], "id", [])]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "nom", []), "html", null, true);
             echo "</a></li>
@@ -66,7 +66,7 @@ class __TwigTemplate_9a0d567352760529b7799ec02a18096beac2a8a3f6c760bea9cf046713f
     public function getSourceContext()
     {
         return new Twig_Source("{% for p in projets %}
-    <li><a href=\"{{ path('my-project', {'id': p.id}) }}\">{{ p.nom }}</a></li>
+    <li><a href=\"{{ path('gros-oeuvre', {'id': p.id}) }}\">{{ p.nom }}</a></li>
 {% endfor %}", "project/liste-projets.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/liste-projets.html.twig");
     }
 }
