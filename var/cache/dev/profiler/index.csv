@@ -1388,3 +1388,11 @@ ac381b,127.0.0.1,GET,http://localhost/Symfony/public/renouvellement-mot-de-passe
 02d7e4,127.0.0.1,GET,http://localhost/Symfony/public/renouvellement-mot-de-passe/1/7k5q_3wPZB9C7vD6d6OdrMMSyFx506BwtPrCBDT4TUI,1555877198,,200
 86f300,127.0.0.1,POST,http://localhost/Symfony/public/renouvellement-mot-de-passe/1/7k5q_3wPZB9C7vD6d6OdrMMSyFx506BwtPrCBDT4TUI,1555877202,,302
 df73b1,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555877202,,200
+d3301e,127.0.0.1,GET,http://localhost/Symfony/public/,1555934042,,200
+199095,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555934133,,200
+15e2db,127.0.0.1,GET,http://localhost/Symfony/public/inscription/,1555934136,,301
+7cbbfd,127.0.0.1,GET,http://localhost/Symfony/public/inscription,1555934136,,200
+d4f3f0,127.0.0.1,GET,http://localhost/Symfony/public/inscription,1555934184,,200
+09f849,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555934187,,200
+222713,127.0.0.1,GET,http://localhost/Symfony/public/renouvellement-mot-de-passe/requete,1555934192,,200
+909cba,127.0.0.1,GET,http://localhost/Symfony/public/connexion/,1555934196,,200

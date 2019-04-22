@@ -54,25 +54,7 @@
                 <h2 class="my-5">Inscrivez-vous</h2>
               </div>
     
-              <!-- Login Form -->
-
-
-              <!-- <form>
-				<input type="text" id="name" class="fadeIn second zero-raduis" name="name" placeholder="Nom">
-				
-                <input type="email" id="email" class="fadeIn second zero-raduis" name="email" placeholder="Adresse e-mail">
-                <input type="text" id="password" class="fadeIn third zero-raduis" name="login" placeholder="Mot de passe">
-				
-                  <div id="formFooter">
-                </div>
-                <input type="submit" class="fadeIn fourth zero-raduis" value="S'inscrire">
-
-                              </form>
-              <h2>Déjà inscrit ?</h2>
-              <form action="{{ path('connexion') }}">
-				        <input type="submit" class="fadeIn fourth zero-raduis pc" value="Connectez-vous">
-			        </form>
-              </form> -->
+              <!-- Register Form -->
 
               {{ form_start(form) }}
                 {{ form_row(form.username, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Nom'}} ) }}  
@@ -83,6 +65,12 @@
             
                 <input type="submit" class="fadeIn fourth zero-raduis pc" value="S'inscrire">
                  {{ form_end(form) }}
+
+                               </form>
+              <h2>Déjà inscrit ?</h2>
+              <form action="{{ path('connexion') }}">
+				        <input type="submit" class="fadeIn fourth zero-raduis pc" value="Connectez-vous">
+			        </form>
 
               
     
