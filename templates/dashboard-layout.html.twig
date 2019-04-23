@@ -229,9 +229,14 @@
 							</figure>
 							<div class="profile-info">
 								<span class="name">{{ app.user.username }}</span>
-								<span class="role">{% for role in app.user.roles %}
-                                                    {{ role }}
-                                                    {% endfor %}</span>
+								<span class="role">
+								{% if is_granted('ROLE_ADMIN') %}
+								Administrateur
+								{% elseif is_granted('ROLE_USER') %}
+								Membre
+								{% elseif is_granted('ROLE_COMMERCIAL') %}
+								Commercial
+								{% endif %}</span>
 							</div>
 			
 							<i class="fa custom-caret"></i>

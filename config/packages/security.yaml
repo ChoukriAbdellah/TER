@@ -3,8 +3,7 @@ security:
     role_hierarchy:
         # un membre avec le ROLE_ADMIN aura également le ROLE_USER
         ROLE_ADMIN: ROLE_USER
-        # Le ROLE_SUPER_ADMIN avec le ROLE_ALLOWED_TO_SWITCH qui permet de s'authentifier en se faisant passer pour n'importe quel membre. Particulièrement utile pour débugger son code.
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_COMMERCIAL: ROLE_USER
     encoders:
         App\Entity\User:
             algorithm: bcrypt

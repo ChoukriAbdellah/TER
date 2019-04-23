@@ -112,7 +112,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "pageactuelle"));
 
-        echo " Tableau de bord ";
+        echo " Mes informations ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -132,7 +132,49 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
         // line 20
         echo "
-\t\t\t\t\tA faire
+\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t\t\t<div class=\"col-xs-12\">
+\t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
+\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Mes informations</h2>
+\t\t\t\t\t\t\t\t\t</header>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 27
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 27, $this->source); })()), 'form_start');
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 29
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 29, $this->source); })()), "oldPassword", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Ancien mdp"]]);
+        echo "  
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 30
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 30, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Mot de passe"]]);
+        echo "  
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 31
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 31, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Confirmer le mot de passe"]]);
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+     
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
+        // line 35
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 35, $this->source); })()), 'form_end');
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t
+\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
+\t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
+
+\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</section>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
 \t\t\t\t\t";
         
@@ -143,7 +185,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
     }
 
-    // line 25
+    // line 52
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -152,107 +194,107 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 26
+        // line 53
         echo "
 \t\t<!-- Specific Page Vendor -->
 \t\t<script src=\"";
-        // line 28
+        // line 55
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 29
+        // line 56
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 30
+        // line 57
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-appear/jquery.appear.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 31
+        // line 58
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 32
+        // line 59
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 33
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 34
+        // line 61
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 35
+        // line 62
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 36
+        // line 63
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.categories.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 37
+        // line 64
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.resize.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 38
+        // line 65
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-sparkline/jquery.sparkline.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 39
+        // line 66
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/raphael/raphael.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 40
+        // line 67
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/morris/morris.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 41
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/gauge/gauge.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 42
+        // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/snap-svg/snap.svg.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 43
+        // line 70
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/liquid-meter/liquid.meter.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 44
+        // line 71
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/jquery.vmap.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 45
+        // line 72
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 46
+        // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/jquery.vmap.world.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 47
+        // line 74
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 48
+        // line 75
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 49
+        // line 76
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 50
+        // line 77
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 51
+        // line 78
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 52
+        // line 79
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"), "html", null, true);
         echo "\"></script>
 
@@ -277,7 +319,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
     public function getDebugInfo()
     {
-        return array (  256 => 52,  252 => 51,  248 => 50,  244 => 49,  240 => 48,  236 => 47,  232 => 46,  228 => 45,  224 => 44,  220 => 43,  216 => 42,  212 => 41,  208 => 40,  204 => 39,  200 => 38,  196 => 37,  192 => 36,  188 => 35,  184 => 34,  180 => 33,  176 => 32,  172 => 31,  168 => 30,  164 => 29,  160 => 28,  156 => 26,  147 => 25,  134 => 20,  125 => 19,  107 => 17,  96 => 14,  87 => 13,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  298 => 79,  294 => 78,  290 => 77,  286 => 76,  282 => 75,  278 => 74,  274 => 73,  270 => 72,  266 => 71,  262 => 70,  258 => 69,  254 => 68,  250 => 67,  246 => 66,  242 => 65,  238 => 64,  234 => 63,  230 => 62,  226 => 61,  222 => 60,  218 => 59,  214 => 58,  210 => 57,  206 => 56,  202 => 55,  198 => 53,  189 => 52,  163 => 35,  156 => 31,  152 => 30,  148 => 29,  143 => 27,  134 => 20,  125 => 19,  107 => 17,  96 => 14,  87 => 13,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -298,11 +340,38 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t\t\t<h2> Tableau de bord </h2>
 \t\t\t\t{% endblock %}
 
-\t\t\t\t{% block pageactuelle %} Tableau de bord {% endblock %}
+\t\t\t\t{% block pageactuelle %} Mes informations {% endblock %}
 
 \t\t\t\t\t{% block body %}
 
-\t\t\t\t\tA faire
+\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t\t\t<div class=\"col-xs-12\">
+\t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
+\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Mes informations</h2>
+\t\t\t\t\t\t\t\t\t</header>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.oldPassword, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Ancien mdp'}} ) }}  
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.plainPassword.first, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Mot de passe'}} ) }}  
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.plainPassword.second, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Confirmer le mot de passe'}} ) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+     
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t
+\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"panel-footer\">
+\t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
+
+\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</section>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
 \t\t\t\t\t{% endblock %}
 

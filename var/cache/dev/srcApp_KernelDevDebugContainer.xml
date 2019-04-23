@@ -264,10 +264,8 @@
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
       </parameter>
-      <parameter key="ROLE_SUPER_ADMIN" type="collection">
+      <parameter key="ROLE_COMMERCIAL" type="collection">
         <parameter>ROLE_USER</parameter>
-        <parameter>ROLE_ADMIN</parameter>
-        <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
       </parameter>
     </parameter>
     <parameter key="security.access.denied_url">null</parameter>
@@ -431,6 +429,9 @@
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SecurityController"/>
       </call>
+    </service>
+    <service id="App\Form\AccountType" class="App\Form\AccountType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -831,6 +832,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AccountType</argument>
         <argument>App\Form\CharpenteType</argument>
         <argument>App\Form\ClimatisationType</argument>
         <argument>App\Form\CloisonType</argument>
@@ -1092,7 +1094,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.02mSF_T"/>
+      <argument type="service" id=".service_locator.p3Wm8bM"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3884,6 +3886,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AccountType" class="App\Form\AccountType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AccountType" class="App\Form\AccountType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClimatisationType" class="App\Form\ClimatisationType" autowire="true" abstract="true"/>
@@ -4140,16 +4144,16 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.oXHHcjB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="twig" type="service" id="twig"/>
-      </argument>
-    </service>
     <service id=".service_locator.lm3AYgL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.oXHHcjB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
     <service id=".service_locator.YlitY.M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4172,17 +4176,17 @@
         <argument key="authUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.yZdetbG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.OAHEOHE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\DashboardController::index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\DashboardController::index" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\ResettingController::request" type="service" id=".service_locator.YlitY.M"/>
         <argument key="App\Controller\ResettingController::resetting" type="service" id=".service_locator.5iM2kDV"/>
         <argument key="App\Controller\SecurityController::connexion" type="service" id=".service_locator.d24Amjx"/>
         <argument key="App\Controller\SecurityController::inscription" type="service" id=".service_locator.oXHHcjB"/>
-        <argument key="App\Controller\DashboardController:index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\DashboardController:index" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\ResettingController:request" type="service" id=".service_locator.YlitY.M"/>
@@ -4244,9 +4248,10 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.02mSF_T" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.p3Wm8bM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AccountType" type="service" id="App\Form\AccountType"/>
         <argument key="App\Form\CharpenteType" type="service" id="App\Form\CharpenteType"/>
         <argument key="App\Form\ClimatisationType" type="service" id="App\Form\ClimatisationType"/>
         <argument key="App\Form\CloisonType" type="service" id="App\Form\CloisonType"/>
@@ -4586,7 +4591,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.yZdetbG"/>
+      <argument type="service" id=".service_locator.OAHEOHE"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4877,7 +4882,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.yZdetbG"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.OAHEOHE"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
