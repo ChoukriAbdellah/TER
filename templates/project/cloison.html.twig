@@ -1,0 +1,97 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2>Cloison </h2>
+				{% endblock %}
+
+				{% block pageactuelle %}Cloison {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Cloison</h2>
+									</header>
+
+                                    
+								
+														<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+													
+															{{ form_label(form.cloisonsAmovibles, "Indiquez le nombre de mètres carrés de cloisons amovibles à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsAmovibles, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
+															</div>  
+										
+															{{ form_label(form.cloisonsSeches, "Indiquez le nombre de mètres carrés de cloisons sèches à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsSeches, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsPiecesHumides, "Indiquez le nombre de mètres carrés de cloisons pour pièces humides à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsPiecesHumides, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsVerre, "Indiquez le nombre de mètres carrés de cloisons en verre à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsVerre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsJaponaises, "Indiquez le nombre de mètres carrés de cloisons japonaises à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsJaponaises, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.claustraInterieur, "Indiquez le nombre de mètres carrés de claustras intérieur à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.claustraInterieur, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsVitreesStyleAtelier, "Indiquez le nombre de mètres carrés de cloisons vitrées style atelier à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsVitreesStyleAtelier, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsVegetales, "Indiquez le nombre de mètres carrés de cloisons végétales à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsVegetales, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div> 
+													
+													<br><br>
+														
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+					
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}

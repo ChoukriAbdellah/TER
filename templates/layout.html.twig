@@ -57,7 +57,7 @@
           <li><a class="smothscroll" href="{{ path('index') }}#showcase">Photos</a></li>
             <li><a href="#contact" class="smothscroll">Contact</a></li>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a>Mon profil ({{ app.user.username }})</a></li>
+          <li><a href="{{ path('dashboard') }}">Mon profil ({{ app.user.username }})</a></li>
 
           <li><a href="{{ path('logout') }}">Deconnexion</a></li>
           {% else %}
@@ -71,6 +71,10 @@
     </div>
   </div>
     {% endblock %}
+
+    {% block flash %}
+            {{include('flash.html.twig')}} 
+{% endblock %}
 
     {% block body %}
 
@@ -95,7 +99,7 @@
           <form class="contact-form php-mail-form" role="form" action="" method="POST">
 
             <div class="form-group">
-              <label for="contact-name">Votre nom</label>
+              <label for="contact-name">Votre nom</label><br>
               <input type="name" name="name" class="form-control" id="contact-name" placeholder="Votre nom" data-rule="minlen:4" data-msg="Veuillez entrer au moins 4 caractères">
               <div class="validate"></div>
             </div>

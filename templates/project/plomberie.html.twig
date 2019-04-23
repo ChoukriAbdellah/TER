@@ -1,0 +1,105 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2> Plomberie </h2>
+				{% endblock %}
+
+				{% block pageactuelle %} Plomberie {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Plomberie</h2>
+									</header>
+													<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+														
+														{{ form_label(form.nbMetreTuyau, "Quelles sont les dimensions du tuyau (en metres) ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbMetreTuyau, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+														
+														</div>
+
+														{{ form_label(form.typeTuyau, "Quel est le type du tuyau ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.typeTuyau, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbRobinets, "Quel est le nombre de robinets ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbRobinets, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbWC, "Quel est le nombre de WC ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbWC, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.typeChauffageEau, "Quel est le type du chauffage a eau ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.typeChauffageEau, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.typeCompteur, "Quel est le type du compteur ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.typeCompteur, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbBaignoire, "Quel est le nombre de baignoire ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbBaignoire, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+														{{ form_label(form.nbDouche, "Quel est le nombre de douches ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.nbDouche, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+
+
+														</div>
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+									
+									
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+		<!--
+		<script src="assets/public/js/app.js"></script>
+		<script src="assets/public/js/runtime.js"></script>
+		-->
+
+    {% endblock %}
