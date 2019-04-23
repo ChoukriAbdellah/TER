@@ -27,16 +27,46 @@
 														<div class="form-group">
 													{{ form_start(form) }}
 													<br><br>
-															{{ form_label(form.typeCloisons, "Quel est le type de votre cloison ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
-														<div class="col-sm-9">
-															{{ form_row(form.typeCloisons, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
-															</div>  
 													
-													<br><br>
-															{{ form_label(form.surfaceTotale, "Indiquez la surface totale (en m2). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+															{{ form_label(form.cloisonsAmovibles, "Indiquez le nombre de mètres carrés de cloisons amovibles à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
-															{{ form_row(form.surfaceTotale, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															{{ form_row(form.cloisonsAmovibles, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
 															</div>  
+										
+															{{ form_label(form.cloisonsSeches, "Indiquez le nombre de mètres carrés de cloisons sèches à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsSeches, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsPiecesHumides, "Indiquez le nombre de mètres carrés de cloisons pour pièces humides à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsPiecesHumides, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsVerre, "Indiquez le nombre de mètres carrés de cloisons en verre à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsVerre, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsJaponaises, "Indiquez le nombre de mètres carrés de cloisons japonaises à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsJaponaises, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.claustraInterieur, "Indiquez le nombre de mètres carrés de claustras intérieur à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.claustraInterieur, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsVitreesStyleAtelier, "Indiquez le nombre de mètres carrés de cloisons vitrées style atelier à poser", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsVitreesStyleAtelier, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+
+															{{ form_label(form.cloisonsVegetales, "Indiquez le nombre de mètres carrés de cloisons végétales à poser ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.cloisonsVegetales, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div> 
 													
 													<br><br>
 														

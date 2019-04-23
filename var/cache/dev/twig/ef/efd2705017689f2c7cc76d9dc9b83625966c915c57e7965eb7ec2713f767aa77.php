@@ -17,6 +17,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'menu' => [$this, 'block_menu'],
+            'flash' => [$this, 'block_flash'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -61,8 +62,13 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         echo "
     ";
         // line 75
-        $this->displayBlock('body', $context, $blocks);
+        $this->displayBlock('flash', $context, $blocks);
         // line 78
+        echo "
+    ";
+        // line 79
+        $this->displayBlock('body', $context, $blocks);
+        // line 82
         echo "
 
   <section id=\"contact\" name=\"contact\">
@@ -83,7 +89,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <form class=\"contact-form php-mail-form\" role=\"form\" action=\"\" method=\"POST\">
 
             <div class=\"form-group\">
-              <label for=\"contact-name\">Votre nom</label>
+              <label for=\"contact-name\">Votre nom</label><br>
               <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
               <div class=\"validate\"></div>
             </div>
@@ -137,9 +143,9 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
   </div>
 
    ";
-        // line 151
+        // line 155
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 163
+        // line 167
         echo "
 </body>
 </html>";
@@ -262,7 +268,9 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         // line 59
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 60
-            echo "          <li><a>Mon profil (";
+            echo "          <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
+            echo "\">Mon profil (";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 60, $this->source); })()), "user", []), "username", []), "html", null, true);
             echo ")</a></li>
 
@@ -299,6 +307,28 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
     }
 
     // line 75
+    public function block_flash($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "flash"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "flash"));
+
+        // line 76
+        echo "            ";
+        echo twig_include($this->env, $context, "flash.html.twig");
+        echo " 
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 79
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -307,7 +337,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 76
+        // line 80
         echo "
     ";
         
@@ -318,7 +348,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     }
 
-    // line 151
+    // line 155
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -327,29 +357,29 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 152
+        // line 156
         echo "
   <!-- JavaScript Libraries -->
   <script src=\"";
-        // line 154
+        // line 158
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 155
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 156
+        // line 160
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/php-mail-form/validate.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 157
+        // line 161
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Template Main Javascript File -->
   <script src=\"";
-        // line 160
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -369,7 +399,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     public function getDebugInfo()
     {
-        return array (  353 => 160,  347 => 157,  343 => 156,  339 => 155,  335 => 154,  331 => 152,  322 => 151,  311 => 76,  302 => 75,  286 => 67,  281 => 65,  276 => 64,  271 => 62,  265 => 60,  263 => 59,  258 => 57,  254 => 56,  246 => 51,  234 => 41,  225 => 40,  205 => 24,  199 => 21,  190 => 15,  186 => 14,  182 => 12,  173 => 11,  155 => 6,  143 => 163,  141 => 151,  66 => 78,  64 => 75,  61 => 74,  59 => 40,  51 => 34,  49 => 11,  41 => 6,  34 => 1,);
+        return array (  383 => 164,  377 => 161,  373 => 160,  369 => 159,  365 => 158,  361 => 156,  352 => 155,  341 => 80,  332 => 79,  319 => 76,  310 => 75,  294 => 67,  289 => 65,  284 => 64,  279 => 62,  271 => 60,  269 => 59,  264 => 57,  260 => 56,  252 => 51,  240 => 41,  231 => 40,  211 => 24,  205 => 21,  196 => 15,  192 => 14,  188 => 12,  179 => 11,  161 => 6,  149 => 167,  147 => 155,  72 => 82,  70 => 79,  67 => 78,  65 => 75,  62 => 74,  60 => 40,  52 => 34,  50 => 11,  42 => 6,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -433,7 +463,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <li><a class=\"smothscroll\" href=\"{{ path('index') }}#showcase\">Photos</a></li>
             <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a>Mon profil ({{ app.user.username }})</a></li>
+          <li><a href=\"{{ path('dashboard') }}\">Mon profil ({{ app.user.username }})</a></li>
 
           <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
           {% else %}
@@ -447,6 +477,10 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
     </div>
   </div>
     {% endblock %}
+
+    {% block flash %}
+            {{include('flash.html.twig')}} 
+{% endblock %}
 
     {% block body %}
 
@@ -471,7 +505,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
           <form class=\"contact-form php-mail-form\" role=\"form\" action=\"\" method=\"POST\">
 
             <div class=\"form-group\">
-              <label for=\"contact-name\">Votre nom</label>
+              <label for=\"contact-name\">Votre nom</label><br>
               <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
               <div class=\"validate\"></div>
             </div>

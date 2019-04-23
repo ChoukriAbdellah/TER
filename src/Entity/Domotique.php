@@ -15,6 +15,7 @@ class Domotique
      * @ORM\Column(type="integer")
      */
     private $id;
+    
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

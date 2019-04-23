@@ -126,8 +126,8 @@
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
 									Type de toit ({{toiture.typeToit}}) <br>
-									votre pente est de : ({{toiture.degPente}}) degres <br>
-									votre toit est-il renforcé ? : ({{toiture.renforcement}})<br>
+									La pente de votre toit est de : ({{toiture.degPente}}) degrés <br>
+									Votre toit est-il renforcé ? : ({{toiture.renforcement}})<br>
 									<b> Sous-total : </b> {{toiture.prix}} </b> €
 									
 									{% endif %}									</div>
@@ -170,7 +170,7 @@
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
 									soubassement choisi {{ soubassement.typeSoubassement}} <br>
-									<b> Sous-total : </b> {{soubassement.prix}} </b> €
+									<b> Sous-total : </b> {{soubassement.prix}} €
 									
 									{% endif %}									</div>
 							</section>
@@ -310,14 +310,38 @@
 
 						</div>
 					</div>
+
+					<br> <br>
+
+					<section class="panel panel-featured-left panel-featured-secondary">
+									<div class="panel-body">
+										<div class="widget-summary">
+											<div class="widget-summary-col widget-summary-col-icon">
+												<div class="summary-icon bg-secondary">
+													<i class="fa fa-usd"></i>
+												</div>
+											</div>
+											<div class="widget-summary-col">
+												<div class="summary">
+													<h4 class="title">Sous-total</h4>
+													<div class="info">
+																						{% if nbform == 11 %} <strong class="amount"> 	
+									{{etudeSol.prix + charpente.prix + prepTerrain.prix + soubassement.prix + elevation.prix 
+									+ excavation.prix + vrd.prix + fondations.prix + plancher.prix + toiture.prix + menuiserie.prix}} €</strong>
+									{% else %} Vous devez avoir rempli tous les formulaires pour avoir le prix total du gros oeuvre.
+									{% endif %} 
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
 					
 						
 									</div>
 									<div class="panel-footer">
-									{% if nbform == 11 %} 
-									<b> Prix total : </b> {{etudeSol.prix + charpente.prix + prepTerrain.prix + soubassement.prix + elevation.prix 
-									+ excavation.prix + vrd.prix + fondations.prix + plancher.prix + toiture.prix + menuiserie.prix}} €
-									{% endif %}
+
 										<ul class="pager">
 										<a href="{{path('second-oeuvre', {'id': projet.id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
 										type="button">Passer au second oeuvre</button></a>

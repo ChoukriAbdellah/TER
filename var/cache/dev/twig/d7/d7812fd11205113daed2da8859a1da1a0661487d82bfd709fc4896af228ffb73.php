@@ -154,63 +154,48 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
                 <h2 class=\"my-5\">Inscrivez-vous</h2>
               </div>
     
-              <!-- Login Form -->
-
-
-              <!-- <form>
-\t\t\t\t<input type=\"text\" id=\"name\" class=\"fadeIn second zero-raduis\" name=\"name\" placeholder=\"Nom\">
-\t\t\t\t
-                <input type=\"email\" id=\"email\" class=\"fadeIn second zero-raduis\" name=\"email\" placeholder=\"Adresse e-mail\">
-                <input type=\"text\" id=\"password\" class=\"fadeIn third zero-raduis\" name=\"login\" placeholder=\"Mot de passe\">
-\t\t\t\t
-                  <div id=\"formFooter\">
-                </div>
-                <input type=\"submit\" class=\"fadeIn fourth zero-raduis\" value=\"S'inscrire\">
-
-                              </form>
-              <h2>Déjà inscrit ?</h2>
-              <form action=\"";
-        // line 72
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
-        echo "\">
-\t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
-\t\t\t        </form>
-              </form> -->
+              <!-- Register Form -->
 
               ";
-        // line 77
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 77, $this->source); })()), 'form_start');
+        // line 59
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 59, $this->source); })()), 'form_start');
         echo "
                 ";
-        // line 78
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 78, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Nom"]]);
+        // line 60
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Identifiant"]]);
         echo "  
                 ";
-        // line 79
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 79, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Adresse e-mail"]]);
+        // line 61
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 61, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Adresse e-mail"]]);
         echo "  
                 ";
-        // line 80
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 80, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Mot de passe"]]);
+        // line 62
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 62, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Mot de passe"]]);
         echo "  
                 ";
-        // line 81
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 81, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Confirmer le mot de passe"]]);
+        // line 63
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 63, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Confirmer le mot de passe"]]);
         echo "  
+                ";
+        // line 64
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 64, $this->source); })()), "_token", []), 'row');
+        echo "
             
                 <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"S'inscrire\">
-            ";
-        // line 84
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 84, $this->source); })()), 'form_end');
+                 ";
+        // line 67
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 67, $this->source); })()), 'form_end');
         echo "
-            <h2>Déjà inscrit ?</h2>
-                <form action=\"";
-        // line 86
+
+                               </form>
+              <h2>Déjà inscrit ?</h2>
+              <form action=\"";
+        // line 71
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
 \t\t\t        </form>
-  
+
               
     
             </div>
@@ -243,7 +228,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
 
     public function getDebugInfo()
     {
-        return array (  209 => 86,  204 => 84,  198 => 81,  194 => 80,  190 => 79,  186 => 78,  182 => 77,  174 => 72,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  194 => 71,  187 => 67,  181 => 64,  177 => 63,  173 => 62,  169 => 61,  165 => 60,  161 => 59,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -304,39 +289,24 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
                 <h2 class=\"my-5\">Inscrivez-vous</h2>
               </div>
     
-              <!-- Login Form -->
+              <!-- Register Form -->
 
+              {{ form_start(form) }}
+                {{ form_row(form.username, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Identifiant'}} ) }}  
+                {{ form_row(form.email, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Adresse e-mail'}} ) }}  
+                {{ form_row(form.plainPassword.first, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Mot de passe'}} ) }}  
+                {{ form_row(form.plainPassword.second, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Confirmer le mot de passe'}} ) }}  
+                {{ form_row(form._token) }}
+            
+                <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"S'inscrire\">
+                 {{ form_end(form) }}
 
-              <!-- <form>
-\t\t\t\t<input type=\"text\" id=\"name\" class=\"fadeIn second zero-raduis\" name=\"name\" placeholder=\"Nom\">
-\t\t\t\t
-                <input type=\"email\" id=\"email\" class=\"fadeIn second zero-raduis\" name=\"email\" placeholder=\"Adresse e-mail\">
-                <input type=\"text\" id=\"password\" class=\"fadeIn third zero-raduis\" name=\"login\" placeholder=\"Mot de passe\">
-\t\t\t\t
-                  <div id=\"formFooter\">
-                </div>
-                <input type=\"submit\" class=\"fadeIn fourth zero-raduis\" value=\"S'inscrire\">
-
-                              </form>
+                               </form>
               <h2>Déjà inscrit ?</h2>
               <form action=\"{{ path('connexion') }}\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
 \t\t\t        </form>
-              </form> -->
 
-              {{ form_start(form) }}
-                {{ form_row(form.username, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Nom'}} ) }}  
-                {{ form_row(form.email, {'attr': {'class': 'fadeIn second zero-raduis', 'placeholder' : 'Adresse e-mail'}} ) }}  
-                {{ form_row(form.plainPassword.first, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Mot de passe'}} ) }}  
-                {{ form_row(form.plainPassword.second, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'Confirmer le mot de passe'}} ) }}  
-            
-                <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"S'inscrire\">
-            {{ form_end(form) }}
-            <h2>Déjà inscrit ?</h2>
-                <form action=\"{{ path('connexion') }}\">
-\t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
-\t\t\t        </form>
-  
               
     
             </div>
