@@ -15,6 +15,10 @@ class Domotique
      * @ORM\Column(type="integer")
      */
     private $id;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

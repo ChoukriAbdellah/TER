@@ -25,10 +25,17 @@ class DomotiqueRepository extends ServiceEntityRepository
     /*
     public function findByExampleField($value)
     {
+<<<<<<< HEAD
         return $this->createQueryBuilder('d')
             ->andWhere('d.exampleField = :val')
             ->setParameter('val', $value)
             ->orderBy('d.id', 'ASC')
+=======
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('c.id', 'ASC')
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -39,8 +46,13 @@ class DomotiqueRepository extends ServiceEntityRepository
     /*
     public function findOneBySomeField($value): ?Domotique
     {
+<<<<<<< HEAD
         return $this->createQueryBuilder('d')
             ->andWhere('d.exampleField = :val')
+=======
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

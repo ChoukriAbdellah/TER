@@ -6,21 +6,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
+
 use App\Form\ProjetType;
-use App\Form\EtudeSolType;
-use App\Form\CharpenteType;
-use App\Form\VrdType;
-use App\Form\ExcavationType;
-use App\Form\FondationType;
-use App\Form\PlancherType;
-use App\Form\PreparationEtAccesType;
-use App\Form\SoubassementType;
-use App\Form\ElevationType;
-use App\Form\MenuiserieType;
-use App\Form\ToitureType;
+
 use App\Entity\Projet;
+
 use App\Entity\GrosOeuvre;
 use App\Entity\SecondOeuvre;
+<<<<<<< HEAD
 use App\Entity\EtudeSol;
 use App\Entity\Charpente;
 use App\Entity\Excavation;
@@ -34,207 +27,37 @@ use App\Entity\Menuiserie;
 use App\Entity\Toiture;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Prix;
+=======
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
 use App\Repository\ProjetRepository;
 use App\Repository\UserRepository;
 use App\Repository\GrosOeuvreRepository;
 
+
 class ProjectController extends AbstractController
 {
 
-  public function newProject(Request $request)
-  {
-            // création du formulaire
-            $projet = new Projet();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(ProjetType::class, $projet);        
-            $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                $proprio = $this->getUser();
-                $idProprio = $proprio->getId();
-                $projet->setIdProprio($idProprio);
-
-                // création du gros oeuvre
-                $go = new GrosOeuvre();
-                // création du second oeuvre
-                $so = new SecondOeuvre();
-
-                // on enregistre go et so dans la BDD pr qu'ils aient une ID
-
-                $em->persist($go);
-                $em->flush();
-                $em->persist($so);
-                $em->flush();
-
-                // On recup l'id du GO et SO
-
-                $idGo = $go->getId();
-                $idSo = $so->getId();
-
-                // on lie les id des gros oeuvre et second oeuvre au projet qu'on a crée
-
-                $projet->setIdGrosOeuvre($idGo);
-                $projet->setIdSecondOeuvre($idSo);
-
-                // Enregistre le projet en base
-
-                $em->persist($projet);
-                $em->flush();
-     
-                return $this->redirectToRoute('dashboard');
-            }
-     
-            return $this->render(
-                'project/new-project.html.twig', array('form' => $form->createView()));
-  }
-
-  public function etudeSol($id, Request $request)
-  {
-            // création du formulaire
-            $e = new EtudeSol();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(EtudeSolType::class, $e);        
-            $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-                $prix = 0;
-                if($e->getTypeSol() == 'ARGILEUX'){
-                  $prix = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("sol_argileux");
-                }
-
-                if($e->getTypeSol() == 'CALCAIRE'){
-                  $prix = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("sol_calcaire");
-                }
-
-                if($e->getTypeSol() == 'HUMIFERE'){
-                  $prix = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("sol_humifere");
-                }
-
-                if($e->getTypeSol() == 'LIMONEUX'){
-                  $prix = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("sol_limoneux");
-                }
-
-                if($e->getTypeSol() == 'SABLEUX'){
-                  $prix = $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("sol_sableux");
-                }
-                
-                $e->setPrix($prix);
-                $em->persist($e);
-                $em->flush();
-
-                // Met à jour le projet avec l'id de l'étude de sol créée
-
-                $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-
-                $grosOeuvre->setIdEtudeSol($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
-     
-                return $this->redirectToRoute('my-project', array('id' => $id));
-            }
-
-
-     
-            return $this->render(
-              'project/etude-sol.html.twig', array('form' => $form->createView(), 'id' => $id));
-  }
- 
- 
- public function toiture($id, Request $request)
-  {
-            // création du formulaire
-            $e = new Toiture();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(ToitureType::class, $e);        
-            $form->handleRequest($request);
-			        $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-                $idGo = $projet->getIdGrosOeuvre();
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-			          $idCharpente = $grosOeuvre->getIdCharpente();
-			            if($idCharpente == NULL){
-                // création du formulaire
-                  $e = new Charpente();
-                  // instancie le formulaire avec les contraintes par défaut
-                  $form = $this->createForm(CharpenteType::class, $e);        
-                  $form->handleRequest($request);
-                return $this->redirectToRoute(
-                    'charpente', ['id'=>$id]);
-                   }
-                  
-                  if ($form->isSubmitted() && $form->isValid()) {  
-                        $em = $this->getDoctrine()->getManager();
-                        /* le prix */
-                        $prix=0;
-                        
-                        if($e->getTypeToit()== 'MODERNE'){
-                          $prix=$this->getDoctrine()
-                          ->getRepository(Prix::class)
-                          ->findPrixByNom("tuile_moderne");
-                        }
-                        if($e->getTypeToit()== 'CLASSIQUE'){
-                          $prix=$this->getDoctrine()
-                          ->getRepository(Prix::class)
-                          ->findPrixByNom("tuile_classique");
-                        }
-                        $p_deg=0;
-                        if($e->getrenforcement() == 'true'){
-                        $p_deg=$this->getDoctrine()
-                        ->getRepository(Prix::class)
-                        ->findPrixByNom("tuile_degre");
-                        }
-                        $renf=$this->getDoctrine()
-                        ->getRepository(Prix::class)
-                        ->findPrixByNom("tuile_renforcement");
-                        $a=$e->getdegPente();
-                        $prix=$prix+$renf+($a*$p_deg);
-                       
-                        // Enregistre l'étude de sol en base
-                        $e->setPrix($prix);
-                        $em->persist($e);
-                        $em->flush();
-                      // Met à jour le projet avec l'id de l'étude de sol créée
-                      
-                
-                        $grosOeuvre->setIdToiture($e->getId());
-                        $em->persist($grosOeuvre);
-                        $em->flush();
-     
-                return $this->redirectToRoute('dashboard');
-                      
-		}
-            return $this->render(
-              'project/toiture.html.twig', array('form' => $form->createView(), 'id' => $id));
-			
+    public function newProject(Request $request)
+    {
+              // création du formulaire
+              $projet = new Projet();
+              // instancie le formulaire avec les contraintes par défaut
+              $form = $this->createForm(ProjetType::class, $projet);        
+              $form->handleRequest($request);
+              if ($form->isSubmitted() && $form->isValid()) {  
+                  $em = $this->getDoctrine()->getManager();
   
-  }
+                  $proprio = $this->getUser();
+                  $idProprio = $proprio->getId();
+                  $projet->setIdProprio($idProprio);
   
+                  // création du gros oeuvre
+                  $go = new GrosOeuvre();
+                  // création du second oeuvre
+                  $so = new SecondOeuvre();
   
+<<<<<<< HEAD
   public function menuiserie($id, Request $request)
   {
             // création du formulaire
@@ -729,383 +552,35 @@ class ProjectController extends AbstractController
               'project/elevation.html.twig', array('form' => $form->createView(), 'id' => $id));
   } 
 
+=======
+                  // on enregistre go et so dans la BDD pr qu'ils aient une ID
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
   
+                  $em->persist($go);
+                  $em->flush();
+                  $em->persist($so);
+                  $em->flush();
   
-    public function excavation($id, Request $request)
-  {
-            // création du formulaire
-            $e = new Excavation();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(ExcavationType::class, $e);        
-            $form->handleRequest($request);
-			  $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-				$idEtudeSol = $grosOeuvre->getIdEtudeSol();
-			if($idEtudeSol == NULL){
-				 // création du formulaire
-					$e = new EtudeSol();
-					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(EtudeSolType::class, $e);        
-					$form->handleRequest($request);
-			  return $this->redirectToRoute(
-					  'etude-sol', ['id'=>$id]);
-			}
-			else{
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-                $prix = 0;
-                if($e->getTypeTerrassement() == 'FILANTE'){
-                  $prix += $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("type_terrassement_semelle_filante
-");
-                }
-
-                if($e->getTypeTerrassement() == 'LONGRINES'){
-                  $prix += $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("type_terrassement_longrines");
-                }
-
-                $prixMurs = ($e->getMursPeripherique() * $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("mur_peripherique")) + ($e->getMursRefont() * $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("mur_refont"));
-
-                $prixProfondeur = ( $e->getProfondeurFouille() * $this->getDoctrine()
-                  	->getRepository(Prix::class)
-                  	->findPrixByNom("profondeur_fouille")) 
-                	+ ( $e->getLargeurFouille() * $this->getDoctrine()
-                 	->getRepository(Prix::class)
-                 	 ->findPrixByNom("largeur_fouille"));
-
-                $prix += $prixMurs + $prixProfondeur;
-                $e->setPrix($prix);
-                $em->persist($e);
-                $em->flush();
-
-                // Met à jour le projet avec l'id de l'étude de sol créée
-
-              
-                $grosOeuvre->setIdExcavation($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
-     
-                return $this->redirectToRoute('my-project', array('id' => $id));
-            }
-     
-            return $this->render(
-              'project/excavation.html.twig', array('form' => $form->createView(), 'id' => $id));
-			}
-  }
+                  // On recup l'id du GO et SO
   
-    public function vrd($id, Request $request)
-  {
-            // création du formulaire
-            $e = new Vrd();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(VrdType::class, $e);        
-            $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-
-                
-
-
-                // Met à jour le projet avec l'id de l'étude de sol créée
-
-                $projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-                                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-
-                $prix = 0;
-                if($e->getPompeRelevage() == true){
-                  $prix += $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("pompe_relevage");
-                }
-
-                if($e->getFosseSeptique() == true){
-                  $prix += $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("fosse_septique");
-                }
-
-                if($e->getMicroStation() == true){
-                  $prix += $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("micro_station");
-                }
-
-                if($e->getEtudeHydrogeologique() == true){
-                  $prix += $this->getDoctrine()
-                  ->getRepository(Prix::class)
-                  ->findPrixByNom("etude_hydro");
-                }
-
-
-                $prix+= $e->getDistanceEauPotable() * $this->getDoctrine()
-                  	->getRepository(Prix::class)
-                  	->findPrixByNom("reseau_eau");
-
-                $prix+= $e->getDistanceElectricite() * $this->getDoctrine()
-                  	->getRepository(Prix::class)
-                  	->findPrixByNom("reseau_electricite");
-
-                $prix+= $e->getDistanceTelephonique() * $this->getDoctrine()
-                  	->getRepository(Prix::class)
-                  	->findPrixByNom("reseau_telephonique");
-
-                $e->setPrix($prix);
-                $em->persist($e);
-                $em->flush();
-
-                $grosOeuvre->setIdVrd($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
-     
-                return $this->redirectToRoute('my-project', array('id' => $id));
-            }
-     
-            return $this->render(
-              'project/vrd.html.twig', array('form' => $form->createView(), 'id' => $id));
-  }
+                  $idGo = $go->getId();
+                  $idSo = $so->getId();
   
-  public function fondation($id, Request $request)
-  {
-            // création du formulaire
-            $e = new Fondation();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(FondationType::class, $e);        
-            $form->handleRequest($request);
-			
-			$projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-				
-			$idExcavation = $grosOeuvre->getIdExcavation();
-			if($idExcavation == NULL){
-				 // création du formulaire
-					$e = new Excavation();
-					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(ExcavationType::class, $e);        
-					$form->handleRequest($request);
-			  return $this->redirectToRoute(
-					  'excavation', ['id'=>$id]);
-			}
-			else{
-				
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-
-                $em->persist($e);
-                $em->flush();
-
-                // Met à jour le projet avec l'id de l'étude de sol créée
-
-                
-
-                $grosOeuvre->setIdFondations($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
-     
-                return $this->redirectToRoute('my-project', array('id' => $id));
-            }
-     
-            return $this->render(
-              'project/fondation.html.twig', array('form' => $form->createView(), 'id' => $id));
-			}
-  }
+                  // on lie les id des gros oeuvre et second oeuvre au projet qu'on a crée
   
-    public function plancher($id, Request $request)
-  {
-            // création du formulaire
-            $e = new Plancher();
-            // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(PlancherType::class, $e);        
-            $form->handleRequest($request);
-			
-			$projet = $this->getDoctrine()
-                ->getRepository(Projet::class)
-                ->find($id);
-
-                $idGo = $projet->getIdGrosOeuvre();
-
-                $grosOeuvre = $this->getDoctrine()
-                ->getRepository(GrosOeuvre::class)
-                ->find($idGo);
-				
-			$idExcavation = $grosOeuvre->getIdExcavation();
-			if($idExcavation == NULL){
-				 // création du formulaire
-					$e = new Excavation();
-					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(ExcavationType::class, $e);        
-					$form->handleRequest($request);
-			  return $this->redirectToRoute(
-					  'excavation', ['id'=>$id]);
-			}
-			else{
-            if ($form->isSubmitted() && $form->isValid()) {  
-                $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-
-                $em->persist($e);
-                $em->flush();
-
-                // Met à jour le projet avec l'id de l'étude de sol créée
-
-                
-
-                $grosOeuvre->setIdPlancher($e->getId());
-                $em->persist($grosOeuvre);
-                $em->flush();
-     
-                return $this->redirectToRoute('my-project', array('id' => $id));
-            }
-     
-            return $this->render(
-              'project/plancher.html.twig', array('form' => $form->createView(), 'id' => $id));
-			}
-  }
-          
-
-  public function view($id, Request $request)
-    {
-    $projet = $this->getDoctrine()
-        ->getRepository(Projet::class)
-        ->find($id);
-
-    $idGo = $projet->getIdGrosOeuvre();
-    $grosOeuvre = $this->getDoctrine()
-    ->getRepository(GrosOeuvre::class)
-    ->find($idGo);
-
-    $idEtudeSol = $grosOeuvre->getIdEtudeSol();
-    if($idEtudeSol != NULL){
-      $etudeSol = $this->getDoctrine()->getRepository(EtudeSol::class)->find($idEtudeSol);
-    }
-    else{
-      $etudeSol = null;
-    }
-
-    $idCharpente = $grosOeuvre->getIdCharpente();
-    if($idCharpente != NULL){
-      $charpente = $this->getDoctrine()->getRepository(Charpente::class)->find($idCharpente);
-    }
-    else{
-      $charpente = null;
-    }
-
-    $idPrepTerrain = $grosOeuvre->getIdPrepTerrain();
-    if($idPrepTerrain != NULL){
-      $prepTerrain = $this->getDoctrine()->getRepository(PreparationEtAcces::class)->find($idPrepTerrain);
-    }
-    else{
-      $prepTerrain = null;
-    }
-
-    $idSoubassement = $grosOeuvre->getIdSoubassement();
-    if($idSoubassement != NULL){
-      $soubassement = $this->getDoctrine()->getRepository(Soubassement::class)->find($idSoubassement);
-    }
-    else{
-      $soubassement = null;
-    }
-
-    $idElevation = $grosOeuvre->getIdElevation();
-    if($idElevation != NULL){
-      $elevation = $this->getDoctrine()->getRepository(Elevation::class)->find($idElevation);
-    }
-    else{
-      $elevation = null;
-    }
-
-    $idExcavation = $grosOeuvre->getIdExcavation();
-    if($idExcavation != NULL){
-      $excavation = $this->getDoctrine()->getRepository(Excavation::class)->find($idExcavation);
-    }
-    else{
-      $excavation = null;
-    }
-
-    $idVRD = $grosOeuvre->getIdVRD();
-    if($idVRD != NULL){
-      $vrd = $this->getDoctrine()->getRepository(Vrd::class)->find($idVRD);
-    }
-    else{
-      $vrd = null;
-    }
-	
-	$idToiture = $grosOeuvre->getIdToiture();
-    if($idToiture != NULL){
-      $toiture = $this->getDoctrine()->getRepository(Toiture::class)->find($idToiture);
-    }
-    else{
-      $toiture = null;
-    }
-
-
-    $idFondations = $grosOeuvre->getIdFondations();
-    if($idFondations != NULL){
-      $fondations = $this->getDoctrine()->getRepository(Fondation::class)->find($idFondations);
-    }
-    else{
-      $fondations = null;
-    }
-
-    $idPlancher = $grosOeuvre->getIdPlancher();
-    if($idPlancher != NULL){
-      $plancher = $this->getDoctrine()->getRepository(Plancher::class)->find($idPlancher);
-    }
-    else{
-      $plancher = null;
-    }
-
-
-    $idMenuiserie = $grosOeuvre->getIdMenuiseriesExt();
-    if($idMenuiserie != NULL){
-      $menuiserie = $this->getDoctrine()->getRepository(Menuiserie::class)->find($idMenuiserie);
-    }
-
-    else{
-      $menuiserie = null;
-    }
-
-    $nbform = $this->getDoctrine()
-    ->getRepository(GrosOeuvre::class)->findNbFormulairesByGrosOeuvre($idGo);
-
-    return $this->render(
-        'project/view.html.twig',
-        ['projet'  => $projet, 'nbform' => $nbform, 'etudeSol' => $etudeSol, 'charpente' => $charpente, 'prepTerrain' => $prepTerrain, 'soubassement' => $soubassement,
-        'elevation' => $elevation, 'excavation' => $excavation, 'vrd' => $vrd, 'fondations' => $fondations, 'plancher' => $plancher, 'toiture' => $toiture, 'menuiserie' => $menuiserie]
-    );
+                  $projet->setIdGrosOeuvre($idGo);
+                  $projet->setIdSecondOeuvre($idSo);
+  
+                  // Enregistre le projet en base
+  
+                  $em->persist($projet);
+                  $em->flush();
+       
+                  return $this->redirectToRoute('dashboard');
+              }
+       
+              return $this->render(
+                  'project/new-project.html.twig', array('form' => $form->createView()));
     }
 
     public function menu()
@@ -1119,7 +594,12 @@ class ProjectController extends AbstractController
         'projets' => $projets
       ));
     }
+<<<<<<< HEAD
    
    
 
 }
+=======
+
+}
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a

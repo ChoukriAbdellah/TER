@@ -41,6 +41,15 @@ class ExcavationType extends AbstractType
 			->add('profondeurFouille', NumberType::class,[
                 'label' => false
             ]);
+
+        $builder 
+            ->add('profondeurFouille', ChoiceType::class,[
+                'label' => false,
+                'choices' => [
+                    'Oui'=>true,
+                    'Non'=>false]
+            ]);
+
 			
 			
 			
