@@ -11,8 +11,8 @@ use App\Entity\Projet;
 use App\Entity\SecondOeuvre;
 
 use App\Entity\Prix;
-
 use App\Repository\ProjetRepository;
+use App\Repository\UserRepository;
 use App\Repository\SecondOeuvreRepository;
 
 use App\Entity\Ventilation;
@@ -30,6 +30,13 @@ use App\Entity\Climatisation;
 use App\Form\ClimatisationType;
 use App\Entity\Domotique;
 use App\Form\DomotiqueType;
+
+use App\Entity\Enduit;
+use App\Form\EnduitType;
+use App\Entity\Isolation;
+use App\Form\IsolationType;
+use App\Entity\Revetement;
+use App\Form\RevetementType;
 
 use App\Entity\Electricite;
 use App\Form\ElectriciteType;
@@ -106,6 +113,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdCloisons($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des cloisons avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -160,6 +169,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdEvacuation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'évacuation des fumées avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -238,6 +249,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdMenuiseriesInt($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des menuiseries intérieures avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -256,33 +269,6 @@ class SecondOeuvreController extends AbstractController
         $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-                /*
-                $prix = 0;
-
-                $coutFeraillage = 0;
-                if ($e->getSismicite() == true)
-                    $coutFeraillage += $this->getDoctrine()->getRepository(Prix::class)->findPrixByNom("sismicite");;
-
-                $idEtudeSol = $grosOeuvre->getIdEtudeSol();
-                $etudeSol = $this->getDoctrine()
-                    ->getRepository(EtudeSol::class)
-                    ->find($idEtudeSol);
-                $coutFeraillage += $etudeSol->getPrix();
-
-                $quantiteFeraillage = 0;
-
-                $idExcavation = $grosOeuvre->getIdExcavation();
-                $excavation = $this->getDoctrine()
-                    ->getRepository(Excavation::class)
-                    ->find($idExcavation);
-                // les mètres linéaires sont récupérés à partir de l'excavation
-                $metresLineaires = $excavation->getMursPeripherique() + $excavation->getMursRefont();
-
-                $quantiteFerraillage = $metresLineaires * (3 / 5);
-
-                $prix = $coutFeraillage * $quantiteFerraillage;*/
                 $prix = 0;
                 if($e->getTypeEscalier() == 'DROIT'){
                     $prix += $e->getDimensions()* $this->getDoctrine()
@@ -339,7 +325,9 @@ class SecondOeuvreController extends AbstractController
 
 				$secondOeuvre->setIdEscaliers($e->getId());
 				$em->persist($secondOeuvre);
-				$em->flush();
+                $em->flush();
+                
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des escaliers avec succès !");
 
 				return $this->redirectToRoute('second-oeuvre', array('id' => $id));
 			}
@@ -438,6 +426,8 @@ class SecondOeuvreController extends AbstractController
             $secondOeuvre->setIdPlomberie($e->getId());
             $em->persist($secondOeuvre);
             $em->flush();
+
+            $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la plomberie avec succès !");
 
             return $this->redirectToRoute('second-oeuvre', array('id' => $id));
         }
@@ -542,6 +532,8 @@ class SecondOeuvreController extends AbstractController
             $em->persist($secondOeuvre);
             $em->flush();
 
+            $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'électricité avec succès !");
+
             return $this->redirectToRoute('second-oeuvre', array('id' => $id));
         }
 
@@ -607,6 +599,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdVentilation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la ventilation avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -656,6 +650,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdClimatisation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la climatisation avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -732,6 +728,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdDomotique($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la domotique avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -740,7 +738,163 @@ class SecondOeuvreController extends AbstractController
               'project/domotique.html.twig', array('form' => $form->createView(), 'id' => $id));
 			
   }
+  public function enduit ($id, Request $request)
+  {
+    
+            // création du formulaire
+            $e = new Enduit();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(EnduitType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                
+                
+                $nbc = $e->getNbCouches();
+                $s= $e->getSurface();
+                $prix=$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("enduit_metre");
+                
+                $prix= $prix *$s *$nbc ;
+                // Enregistre l'étude de sol en base
+                $e->setPrix($prix);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdEnduitFacade($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'enduit de façade avec succès !");
      
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/enduit.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
+  public function isolation ($id, Request $request){
+    
+            // création du formulaire
+            $e = new Isolation();
+            // instancie le formulaire avec les contraintes par défaut
+            $form = $this->createForm(IsolationType::class, $e);        
+            $form->handleRequest($request);
+			
+			$projet = $this->getDoctrine()
+                ->getRepository(Projet::class)
+                ->find($id);
+
+                $idSo = $projet->getIdSecondOeuvre();
+
+                $secondOeuvre = $this->getDoctrine()
+                ->getRepository(SecondOeuvre::class)
+                ->find($idSo);
+				
+		
+            if ($form->isSubmitted() && $form->isValid()) {  
+                $em = $this->getDoctrine()->getManager();
+                
+                
+                $s_t = $e->getSurfaceThermique();
+                $s_p = $e->getSurfacePhonique();
+                $p_t=$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("isolation_t");
+                $p_p=$this->getDoctrine()
+                ->getRepository(Prix::class)
+                ->findPrixByNom("isolation_p");
+                
+                $prix= ($s_t * $p_t) +( $s_p * $p_p) ;
+                // Enregistre l'étude de sol en base
+                $e->setPrix($prix);
+                $em->persist($e);
+                $em->flush();
+
+                // Met à jour le projet avec l'id de l'étude de sol créée
+
+                $secondOeuvre->setIdIsolation($e->getId());
+                $em->persist($secondOeuvre);
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'isolation avec succès !");
+     
+                return $this->redirectToRoute('second-oeuvre', array('id' => $id));
+            }
+     
+            return $this->render(
+              'project/isolation.html.twig', array('form' => $form->createView(), 'id' => $id));
+			
+  }
+  public function revetement ($id, Request $request){
+    
+    // création du formulaire
+    $e = new Revetement();
+    // instancie le formulaire avec les contraintes par défaut
+    $form = $this->createForm(RevetementType::class, $e);        
+    $form->handleRequest($request);
+    
+    $projet = $this->getDoctrine()
+        ->getRepository(Projet::class)
+        ->find($id);
+
+        $idSo = $projet->getIdSecondOeuvre();
+
+        $secondOeuvre = $this->getDoctrine()
+        ->getRepository(SecondOeuvre::class)
+        ->find($idSo);
+        
+
+    if ($form->isSubmitted() && $form->isValid()) {  
+        $em = $this->getDoctrine()->getManager();
+        
+        
+        $s_c = $e->getSurfRevetClassique();
+        $s_m = $e->getSurfRevetMotif();
+        $p_c=$this->getDoctrine()
+        ->getRepository(Prix::class)
+        ->findPrixByNom("revet_clas");
+        $p_m=$this->getDoctrine()
+        ->getRepository(Prix::class)
+        ->findPrixByNom("revet_motif");
+        
+        $prix= ($s_c * $p_c) +( $s_m * $p_m) ;
+        // Enregistre l'étude de sol en base
+        $e->setPrix($prix);
+        $em->persist($e);
+        $em->flush();
+
+        // Met à jour le projet avec l'id de l'étude de sol créée
+
+        $secondOeuvre->setIdRevetement($e->getId());
+        $em->persist($secondOeuvre);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire du revêtement avec succès !");
+
+        return $this->redirectToRoute('second-oeuvre', array('id' => $id));
+    }
+
+    return $this->render(
+      'project/revetement.html.twig', array('form' => $form->createView(), 'id' => $id));
+    
+}
 
   public function view($id, Request $request)
     {
@@ -822,6 +976,27 @@ class SecondOeuvreController extends AbstractController
     else{
         $menuiseriesInt = null;
     }
+    $idEnduit = $secondOeuvre->getIdEnduitFacade();
+    if($idEnduit != NULL){
+        $enduit = $this->getDoctrine()->getRepository(Enduit::class)->find($idEnduit);
+    }
+    else{
+        $enduit = null;
+    }
+    $idIsolation = $secondOeuvre->getIdIsolation();
+    if($idIsolation != NULL){
+        $isolation = $this->getDoctrine()->getRepository(isolation::class)->find($idIsolation);
+    }
+    else{
+        $isolation = null;
+    }
+    $idRevetement = $secondOeuvre->getIdRevetement();
+    if($idRevetement != NULL){
+        $revetement = $this->getDoctrine()->getRepository(Revetement::class)->find($idRevetement);
+    }
+    else{
+        $revetement = null;
+    }
 
 
 
@@ -831,7 +1006,7 @@ class SecondOeuvreController extends AbstractController
     return $this->render(
         'project/second-oeuvre-view.html.twig', ['projet' => $projet, 'nbform' => $nbform,
         'ventilation' => $ventilation, 'climatisation' => $climatisation, 'domotique' => $domotique,
-		'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite, 'cloisons' => $cloisons, 'evacuation' => $evacuation, 'menuiseriesInt' => $menuiseriesInt
+		'escaliers' => $escaliers, 'plomberie' => $plomberie, 'electricite' => $electricite, 'cloisons' => $cloisons, 'evacuation' => $evacuation, 'menuiseriesInt' => $menuiseriesInt,'enduit'=> $enduit , 'isolation' => $isolation, 'revetement'=>$revetement
         ]);
         
     }

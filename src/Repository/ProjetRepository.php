@@ -35,17 +35,30 @@ class ProjetRepository extends ServiceEntityRepository
         ;
     }
 
-    /*
-
-    public function findProjetById($value): ?Projet
+    public function sumProjets()
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.id = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'select count(id) as number from projet ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+        $tab = $stmt->fetch();
+        $nb = $tab['number'];
+    
+        // returns an array of arrays (i.e. a raw data set)
+        return $nb;
     }
 
-    */
+    
+    /*public function sumProjets()
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'select count(id) as number from projet ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([]);
+        $tab = $stmt->fetch();
+        $nb = $tab['number'];
+    
+        // returns an array of arrays (i.e. a raw data set)
+        return $nb;
+    }*/
 }

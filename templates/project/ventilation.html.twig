@@ -15,13 +15,11 @@
 				{% block pageactuelle %}Ventilation {% endblock %}
 
     {% block body %}
-
 	<div class="row">
 							<div class="col-xs-12">
 									<header class="panel-heading">
 									<h2 class="panel-title">Ventilation</h2>
 									</header>
-
                                     
 								
 														<div class="form-group">
@@ -33,12 +31,12 @@
 															</div>  
 													
 													<br><br>
-															{{ form_label(form.surfaceChambreSalon, "Indiquez la surface totale à ventiler(chambre + cuisine). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
-														<div class="col-sm-9">
-															{{ form_row(form.surfaceChambreSalon, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
-															</div>  
 													
-													<br><br>
+															{{ form_label(form.surfaceChambreSalon, "Indiquez la surface totale à ventiler(chambre + cuisine). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+													<div class="col-sm-9">
+													{{ form_row(form.surfaceChambreSalon, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+													</div>
+
 															{{ form_label(form.surfaceCuisineWc, "Indiquez la surface totale retante (Wc + cuisine). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
 														<div class="col-sm-9">
 															{{ form_row(form.surfaceCuisineWc, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
@@ -58,7 +56,7 @@
 									</div>
 								</section>
 							</div>
-						</div>
+						</div> 
 
     {% endblock %}
 
@@ -67,5 +65,9 @@
 		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
 		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
 		<script src="assets/vendor/store-js/store.js"></script>
+<<<<<<< HEAD
+	 
+=======
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
     {% endblock %}

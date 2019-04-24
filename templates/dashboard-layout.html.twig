@@ -229,9 +229,17 @@
 							</figure>
 							<div class="profile-info">
 								<span class="name">{{ app.user.username }}</span>
-								<span class="role">{% for role in app.user.roles %}
-                                                    {{ role }}
-                                                    {% endfor %}</span>
+								<span class="role">
+								{% if is_granted('ROLE_ADMIN') %}
+								Administrateur
+								{% elseif is_granted('ROLE_COMMERCIAL') %}
+								Commercial
+								{% elseif is_granted('ROLE_USER') %}
+								Membre
+								{% else %}
+								Non enregistré
+
+								{% endif %}</span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
@@ -274,12 +282,30 @@
 											<span>Tableau de bord</span>
 										</a>
 									</li>
+									
 									<li class="nav-active">
 										<a href="{{ path('new-project') }}">
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>Nouveau projet</span>
 										</a>
 									</li>
+									{% if is_granted('ROLE_ADMIN') %}
+																		
+									<li class="nav-active">
+										<a href="{{ path('listeMembreAdmin') }}">
+											<i class="fa fa-user" aria-hidden="true"></i>
+											<span>Membres</span>
+										</a>
+									</li>
+
+									<li class="nav-active">
+										<a href="{{ path('listeAdmin') }}">
+											<i class="fa fa-table" aria-hidden="true"></i>
+											<span>Liste des projets</span>
+										</a>
+									</li>
+
+									{% endif %}
 		
 									
 								</ul>
@@ -424,6 +450,7 @@
 
 		<!-- Examples -->
 		<script src="{{ asset('resources/assets/javascripts/dashboard/examples.dashboard.js') }}"></script>
+		<script src="{{ asset('resources/assets/javascripts/ui-elements/examples.notifications.js') }}"></script>
 
 		{% block javascript %}
 

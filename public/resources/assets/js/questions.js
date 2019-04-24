@@ -1,7 +1,7 @@
 module.exports= [
-    'Qu’avez vous déjà fait sur votre terrain ?',
-    'Quel type de toiture  ?'
-    ,'quel est votre budget ?',
-    'Quelle est la surface de votre maison ? (surface habitable)',
-    'Quel est le style de construction ?'
+    'Quelle est la nature de votre terrain ?',
+    'Combien d\'arbre avez vous sur votre terrain ?'
+    ,'Rensignez le type de l\'arbre',
+    'Rensignez la taille de l\'arbre',
+    'Indiquez le nombre de mètres linéaires des murs ?'
 ];

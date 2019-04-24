@@ -264,10 +264,8 @@
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
       </parameter>
-      <parameter key="ROLE_SUPER_ADMIN" type="collection">
+      <parameter key="ROLE_COMMERCIAL" type="collection">
         <parameter>ROLE_USER</parameter>
-        <parameter>ROLE_ADMIN</parameter>
-        <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
       </parameter>
     </parameter>
     <parameter key="security.access.denied_url">null</parameter>
@@ -380,6 +378,13 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/opt/lampp/htdocs/Symfony/var/log/dev.log</argument>
     </service>
+    <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\AdminController"/>
+      </call>
+    </service>
     <service id="App\Controller\DashboardController" class="App\Controller\DashboardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -432,6 +437,9 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Form\AccountType" class="App\Form\AccountType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -441,6 +449,12 @@
     <service id="App\Form\CloisonType" class="App\Form\CloisonType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\CloisonsType" class="App\Form\CloisonsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CreateMemberType" class="App\Form\CreateMemberType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\DomotiqueType" class="App\Form\DomotiqueType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -448,6 +462,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ElevationType" class="App\Form\ElevationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EnduitType" class="App\Form\EnduitType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\EscaliersType" class="App\Form\EscaliersType" autowire="true" autoconfigure="true">
@@ -463,6 +480,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\FondationType" class="App\Form\FondationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\IsolationType" class="App\Form\IsolationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\MenuiserieType" class="App\Form\MenuiserieType" autowire="true" autoconfigure="true">
@@ -484,6 +504,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ResettingType" class="App\Form\ResettingType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RevetementType" class="App\Form\RevetementType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\SoubassementType" class="App\Form\SoubassementType" autowire="true" autoconfigure="true">
@@ -513,6 +536,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\CloisonsRepository" class="App\Repository\CloisonsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\DomotiqueRepository" class="App\Repository\DomotiqueRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -522,6 +549,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ElevationRepository" class="App\Repository\ElevationRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\EnduitRepository" class="App\Repository\EnduitRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -546,6 +577,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\IsolationRepository" class="App\Repository\IsolationRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -574,6 +609,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ProjetRepository" class="App\Repository\ProjetRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RevetementRepository" class="App\Repository\RevetementRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -831,17 +870,22 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AccountType</argument>
         <argument>App\Form\CharpenteType</argument>
         <argument>App\Form\ClimatisationType</argument>
         <argument>App\Form\CloisonType</argument>
+        <argument>App\Form\CloisonsType</argument>
+        <argument>App\Form\CreateMemberType</argument>
         <argument>App\Form\DomotiqueType</argument>
         <argument>App\Form\ElectriciteType</argument>
         <argument>App\Form\ElevationType</argument>
+        <argument>App\Form\EnduitType</argument>
         <argument>App\Form\EscaliersType</argument>
         <argument>App\Form\EtudeSolType</argument>
         <argument>App\Form\EvacuationFumeesType</argument>
         <argument>App\Form\ExcavationType</argument>
         <argument>App\Form\FondationType</argument>
+        <argument>App\Form\IsolationType</argument>
         <argument>App\Form\MenuiserieType</argument>
         <argument>App\Form\MenuiseriesIntType</argument>
         <argument>App\Form\PlancherType</argument>
@@ -849,6 +893,7 @@
         <argument>App\Form\PreparationEtAccesType</argument>
         <argument>App\Form\ProjetType</argument>
         <argument>App\Form\ResettingType</argument>
+        <argument>App\Form\RevetementType</argument>
         <argument>App\Form\SoubassementType</argument>
         <argument>App\Form\ToitureType</argument>
         <argument>App\Form\UserType</argument>
@@ -1092,7 +1137,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.02mSF_T"/>
+      <argument type="service" id=".service_locator.7fGCWer"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2656,7 +2701,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.BG7X..z"/>
+      <argument type="service" id=".service_locator.hqoMbbU"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3863,6 +3908,9 @@
     <service id="swiftmailer.mailer.default.plugin.messagelogger" class="Swift_Plugins_MessageLogger" public="true">
       <tag name="swiftmailer.default.plugin"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DashboardController" class="App\Controller\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DashboardController" class="App\Controller\DashboardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DashboardController" class="App\Controller\DashboardController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -3884,18 +3932,26 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AccountType" class="App\Form\AccountType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AccountType" class="App\Form\AccountType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CharpenteType" class="App\Form\CharpenteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClimatisationType" class="App\Form\ClimatisationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ClimatisationType" class="App\Form\ClimatisationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloisonType" class="App\Form\CloisonType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CloisonType" class="App\Form\CloisonType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloisonsType" class="App\Form\CloisonsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CloisonsType" class="App\Form\CloisonsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CreateMemberType" class="App\Form\CreateMemberType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CreateMemberType" class="App\Form\CreateMemberType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DomotiqueType" class="App\Form\DomotiqueType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\DomotiqueType" class="App\Form\DomotiqueType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ElectriciteType" class="App\Form\ElectriciteType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ElectriciteType" class="App\Form\ElectriciteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ElevationType" class="App\Form\ElevationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ElevationType" class="App\Form\ElevationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EnduitType" class="App\Form\EnduitType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EnduitType" class="App\Form\EnduitType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EscaliersType" class="App\Form\EscaliersType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EscaliersType" class="App\Form\EscaliersType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EtudeSolType" class="App\Form\EtudeSolType" autowire="true" abstract="true"/>
@@ -3906,6 +3962,8 @@
     <service id=".abstract.instanceof.App\Form\ExcavationType" class="App\Form\ExcavationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FondationType" class="App\Form\FondationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FondationType" class="App\Form\FondationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\IsolationType" class="App\Form\IsolationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\IsolationType" class="App\Form\IsolationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MenuiserieType" class="App\Form\MenuiserieType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MenuiserieType" class="App\Form\MenuiserieType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MenuiseriesIntType" class="App\Form\MenuiseriesIntType" autowire="true" abstract="true"/>
@@ -3920,6 +3978,8 @@
     <service id=".abstract.instanceof.App\Form\ProjetType" class="App\Form\ProjetType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResettingType" class="App\Form\ResettingType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ResettingType" class="App\Form\ResettingType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RevetementType" class="App\Form\RevetementType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RevetementType" class="App\Form\RevetementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SoubassementType" class="App\Form\SoubassementType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SoubassementType" class="App\Form\SoubassementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ToitureType" class="App\Form\ToitureType" autowire="true" abstract="true"/>
@@ -3936,12 +3996,16 @@
     <service id=".abstract.instanceof.App\Repository\ClimatisationRepository" class="App\Repository\ClimatisationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CloisonRepository" class="App\Repository\CloisonRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CloisonRepository" class="App\Repository\CloisonRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CloisonsRepository" class="App\Repository\CloisonsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CloisonsRepository" class="App\Repository\CloisonsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DomotiqueRepository" class="App\Repository\DomotiqueRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DomotiqueRepository" class="App\Repository\DomotiqueRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ElectriciteRepository" class="App\Repository\ElectriciteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ElectriciteRepository" class="App\Repository\ElectriciteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ElevationRepository" class="App\Repository\ElevationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ElevationRepository" class="App\Repository\ElevationRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EnduitRepository" class="App\Repository\EnduitRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EnduitRepository" class="App\Repository\EnduitRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EscaliersRepository" class="App\Repository\EscaliersRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EscaliersRepository" class="App\Repository\EscaliersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EtudeSolRepository" class="App\Repository\EtudeSolRepository" autowire="true" abstract="true"/>
@@ -3954,6 +4018,8 @@
     <service id=".abstract.instanceof.App\Repository\FondationRepository" class="App\Repository\FondationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GrosOeuvreRepository" class="App\Repository\GrosOeuvreRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IsolationRepository" class="App\Repository\IsolationRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\IsolationRepository" class="App\Repository\IsolationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MenuiserieRepository" class="App\Repository\MenuiserieRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MenuiserieRepository" class="App\Repository\MenuiserieRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MenuiseriesIntRepository" class="App\Repository\MenuiseriesIntRepository" autowire="true" abstract="true"/>
@@ -3968,6 +4034,8 @@
     <service id=".abstract.instanceof.App\Repository\PrixRepository" class="App\Repository\PrixRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProjetRepository" class="App\Repository\ProjetRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProjetRepository" class="App\Repository\ProjetRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RevetementRepository" class="App\Repository\RevetementRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RevetementRepository" class="App\Repository\RevetementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SecondOeuvreRepository" class="App\Repository\SecondOeuvreRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SecondOeuvreRepository" class="App\Repository\SecondOeuvreRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SoubassementRepository" class="App\Repository\SoubassementRepository" autowire="true" abstract="true"/>
@@ -4140,16 +4208,23 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.oXHHcjB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.eBT2KwA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="twig" type="service" id="twig"/>
+        <argument key="mailer" type="service" id="App\Services\Mailer"/>
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
     <service id=".service_locator.lm3AYgL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.oXHHcjB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
     <service id=".service_locator.YlitY.M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4172,17 +4247,19 @@
         <argument key="authUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.yZdetbG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.rAkKL4H" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\DashboardController::index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\AdminController::listeMembreAdmin" type="service" id=".service_locator.eBT2KwA"/>
+        <argument key="App\Controller\DashboardController::index" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\ResettingController::request" type="service" id=".service_locator.YlitY.M"/>
         <argument key="App\Controller\ResettingController::resetting" type="service" id=".service_locator.5iM2kDV"/>
         <argument key="App\Controller\SecurityController::connexion" type="service" id=".service_locator.d24Amjx"/>
         <argument key="App\Controller\SecurityController::inscription" type="service" id=".service_locator.oXHHcjB"/>
-        <argument key="App\Controller\DashboardController:index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\AdminController:listeMembreAdmin" type="service" id=".service_locator.eBT2KwA"/>
+        <argument key="App\Controller\DashboardController:index" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\ResettingController:request" type="service" id=".service_locator.YlitY.M"/>
@@ -4244,20 +4321,25 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.02mSF_T" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.7fGCWer" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AccountType" type="service" id="App\Form\AccountType"/>
         <argument key="App\Form\CharpenteType" type="service" id="App\Form\CharpenteType"/>
         <argument key="App\Form\ClimatisationType" type="service" id="App\Form\ClimatisationType"/>
         <argument key="App\Form\CloisonType" type="service" id="App\Form\CloisonType"/>
+        <argument key="App\Form\CloisonsType" type="service" id="App\Form\CloisonsType"/>
+        <argument key="App\Form\CreateMemberType" type="service" id="App\Form\CreateMemberType"/>
         <argument key="App\Form\DomotiqueType" type="service" id="App\Form\DomotiqueType"/>
         <argument key="App\Form\ElectriciteType" type="service" id="App\Form\ElectriciteType"/>
         <argument key="App\Form\ElevationType" type="service" id="App\Form\ElevationType"/>
+        <argument key="App\Form\EnduitType" type="service" id="App\Form\EnduitType"/>
         <argument key="App\Form\EscaliersType" type="service" id="App\Form\EscaliersType"/>
         <argument key="App\Form\EtudeSolType" type="service" id="App\Form\EtudeSolType"/>
         <argument key="App\Form\EvacuationFumeesType" type="service" id="App\Form\EvacuationFumeesType"/>
         <argument key="App\Form\ExcavationType" type="service" id="App\Form\ExcavationType"/>
         <argument key="App\Form\FondationType" type="service" id="App\Form\FondationType"/>
+        <argument key="App\Form\IsolationType" type="service" id="App\Form\IsolationType"/>
         <argument key="App\Form\MenuiserieType" type="service" id="App\Form\MenuiserieType"/>
         <argument key="App\Form\MenuiseriesIntType" type="service" id="App\Form\MenuiseriesIntType"/>
         <argument key="App\Form\PlancherType" type="service" id="App\Form\PlancherType"/>
@@ -4265,6 +4347,7 @@
         <argument key="App\Form\PreparationEtAccesType" type="service" id="App\Form\PreparationEtAccesType"/>
         <argument key="App\Form\ProjetType" type="service" id="App\Form\ProjetType"/>
         <argument key="App\Form\ResettingType" type="service" id="App\Form\ResettingType"/>
+        <argument key="App\Form\RevetementType" type="service" id="App\Form\RevetementType"/>
         <argument key="App\Form\SoubassementType" type="service" id="App\Form\SoubassementType"/>
         <argument key="App\Form\ToitureType" type="service" id="App\Form\ToitureType"/>
         <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
@@ -4393,21 +4476,24 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.BG7X..z" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.hqoMbbU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CharpenteRepository" type="service" id="App\Repository\CharpenteRepository"/>
         <argument key="App\Repository\ClimatisationRepository" type="service" id="App\Repository\ClimatisationRepository"/>
         <argument key="App\Repository\CloisonRepository" type="service" id="App\Repository\CloisonRepository"/>
+        <argument key="App\Repository\CloisonsRepository" type="service" id="App\Repository\CloisonsRepository"/>
         <argument key="App\Repository\DomotiqueRepository" type="service" id="App\Repository\DomotiqueRepository"/>
         <argument key="App\Repository\ElectriciteRepository" type="service" id="App\Repository\ElectriciteRepository"/>
         <argument key="App\Repository\ElevationRepository" type="service" id="App\Repository\ElevationRepository"/>
+        <argument key="App\Repository\EnduitRepository" type="service" id="App\Repository\EnduitRepository"/>
         <argument key="App\Repository\EscaliersRepository" type="service" id="App\Repository\EscaliersRepository"/>
         <argument key="App\Repository\EtudeSolRepository" type="service" id="App\Repository\EtudeSolRepository"/>
         <argument key="App\Repository\EvacuationFumeesRepository" type="service" id="App\Repository\EvacuationFumeesRepository"/>
         <argument key="App\Repository\ExcavationRepository" type="service" id="App\Repository\ExcavationRepository"/>
         <argument key="App\Repository\FondationRepository" type="service" id="App\Repository\FondationRepository"/>
         <argument key="App\Repository\GrosOeuvreRepository" type="service" id="App\Repository\GrosOeuvreRepository"/>
+        <argument key="App\Repository\IsolationRepository" type="service" id="App\Repository\IsolationRepository"/>
         <argument key="App\Repository\MenuiserieRepository" type="service" id="App\Repository\MenuiserieRepository"/>
         <argument key="App\Repository\MenuiseriesIntRepository" type="service" id="App\Repository\MenuiseriesIntRepository"/>
         <argument key="App\Repository\PlancherRepository" type="service" id="App\Repository\PlancherRepository"/>
@@ -4415,6 +4501,7 @@
         <argument key="App\Repository\PreparationEtAccesRepository" type="service" id="App\Repository\PreparationEtAccesRepository"/>
         <argument key="App\Repository\PrixRepository" type="service" id="App\Repository\PrixRepository"/>
         <argument key="App\Repository\ProjetRepository" type="service" id="App\Repository\ProjetRepository"/>
+        <argument key="App\Repository\RevetementRepository" type="service" id="App\Repository\RevetementRepository"/>
         <argument key="App\Repository\SecondOeuvreRepository" type="service" id="App\Repository\SecondOeuvreRepository"/>
         <argument key="App\Repository\SoubassementRepository" type="service" id="App\Repository\SoubassementRepository"/>
         <argument key="App\Repository\ToitureRepository" type="service" id="App\Repository\ToitureRepository"/>
@@ -4464,6 +4551,12 @@
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
+      <argument>App\Controller\AdminController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>
     <service id=".service_locator.KTVqfp6.App\Controller\DashboardController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\DashboardController"/>
@@ -4586,7 +4679,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.yZdetbG"/>
+      <argument type="service" id=".service_locator.rAkKL4H"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4877,7 +4970,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.yZdetbG"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.rAkKL4H"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

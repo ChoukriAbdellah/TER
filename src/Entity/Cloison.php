@@ -5,7 +5,11 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+<<<<<<< HEAD
+ * @ORM\Entity(repositoryClass="App\Repository\CloisonsRepository")
+=======
  * @ORM\Entity(repositoryClass="App\Repository\CloisonRepository")
+>>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
  */
 class Cloison
 {

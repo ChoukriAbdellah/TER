@@ -1,0 +1,46 @@
+.App {
+ display: flex;
+}
+
+.main{
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.flats{
+  display:flex;
+  flex-wrap: wrap;
+  align-content: flex-start
+}
+.search {
+  padding: 10px;
+  margin-right: 15px;
+}
+.search input{
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  color: #999;
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+} 

@@ -190,29 +190,16 @@ class __TwigTemplate_53defcfa3c5e8ccf48d7e8173ff2a421164901123fee753d53f968aeb5e
 
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<!--
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 60
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "typeTerrassement", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Quel est le type de terrassement de votre terrain ? "]);
-        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 62
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 62, $this->source); })()), "typeTerrassement", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
-        echo "           
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t-->
+
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"nano\"> 
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t  <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
-        // line 73
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 73, $this->source); })()), 'form_end');
+        // line 66
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), 'form_end');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br>
@@ -237,7 +224,7 @@ class __TwigTemplate_53defcfa3c5e8ccf48d7e8173ff2a421164901123fee753d53f968aeb5e
 
     }
 
-    // line 90
+    // line 83
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -246,7 +233,7 @@ class __TwigTemplate_53defcfa3c5e8ccf48d7e8173ff2a421164901123fee753d53f968aeb5e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 91
+        // line 84
         echo "\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
@@ -277,7 +264,7 @@ class __TwigTemplate_53defcfa3c5e8ccf48d7e8173ff2a421164901123fee753d53f968aeb5e
 
     public function getDebugInfo()
     {
-        return array (  250 => 91,  241 => 90,  215 => 73,  201 => 62,  196 => 60,  185 => 52,  180 => 50,  173 => 46,  168 => 44,  161 => 40,  156 => 38,  149 => 34,  144 => 32,  137 => 28,  132 => 26,  127 => 24,  118 => 17,  109 => 16,  91 => 14,  80 => 11,  71 => 10,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  237 => 84,  228 => 83,  202 => 66,  185 => 52,  180 => 50,  173 => 46,  168 => 44,  161 => 40,  156 => 38,  149 => 34,  144 => 32,  137 => 28,  132 => 26,  127 => 24,  118 => 17,  109 => 16,  91 => 14,  80 => 11,  71 => 10,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -340,19 +327,12 @@ class __TwigTemplate_53defcfa3c5e8ccf48d7e8173ff2a421164901123fee753d53f968aeb5e
 
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<!--
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.typeTerrassement, \"Quel est le type de terrassement de votre terrain ? \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.typeTerrassement, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t-->
+
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"nano\"> 
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t  <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>

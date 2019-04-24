@@ -346,6 +346,13 @@
 										<a href="{{path('second-oeuvre', {'id': projet.id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
 										type="button">Passer au second oeuvre</button></a>
 										</ul>
+										{% if nbform == 11 %}
+										<ul class="pager">
+										<a href="#"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
+										type="button">Accéder à la facture finale</button></a>
+										</ul>
+										{% endif %}
+
 									</div>
 								</section>
 							</div>

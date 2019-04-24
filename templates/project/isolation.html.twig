@@ -1,0 +1,66 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2>Isolation</h2>
+				{% endblock %}
+
+				{% block pageactuelle %}Isolation {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Isolation Thermique et Phonique</h2>
+									</header>
+
+                                    
+													<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+														
+																	
+                                                        {{ form_label(form.surfaceThermique, "la surface sur laquelle vous voulez installer un isolateur thermique : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.surfaceThermique, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+                                                        {{ form_label(form.surfacePhonique, "la surface sur laquelle vous voulez installer un isolateur phonique : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+														<div class="col-sm-9">
+															{{ form_row(form.surfacePhonique, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+
+														</div>
+                                                        </div>
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+					
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}

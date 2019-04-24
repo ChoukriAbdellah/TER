@@ -30,6 +30,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\SecurityController::connexion'], null, null, null, true, false, null]],
             '/dashboard' => [[['_route' => 'dashboard', '_controller' => 'App\\Controller\\DashboardController::index'], null, null, null, true, false, null]],
             '/dashboard/new-project' => [[['_route' => 'new-project', '_controller' => 'App\\Controller\\ProjectController::newProject'], null, null, null, true, false, null]],
+            '/dashboard/listeProjetsAdmin' => [[['_route' => 'listeAdmin', '_controller' => 'App\\Controller\\AdminController::listeProjetAdmin'], null, null, null, false, false, null]],
+            '/dashboard/listeMembresAdmin' => [[['_route' => 'listeMembreAdmin', '_controller' => 'App\\Controller\\AdminController::listeMembreAdmin'], null, null, null, false, false, null]],
             '/deconnexion' => [[['_route' => 'logout'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
@@ -68,27 +70,28 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                                 .'|soubassement(*:424)'
                                 .'|charpente(*:441)'
                                 .'|toiture(*:456)'
-                                .'|menuiseries(*:475)'
                             .')'
                         .')'
                         .'|second\\-oeuvre(?'
-                            .'|(*:502)'
+                            .'|(*:483)'
                             .'|/(?'
-                                .'|ventilation(*:525)'
-                                .'|cl(?'
-                                    .'|imatisation(*:549)'
-                                    .'|oisons(*:563)'
-                                .')'
-                                .'|domotique(*:581)'
+                                .'|ventilation(*:506)'
+                                .'|cloisons(*:522)'
                                 .'|e(?'
-                                    .'|vacuation\\-fumees(*:610)'
-                                    .'|scaliers(*:626)'
-                                    .'|lectricite(*:644)'
+                                    .'|vacuation\\-fumees(*:551)'
+                                    .'|scaliers(*:567)'
+                                    .'|lectricite(*:585)'
+                                    .'|nduit(*:598)'
                                 .')'
-                                .'|menuiseries\\-interieures(*:677)'
-                                .'|plomberie(*:694)'
+                                .'|menuiseries\\-interieures(*:631)'
+                                .'|plomberie(*:648)'
+                                .'|isolation(*:665)'
+                                .'|revetement(*:683)'
                             .')'
                         .')'
+                        .'|menuiserie(*:703)'
+                        .'|climatisation(*:724)'
+                        .'|domotique(*:741)'
                     .')'
                 .')/?$}sDu',
         ];
@@ -112,17 +115,20 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             424 => [[['_route' => 'soubassement', '_controller' => 'App\\Controller\\GrosOeuvreController::Soubassement'], ['id'], null, null, false, false, null]],
             441 => [[['_route' => 'charpente', '_controller' => 'App\\Controller\\GrosOeuvreController::charpente'], ['id'], null, null, false, false, null]],
             456 => [[['_route' => 'toiture', '_controller' => 'App\\Controller\\GrosOeuvreController::toiture'], ['id'], null, null, false, false, null]],
-            475 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\GrosOeuvreController::menuiserie'], ['id'], null, null, false, false, null]],
-            502 => [[['_route' => 'second-oeuvre', '_controller' => 'App\\Controller\\SecondOeuvreController::view'], ['id'], null, null, false, false, null]],
-            525 => [[['_route' => 'ventilation', '_controller' => 'App\\Controller\\SecondOeuvreController::ventilation'], ['id'], null, null, false, false, null]],
-            549 => [[['_route' => 'climatisation', '_controller' => 'App\\Controller\\SecondOeuvreController::climatisation'], ['id'], null, null, false, false, null]],
-            563 => [[['_route' => 'cloisons', '_controller' => 'App\\Controller\\SecondOeuvreController::cloison'], ['id'], null, null, false, false, null]],
-            581 => [[['_route' => 'domotique', '_controller' => 'App\\Controller\\SecondOeuvreController::domotique'], ['id'], null, null, false, false, null]],
-            610 => [[['_route' => 'evacuation', '_controller' => 'App\\Controller\\SecondOeuvreController::evacuation'], ['id'], null, null, false, false, null]],
-            626 => [[['_route' => 'escaliers', '_controller' => 'App\\Controller\\SecondOeuvreController::escaliers'], ['id'], null, null, false, false, null]],
-            644 => [[['_route' => 'electricite', '_controller' => 'App\\Controller\\SecondOeuvreController::electricite'], ['id'], null, null, false, false, null]],
-            677 => [[['_route' => 'menuiseriesInt', '_controller' => 'App\\Controller\\SecondOeuvreController::menuiseriesInt'], ['id'], null, null, false, false, null]],
-            694 => [[['_route' => 'plomberie', '_controller' => 'App\\Controller\\SecondOeuvreController::plomberie'], ['id'], null, null, false, false, null]],
+            483 => [[['_route' => 'second-oeuvre', '_controller' => 'App\\Controller\\SecondOeuvreController::view'], ['id'], null, null, false, false, null]],
+            506 => [[['_route' => 'ventilation', '_controller' => 'App\\Controller\\SecondOeuvreController::ventilation'], ['id'], null, null, false, false, null]],
+            522 => [[['_route' => 'cloisons', '_controller' => 'App\\Controller\\SecondOeuvreController::cloison'], ['id'], null, null, false, false, null]],
+            551 => [[['_route' => 'evacuation', '_controller' => 'App\\Controller\\SecondOeuvreController::evacuation'], ['id'], null, null, false, false, null]],
+            567 => [[['_route' => 'escaliers', '_controller' => 'App\\Controller\\SecondOeuvreController::escaliers'], ['id'], null, null, false, false, null]],
+            585 => [[['_route' => 'electricite', '_controller' => 'App\\Controller\\SecondOeuvreController::electricite'], ['id'], null, null, false, false, null]],
+            598 => [[['_route' => 'enduit', '_controller' => 'App\\Controller\\SecondOeuvreController::enduit'], ['id'], null, null, false, false, null]],
+            631 => [[['_route' => 'menuiseriesInt', '_controller' => 'App\\Controller\\SecondOeuvreController::menuiseriesInt'], ['id'], null, null, false, false, null]],
+            648 => [[['_route' => 'plomberie', '_controller' => 'App\\Controller\\SecondOeuvreController::plomberie'], ['id'], null, null, false, false, null]],
+            665 => [[['_route' => 'isolation', '_controller' => 'App\\Controller\\SecondOeuvreController::isolation'], ['id'], null, null, false, false, null]],
+            683 => [[['_route' => 'revetement', '_controller' => 'App\\Controller\\SecondOeuvreController::revetement'], ['id'], null, null, false, false, null]],
+            703 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\GrosOeuvreController::menuiserie'], ['id'], null, null, false, false, null]],
+            724 => [[['_route' => 'climatisation', '_controller' => 'App\\Controller\\SecondOeuvreController::climatisation'], ['id'], null, null, false, false, null]],
+            741 => [[['_route' => 'domotique', '_controller' => 'App\\Controller\\SecondOeuvreController::domotique'], ['id'], null, null, false, false, null]],
         ];
     }
 }

@@ -2,14 +2,20 @@
   "entrypoints": {
     "app": {
       "js": [
-        "static/js/runtime.js",
-        "static/js/app.js"
+        "public/resources/static/js/runtime.js",
+        "public/resources/static/js/app.js"
+      ],
+      "css": [
+        "public/resources/static/js/app.css"
       ]
     },
     "app2": {
       "js": [
-        "static/js/runtime.js",
-        "static/js/app2.js"
+        "public/resources/static/js/runtime.js",
+        "public/resources/static/js/app2.js"
+      ],
+      "css": [
+        "public/resources/static/js/app2.css"
       ]
     }
   }

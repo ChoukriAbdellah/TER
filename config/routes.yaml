@@ -66,17 +66,18 @@ toiture:
     path:       /dashboard/my-project/{id}/gros-oeuvre/toiture
     controller: App\Controller\GrosOeuvreController::toiture
 menuiserie:
-    path:       /dashboard/my-project/{id}/gros-oeuvre/menuiseries
+    path:       /dashboard/my-project/{id}/menuiserie
     controller: App\Controller\GrosOeuvreController::menuiserie
-ventilation:
-    path:       /dashboard/my-project/{id}/second-oeuvre/ventilation
-    controller: App\Controller\SecondOeuvreController::ventilation
 climatisation:
-    path:       /dashboard/my-project/{id}/second-oeuvre/climatisation
+    path:       /dashboard/my-project/{id}/climatisation
     controller: App\Controller\SecondOeuvreController::climatisation
 domotique:
-    path:       /dashboard/my-project/{id}/second-oeuvre/domotique
-    controller: App\Controller\SecondOeuvreController::domotique    
+    path:       /dashboard/my-project/{id}/domotique
+    controller: App\Controller\SecondOeuvreController::domotique
+    
+ventilation:
+    path:       /dashboard/my-project/{id}/second-oeuvre/ventilation
+    controller: App\Controller\SecondOeuvreController::ventilation  
 
 cloisons:
     path:       /dashboard/my-project/{id}/second-oeuvre/cloisons
@@ -101,5 +102,25 @@ plomberie:
 electricite:
     path:       /dashboard/my-project/{id}/second-oeuvre/electricite
     controller: App\Controller\SecondOeuvreController::electricite
+
+enduit:
+    path:       /dashboard/my-project/{id}/second-oeuvre/enduit
+    controller: App\Controller\SecondOeuvreController::enduit
+isolation:
+    path:       /dashboard/my-project/{id}/second-oeuvre/isolation
+    controller: App\Controller\SecondOeuvreController::isolation
+
+revetement:
+    path:       /dashboard/my-project/{id}/second-oeuvre/revetement
+    controller: App\Controller\SecondOeuvreController::revetement
+
+listeAdmin:
+    path:       /dashboard/listeProjetsAdmin
+    controller: App\Controller\AdminController::listeProjetAdmin
+
+listeMembreAdmin:
+    path:       /dashboard/listeMembresAdmin
+    controller: App\Controller\AdminController::listeMembreAdmin
+
 logout:
-    path: /deconnexion
+    path: /deconnexion 
