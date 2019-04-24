@@ -162,8 +162,17 @@
 
 									<h2 class="panel-title">La ventilation</h2>
 								</header>
-								<div class="panel-body">
-								...								</div>
+									<div class="panel-body" {% if ventilation != null %} style="display: none;" {% endif %}>
+									{% if ventilation == null %} 
+									Vous n'avez pas encore rempli ce formulaire. <br>
+									<a href="{{ path('ventilation', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									Type de Ventilation : <b>{{ventilation.typeVentilation}} <b/><br>
+									<b> Sous-total : </b> {{ventilation.prix}} </b> €
+									
+									{% endif %}								</div>
 							</section>
 
 							<section class="panel panel-danger" id="panel-9" data-portlet-item>
@@ -174,9 +183,17 @@
 
 									<h2 class="panel-title">La climatisation</h2>
 								</header>
-								<div class="panel-body">
-								...
-								</div>
+								<div class="panel-body" {% if climatisation != null %} style="display: none;" {% endif %}>
+									{% if climatisation == null %} 
+									Vous n'avez pas encore rempli ce formulaire. <br>
+									<a href="{{ path('climatisation', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									<b>Type de climatisation : {{climatisation.typeClimatisation}}</b> <br>
+									<b> Sous-total : </b> {{climatisation.prix}} </b> €
+									
+									{% endif %}								</div>
 							</section>
 
 							<section class="panel panel-info" id="panel-7" data-portlet-item>
@@ -187,8 +204,36 @@
 
 									<h2 class="panel-title">La domotique</h2> </a>
 								</header>
-								<div class="panel-body" >
-								...								</div>
+								<div class="panel-body" {% if domotique != null %} style="display: none;" {% endif %}>
+									{% if domotique == null %} 
+									Vous n'avez pas encore rempli ce formulaire. <br>
+									<a href="{{ path('domotique', {'id': projet.id}) }}"> Cliquez ici pour le remplir.</a>
+									{% else %}
+									Vous avez déjà rempli ce formulaire. <br>
+									Récapitulatif : <br>
+									{% if domotique.regularisationChauffage != null %}
+									<b>Option Chauffage autonome<b>
+									<br/>
+									{% endif %}
+									{% if domotique.eclairageAuto != null %}
+									<b>Option Eclairage automatique<b>
+									<br/>
+									{% endif %}
+									{% if domotique.ouvertureFermetureAuto != null %}
+									<b>Option ouverture et fermeture automatique des fenêtre<b>
+									<br/>
+									{% endif %}
+									{% if domotique.autonomieEau != null %}
+									<b>Option Autonomie du débit d'eau<b>
+									<br/>
+									{% endif %}
+									{% if domotique.detecteurEtAlarme != null %}
+									<b>Option alarme et détecteurs<b>
+									<br/>
+									{% endif %}
+									<b> Sous-total : </b> {{domotique.prix}} </b> €
+									
+									{% endif %}								</div>
 							</section>
 
 						</div>

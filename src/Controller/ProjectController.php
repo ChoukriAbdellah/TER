@@ -32,10 +32,11 @@ use App\Entity\Soubassement;
 use App\Entity\Elevation;
 use App\Entity\Menuiserie;
 use App\Entity\Toiture;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Prix;
 
 use App\Repository\ProjetRepository;
+use App\Repository\UserRepository;
 use App\Repository\GrosOeuvreRepository;
 
 class ProjectController extends AbstractController
@@ -530,28 +531,35 @@ class ProjectController extends AbstractController
                 $em = $this->getDoctrine()->getManager();
 
                 // Enregistre l'étude de sol en base
-                $prix = 0;
-                if($e->getMaterielUtilise() == 'tractopelle'){
+                $finalPrice = 0;
+                if($e->getTractopelle() != null){
                   $prix = $this->getDoctrine()
                   ->getRepository(Prix::class)
                   ->findPrixByNom("tractopelle");
+                  $finalPrice+=$prix;
                 }
 
-                if($e->getMaterielUtilise() == 'camion_benne'){
+                if($e->getCamionBenne() !=NULL){
                   $prix = $this->getDoctrine()
                   ->getRepository(Prix::class)
                   ->findPrixByNom("camion_benne");
+                  $finalPrice+=$prix;
                 }
 
-                if($e->getMaterielUtilise() == 'betonniere'){
+                if($e->getBetonniere() !=NULL){
                   $prix = $this->getDoctrine()
                   ->getRepository(Prix::class)
                   ->findPrixByNom("betonniere");
+                  $finalPrice+=$prix;
                 }
+                $prixType = $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom($e->getMaterielUtilise());
+                  $finalPrice+=$prixType;
 
                
                 
-                $e->setPrix($prix);
+                $e->setPrix($finalPrice);
                 $em->persist($e);
                 $em->flush();
 
@@ -1111,6 +1119,7 @@ class ProjectController extends AbstractController
         'projets' => $projets
       ));
     }
-
+   
+   
 
 }

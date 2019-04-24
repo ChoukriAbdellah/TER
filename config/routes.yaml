@@ -68,5 +68,25 @@ toiture:
 menuiserie:
     path:       /dashboard/my-project/{id}/menuiserie
     controller: App\Controller\ProjectController::menuiserie
+ventilation:
+    path:       /dashboard/my-project/{id}/ventilation
+    controller: App\Controller\SecondOeuvreController::ventilation
+climatisation:
+    path:       /dashboard/my-project/{id}/climatisation
+    controller: App\Controller\SecondOeuvreController::climatisation
+domotique:
+    path:       /dashboard/my-project/{id}/domotique
+    controller: App\Controller\SecondOeuvreController::domotique
+cloison:
+    path:       /dashboard/my-project/{id}/cloison
+    controller: App\Controller\SecondOeuvreController::cloison
+listeAdmin:
+    path:       /dashboard/listeProjetsAdmin
+    controller: App\Controller\AdminController::listeProjetAdmin
+listeMembreAdmin:
+    path:       /dashboard/listeMembresAdmin
+    controller: App\Controller\AdminController::listeMembreAdmin
+
+
 logout:
-    path: /deconnexion
+    path: /deconnexion 

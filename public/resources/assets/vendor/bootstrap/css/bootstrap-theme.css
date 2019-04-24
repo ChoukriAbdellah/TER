@@ -8,6 +8,38 @@
  * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=44a1de7e0e4941725c68)
  * Config saved to config.json and https://gist.github.com/44a1de7e0e4941725c68
  */
+ .App {
+  display: flex;
+ }
+ 
+ .main{
+   flex-basis: 60%;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ 
+ .flats{
+   display:flex;
+   flex-wrap: wrap;
+   align-content: flex-start
+ }
+ .search {
+   padding: 10px;
+   margin-right: 15px;
+ }
+ .search input{
+   width: 100%;
+   height: 40px;
+   font-size: 24px;
+   color: #999;
+ }
+ .flat{
+  flex-basis: calc(50% - 20px);
+  margin: 10px;
+  cursor: pointer
+  
+}
 .btn-default,
 .btn-primary,
 .btn-success,
