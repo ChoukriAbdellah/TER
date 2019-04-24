@@ -1,0 +1,48 @@
+
+{% extends "/dashboard-layout.html.twig" %}
+
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+  <link rel="stylesheet" href="{{ asset('resources/static/js/app.css') }}"/>
+	{% endblock %}
+
+				{% block title %}
+				<h2>Liste Projets </h2>
+				{% endblock %}
+
+				{% block pageactuelle %}Admin: Projets  {% endblock %}
+
+    {% block body %}
+							
+			
+
+			<div id="listeProjet"  data-items=>
+									
+		
+    							</div>
+	<div class="row">
+	<div>
+	
+			
+	</div>
+		
+								</section>
+							</div>
+						</div> 
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+	 
+		<script type="text/javascript" src="{{ asset('resources/static/js/app.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('resources/static/js/app2.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('resources/static/js/runtime.js') }}"></script>
+
+    {% endblock %}
