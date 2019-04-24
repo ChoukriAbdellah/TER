@@ -110,6 +110,11 @@ isolation:
 revetement:
     path:       /dashboard/my-project/{id}/second-oeuvre/revetement
     controller: App\Controller\SecondOeuvreController::revetement
-
+listeAdmin:
+    path:       /dashboard/listeProjetsAdmin
+    controller: App\Controller\AdminController::listeProjetAdmin
+listeMembreAdmin:
+    path:       /dashboard/listeMembresAdmin
+    controller: App\Controller\AdminController::listeMembreAdmin
 logout:
     path: /deconnexion
