@@ -47,14 +47,9 @@ class ProjetRepository extends ServiceEntityRepository
         // returns an array of arrays (i.e. a raw data set)
         return $nb;
     }
-<<<<<<< HEAD
-    
-    
-=======
 
-    */
     
-    public function sumProjets()
+    /*public function sumProjets()
     {
         $conn = $this->getEntityManager()->getConnection();
         $sql = 'select count(id) as number from projet ';
@@ -65,6 +60,5 @@ class ProjetRepository extends ServiceEntityRepository
     
         // returns an array of arrays (i.e. a raw data set)
         return $nb;
-    }
->>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
+    }*/
 }
