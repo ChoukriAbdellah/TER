@@ -1,0 +1,67 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2>Cloison </h2>
+				{% endblock %}
+
+				{% block pageactuelle %}Cloison {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Cloison</h2>
+									</header>
+
+                                    
+								
+														<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+															{{ form_label(form.typeCloisons, "Quel est le type de votre cloison ? ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.typeCloisons, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}        
+															</div>  
+													
+													<br><br>
+															{{ form_label(form.surfaceTotale, "Indiquez la surface totale (en m2). ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
+														<div class="col-sm-9">
+															{{ form_row(form.surfaceTotale, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
+															</div>  
+													
+													<br><br>
+														
+														  <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Valider</button>
+														   {{ form_end(form) }}
+													</div>
+													<br>
+					
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}
