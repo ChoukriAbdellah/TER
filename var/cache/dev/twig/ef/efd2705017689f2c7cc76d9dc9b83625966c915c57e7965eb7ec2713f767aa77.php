@@ -16,8 +16,8 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'menu' => [$this, 'block_menu'],
             'flash' => [$this, 'block_flash'],
+            'menu' => [$this, 'block_menu'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -55,75 +55,21 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
 <body data-spy=\"scroll\" data-offset=\"0\" data-target=\"#navigation\">
 
-  ";
+    ";
         // line 40
-        $this->displayBlock('menu', $context, $blocks);
-        // line 74
-        echo "
-    ";
-        // line 75
         $this->displayBlock('flash', $context, $blocks);
-        // line 78
+        // line 43
+        echo "
+";
+        // line 44
+        $this->displayBlock('menu', $context, $blocks);
+        // line 47
         echo "
     ";
-        // line 79
+        // line 48
         $this->displayBlock('body', $context, $blocks);
-        // line 82
+        // line 51
         echo "
-
-  <section id=\"contact\" name=\"contact\">
-    <div id=\"footerwrap\">
-      <div class=\"container\">
-        <div class=\"col-lg-5\">
-          <h3>Adresse</h3>
-          <p>
-            Faculté des Sciences de Montpellier,<br/> Place E. Bataillon,<br/> 34095<br/>
-            <br/> Montpellier, France
-          </p>
-        </div>
-
-        <div class=\"col-lg-7\">
-          <h3>Envoyez-nous un message</h3>
-
-          <br>
-          <form class=\"contact-form php-mail-form\" role=\"form\" action=\"\" method=\"POST\">
-
-            <div class=\"form-group\">
-              <label for=\"contact-name\">Votre nom</label><br>
-              <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
-              <div class=\"validate\"></div>
-            </div>
-            <div class=\"form-group\">
-              <label for=\"contact-email\">Votre adresse e-mail</label>
-              <input type=\"email\" name=\"email\" class=\"form-control\" id=\"contact-email\" placeholder=\"Votre adresse e-mail\" data-rule=\"email\" data-msg=\"L'adresse e-mail n'est pas valide\">
-              <div class=\"validate\"></div>
-            </div>
-            <div class=\"form-group\">
-              <label for=\"contact-subject\">Sujet</label> <br/>
-              <input type=\"text\" name=\"subject\" class=\"form-control\" id=\"contact-subject\" placeholder=\"Sujet\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 8 caractères\">
-              <div class=\"validate\"></div>
-            </div>
-
-            <div class=\"form-group\">
-              <label for=\"contact-message\">Votre Message</label>
-              <textarea class=\"form-control\" name=\"message\" id=\"contact-message\" placeholder=\"Ecrivez votre message\" rows=\"5\" data-rule=\"required\" data-msg=\"Ecrivez un message\"></textarea>
-              <div class=\"validate\"></div>
-            </div>
-
-            <div class=\"loading\"><br>Votre message est en cours d'envoi.</div>
-            <div class=\"error-message\"></div>
-            <div class=\"sent-message\">Votre message a bien été envoyé, merci !</div>
-
-            <div class=\"form-send\">
-              <button type=\"submit\" class=\"btn btn-large\">Envoyer</button>
-            </div>
-
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div id=\"copyrights\">
     <div class=\"container\">
@@ -143,9 +89,9 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
   </div>
 
    ";
-        // line 155
+        // line 70
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 167
+        // line 82
         echo "
 </body>
 </html>";
@@ -228,85 +174,6 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
     }
 
     // line 40
-    public function block_menu($context, array $blocks = [])
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
-
-        // line 41
-        echo "
-  <!-- Fixed navbar -->
-  <div id=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\">
-    <div class=\"container\">
-      <div class=\"navbar-header\">
-        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
-          <span class=\"icon-bar\"></span>
-          <span class=\"icon-bar\"></span>
-          <span class=\"icon-bar\"></span>
-        </button>
-        <a class=\"navbar-brand smothscroll\" href=\"";
-        // line 51
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\"><b>Estimation.com</b></a>
-      </div>
-      <div class=\"navbar-collapse collapse\">
-        <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"#home\" class=\"smothscroll\">Accueil</a></li>
-          <li><a class=\"smothscroll\" href=\"";
-        // line 56
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "#desc\">Description</a></li>
-          <li><a class=\"smothscroll\" href=\"";
-        // line 57
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "#showcase\">Photos</a></li>
-            <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
-          ";
-        // line 59
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 60
-            echo "          <li><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
-            echo "\">Mon profil (";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 60, $this->source); })()), "user", []), "username", []), "html", null, true);
-            echo ")</a></li>
-
-          <li><a href=\"";
-            // line 62
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
-            echo "\">Deconnexion</a></li>
-          ";
-        } else {
-            // line 64
-            echo "            <li><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
-            echo "\">Connexion</a></li>
-            <li><a href=\"";
-            // line 65
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
-            echo "\">Inscription</a></li>
-          ";
-        }
-        // line 67
-        echo "          
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </div>
-    ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 75
     public function block_flash($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -315,7 +182,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "flash"));
 
-        // line 76
+        // line 41
         echo "            ";
         echo twig_include($this->env, $context, "flash.html.twig");
         echo " 
@@ -328,7 +195,27 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     }
 
-    // line 79
+    // line 44
+    public function block_menu($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
+        // line 45
+        echo "
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 48
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -337,7 +224,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 80
+        // line 49
         echo "
     ";
         
@@ -348,7 +235,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     }
 
-    // line 155
+    // line 70
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -357,29 +244,29 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 156
+        // line 71
         echo "
   <!-- JavaScript Libraries -->
   <script src=\"";
-        // line 158
+        // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 159
+        // line 74
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 160
+        // line 75
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/php-mail-form/validate.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 161
+        // line 76
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Template Main Javascript File -->
   <script src=\"";
-        // line 164
+        // line 79
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -399,7 +286,7 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
     public function getDebugInfo()
     {
-        return array (  383 => 164,  377 => 161,  373 => 160,  369 => 159,  365 => 158,  361 => 156,  352 => 155,  341 => 80,  332 => 79,  319 => 76,  310 => 75,  294 => 67,  289 => 65,  284 => 64,  279 => 62,  271 => 60,  269 => 59,  264 => 57,  260 => 56,  252 => 51,  240 => 41,  231 => 40,  211 => 24,  205 => 21,  196 => 15,  192 => 14,  188 => 12,  179 => 11,  161 => 6,  149 => 167,  147 => 155,  72 => 82,  70 => 79,  67 => 78,  65 => 75,  62 => 74,  60 => 40,  52 => 34,  50 => 11,  42 => 6,  35 => 1,);
+        return array (  270 => 79,  264 => 76,  260 => 75,  256 => 74,  252 => 73,  248 => 71,  239 => 70,  228 => 49,  219 => 48,  208 => 45,  199 => 44,  186 => 41,  177 => 40,  157 => 24,  151 => 21,  142 => 15,  138 => 14,  134 => 12,  125 => 11,  107 => 6,  95 => 82,  93 => 70,  72 => 51,  70 => 48,  67 => 47,  65 => 44,  62 => 43,  60 => 40,  52 => 34,  50 => 11,  42 => 6,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -443,103 +330,18 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
 
 <body data-spy=\"scroll\" data-offset=\"0\" data-target=\"#navigation\">
 
-  {% block menu %}
-
-  <!-- Fixed navbar -->
-  <div id=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\">
-    <div class=\"container\">
-      <div class=\"navbar-header\">
-        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
-          <span class=\"icon-bar\"></span>
-          <span class=\"icon-bar\"></span>
-          <span class=\"icon-bar\"></span>
-        </button>
-        <a class=\"navbar-brand smothscroll\" href=\"{{ path('index') }}\"><b>Estimation.com</b></a>
-      </div>
-      <div class=\"navbar-collapse collapse\">
-        <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"#home\" class=\"smothscroll\">Accueil</a></li>
-          <li><a class=\"smothscroll\" href=\"{{ path('index') }}#desc\">Description</a></li>
-          <li><a class=\"smothscroll\" href=\"{{ path('index') }}#showcase\">Photos</a></li>
-            <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a href=\"{{ path('dashboard') }}\">Mon profil ({{ app.user.username }})</a></li>
-
-          <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
-          {% else %}
-            <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
-            <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
-          {% endif %}
-          
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </div>
-    {% endblock %}
-
     {% block flash %}
             {{include('flash.html.twig')}} 
+{% endblock %}
+
+{% block menu %}
+
 {% endblock %}
 
     {% block body %}
 
     {% endblock %}
 
-
-  <section id=\"contact\" name=\"contact\">
-    <div id=\"footerwrap\">
-      <div class=\"container\">
-        <div class=\"col-lg-5\">
-          <h3>Adresse</h3>
-          <p>
-            Faculté des Sciences de Montpellier,<br/> Place E. Bataillon,<br/> 34095<br/>
-            <br/> Montpellier, France
-          </p>
-        </div>
-
-        <div class=\"col-lg-7\">
-          <h3>Envoyez-nous un message</h3>
-
-          <br>
-          <form class=\"contact-form php-mail-form\" role=\"form\" action=\"\" method=\"POST\">
-
-            <div class=\"form-group\">
-              <label for=\"contact-name\">Votre nom</label><br>
-              <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
-              <div class=\"validate\"></div>
-            </div>
-            <div class=\"form-group\">
-              <label for=\"contact-email\">Votre adresse e-mail</label>
-              <input type=\"email\" name=\"email\" class=\"form-control\" id=\"contact-email\" placeholder=\"Votre adresse e-mail\" data-rule=\"email\" data-msg=\"L'adresse e-mail n'est pas valide\">
-              <div class=\"validate\"></div>
-            </div>
-            <div class=\"form-group\">
-              <label for=\"contact-subject\">Sujet</label> <br/>
-              <input type=\"text\" name=\"subject\" class=\"form-control\" id=\"contact-subject\" placeholder=\"Sujet\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 8 caractères\">
-              <div class=\"validate\"></div>
-            </div>
-
-            <div class=\"form-group\">
-              <label for=\"contact-message\">Votre Message</label>
-              <textarea class=\"form-control\" name=\"message\" id=\"contact-message\" placeholder=\"Ecrivez votre message\" rows=\"5\" data-rule=\"required\" data-msg=\"Ecrivez un message\"></textarea>
-              <div class=\"validate\"></div>
-            </div>
-
-            <div class=\"loading\"><br>Votre message est en cours d'envoi.</div>
-            <div class=\"error-message\"></div>
-            <div class=\"sent-message\">Votre message a bien été envoyé, merci !</div>
-
-            <div class=\"form-send\">
-              <button type=\"submit\" class=\"btn btn-large\">Envoyer</button>
-            </div>
-
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div id=\"copyrights\">
     <div class=\"container\">

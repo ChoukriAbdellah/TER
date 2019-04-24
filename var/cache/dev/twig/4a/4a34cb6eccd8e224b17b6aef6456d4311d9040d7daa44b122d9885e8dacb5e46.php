@@ -107,17 +107,18 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
         echo "\t\t\t\t\t
 \t\t\t\t\t";
         // line 361
+        echo "\t\t\t\t\t";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 361, $this->source); })()), "flashes", [0 => "notice"], "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 362
-            echo "    <div class=\"flash-notice\">
-        ";
+            echo "    \t\t\t\t\t<div class=\"flash-notice\">
+        \t\t\t\t";
             // line 363
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
-    </div>
-";
+\t\t\t\t\t\t</div>
+\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
@@ -818,7 +819,7 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
     public function getDebugInfo()
     {
-        return array (  799 => 456,  790 => 455,  749 => 397,  740 => 396,  729 => 387,  720 => 386,  703 => 350,  686 => 340,  667 => 350,  659 => 345,  653 => 341,  651 => 340,  631 => 323,  615 => 309,  605 => 302,  595 => 295,  591 => 293,  589 => 292,  581 => 287,  571 => 280,  540 => 252,  528 => 242,  523 => 240,  519 => 238,  515 => 236,  511 => 234,  509 => 233,  504 => 231,  496 => 228,  419 => 154,  407 => 145,  395 => 136,  383 => 127,  303 => 50,  294 => 43,  285 => 42,  274 => 25,  265 => 24,  252 => 458,  250 => 455,  245 => 453,  241 => 452,  234 => 448,  228 => 445,  222 => 442,  215 => 438,  211 => 437,  207 => 436,  203 => 435,  199 => 434,  195 => 433,  191 => 432,  186 => 429,  184 => 396,  175 => 389,  173 => 386,  170 => 385,  159 => 380,  154 => 377,  150 => 376,  147 => 375,  136 => 370,  131 => 367,  126 => 366,  117 => 363,  114 => 362,  110 => 361,  107 => 359,  105 => 42,  98 => 38,  92 => 35,  86 => 32,  80 => 29,  75 => 26,  73 => 24,  68 => 22,  64 => 21,  60 => 20,  56 => 19,  36 => 1,);
+        return array (  800 => 456,  791 => 455,  750 => 397,  741 => 396,  730 => 387,  721 => 386,  704 => 350,  687 => 340,  668 => 350,  660 => 345,  654 => 341,  652 => 340,  632 => 323,  616 => 309,  606 => 302,  596 => 295,  592 => 293,  590 => 292,  582 => 287,  572 => 280,  541 => 252,  529 => 242,  524 => 240,  520 => 238,  516 => 236,  512 => 234,  510 => 233,  505 => 231,  497 => 228,  420 => 154,  408 => 145,  396 => 136,  384 => 127,  304 => 50,  295 => 43,  286 => 42,  275 => 25,  266 => 24,  253 => 458,  251 => 455,  246 => 453,  242 => 452,  235 => 448,  229 => 445,  223 => 442,  216 => 438,  212 => 437,  208 => 436,  204 => 435,  200 => 434,  196 => 433,  192 => 432,  187 => 429,  185 => 396,  176 => 389,  174 => 386,  171 => 385,  160 => 380,  155 => 377,  151 => 376,  148 => 375,  137 => 370,  132 => 367,  127 => 366,  118 => 363,  115 => 362,  110 => 361,  107 => 359,  105 => 42,  98 => 38,  92 => 35,  86 => 32,  80 => 29,  75 => 26,  73 => 24,  68 => 22,  64 => 21,  60 => 20,  56 => 19,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -1183,11 +1184,11 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
                     {% endblock %}
 \t\t\t\t\t
 \t\t\t\t\t{# read and display just one flash message type #}
-{% for message in app.flashes('notice') %}
-    <div class=\"flash-notice\">
-        {{ message }}
-    </div>
-{% endfor %}
+\t\t\t\t\t{% for message in app.flashes('notice') %}
+    \t\t\t\t\t<div class=\"flash-notice\">
+        \t\t\t\t{{ message }}
+\t\t\t\t\t\t</div>
+\t\t\t\t\t{% endfor %}
 \t\t\t\t\t{% for message in app.flashes('success') %}
 
             <div class=\"alert alert-success\">

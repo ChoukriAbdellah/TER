@@ -87,17 +87,17 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
           <span class=\"icon-bar\"></span>
           <span class=\"icon-bar\"></span>
         </button>
-        <a class=\"navbar-brand smothscroll\" href=\"";
+        <a class=\"navbar-brand\" href=\"";
         // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\"><b>Estimation.com</b></a>
+        echo "#home\"><b>Estimation.com</b></a>
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"";
+          <li><a href=\"";
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\">Accueil</a></li>
+        echo "#home\">Accueil</a></li>
           <li><a href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
@@ -106,12 +106,38 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "#showcase\">Photos</a></li>
-          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
-          <li><a href=\"#connexion\" class=\"smothscroll\">Connexion</a></li>
           <li><a href=\"";
-        // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
-        echo "\">Inscription</a></li>
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "#contact\">Contact</a></li>
+          ";
+        // line 28
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 29
+            echo "          <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
+            echo "\">Mon profil (";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 29, $this->source); })()), "user", []), "username", []), "html", null, true);
+            echo ")</a></li>
+
+          <li><a href=\"";
+            // line 31
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            echo "\">Deconnexion</a></li>
+          ";
+        } else {
+            // line 33
+            echo "            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+            echo "\">Connexion</a></li>
+            <li><a href=\"";
+            // line 34
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+            echo "\">Inscription</a></li>
+          ";
+        }
+        // line 36
+        echo "          
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -127,7 +153,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
 
     }
 
-    // line 38
+    // line 45
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -136,21 +162,21 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 39
+        // line 46
         echo "
 ";
-        // line 40
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 40, $this->source); })())) {
-            // line 41
+        // line 47
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 47, $this->source); })())) {
+            // line 48
             echo "  <section id=\"erreur_connexion\" name =\"erreur_connexion\"
     <div class=\"row centered\">";
-            // line 42
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 42, $this->source); })()), "messageKey", []), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 42, $this->source); })()), "messageData", []), "security"), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 49, $this->source); })()), "messageKey", []), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 49, $this->source); })()), "messageData", []), "security"), "html", null, true);
             echo "</div>
     </section>
 ";
         }
-        // line 45
+        // line 52
         echo "
    <section id=\"connexion\" name=\"connexion\">
     <!-- INTRO WRAP -->
@@ -170,12 +196,12 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
     
               <!-- Login Form -->
               <form action=\"";
-        // line 63
+        // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\" method=\"post\">
               <input type=\"text\" class=\"fadeIn second zero-raduis\" id=\"username\" name=\"_username\" value=\"";
-        // line 64
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 64, $this->source); })()), "html", null, true);
+        // line 71
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 71, $this->source); })()), "html", null, true);
         echo "\" placeholder=\"Adresse e-mail ou login\" />
               <input type=\"password\" class=\"fadeIn third zero-raduis\" id=\"password\" name=\"_password\" placeholder=\"Mot de passe\" />
                               <div id=\"formFooter\">
@@ -183,7 +209,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
 
               <input type=\"hidden\" name=\"_csrf_token\"
                   value=\"";
-        // line 70
+        // line 77
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
 
@@ -194,21 +220,21 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
               </form>
               <h2>Vous n'avez pas encore de compte ?</h2>
               <form action=\"";
-        // line 78
+        // line 85
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Inscrivez-vous\">
 \t\t\t        </form>
 
               <a href=\"";
-        // line 82
+        // line 89
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("request_resetting");
         echo "\"> <h2>Mot de passe oublié ?</h2> </a>
               <br>
               <br>
               
               ";
-        // line 91
+        // line 98
         echo "
               
           </form>
@@ -244,7 +270,7 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
 
     public function getDebugInfo()
     {
-        return array (  212 => 91,  205 => 82,  198 => 78,  187 => 70,  178 => 64,  174 => 63,  154 => 45,  148 => 42,  145 => 41,  143 => 40,  140 => 39,  131 => 38,  113 => 29,  107 => 26,  103 => 25,  99 => 24,  92 => 20,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
+        return array (  238 => 98,  231 => 89,  224 => 85,  213 => 77,  204 => 71,  200 => 70,  180 => 52,  174 => 49,  171 => 48,  169 => 47,  166 => 46,  157 => 45,  140 => 36,  135 => 34,  130 => 33,  125 => 31,  117 => 29,  115 => 28,  111 => 27,  107 => 26,  103 => 25,  99 => 24,  92 => 20,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -268,16 +294,23 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
           <span class=\"icon-bar\"></span>
           <span class=\"icon-bar\"></span>
         </button>
-        <a class=\"navbar-brand smothscroll\" href=\"{{ path('index') }}\"><b>Estimation.com</b></a>
+        <a class=\"navbar-brand\" href=\"{{ path('index') }}#home\"><b>Estimation.com</b></a>
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"{{ path('index') }}\">Accueil</a></li>
+          <li><a href=\"{{ path('index') }}#home\">Accueil</a></li>
           <li><a href=\"{{ path('index') }}#desc\">Description</a></li>
           <li><a href=\"{{ path('index') }}#showcase\">Photos</a></li>
-          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
-          <li><a href=\"#connexion\" class=\"smothscroll\">Connexion</a></li>
-          <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
+          <li><a href=\"{{ path('index') }}#contact\">Contact</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a href=\"{{ path('dashboard') }}\">Mon profil ({{ app.user.username }})</a></li>
+
+          <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
+          {% else %}
+            <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
+            <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
+          {% endif %}
+          
         </ul>
       </div>
       <!--/.nav-collapse -->

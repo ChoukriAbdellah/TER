@@ -87,17 +87,17 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
           <span class=\"icon-bar\"></span>
           <span class=\"icon-bar\"></span>
         </button>
-        <a class=\"navbar-brand smothscroll\" href=\"";
+        <a class=\"navbar-brand\" href=\"";
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\"><b>Estimation.com</b></a>
+        echo "#home\"><b>Estimation.com</b></a>
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"";
+          <li><a href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\">Accueil</a></li>
+        echo "#home\">Accueil</a></li>
           <li><a href=\"";
         // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
@@ -106,19 +106,45 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
         // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "#showcase\">Photos</a></li>
-          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
           <li><a href=\"";
+        // line 28
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "#contact\">Contact</a></li>
+          ";
         // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
-        echo "\">Connexion</a></li>
-          <li><a href=\"#inscription\" class=\"smothscroll\">Inscription</a></li>
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 30
+            echo "          <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
+            echo "\">Mon profil (";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 30, $this->source); })()), "user", []), "username", []), "html", null, true);
+            echo ")</a></li>
+
+          <li><a href=\"";
+            // line 32
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            echo "\">Deconnexion</a></li>
+          ";
+        } else {
+            // line 34
+            echo "            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+            echo "\">Connexion</a></li>
+            <li><a href=\"";
+            // line 35
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+            echo "\">Inscription</a></li>
+          ";
+        }
+        // line 37
+        echo "          
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
 
-";
+  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -127,7 +153,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
 
     }
 
-    // line 39
+    // line 46
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -136,7 +162,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 40
+        // line 47
         echo "
   <section id=\"inscription\" name=\"inscription\">
     <!-- INTRO WRAP -->
@@ -157,40 +183,40 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
               <!-- Register Form -->
 
               ";
-        // line 59
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 59, $this->source); })()), 'form_start');
+        // line 66
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 66, $this->source); })()), 'form_start');
         echo "
                 ";
-        // line 60
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Identifiant"]]);
+        // line 67
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 67, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Identifiant"]]);
         echo "  
                 ";
-        // line 61
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 61, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Adresse e-mail"]]);
+        // line 68
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 68, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "fadeIn second zero-raduis", "placeholder" => "Adresse e-mail"]]);
         echo "  
                 ";
-        // line 62
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 62, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Mot de passe"]]);
+        // line 69
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 69, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Mot de passe"]]);
         echo "  
                 ";
-        // line 63
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 63, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Confirmer le mot de passe"]]);
+        // line 70
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 70, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "Confirmer le mot de passe"]]);
         echo "  
                 ";
-        // line 64
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 64, $this->source); })()), "_token", []), 'row');
+        // line 71
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 71, $this->source); })()), "_token", []), 'row');
         echo "
             
                 <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"S'inscrire\">
                  ";
-        // line 67
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 67, $this->source); })()), 'form_end');
+        // line 74
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 74, $this->source); })()), 'form_end');
         echo "
 
                                </form>
               <h2>Déjà inscrit ?</h2>
               <form action=\"";
-        // line 71
+        // line 78
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\">
 \t\t\t\t        <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Connectez-vous\">
@@ -228,7 +254,7 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
 
     public function getDebugInfo()
     {
-        return array (  194 => 71,  187 => 67,  181 => 64,  177 => 63,  173 => 62,  169 => 61,  165 => 60,  161 => 59,  140 => 40,  131 => 39,  112 => 29,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  220 => 78,  213 => 74,  207 => 71,  203 => 70,  199 => 69,  195 => 68,  191 => 67,  187 => 66,  166 => 47,  157 => 46,  140 => 37,  135 => 35,  130 => 34,  125 => 32,  117 => 30,  115 => 29,  111 => 28,  107 => 27,  103 => 26,  99 => 25,  92 => 21,  80 => 11,  71 => 10,  58 => 6,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -253,23 +279,30 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
           <span class=\"icon-bar\"></span>
           <span class=\"icon-bar\"></span>
         </button>
-        <a class=\"navbar-brand smothscroll\" href=\"{{ path('index') }}\"><b>Estimation.com</b></a>
+        <a class=\"navbar-brand\" href=\"{{ path('index') }}#home\"><b>Estimation.com</b></a>
       </div>
       <div class=\"navbar-collapse collapse\">
         <ul class=\"nav navbar-nav\">
-          <li class=\"active\"><a href=\"{{ path('index') }}\">Accueil</a></li>
+          <li><a href=\"{{ path('index') }}#home\">Accueil</a></li>
           <li><a href=\"{{ path('index') }}#desc\">Description</a></li>
           <li><a href=\"{{ path('index') }}#showcase\">Photos</a></li>
-          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
-          <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
-          <li><a href=\"#inscription\" class=\"smothscroll\">Inscription</a></li>
+          <li><a href=\"{{ path('index') }}#contact\">Contact</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a href=\"{{ path('dashboard') }}\">Mon profil ({{ app.user.username }})</a></li>
+
+          <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
+          {% else %}
+            <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
+            <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
+          {% endif %}
+          
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
 
-{% endblock %}
+  {% endblock %}
 
 {% block body %}
 

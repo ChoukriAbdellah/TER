@@ -27,42 +27,60 @@ class __TwigTemplate_95667e8778971ff1876092c524eb899038bafa5b0f12a504dbf7c2c220b
 
         // line 1
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 1, $this->source); })()), "flashes", []));
-        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 1, $this->source); })()), "flashes", [0 => "notice"], "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 2
-            echo "    ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($context["messages"]);
-            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 3
-                echo "        <br>
-        <div class=\"grid-container\">
-            <div class=\"grid-x grid-padding-x\">
-                <div class=\"small-12 medium-8 medium-offset-2 large-6 large-offset-3 cell\">
-
-                    <div class=\"";
-                // line 8
-                echo twig_escape_filter($this->env, $context["label"], "html", null, true);
-                echo " callout\">
-                        ";
-                // line 9
-                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-                echo "
-                    </div>
-                </div>
-            </div>
-        </div>
-    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
+            echo "    <div class=\"flash-notice\">
+        ";
+            // line 3
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+    </div>
+";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 15
-        echo " ";
+        // line 6
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 6, $this->source); })()), "flashes", [0 => "success"], "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 7
+            echo "<div class=\"alert alert-success\">
+";
+            // line 8
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+ </div>
+
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 12
+        echo "\t\t
+\t\t";
+        // line 13
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 13, $this->source); })()), "flashes", [0 => "danger"], "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 14
+            echo "
+            <div class=\"alert alert-danger\" role=\"alert\">
+
+                ";
+            // line 17
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+
+            </div>
+
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -83,25 +101,31 @@ class __TwigTemplate_95667e8778971ff1876092c524eb899038bafa5b0f12a504dbf7c2c220b
 
     public function getDebugInfo()
     {
-        return array (  65 => 15,  49 => 9,  45 => 8,  38 => 3,  33 => 2,  29 => 1,);
+        return array (  74 => 17,  69 => 14,  65 => 13,  62 => 12,  52 => 8,  49 => 7,  45 => 6,  36 => 3,  33 => 2,  29 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% for label, messages in app.flashes %}
-    {% for message in messages %}
-        <br>
-        <div class=\"grid-container\">
-            <div class=\"grid-x grid-padding-x\">
-                <div class=\"small-12 medium-8 medium-offset-2 large-6 large-offset-3 cell\">
+        return new Twig_Source("{% for message in app.flashes('notice') %}
+    <div class=\"flash-notice\">
+        {{ message }}
+    </div>
+{% endfor %}
+{% for message in app.flashes('success') %}
+<div class=\"alert alert-success\">
+{{ message }}
+ </div>
 
-                    <div class=\"{{label}} callout\">
-                        {{message}}
-                    </div>
-                </div>
+        {% endfor %}
+\t\t
+\t\t{% for message in app.flashes('danger') %}
+
+            <div class=\"alert alert-danger\" role=\"alert\">
+
+                {{ message }}
+
             </div>
-        </div>
-    {% endfor %}
-{% endfor %} ", "flash.html.twig", "/opt/lampp/htdocs/Symfony/templates/flash.html.twig");
+
+        {% endfor %}", "flash.html.twig", "/opt/lampp/htdocs/Symfony/templates/flash.html.twig");
     }
 }

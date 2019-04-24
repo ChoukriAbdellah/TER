@@ -15,6 +15,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
         $this->parent = $this->loadTemplate("layout.html.twig", "home/index.html.twig", 1);
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'menu' => [$this, 'block_menu'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -66,7 +67,78 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
 
     }
 
-    // line 10
+    // line 9
+    public function block_menu($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
+        // line 10
+        echo "
+  <!-- Fixed navbar -->
+  <div id=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\">
+    <div class=\"container\">
+      <div class=\"navbar-header\">
+        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
+          <span class=\"icon-bar\"></span>
+          <span class=\"icon-bar\"></span>
+          <span class=\"icon-bar\"></span>
+        </button>
+        <a class=\"navbar-brand smothscroll\" href=\"#home\" class=\"smothscroll\"><b>Estimation.com</b></a>
+      </div>
+      <div class=\"navbar-collapse collapse\">
+        <ul class=\"nav navbar-nav\">
+          <li class=\"active\"><a href=\"#home\" class=\"smothscroll\">Accueil</a></li>
+          <li><a class=\"smothscroll\" href=\"#desc\">Description</a></li>
+          <li><a class=\"smothscroll\" href=\"#showcase\">Photos</a></li>
+          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
+          ";
+        // line 28
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 29
+            echo "          <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
+            echo "\">Mon espace membre (";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 29, $this->source); })()), "user", []), "username", []), "html", null, true);
+            echo ")</a></li>
+
+          <li><a href=\"";
+            // line 31
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            echo "\">Deconnexion</a></li>
+          ";
+        } else {
+            // line 33
+            echo "            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+            echo "\">Connexion</a></li>
+            <li><a href=\"";
+            // line 34
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+            echo "\">Inscription</a></li>
+          ";
+        }
+        // line 36
+        echo "          
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+  ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 45
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -75,7 +147,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 11
+        // line 46
         echo "
  <section id=\"home\" name=\"home\">
     <div id=\"headerwrap\">
@@ -88,27 +160,27 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
 
           <div class=\"col-lg-2\">
-            <h5>Précision garantie</h5>
-            <p>Texte à insérer plus tard...</p>
+            <h5>Facile à prendre en main</h5>
+            <p>Grâce à son interface moderne et intuitive</p>
             <img class=\"hidden-xs hidden-sm hidden-md\" src=\"";
-        // line 25
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/arrow1.png"), "html", null, true);
         echo "\">
           </div>
           <div class=\"col-lg-8\">
             <img class=\"img-responsive\" src=\"";
-        // line 28
+        // line 63
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/app-bg.png"), "html", null, true);
         echo "\" alt=\"\">
           </div>
           <div class=\"col-lg-2\">
             <br>
             <img class=\"hidden-xs hidden-sm hidden-md\" src=\"";
-        // line 32
+        // line 67
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/arrow2.png"), "html", null, true);
         echo "\">
-            <h5>Pratique et efficace</h5>
-            <p>Texte à insérer plus tard...</p>
+            <h5>Sauvegardez vos données</h5>
+            <p>Avec une inscription rapide</p>
           </div>
         </div>
       </div>
@@ -128,7 +200,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <br>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 53
+        // line 88
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro01.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Echange</h3>
@@ -137,7 +209,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
 
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 59
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro02.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Date</h3>
@@ -145,7 +217,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 64
+        // line 99
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro03.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Précision</h3>
@@ -153,7 +225,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 69
+        // line 104
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro04.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Localisation</h3>
@@ -161,7 +233,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 74
+        // line 109
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro05.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Professionnalisme</h3>
@@ -169,7 +241,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 79
+        // line 114
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro06.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Classé n°1</h3>
@@ -177,7 +249,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 84
+        // line 119
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro07.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Gratuit</h3>
@@ -185,7 +257,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 89
+        // line 124
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro08.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Instantané</h3>
@@ -193,7 +265,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 94
+        // line 129
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro09.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Sans engagement</h3>
@@ -206,7 +278,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
           <div class=\"col-lg-4\">
             <img src=\"";
-        // line 104
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/intro10.png"), "html", null, true);
         echo "\" alt=\"\">
             <h3>Portable</h3>
@@ -229,7 +301,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <br>
           <div class=\"col-lg-6 centered\">
             <img class=\"centered\" src=\"";
-        // line 124
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/arrow1.png"), "html", null, true);
         echo "\" alt=\"\">
           </div>
@@ -278,8 +350,8 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
             </div>
             <!-- Accordion -->
             <form action=\"";
-        // line 170
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+        // line 205
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\">
 \t\t\t\t      <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Je m'inscris\">
 \t\t\t      </form>
@@ -320,37 +392,37 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
               <div class=\"carousel-inner\">
                 <div class=\"item active\">
                   <img src=\"";
-        // line 209
+        // line 244
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-01.png "), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
-        // line 212
+        // line 247
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-02.png "), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
-        // line 215
+        // line 250
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-03.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
-        // line 218
+        // line 253
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-04.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
-        // line 221
+        // line 256
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-05.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
                 <div class=\"item\">
                   <img src=\"";
-        // line 224
+        // line 259
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/img/item-06.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
@@ -363,6 +435,91 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
         <br>
       </div>
       <!-- /container -->
+    </div>
+  </section>
+
+    <section id=\"contact\" name=\"contact\">
+    <div id=\"footerwrap\">
+      <div class=\"container\">
+        <div class=\"col-lg-5\">
+          <h3>Adresse</h3>
+          <p>
+            Faculté des Sciences de Montpellier,<br/> Place E. Bataillon,<br/> 34095<br/>
+            <br/> Montpellier, France
+          </p>
+        </div>
+
+        <div class=\"col-lg-7\">
+          <h3>Envoyez-nous un message</h3>
+
+          <br>
+
+\t\t\t\t\t\t\t\t\t";
+        // line 289
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 289, $this->source); })()), 'form_start');
+        echo "
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 291
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 291, $this->source); })()), "nom", []), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Votre nom", "required minlength" => "4"]]);
+        echo "
+                              </div>
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 294
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 294, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Votre adresse e-mail"]]);
+        echo "
+                              </div>
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 297
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 297, $this->source); })()), "sujet", []), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Sujet", "required minlength" => "6"]]);
+        echo "
+                              </div>
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 300
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 300, $this->source); })()), "message", []), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Ecrivez votre message"]]);
+        echo "
+                              </div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
+        // line 302
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 302, $this->source); })()), 'form_end');
+        echo "
+         <!--  <form role=\"form\" action=\"\" method=\"POST\">
+
+            <div class=\"form-group\">
+              <label for=\"contact-name\">Votre nom</label><br>
+              <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
+              <div class=\"validate\"></div>
+            </div>
+            <div class=\"form-group\">
+              <label for=\"contact-email\">Votre adresse e-mail</label>
+              <input type=\"email\" name=\"email\" class=\"form-control\" id=\"contact-email\" placeholder=\"Votre adresse e-mail\" data-rule=\"email\" data-msg=\"L'adresse e-mail n'est pas valide\">
+              <div class=\"validate\"></div>
+            </div>
+            <div class=\"form-group\">
+              <label for=\"contact-subject\">Sujet</label> <br/>
+              <input type=\"text\" name=\"subject\" class=\"form-control\" id=\"contact-subject\" placeholder=\"Sujet\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 8 caractères\">
+              <div class=\"validate\"></div>
+            </div>
+
+            <div class=\"form-group\">
+              <label for=\"contact-message\">Votre Message</label>
+              <textarea class=\"form-control\" name=\"message\" id=\"contact-message\" placeholder=\"Ecrivez votre message\" rows=\"5\" data-rule=\"required\" data-msg=\"Ecrivez un message\"></textarea>
+              <div class=\"validate\"></div>
+            </div>
+
+            <div class=\"form-send\">
+              <button type=\"submit\" class=\"btn btn-large\">Envoyer</button>
+              </div>
+
+            
+
+          </form>  -->
+
+        </div>
+      </div>
     </div>
   </section>
 
@@ -388,7 +545,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
 
     public function getDebugInfo()
     {
-        return array (  354 => 224,  348 => 221,  342 => 218,  336 => 215,  330 => 212,  324 => 209,  282 => 170,  233 => 124,  210 => 104,  197 => 94,  189 => 89,  181 => 84,  173 => 79,  165 => 74,  157 => 69,  149 => 64,  141 => 59,  132 => 53,  108 => 32,  101 => 28,  95 => 25,  79 => 11,  70 => 10,  57 => 5,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  487 => 302,  482 => 300,  476 => 297,  470 => 294,  464 => 291,  459 => 289,  426 => 259,  420 => 256,  414 => 253,  408 => 250,  402 => 247,  396 => 244,  354 => 205,  305 => 159,  282 => 139,  269 => 129,  261 => 124,  253 => 119,  245 => 114,  237 => 109,  229 => 104,  221 => 99,  213 => 94,  204 => 88,  180 => 67,  173 => 63,  167 => 60,  151 => 46,  142 => 45,  125 => 36,  120 => 34,  115 => 33,  110 => 31,  102 => 29,  100 => 28,  80 => 10,  71 => 9,  58 => 5,  55 => 4,  46 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -401,6 +558,41 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
 
 {% endblock %}
 
+{% block menu %}
+
+  <!-- Fixed navbar -->
+  <div id=\"navigation\" class=\"navbar navbar-default navbar-fixed-top\">
+    <div class=\"container\">
+      <div class=\"navbar-header\">
+        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">
+          <span class=\"icon-bar\"></span>
+          <span class=\"icon-bar\"></span>
+          <span class=\"icon-bar\"></span>
+        </button>
+        <a class=\"navbar-brand smothscroll\" href=\"#home\" class=\"smothscroll\"><b>Estimation.com</b></a>
+      </div>
+      <div class=\"navbar-collapse collapse\">
+        <ul class=\"nav navbar-nav\">
+          <li class=\"active\"><a href=\"#home\" class=\"smothscroll\">Accueil</a></li>
+          <li><a class=\"smothscroll\" href=\"#desc\">Description</a></li>
+          <li><a class=\"smothscroll\" href=\"#showcase\">Photos</a></li>
+          <li><a href=\"#contact\" class=\"smothscroll\">Contact</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a href=\"{{ path('dashboard') }}\">Mon espace membre ({{ app.user.username }})</a></li>
+
+          <li><a href=\"{{ path('logout') }}\">Deconnexion</a></li>
+          {% else %}
+            <li><a href=\"{{ path('connexion') }}\">Connexion</a></li>
+            <li><a href=\"{{ path('inscription') }}\">Inscription</a></li>
+          {% endif %}
+          
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+  {% endblock %}
 
 {% block body %}
 
@@ -415,8 +607,8 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           </div>
 
           <div class=\"col-lg-2\">
-            <h5>Précision garantie</h5>
-            <p>Texte à insérer plus tard...</p>
+            <h5>Facile à prendre en main</h5>
+            <p>Grâce à son interface moderne et intuitive</p>
             <img class=\"hidden-xs hidden-sm hidden-md\" src=\"{{ asset('resources/img/arrow1.png') }}\">
           </div>
           <div class=\"col-lg-8\">
@@ -425,8 +617,8 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
           <div class=\"col-lg-2\">
             <br>
             <img class=\"hidden-xs hidden-sm hidden-md\" src=\"{{ asset('resources/img/arrow2.png') }}\">
-            <h5>Pratique et efficace</h5>
-            <p>Texte à insérer plus tard...</p>
+            <h5>Sauvegardez vos données</h5>
+            <p>Avec une inscription rapide</p>
           </div>
         </div>
       </div>
@@ -562,7 +754,7 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
               <br>
             </div>
             <!-- Accordion -->
-            <form action=\"{{ path('connexion') }}\">
+            <form action=\"{{ path('inscription') }}\">
 \t\t\t\t      <input type=\"submit\" class=\"fadeIn fourth zero-raduis pc\" value=\"Je m'inscris\">
 \t\t\t      </form>
               
@@ -627,6 +819,73 @@ class __TwigTemplate_553b98ab17def355ca36a21512e5e464bc4f9f8f41345d3179dae78acf0
         <br>
       </div>
       <!-- /container -->
+    </div>
+  </section>
+
+    <section id=\"contact\" name=\"contact\">
+    <div id=\"footerwrap\">
+      <div class=\"container\">
+        <div class=\"col-lg-5\">
+          <h3>Adresse</h3>
+          <p>
+            Faculté des Sciences de Montpellier,<br/> Place E. Bataillon,<br/> 34095<br/>
+            <br/> Montpellier, France
+          </p>
+        </div>
+
+        <div class=\"col-lg-7\">
+          <h3>Envoyez-nous un message</h3>
+
+          <br>
+
+\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Votre nom', 'required minlength':'4'}} ) }}
+                              </div>
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Votre adresse e-mail'}} ) }}
+                              </div>
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.sujet, {'attr': {'class': 'form-control', 'placeholder': 'Sujet', 'required minlength':'6'}} ) }}
+                              </div>
+                              <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.message, {'attr': {'class': 'form-control', 'placeholder': 'Ecrivez votre message'}} ) }}
+                              </div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
+         <!--  <form role=\"form\" action=\"\" method=\"POST\">
+
+            <div class=\"form-group\">
+              <label for=\"contact-name\">Votre nom</label><br>
+              <input type=\"name\" name=\"name\" class=\"form-control\" id=\"contact-name\" placeholder=\"Votre nom\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 4 caractères\">
+              <div class=\"validate\"></div>
+            </div>
+            <div class=\"form-group\">
+              <label for=\"contact-email\">Votre adresse e-mail</label>
+              <input type=\"email\" name=\"email\" class=\"form-control\" id=\"contact-email\" placeholder=\"Votre adresse e-mail\" data-rule=\"email\" data-msg=\"L'adresse e-mail n'est pas valide\">
+              <div class=\"validate\"></div>
+            </div>
+            <div class=\"form-group\">
+              <label for=\"contact-subject\">Sujet</label> <br/>
+              <input type=\"text\" name=\"subject\" class=\"form-control\" id=\"contact-subject\" placeholder=\"Sujet\" data-rule=\"minlen:4\" data-msg=\"Veuillez entrer au moins 8 caractères\">
+              <div class=\"validate\"></div>
+            </div>
+
+            <div class=\"form-group\">
+              <label for=\"contact-message\">Votre Message</label>
+              <textarea class=\"form-control\" name=\"message\" id=\"contact-message\" placeholder=\"Ecrivez votre message\" rows=\"5\" data-rule=\"required\" data-msg=\"Ecrivez un message\"></textarea>
+              <div class=\"validate\"></div>
+            </div>
+
+            <div class=\"form-send\">
+              <button type=\"submit\" class=\"btn btn-large\">Envoyer</button>
+              </div>
+
+            
+
+          </form>  -->
+
+        </div>
+      </div>
     </div>
   </section>
 

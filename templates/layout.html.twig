@@ -37,103 +37,18 @@
 
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
 
-  {% block menu %}
-
-  <!-- Fixed navbar -->
-  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand smothscroll" href="{{ path('index') }}"><b>Estimation.com</b></a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#home" class="smothscroll">Accueil</a></li>
-          <li><a class="smothscroll" href="{{ path('index') }}#desc">Description</a></li>
-          <li><a class="smothscroll" href="{{ path('index') }}#showcase">Photos</a></li>
-            <li><a href="#contact" class="smothscroll">Contact</a></li>
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a href="{{ path('dashboard') }}">Mon profil ({{ app.user.username }})</a></li>
-
-          <li><a href="{{ path('logout') }}">Deconnexion</a></li>
-          {% else %}
-            <li><a href="{{ path('connexion') }}">Connexion</a></li>
-            <li><a href="{{ path('inscription') }}">Inscription</a></li>
-          {% endif %}
-          
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </div>
-    {% endblock %}
-
     {% block flash %}
             {{include('flash.html.twig')}} 
+{% endblock %}
+
+{% block menu %}
+
 {% endblock %}
 
     {% block body %}
 
     {% endblock %}
 
-
-  <section id="contact" name="contact">
-    <div id="footerwrap">
-      <div class="container">
-        <div class="col-lg-5">
-          <h3>Adresse</h3>
-          <p>
-            Faculté des Sciences de Montpellier,<br/> Place E. Bataillon,<br/> 34095<br/>
-            <br/> Montpellier, France
-          </p>
-        </div>
-
-        <div class="col-lg-7">
-          <h3>Envoyez-nous un message</h3>
-
-          <br>
-          <form class="contact-form php-mail-form" role="form" action="" method="POST">
-
-            <div class="form-group">
-              <label for="contact-name">Votre nom</label><br>
-              <input type="name" name="name" class="form-control" id="contact-name" placeholder="Votre nom" data-rule="minlen:4" data-msg="Veuillez entrer au moins 4 caractères">
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Votre adresse e-mail</label>
-              <input type="email" name="email" class="form-control" id="contact-email" placeholder="Votre adresse e-mail" data-rule="email" data-msg="L'adresse e-mail n'est pas valide">
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <label for="contact-subject">Sujet</label> <br/>
-              <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Sujet" data-rule="minlen:4" data-msg="Veuillez entrer au moins 8 caractères">
-              <div class="validate"></div>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-message">Votre Message</label>
-              <textarea class="form-control" name="message" id="contact-message" placeholder="Ecrivez votre message" rows="5" data-rule="required" data-msg="Ecrivez un message"></textarea>
-              <div class="validate"></div>
-            </div>
-
-            <div class="loading"><br>Votre message est en cours d'envoi.</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Votre message a bien été envoyé, merci !</div>
-
-            <div class="form-send">
-              <button type="submit" class="btn btn-large">Envoyer</button>
-            </div>
-
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div id="copyrights">
     <div class="container">

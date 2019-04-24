@@ -401,6 +401,10 @@
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\HomeController"/>
+      </call>
     </service>
     <service id="App\Controller\ProjectController" class="App\Controller\ProjectController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -450,6 +454,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\CloisonsType" class="App\Form\CloisonsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\CreateMemberType" class="App\Form\CreateMemberType" autowire="true" autoconfigure="true">
@@ -875,6 +882,7 @@
         <argument>App\Form\ClimatisationType</argument>
         <argument>App\Form\CloisonType</argument>
         <argument>App\Form\CloisonsType</argument>
+        <argument>App\Form\ContactType</argument>
         <argument>App\Form\CreateMemberType</argument>
         <argument>App\Form\DomotiqueType</argument>
         <argument>App\Form\ElectriciteType</argument>
@@ -1137,7 +1145,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.7fGCWer"/>
+      <argument type="service" id=".service_locator.mrwby8x"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3917,6 +3925,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GrosOeuvreController" class="App\Controller\GrosOeuvreController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GrosOeuvreController" class="App\Controller\GrosOeuvreController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GrosOeuvreController" class="App\Controller\GrosOeuvreController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -3942,6 +3953,8 @@
     <service id=".abstract.instanceof.App\Form\CloisonType" class="App\Form\CloisonType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloisonsType" class="App\Form\CloisonsType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CloisonsType" class="App\Form\CloisonsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactType" class="App\Form\ContactType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CreateMemberType" class="App\Form\CreateMemberType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CreateMemberType" class="App\Form\CreateMemberType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DomotiqueType" class="App\Form\DomotiqueType" autowire="true" abstract="true"/>
@@ -4221,10 +4234,10 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.oXHHcjB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.TAB62Ol" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="twig" type="service" id="twig"/>
+        <argument key="mailer" type="service" id="App\Services\Mailer"/>
       </argument>
     </service>
     <service id=".service_locator.YlitY.M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4247,12 +4260,18 @@
         <argument key="authUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.rAkKL4H" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.oXHHcjB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="twig" type="service" id="twig"/>
+      </argument>
+    </service>
+    <service id=".service_locator.XzyijJy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::listeMembreAdmin" type="service" id=".service_locator.eBT2KwA"/>
         <argument key="App\Controller\DashboardController::index" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.TAB62Ol"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\ResettingController::request" type="service" id=".service_locator.YlitY.M"/>
         <argument key="App\Controller\ResettingController::resetting" type="service" id=".service_locator.5iM2kDV"/>
@@ -4260,7 +4279,7 @@
         <argument key="App\Controller\SecurityController::inscription" type="service" id=".service_locator.oXHHcjB"/>
         <argument key="App\Controller\AdminController:listeMembreAdmin" type="service" id=".service_locator.eBT2KwA"/>
         <argument key="App\Controller\DashboardController:index" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.oXHHcjB"/>
+        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.TAB62Ol"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\ResettingController:request" type="service" id=".service_locator.YlitY.M"/>
         <argument key="App\Controller\ResettingController:resetting" type="service" id=".service_locator.5iM2kDV"/>
@@ -4321,7 +4340,7 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.7fGCWer" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.mrwby8x" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AccountType" type="service" id="App\Form\AccountType"/>
@@ -4329,6 +4348,7 @@
         <argument key="App\Form\ClimatisationType" type="service" id="App\Form\ClimatisationType"/>
         <argument key="App\Form\CloisonType" type="service" id="App\Form\CloisonType"/>
         <argument key="App\Form\CloisonsType" type="service" id="App\Form\CloisonsType"/>
+        <argument key="App\Form\ContactType" type="service" id="App\Form\ContactType"/>
         <argument key="App\Form\CreateMemberType" type="service" id="App\Form\CreateMemberType"/>
         <argument key="App\Form\DomotiqueType" type="service" id="App\Form\DomotiqueType"/>
         <argument key="App\Form\ElectriciteType" type="service" id="App\Form\ElectriciteType"/>
@@ -4570,6 +4590,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
+    </service>
     <service id=".service_locator.KTVqfp6.App\Controller\ProjectController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ProjectController"/>
       <argument>App\Controller\ProjectController</argument>
@@ -4679,7 +4705,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.rAkKL4H"/>
+      <argument type="service" id=".service_locator.XzyijJy"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4970,7 +4996,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.rAkKL4H"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.XzyijJy"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

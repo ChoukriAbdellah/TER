@@ -82,14 +82,14 @@
 																						
 																						<td>{{ p }}</td>
 																						<td>{{ projets[p].nom }}</td>
-																						{% if  data[p]  == 11 %}
-																						<td><span class="label label-success">Success</span></td>
+																						{% if  data[p]  == 23 %}
+																						<td><span class="label label-success">Terminé</span></td>
 																						{% else %}
-																							<td> En cours </td>
+																							<td><span class="label label-warning">En cours</span></td>
 																						{% endif %}
 																						<td>
 																							<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-																								<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+																								<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow={{dataPourcentage[p]}} aria-valuemin="0" aria-valuemax="100" style="width: {{dataPourcentage[p]}}%;">
 																									{{ dataPourcentage[p]}} %
 																								</div>
 																							</div>
