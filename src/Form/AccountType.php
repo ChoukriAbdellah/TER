@@ -4,6 +4,7 @@ namespace App\Form;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormView;
@@ -19,7 +20,8 @@ class AccountType extends AbstractType
 
         $builder
             ->add('oldPassword', PasswordType::class, array(
-                'mapped' => false
+                'mapped' => false,
+                'label' => false
             ))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
@@ -27,9 +29,15 @@ class AccountType extends AbstractType
                 'options' => array(
                     'attr' => array(
                         'class' => 'password-field'
-                    )
+                    ),
+                    'label' => false
                 ),
-                'required' => true,
+                'required' => true
+            ))
+            ->add('email', EmailType::class, array(
+                'mapped' => false,
+                'label' => false,
+                'required' => false
             ))
             ->add('submit', SubmitType::class, array(
                 'attr' => array(

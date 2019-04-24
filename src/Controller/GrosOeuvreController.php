@@ -1094,7 +1094,7 @@ class GrosOeuvreController extends AbstractController
     }
 
     $nbform = $this->getDoctrine()
-    ->getRepository(GrosOeuvre::class)->findNbFormulairesByGrosOeuvre($idGo);
+        ->getRepository(GrosOeuvre::class)->findNbFormulairesByGrosOeuvre($idGo);
 
     return $this->render(
         'project/gros-oeuvre-view.html.twig',
