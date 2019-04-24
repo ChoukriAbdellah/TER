@@ -21,21 +21,6 @@ class Cloison
     private $id;
 
     /**
-<<<<<<< HEAD
-     * @ORM\Column(type="string", length=255)
-     */
-    private $typeCloisons;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $surfaceTotale;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $prix;
-=======
      * @ORM\Column(type="float")
      */
     private $prix;
@@ -79,23 +64,12 @@ class Cloison
      * @ORM\Column(type="float", nullable=true)
      */
     private $cloisonsVegetales;
->>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-<<<<<<< HEAD
-    public function getTypeCloisons(): ?string
-    {
-        return $this->typeCloisons;
-    }
-
-    public function setTypeCloisons(string $typeCloisons): self
-    {
-        $this->typeCloisons = $typeCloisons;
-=======
     public function getPrix(): ?float
     {
         return $this->prix;
@@ -104,21 +78,10 @@ class Cloison
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
->>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
         return $this;
     }
 
-<<<<<<< HEAD
-    public function getSurfaceTotale(): ?float
-    {
-        return $this->surfaceTotale;
-    }
-
-    public function setSurfaceTotale(float $surfaceTotale): self
-    {
-        $this->surfaceTotale = $surfaceTotale;
-=======
     public function getCloisonsAmovibles(): ?float
     {
         return $this->cloisonsAmovibles;
@@ -127,21 +90,10 @@ class Cloison
     public function setCloisonsAmovibles(?float $cloisonsAmovibles): self
     {
         $this->cloisonsAmovibles = $cloisonsAmovibles;
->>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
         return $this;
     }
 
-<<<<<<< HEAD
-    public function getPrix(): ?float
-    {
-        return $this->prix;
-    }
-
-    public function setPrix(float $prix): self
-    {
-        $this->prix = $prix;
-=======
     public function getCloisonsSeches(): ?float
     {
         return $this->cloisonsSeches;
@@ -222,7 +174,6 @@ class Cloison
     public function setCloisonsVegetales(?float $cloisonsVegetales): self
     {
         $this->cloisonsVegetales = $cloisonsVegetales;
->>>>>>> b34e2a4f66f178e2d3b4e5304cd49a9e3700af3a
 
         return $this;
     }

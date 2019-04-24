@@ -22,26 +22,26 @@
 									<h2 class="panel-title">{{projet.nom}} - Second oeuvre</h2>
 									</header>
                                     <br>
-									<h4> {% if nbform < 11 %} Vous avez rempli {{nbform}} formulaire(s) sur 12 pour le second oeuvre de votre chantier. 
+									<h4> {% if nbform < 12 %} Vous avez rempli {{nbform}} formulaire(s) sur 12 pour le second oeuvre de votre chantier. 
 										{% else %} Vous avez renseigné toutes les informations nécessaires pour le second oeuvre.
 										 {% endif %} </h4>
 		<div class="row">
-			{% if (nbform/11)*100 < 25 %}
+			{% if (nbform/12)*100 < 25 %}
 									<div class="progress progress-striped light active m-md">
-										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
-											{% if nbform == 11 %} Terminé {% else %} En cours {% endif %}
+										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{(nbform/12)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/12)*100}}%;">
+											{% if nbform == 12 %} Terminé {% else %} En cours {% endif %}
 										</div>
 									</div>
-			{% elseif (nbform/11)*100 > 25 and (nbform/11)*100 < 75 %}
+			{% elseif (nbform/12)*100 > 25 and (nbform/12)*100 < 75 %}
 												<div class="progress progress-striped light active m-md">
-										<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
-											{% if nbform == 11 %} Terminé {% else %} En cours {% endif %}
+										<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{(nbform/12)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/12)*100}}%;">
+											{% if nbform == 12 %} Terminé {% else %} En cours {% endif %}
 										</div>
 									</div>
 			{% else %}
 												<div class="progress progress-striped light active m-md">
-										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{(nbform/11)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/11)*100}}%;">
-											{% if nbform == 11 %} Terminé {% else %} En cours {% endif %}
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{(nbform/12)*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(nbform/12)*100}}%;">
+											{% if nbform == 12 %} Terminé {% else %} En cours {% endif %}
 										</div>
 									</div>
 			{% endif %}
@@ -168,7 +168,7 @@
 									Forme de votre cheminée :  ({{evacuation.forme}}) <br>
 									Type de votre cheminée :  ({{evacuation.typeCheminee}}) <br>
 									<br>
-									<b> Sous-total : </b> {{evacuation.prix}} €
+									<b> Sous-total : </b> {{evacuation.prix}} € 
 									
 									{% endif %}								</div>
 							</section>
@@ -203,7 +203,7 @@
 									Nombre de balustrades à poser ({{menuiseriesInt.tailleBalustrades}} m2)  <br>
 
 									<br>
-									<b> Sous-total : </b> {{menuiseriesInt.prix}} €
+									<b> Sous-total : </b> {{menuiseriesInt.prix}} € 
 									
 									{% endif %}									</div>
 							</section>
@@ -226,7 +226,7 @@
 										Dimensions :  {{escaliers.dimensions}} <br>
 										Materiel :  {{escaliers.materiaux}} <br>
 
-										<b> Sous-total : </b> {{escaliers.prix}} €
+										<b> Sous-total : </b> {{escaliers.prix}} € 
 
 									{% endif %}									</div>
 							</section>
@@ -254,7 +254,7 @@
 											Nombre de baignoires :  {{plomberie.nbBaignoire}} <br>
 											Nombre de douches :  {{plomberie.nbDouche}} <br>
 
-											<b> Sous-total : </b> {{plomberie.prix}} </b> €
+											<b> Sous-total : </b> {{plomberie.prix}} </b> € 
 
 										{% endif %}									</div>
 							</section>
@@ -282,7 +282,7 @@
 										Nombre de prises électriques :  {{electricite.nbPriseElectrique}} <br>
 										Nombre de volets roulant :  {{electricite.nbVoletRoulant}} <br>
 
-										<b> Sous-total : </b> {{electricite.prix}} </b> €
+										<b> Sous-total : </b> {{electricite.prix}} </b> € 
 
 									{% endif %}									</div>
 							</section>
@@ -301,8 +301,8 @@
 									{% else %}
 									Vous avez déjà rempli ce formulaire. <br>
 									Récapitulatif : <br>
-									Type de Ventilation : <b>{{ventilation.typeVentilation}} <b/><br>
-									<b> Sous-total : </b> {{ventilation.prix}} </b> €
+									Type de Ventilation : {{ventilation.typeVentilation}} <br>
+									<b> Sous-total : </b> {{ventilation.prix}}  € 
 									
 									{% endif %}								</div>
 							</section>
@@ -370,14 +370,45 @@
 
 						</div>
 					</div>
+
+						<section class="panel panel-featured-left panel-featured-secondary">
+									<div class="panel-body">
+										<div class="widget-summary">
+											<div class="widget-summary-col widget-summary-col-icon">
+												<div class="summary-icon bg-secondary">
+													<i class="fa fa-usd"></i>
+												</div>
+											</div>
+											<div class="widget-summary-col">
+												<div class="summary">
+													<h4 class="title">Sous-total</h4>
+													<div class="info">
+																						{% if nbform == 12 %} <strong class="amount"> 	
+									{{cloisons.prix + domotique.prix + isolation.prix + enduit.prix + climatisation.prix + ventilation.prix + 
+									electricite.prix + plomberie.prix + escaliers.prix + menuiseriesInt.prix + evacuation.prix + revetement.prix }} €</strong>
+									{% else %} Vous devez avoir rempli tous les formulaires pour avoir le prix total du second oeuvre.
+									{% endif %} 
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
 					
 						
 									</div>
 									<div class="panel-footer">
 										<ul class="pager">
 										<a href="{{path('gros-oeuvre', {'id': projet.id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
-										type="button">Revenir au gros oeuvre</button></a>
+										type="button" >Revenir au gros oeuvre</button></a>
 										</ul>
+										{% if nbform == 12 %}
+										<ul class="pager">
+										<a href="#"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
+										type="button">Accéder à la facture finale</button></a>
+										</ul>
+										{% endif %}
 									</div>
 								</section>
 							</div>
