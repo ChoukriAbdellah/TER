@@ -285,6 +285,21 @@
 											<span>Nouveau projet</span>
 										</a>
 									</li>
+									{% if is_granted('ROLE_ADMIN') %}
+									<li class="nav-active">
+										<a href="{{ path('listeAdmin') }}">
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
+											<span>Projets(Admin)</span>
+										</a>
+									</li>
+									
+									<li class="nav-active">
+										<a href="{{ path('listeMembreAdmin') }}">
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
+											<span>Membres du site</span>
+										</a>
+									</li>
+									{% endif %}
 		
 									
 								</ul>
