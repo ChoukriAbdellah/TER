@@ -75,6 +75,8 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdEtudeSol($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'étude du sol avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
@@ -103,10 +105,11 @@ class GrosOeuvreController extends AbstractController
 			          $idCharpente = $grosOeuvre->getIdCharpente();
 			            if($idCharpente == NULL){
                 // création du formulaire
-                  $e = new Charpente();
+                  //$e = new Charpente();
                   // instancie le formulaire avec les contraintes par défaut
-                  $form = $this->createForm(CharpenteType::class, $e);        
-                  $form->handleRequest($request);
+                  //$form = $this->createForm(CharpenteType::class, $e);        
+                  //$form->handleRequest($request);
+                  $request->getSession()->getFlashBag()->add('danger', "Vous avez été redirigé vers le formulaire de la charpente. Il doit être rempli avant celui de la toiture !");
                 return $this->redirectToRoute(
                     'charpente', ['id'=>$id]);
                    }
@@ -148,6 +151,8 @@ class GrosOeuvreController extends AbstractController
                         $grosOeuvre->setIdToiture($e->getId());
                         $em->persist($grosOeuvre);
                         $em->flush();
+
+                        $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la toiture avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
                       
@@ -208,6 +213,8 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdMenuiseriesExt($elem->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des menuiseries extérieures avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
@@ -260,6 +267,8 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdCharpente($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la charpente avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
@@ -288,10 +297,12 @@ class GrosOeuvreController extends AbstractController
 	$idEtudeSol = $grosOeuvre->getIdEtudeSol();
     if($idEtudeSol == NULL){
 		 // création du formulaire
-            $e = new EtudeSol();
+            //$e = new EtudeSol();
             // instancie le formulaire avec les contraintes par défaut
-            $form = $this->createForm(EtudeSolType::class, $e);        
-            $form->handleRequest($request);
+            //$form = $this->createForm(EtudeSolType::class, $e);        
+            //form->handleRequest($request);
+
+            $request->getSession()->getFlashBag()->add('danger', "Vous avez été redirigé vers le formulaire de l'étude du sol. Il doit être rempli avant celui de la préparation du terrain !");
 	  return $this->redirectToRoute(
               'etude-sol', ['id'=>$id]);
     }
@@ -311,9 +322,6 @@ class GrosOeuvreController extends AbstractController
                 $projet = $this->getDoctrine()
                 ->getRepository(Projet::class)
                 ->find($id);
-
-                
-               
 
                 $prixPins = 0;
                 $prixSapins=0;
@@ -435,6 +443,7 @@ class GrosOeuvreController extends AbstractController
                 $em->persist($grosOeuvre);
                 $em->flush();
      
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la préparation et accès du terrain avec succès !");
 
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
@@ -499,6 +508,8 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdSoubassement($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire du soubasement avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
@@ -525,6 +536,7 @@ class GrosOeuvreController extends AbstractController
               $positionTerrain = null;
             }
             
+
             
             return $this->render(
               'project/soubassement.html.twig', array('form' => $form->createView(), 'positionTerrain' => $positionTerrain));
@@ -638,6 +650,8 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdElevation($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'élévation avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
@@ -667,10 +681,12 @@ class GrosOeuvreController extends AbstractController
 				$idEtudeSol = $grosOeuvre->getIdEtudeSol();
 			if($idEtudeSol == NULL){
 				 // création du formulaire
-					$e = new EtudeSol();
+					//$e = new EtudeSol();
 					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(EtudeSolType::class, $e);        
-					$form->handleRequest($request);
+					//$form = $this->createForm(EtudeSolType::class, $e);        
+          //$form->handleRequest($request);
+          
+          $request->getSession()->getFlashBag()->add('danger', "Vous avez été redirigé vers le formulaire de l'étude du sol. Il doit être rempli avant celui de l'excavation !");
 			  return $this->redirectToRoute(
 					  'etude-sol', ['id'=>$id]);
 			}
@@ -716,9 +732,13 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdExcavation($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'excavation avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
+
+           
      
             return $this->render(
               'project/excavation.html.twig', array('form' => $form->createView(), 'id' => $id));
@@ -796,9 +816,13 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdVrd($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire du VRD avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
+
+
      
             return $this->render(
               'project/vrd.html.twig', array('form' => $form->createView(), 'id' => $id));
@@ -825,10 +849,13 @@ class GrosOeuvreController extends AbstractController
 			$idExcavation = $grosOeuvre->getIdExcavation();
 			if($idExcavation == NULL){
 				 // création du formulaire
-					$e = new Excavation();
+					//$e = new Excavation();
 					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(ExcavationType::class, $e);        
-					$form->handleRequest($request);
+					//$form = $this->createForm(ExcavationType::class, $e);        
+          //$form->handleRequest($request);
+          
+          $request->getSession()->getFlashBag()->add('danger', "Vous avez été redirigé vers le formulaire de l'excavation. Il doit être rempli avant celui des fondations !");
+
 			  return $this->redirectToRoute(
 					  'excavation', ['id'=>$id]);
 			}
@@ -900,9 +927,13 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdFondations($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+
+            $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des fondations avec succès !");
      
                 return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
+
      
             return $this->render(
               'project/fondation.html.twig', array('form' => $form->createView(), 'id' => $id));
@@ -930,10 +961,11 @@ class GrosOeuvreController extends AbstractController
 			$idExcavation = $grosOeuvre->getIdExcavation();
 			if($idExcavation == NULL){
 				 // création du formulaire
-					$e = new Excavation();
+					//$e = new Excavation();
 					// instancie le formulaire avec les contraintes par défaut
-					$form = $this->createForm(ExcavationType::class, $e);        
-					$form->handleRequest($request);
+					//$form = $this->createForm(ExcavationType::class, $e);        
+          //$form->handleRequest($request);
+          $request->getSession()->getFlashBag()->add('danger', "Vous avez été redirigé vers le formulaire de l'excavation. Il doit être rempli avant celui du plancher !");
 			  return $this->redirectToRoute(
 					  'excavation', ['id'=>$id]);
 			}
@@ -981,9 +1013,13 @@ class GrosOeuvreController extends AbstractController
                 $grosOeuvre->setIdPlancher($e->getId());
                 $em->persist($grosOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire du plancher avec succès !");
      
                 return $this->redirectToRoute('my-project', array('id' => $id));
             }
+
+
      
             return $this->render(
               'project/plancher.html.twig', array('form' => $form->createView(), 'id' => $id));

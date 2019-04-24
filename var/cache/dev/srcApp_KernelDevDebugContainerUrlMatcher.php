@@ -126,7 +126,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             648 => [[['_route' => 'plomberie', '_controller' => 'App\\Controller\\SecondOeuvreController::plomberie'], ['id'], null, null, false, false, null]],
             665 => [[['_route' => 'isolation', '_controller' => 'App\\Controller\\SecondOeuvreController::isolation'], ['id'], null, null, false, false, null]],
             683 => [[['_route' => 'revetement', '_controller' => 'App\\Controller\\SecondOeuvreController::revetement'], ['id'], null, null, false, false, null]],
-            703 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\ProjectController::menuiserie'], ['id'], null, null, false, false, null]],
+            703 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\GrosOeuvreController::menuiserie'], ['id'], null, null, false, false, null]],
             724 => [[['_route' => 'climatisation', '_controller' => 'App\\Controller\\SecondOeuvreController::climatisation'], ['id'], null, null, false, false, null]],
             741 => [[['_route' => 'domotique', '_controller' => 'App\\Controller\\SecondOeuvreController::domotique'], ['id'], null, null, false, false, null]],
         ];

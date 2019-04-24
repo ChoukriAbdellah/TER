@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mer. 24 avr. 2019 à 16:13
+-- Généré le :  mer. 24 avr. 2019 à 22:36
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.3
 
@@ -233,7 +233,8 @@ INSERT INTO `etude_sol` (`id`, `type_sol`, `prix`) VALUES
 (5, 'ARGILEUX', 1000),
 (6, 'ARGILEUX', 1000),
 (7, 'ARGILEUX', 1000),
-(8, 'HUMIFERE', 1100);
+(8, 'HUMIFERE', 1100),
+(11, 'HUMIFERE', 1100);
 
 -- --------------------------------------------------------
 
@@ -338,7 +339,8 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 (11, 8, 2, 3, 4, 4, 2, 3, 3, 3, 1, 1),
 (12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(14, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -758,7 +760,8 @@ INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, 
 (8, 2, 9, 9, 'Villa Turin'),
 (9, 2, 10, 10, 'Villa Madrid'),
 (10, 2, 11, 11, 'Test test'),
-(11, 4, 12, 12, 'heythem');
+(11, 4, 12, 12, 'heythem'),
+(12, 6, 15, 15, 'Maison de l\'admin');
 
 -- --------------------------------------------------------
 
@@ -816,7 +819,8 @@ INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revet
 (11, 3, 5, 2, 4, 3, 2, 3, 2, 2, 2, 2, 2),
 (12, 2, 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (13, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(14, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -887,12 +891,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`, `date_inscription`, `password_requested_at`, `token`) VALUES
-(1, 'anaschetouan', '$2y$13$Nwr0eIuCh2Am1aJ.tTuaiuoHInU5Fmkkf6uie1le0n9WlYibwFkW2', 'anas.chetouan@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00', NULL, NULL),
 (2, 'cr7', '$2y$13$TQKjgNT8ixAoBAeXowqnfOIU841JFIVW6NAZ1WNwvLlIJQH36ojUS', 'cronaldo@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00', NULL, NULL),
 (4, 'test', '$2y$13$p0a4.oDf2cLtTitSFNbER.rs9WiIWf4r57h.bb7gP.uoiVo1ElQA6', 'test@mail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 16:49:28', NULL, NULL),
 (5, 'CHK-34', '$2y$13$CH7AEoG7v7Jv.VonXVv12Ox0Dn5/6ZKLh9V2/NWv73n9yHWMn785W', 'choukri@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 18:57:39', NULL, NULL),
-(6, 'admin', '$2y$13$.HVQ6qmZwQo9MFc5hqZ8lewjUHTKv4B4Ir1LbvH9ZlN2gkYmns12y', 'admin@test.fr', 1, 'a:2:{i:0;s:10:\"ROLE_ADMIN\";i:1;s:9:\"ROLE_USER\";}', '2019-04-23 16:53:25', NULL, NULL);
-
+(6, 'admin', '$2y$13$.HVQ6qmZwQo9MFc5hqZ8lewjUHTKv4B4Ir1LbvH9ZlN2gkYmns12y', 'admin@test.fr', 1, 'a:2:{i:0;s:10:\"ROLE_ADMIN\";i:1;s:9:\"ROLE_USER\";}', '2019-04-23 16:53:25', NULL, NULL),
+(7, 'anasito34', '$2y$13$xo0.gg/Ji4a0HM537MXRb.vvYvkGs4c5ftQfNZUhe9lRZmxsoVbFO', 'anas@hotmail.fr', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-04-24 21:00:46', NULL, NULL),
+(11, 'anaschetouan', '$2y$13$G8XS81lpvbA2pN3blwUwD.ApmfkrLxh2ym73TvMvHJVOxl9BzKOtS', 'anas.chetouan@gmail.com', 1, 'a:2:{i:0;s:15:\"ROLE_COMMERCIAL\";i:1;s:9:\"ROLE_USER\";}', '2019-04-24 21:39:17', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1178,7 +1182,7 @@ ALTER TABLE `escaliers`
 -- AUTO_INCREMENT pour la table `etude_sol`
 --
 ALTER TABLE `etude_sol`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `evacuation_fumees`
@@ -1202,7 +1206,7 @@ ALTER TABLE `fondation`
 -- AUTO_INCREMENT pour la table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `isolation`
@@ -1250,7 +1254,7 @@ ALTER TABLE `prix`
 -- AUTO_INCREMENT pour la table `projet`
 --
 ALTER TABLE `projet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `revetement`
@@ -1262,7 +1266,7 @@ ALTER TABLE `revetement`
 -- AUTO_INCREMENT pour la table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `soubassement`
@@ -1280,7 +1284,7 @@ ALTER TABLE `toiture`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `ventilation`

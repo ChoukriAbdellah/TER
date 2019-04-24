@@ -232,10 +232,13 @@
 								<span class="role">
 								{% if is_granted('ROLE_ADMIN') %}
 								Administrateur
-								{% elseif is_granted('ROLE_USER') %}
-								Membre
 								{% elseif is_granted('ROLE_COMMERCIAL') %}
 								Commercial
+								{% elseif is_granted('ROLE_USER') %}
+								Membre
+								{% else %}
+								Non enregistré
+
 								{% endif %}</span>
 							</div>
 			
@@ -279,6 +282,7 @@
 											<span>Tableau de bord</span>
 										</a>
 									</li>
+									
 									<li class="nav-active">
 										<a href="{{ path('new-project') }}">
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -286,19 +290,21 @@
 										</a>
 									</li>
 									{% if is_granted('ROLE_ADMIN') %}
-									<li class="nav-active">
-										<a href="{{ path('listeAdmin') }}">
-											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Projets(Admin)</span>
-										</a>
-									</li>
-									
+																		
 									<li class="nav-active">
 										<a href="{{ path('listeMembreAdmin') }}">
-											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Membres du site</span>
+											<i class="fa fa-user" aria-hidden="true"></i>
+											<span>Membres</span>
 										</a>
 									</li>
+
+									<li class="nav-active">
+										<a href="{{ path('listeAdmin') }}">
+											<i class="fa fa-table" aria-hidden="true"></i>
+											<span>Liste des projets</span>
+										</a>
+									</li>
+
 									{% endif %}
 		
 									
@@ -444,6 +450,7 @@
 
 		<!-- Examples -->
 		<script src="{{ asset('resources/assets/javascripts/dashboard/examples.dashboard.js') }}"></script>
+		<script src="{{ asset('resources/assets/javascripts/ui-elements/examples.notifications.js') }}"></script>
 
 		{% block javascript %}
 
