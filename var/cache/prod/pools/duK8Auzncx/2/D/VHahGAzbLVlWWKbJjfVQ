@@ -1,0 +1,142 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Soubassement',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Soubassement',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\SoubassementRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'typeSoubassement' => [
+                            'fieldName' => 'typeSoubassement',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_soubassement',
+                        ],
+                        'materielUtilise' => [
+                            'fieldName' => 'materielUtilise',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'materiel_utilise',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                        'tractopelle' => [
+                            'fieldName' => 'tractopelle',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'tractopelle',
+                        ],
+                        'camion_benne' => [
+                            'fieldName' => 'camion_benne',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'camion_benne',
+                        ],
+                        'betonniere' => [
+                            'fieldName' => 'betonniere',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'betonniere',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'type_soubassement' => 'typeSoubassement',
+                        'materiel_utilise' => 'materielUtilise',
+                        'prix' => 'prix',
+                        'tractopelle' => 'tractopelle',
+                        'camion_benne' => 'camion_benne',
+                        'betonniere' => 'betonniere',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'typeSoubassement' => 'type_soubassement',
+                        'materielUtilise' => 'materiel_utilise',
+                        'prix' => 'prix',
+                        'tractopelle' => 'tractopelle',
+                        'camion_benne' => 'camion_benne',
+                        'betonniere' => 'betonniere',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'soubassement',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

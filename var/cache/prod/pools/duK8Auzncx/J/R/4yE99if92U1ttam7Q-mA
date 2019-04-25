@@ -1,0 +1,178 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Elevation',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Elevation',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\ElevationRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'nb_poutres' => [
+                            'fieldName' => 'nb_poutres',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_poutres',
+                        ],
+                        'LongueurPoutre' => [
+                            'fieldName' => 'LongueurPoutre',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'longueur_poutre',
+                        ],
+                        'TaillePoutre' => [
+                            'fieldName' => 'TaillePoutre',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'taille_poutre',
+                        ],
+                        'TypeMateriauxMur' => [
+                            'fieldName' => 'TypeMateriauxMur',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_materiaux_mur',
+                        ],
+                        'HauteurMur' => [
+                            'fieldName' => 'HauteurMur',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'hauteur_mur',
+                        ],
+                        'NombreFenetre' => [
+                            'fieldName' => 'NombreFenetre',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nombre_fenetre',
+                        ],
+                        'TypeFenetre' => [
+                            'fieldName' => 'TypeFenetre',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_fenetre',
+                        ],
+                        'TypeLinteaux' => [
+                            'fieldName' => 'TypeLinteaux',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_linteaux',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'nb_poutres' => 'nb_poutres',
+                        'longueur_poutre' => 'LongueurPoutre',
+                        'taille_poutre' => 'TaillePoutre',
+                        'type_materiaux_mur' => 'TypeMateriauxMur',
+                        'hauteur_mur' => 'HauteurMur',
+                        'nombre_fenetre' => 'NombreFenetre',
+                        'type_fenetre' => 'TypeFenetre',
+                        'type_linteaux' => 'TypeLinteaux',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'nb_poutres' => 'nb_poutres',
+                        'LongueurPoutre' => 'longueur_poutre',
+                        'TaillePoutre' => 'taille_poutre',
+                        'TypeMateriauxMur' => 'type_materiaux_mur',
+                        'HauteurMur' => 'hauteur_mur',
+                        'NombreFenetre' => 'nombre_fenetre',
+                        'TypeFenetre' => 'type_fenetre',
+                        'TypeLinteaux' => 'type_linteaux',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'elevation',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

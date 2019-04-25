@@ -1,0 +1,154 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Electricite',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Electricite',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\ElectriciteRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'nbChauffage' => [
+                            'fieldName' => 'nbChauffage',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_chauffage',
+                        ],
+                        'nbInterrupteur' => [
+                            'fieldName' => 'nbInterrupteur',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_interrupteur',
+                        ],
+                        'nbSortieLumieres' => [
+                            'fieldName' => 'nbSortieLumieres',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_sortie_lumieres',
+                        ],
+                        'nbPriseElectrique' => [
+                            'fieldName' => 'nbPriseElectrique',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_prise_electrique',
+                        ],
+                        'nbVoletRoulant' => [
+                            'fieldName' => 'nbVoletRoulant',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_volet_roulant',
+                        ],
+                        'dimensionCable' => [
+                            'fieldName' => 'dimensionCable',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'dimension_cable',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'prix' => 'prix',
+                        'id' => 'id',
+                        'nb_chauffage' => 'nbChauffage',
+                        'nb_interrupteur' => 'nbInterrupteur',
+                        'nb_sortie_lumieres' => 'nbSortieLumieres',
+                        'nb_prise_electrique' => 'nbPriseElectrique',
+                        'nb_volet_roulant' => 'nbVoletRoulant',
+                        'dimension_cable' => 'dimensionCable',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'prix' => 'prix',
+                        'id' => 'id',
+                        'nbChauffage' => 'nb_chauffage',
+                        'nbInterrupteur' => 'nb_interrupteur',
+                        'nbSortieLumieres' => 'nb_sortie_lumieres',
+                        'nbPriseElectrique' => 'nb_prise_electrique',
+                        'nbVoletRoulant' => 'nb_volet_roulant',
+                        'dimensionCable' => 'dimension_cable',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'electricite',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];
