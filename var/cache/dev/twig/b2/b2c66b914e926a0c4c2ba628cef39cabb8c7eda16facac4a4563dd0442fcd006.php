@@ -121,7 +121,10 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
         echo "\t\t\t\t\t\t\t
 \t\t\t
 
-\t\t\t<div id=\"listeProjet\"  data-items=>
+\t\t\t<div id=\"listeProjet\"  data-items=\"";
+        // line 22
+        echo twig_escape_filter($this->env, json_encode((isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new Twig_Error_Runtime('Variable "data" does not exist.', 22, $this->source); })())), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -193,7 +196,7 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 
     public function getDebugInfo()
     {
-        return array (  172 => 46,  168 => 45,  164 => 44,  157 => 39,  148 => 38,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
+        return array (  175 => 46,  171 => 45,  167 => 44,  160 => 39,  151 => 38,  126 => 22,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -219,7 +222,7 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 \t\t\t\t\t\t\t
 \t\t\t
 
-\t\t\t<div id=\"listeProjet\"  data-items=>
+\t\t\t<div id=\"listeProjet\"  data-items=\"{{ data|json_encode }}\">
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
