@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelProdContainer::class, false)) {
 
 return new \ContainerG37TDox\srcApp_KernelProdContainer([
     'container.build_hash' => 'G37TDox',
-    'container.build_id' => '4d3a667d',
-    'container.build_time' => 1556210535,
+    'container.build_id' => 'f144f3bb',
+    'container.build_time' => 1556232556,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerG37TDox');
