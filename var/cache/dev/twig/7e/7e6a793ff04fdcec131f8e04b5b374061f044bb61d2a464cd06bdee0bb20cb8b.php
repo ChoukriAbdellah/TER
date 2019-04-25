@@ -102,6 +102,6 @@ class __TwigTemplate_95667e8778971ff1876092c524eb899038bafa5b0f12a504dbf7c2c220b
             </div>
         </div>
     {% endfor %}
-{% endfor %} ", "flash.html.twig", "/opt/lampp/htdocs/Symfony/templates/flash.html.twig");
+{% endfor %} ", "flash.html.twig", "/opt/lampp/htdocs/TER/templates/flash.html.twig");
     }
 }

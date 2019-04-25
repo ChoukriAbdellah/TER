@@ -138,6 +138,6 @@ class __TwigTemplate_fb6cd43e1b4b2c3a199575130f95fff6b9bdeb3a07c57db1c0b4585ac52
 {% block panel %}
     {{ render(path('_profiler_router', { token: token })) }}
 {% endblock %}
-", "@WebProfiler/Collector/router.html.twig", "/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
+", "@WebProfiler/Collector/router.html.twig", "/opt/lampp/htdocs/TER/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
     }
 }

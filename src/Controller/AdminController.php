@@ -9,17 +9,20 @@ use Symfony\Component\HttpFoundation\Request;
 
 use App\Entity\Projet;
 use App\Entity\SecondOeuvre;
-
+use App\Entity\RemoveUser;
+use App\Form\RemoveUserType;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AdminController extends AbstractController
 {   
-
-
-  public function listeProjetAdmin( Request $request)
+  public function projetAdmin( Request $request)
   {
- 
+            
+            
+            
+
+  		    
             $projets = $this->getDoctrine()
             ->getRepository(Projet::class)
             ->findAll();
@@ -36,18 +39,22 @@ class AdminController extends AbstractController
            ->find($projets[$i]->getIdProprio());
            $var=array($projets[$i]->getId(),$projets[$i]->getNom(), $user->getUserName());
 
-            array_push($data,$var);
-        }
-          $newJsonString = json_encode($data);
+            array_push($data,$var);}
+
+		      	$newJsonString = json_encode($data);
           file_put_contents('resources/assets/js/listeProjetsAdmin.json', $newJsonString);
+				
+         
      
             return $this->render(
-              'project/listeProjetsAdmin.html.twig');
+              'project/listeProjetsAdmin.html.twig',array('data' =>$data) );
 			
   }
 
+  
 
-    public function listeMembreAdmin( Request $request)
+
+    public function membreAdmin( Request $request)
   {
  
             $users = $this->getDoctrine()
@@ -67,9 +74,22 @@ class AdminController extends AbstractController
         }
           $newJsonString = json_encode($data);
           file_put_contents('resources/assets/js/listeMembresAdmin.json', $newJsonString);
-    
+      
+          $em = $this->getDoctrine()->getManager();
+          $user = $this->getUser();
+          $form = $this->createForm(RemoveUserType::class,$user);       
+          $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {  
+              $removeUserName = $form->get("userName")->getData();
+              $em = $this->getDoctrine()
+              ->getRepository(User::class);
+              //$em->remove($em->loadUserByUsername($removeUserName));
+              $entityManager->remove($em->loadUserByUsername($removeUserName));
+              $entityManager->flush();
+            
+        }
             return $this->render(
-              'project/listeMembresAdmin.html.twig');
+              'project/listeMembresAdmin.html.twig',array('form' => $form->createView(), 'data'=>$data));
 			
   }
 

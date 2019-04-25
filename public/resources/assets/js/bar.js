@@ -21,3 +21,12 @@ class Bar extends  Component{
     }
 
 export default Bar;
+const domContainer = document.querySelector('#listeProjet');
+ 
+//ReactDOM.render(<Questionnaire data=getData(test)/>, domContainer);
+const getData = (name, json = true) => {
+    const value = domContainer.getAttribute(`data-${name}`);
+    return  value;
+};
+
+ReactDOM.render(<App data={getData("select") }/>, document.getElementById('listeProjet'));

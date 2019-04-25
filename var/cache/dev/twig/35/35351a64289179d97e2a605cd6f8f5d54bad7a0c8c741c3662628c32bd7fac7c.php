@@ -447,6 +447,6 @@ header .container { display: flex; justify-content: space-between; }
     .hidden-xs-down { display: initial; }
     .help-link { margin-left: 30px; }
 }
-", "@Twig/exception.css.twig", "/opt/lampp/htdocs/Symfony/vendor/symfony/twig-bundle/Resources/views/exception.css.twig");
+", "@Twig/exception.css.twig", "/opt/lampp/htdocs/TER/vendor/symfony/twig-bundle/Resources/views/exception.css.twig");
     }
 }

@@ -1,0 +1,26 @@
+{
+  "name": "TER",
+  "version": "1.0.0",
+  "description": "",
+  "main": "console.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " encore dev",
+    "watch": "encore dev --watch",
+    " build": " encore production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-react": "^7.0.0",
+    "@symfony/webpack-encore": "^0.24.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "write-json-file": "^3.2.0"
+  }
+}

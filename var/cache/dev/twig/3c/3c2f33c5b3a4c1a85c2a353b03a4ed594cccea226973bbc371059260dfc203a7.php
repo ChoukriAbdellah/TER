@@ -121,7 +121,10 @@ class __TwigTemplate_1b186459d5a26eacfe9cc798ea7914b5068220354a1961229219fe448dd
         echo "\t\t\t\t\t\t\t
 \t\t\t
 
-\t\t\t<div id=\"listeProjet\"  data-items=>
+\t\t\t<div id=\"listeProjet\"  data-items=\"";
+        // line 22
+        echo twig_escape_filter($this->env, json_encode((isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new Twig_Error_Runtime('Variable "data" does not exist.', 22, $this->source); })())), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -193,7 +196,7 @@ class __TwigTemplate_1b186459d5a26eacfe9cc798ea7914b5068220354a1961229219fe448dd
 
     public function getDebugInfo()
     {
-        return array (  172 => 46,  168 => 45,  164 => 44,  157 => 39,  148 => 38,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
+        return array (  175 => 46,  171 => 45,  167 => 44,  160 => 39,  151 => 38,  126 => 22,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -219,7 +222,7 @@ class __TwigTemplate_1b186459d5a26eacfe9cc798ea7914b5068220354a1961229219fe448dd
 \t\t\t\t\t\t\t
 \t\t\t
 
-\t\t\t<div id=\"listeProjet\"  data-items=>
+\t\t\t<div id=\"listeProjet\"  data-items=\"{{ data|json_encode }}\">
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -245,6 +248,6 @@ class __TwigTemplate_1b186459d5a26eacfe9cc798ea7914b5068220354a1961229219fe448dd
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/app2.js') }}\"></script>
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/runtime.js') }}\"></script>
 
-    {% endblock %}", "project/listeProjetsAdmin.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/listeProjetsAdmin.html.twig");
+    {% endblock %}", "project/listeProjetsAdmin.html.twig", "/opt/lampp/htdocs/TER/templates/project/listeProjetsAdmin.html.twig");
     }
 }

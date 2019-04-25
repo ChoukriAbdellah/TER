@@ -36,13 +36,13 @@ const domContainer = document.querySelector('#listeProjet');
 //ReactDOM.render(<Questionnaire data=getData(test)/>, domContainer);
 const getData = (name, json = true) => {
     const value = domContainer.getAttribute(`data-${name}`);
-    return  value;
+    return json ? JSON.parse(value) : value;
 };
 //const element = React.createElement(App);
 
 
 
-ReactDOM.render(<App data={getData("select") }/>, document.getElementById('listeProjet'));
+ReactDOM.render(<App data={getData("items") }/>, document.getElementById('listeProjet'));
 
 
 

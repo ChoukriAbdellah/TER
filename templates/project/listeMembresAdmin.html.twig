@@ -11,15 +11,33 @@
 
 				{% block title %}
 				<h2>Membres </h2>
+				
 				{% endblock %}
 
 				{% block pageactuelle %}Admin: Projets  {% endblock %}
 
     {% block body %}
-							
+		<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h3 class="panel-title">Supprimer un utilisateur</h3>
+									</header>
+													<div class="form-group">
+													{{ form_start(form) }}
+													<br><br>
+														{{ form_row(form.userName, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'UserName'}} ) }}  
+														
+																	
+     
+														   {{ form_end(form) }}
+													</div>
+													<br>
+					
+									<div id="listeMembre" data-select="">
+									</div>	
 			
 
-			<div id="listeMembre" data-select="">
+			
 									
 		
     							</div>

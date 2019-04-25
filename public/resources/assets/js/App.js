@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import Flat from './flat'
 import './flat.css'
-import flats from './listeProjetsAdmin.json'
+
 
 
 class App extends Component {
+
   constructor(props){
     super(props);
     this.state={
-      flats:flats,
-      allFlats: flats,
+      flats:this.props.data,
+      allFlats: this.props.data,
       selectFlat: null,
       search:""
       
   };
 }
+
 
 handleSearch=(event) =>{
   this.setState({
@@ -60,9 +63,7 @@ handleSearch=(event) =>{
           
           />
           
-            
-          
-
+            <h2>infos:{this.props.data[3][1]}</h2> 
 
           
           </div> 

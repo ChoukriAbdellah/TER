@@ -32,6 +32,7 @@ class UserRepository extends EntityRepository implements UserLoaderInterface
         // returns an array of arrays (i.e. a raw data set)
         return $nb;
     }
+   
 
   
 }

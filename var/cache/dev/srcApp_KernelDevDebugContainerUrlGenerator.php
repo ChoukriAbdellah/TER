@@ -66,8 +66,8 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'enduit' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::enduit'], [], [['text', '/second-oeuvre/enduit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'isolation' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::isolation'], [], [['text', '/second-oeuvre/isolation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'revetement' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::revetement'], [], [['text', '/second-oeuvre/revetement'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
-        'listeAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::listeProjetAdmin'], [], [['text', '/dashboard/listeProjetsAdmin']], [], []],
-        'listeMembreAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::listeMembreAdmin'], [], [['text', '/dashboard/listeMembresAdmin']], [], []],
+        'listeAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::projetAdmin'], [], [['text', '/dashboard/projetsAdmin']], [], []],
+        'listeMembreAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::membreAdmin'], [], [['text', '/dashboard/membresAdmin']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

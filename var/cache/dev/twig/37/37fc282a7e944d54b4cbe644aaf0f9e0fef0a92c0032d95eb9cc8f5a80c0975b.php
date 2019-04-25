@@ -81,6 +81,7 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 
         // line 13
         echo "\t\t\t\t<h2>Membres </h2>
+\t\t\t\t
 \t\t\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -90,7 +91,7 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 
     }
 
-    // line 16
+    // line 17
     public function block_pageactuelle($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -108,7 +109,7 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 
     }
 
-    // line 18
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -117,11 +118,37 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 19
-        echo "\t\t\t\t\t\t\t
+        // line 20
+        echo "\t\t<div class=\"row\">
+\t\t\t\t\t\t\t<div class=\"col-xs-12\">
+\t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
+\t\t\t\t\t\t\t\t\t<h3 class=\"panel-title\">Supprimer un utilisateur</h3>
+\t\t\t\t\t\t\t\t\t</header>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 26, $this->source); })()), 'form_start');
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 28
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 28, $this->source); })()), "userName", []), 'row', ["attr" => ["class" => "fadeIn third zero-raduis", "placeholder" => "UserName"]]);
+        echo "  
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+     
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
+        // line 32
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 32, $this->source); })()), 'form_end');
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t<div id=\"listeMembre\" data-select=\"\">
+\t\t\t\t\t\t\t\t\t</div>\t
 \t\t\t
 
-\t\t\t<div id=\"listeMembre\" data-select=\"\">
+\t\t\t
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -144,7 +171,7 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 
     }
 
-    // line 38
+    // line 56
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -153,22 +180,22 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 39
+        // line 57
         echo "\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 \t 
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 44
+        // line 62
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/listeMembre.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 45
+        // line 63
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/indexMembre.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 46
+        // line 64
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/runtime.js"), "html", null, true);
         echo "\"></script>
 
@@ -193,7 +220,7 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 
     public function getDebugInfo()
     {
-        return array (  172 => 46,  168 => 45,  164 => 44,  157 => 39,  148 => 38,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
+        return array (  199 => 64,  195 => 63,  191 => 62,  184 => 57,  175 => 56,  142 => 32,  135 => 28,  130 => 26,  122 => 20,  113 => 19,  95 => 17,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -211,15 +238,33 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 
 \t\t\t\t{% block title %}
 \t\t\t\t<h2>Membres </h2>
+\t\t\t\t
 \t\t\t\t{% endblock %}
 
 \t\t\t\t{% block pageactuelle %}Admin: Projets  {% endblock %}
 
     {% block body %}
-\t\t\t\t\t\t\t
+\t\t<div class=\"row\">
+\t\t\t\t\t\t\t<div class=\"col-xs-12\">
+\t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
+\t\t\t\t\t\t\t\t\t<h3 class=\"panel-title\">Supprimer un utilisateur</h3>
+\t\t\t\t\t\t\t\t\t</header>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.userName, {'attr': {'class': 'fadeIn third zero-raduis', 'placeholder' : 'UserName'}} ) }}  
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+     
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t<div id=\"listeMembre\" data-select=\"\">
+\t\t\t\t\t\t\t\t\t</div>\t
 \t\t\t
 
-\t\t\t<div id=\"listeMembre\" data-select=\"\">
+\t\t\t
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -245,6 +290,6 @@ class __TwigTemplate_61b9d188a62c4d6ffd8cea4d106bd6b2c3ae8295f53c4399ff5335b7e89
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/indexMembre.js') }}\"></script>
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/runtime.js') }}\"></script>
 
-    {% endblock %}", "project/listeMembresAdmin.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/listeMembresAdmin.html.twig");
+    {% endblock %}", "project/listeMembresAdmin.html.twig", "/opt/lampp/htdocs/TER/templates/project/listeMembresAdmin.html.twig");
     }
 }

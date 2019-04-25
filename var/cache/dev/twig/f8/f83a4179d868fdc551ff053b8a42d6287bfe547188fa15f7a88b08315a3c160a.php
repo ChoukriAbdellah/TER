@@ -210,6 +210,6 @@ class __TwigTemplate_aec1a55fd14867482278c2b631d80fbaf8a5aa08d3f93be95d31f9b2a9a
         {{ include('@Twig/base_js.html.twig') }}
     </body>
 </html>
-", "@Twig/layout.html.twig", "/opt/lampp/htdocs/Symfony/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/opt/lampp/htdocs/TER/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
     }
 }

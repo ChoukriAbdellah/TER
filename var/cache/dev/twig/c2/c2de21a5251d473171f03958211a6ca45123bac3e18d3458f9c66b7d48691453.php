@@ -396,6 +396,6 @@ class __TwigTemplate_202bdeb44098503e65f586c734f180cd865a032397f114c1fbe6846b220
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/opt/lampp/htdocs/Symfony/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/opt/lampp/htdocs/TER/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

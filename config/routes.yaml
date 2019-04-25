@@ -115,12 +115,12 @@ revetement:
     controller: App\Controller\SecondOeuvreController::revetement
 
 listeAdmin:
-    path:       /dashboard/listeProjetsAdmin
-    controller: App\Controller\AdminController::listeProjetAdmin
+    path:       /dashboard/projetsAdmin
+    controller: App\Controller\AdminController::projetAdmin
 
 listeMembreAdmin:
-    path:       /dashboard/listeMembresAdmin
-    controller: App\Controller\AdminController::listeMembreAdmin
+    path:       /dashboard/membresAdmin
+    controller: App\Controller\AdminController::membreAdmin
 
 logout:
     path: /deconnexion 

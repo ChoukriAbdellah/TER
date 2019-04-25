@@ -67,6 +67,6 @@ class __TwigTemplate_a81ca259d550b3d0724e4289357e737c74471a9a711e7ae8de03eb69f9e
         .79-0.25,4.48,4.48,0,0,1,.84-0.15l0.41-.06H9.22c0.3,0,.56,0,0.85,0l0.72,0.07a3.77,3.77,0,0,1,1.2.21v3.17a1.25,
         1.25,0,0,0,2,.89l9-7.45A1.46,1.46,0,0,0,23.06,7.83Z\"/>
 </svg>
-", "@WebProfiler/Icon/redirect.svg", "/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Icon/redirect.svg");
+", "@WebProfiler/Icon/redirect.svg", "/opt/lampp/htdocs/TER/vendor/symfony/web-profiler-bundle/Resources/views/Icon/redirect.svg");
     }
 }

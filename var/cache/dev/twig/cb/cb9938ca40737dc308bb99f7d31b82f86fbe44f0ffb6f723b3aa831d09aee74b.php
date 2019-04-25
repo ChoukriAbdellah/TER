@@ -404,6 +404,6 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t<script src=\"{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js') }}\"></script>
 \t\t<script src=\"{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js') }}\"></script>
 
-\t\t{% endblock %}", "dashboard/index.html.twig", "/opt/lampp/htdocs/Symfony/templates/dashboard/index.html.twig");
+\t\t{% endblock %}", "dashboard/index.html.twig", "/opt/lampp/htdocs/TER/templates/dashboard/index.html.twig");
     }
 }
