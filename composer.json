@@ -63,7 +63,7 @@
             "@auto-scripts"
         ],
         "compile": [
-            "app/console assets:install"
+            "bin/console assets:install"
           ]
     },
     "conflict": {
