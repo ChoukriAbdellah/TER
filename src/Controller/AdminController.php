@@ -114,7 +114,7 @@ class AdminController extends AbstractController
           $newJsonString = json_encode($data);
           file_put_contents('resources/assets/js/listeMembresAdmin.json', $newJsonString);
       
-          $em = $this->getDoctrine()->getManager();
+         /* $em = $this->getDoctrine()->getManager();
           $user = $this->getUser();
           $form = $this->createForm(RemoveUserType::class,$user);       
           $form->handleRequest($request);
@@ -125,10 +125,12 @@ class AdminController extends AbstractController
               //$em->remove($em->loadUserByUsername($removeUserName));
               $entityManager->remove($em->loadUserByUsername($removeUserName));
               $entityManager->flush();
+              
+             
             
-        }
+        } */
             return $this->render(
-              'admin/listeMembresAdmin.html.twig',array('form' => $form->createView(), 'data'=>$data));
+              'admin/listeMembresAdmin.html.twig',array('form' => $form->createView(), 'data'=>$data, 'nbUsers' => $nbUsers));
 			
   }
 

@@ -120,7 +120,7 @@ listeAdmin:
 
 listeMembreAdmin:
     path:       /dashboard/membresAdmin
-    controller: App\Controller\AdminController::membreAdmin
+    controller: App\Controller\AdminController::listeMembreAdmin
 
 logout:
     path: /deconnexion 
