@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelProdContainer::class, false)) {
 
 return new \ContainerVVd6IMc\srcApp_KernelProdContainer([
     'container.build_hash' => 'VVd6IMc',
-    'container.build_id' => 'f0b2bf42',
-    'container.build_time' => 1556208095,
+    'container.build_id' => '57e47ede',
+    'container.build_time' => 1556209502,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerVVd6IMc');
