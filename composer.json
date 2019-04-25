@@ -61,7 +61,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "compile": [
+            "app/console assets:install"
+          ]
     },
     "conflict": {
         "symfony/symfony": "*"
