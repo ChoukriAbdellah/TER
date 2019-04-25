@@ -53,6 +53,7 @@ use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Form\ChoiceList\Factory\CachingFactoryDecorator;
 use Symfony\Component\Form\FormTypeExtensionInterface;
 use Symfony\Component\Form\FormTypeGuesserInterface;
 use Symfony\Component\Form\FormTypeInterface;
@@ -96,6 +97,7 @@ use Symfony\Component\Translation\Command\XliffLintCommand as BaseXliffLintComma
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\ObjectInitializerInterface;
+use Symfony\Component\Validator\Util\LegacyTranslatorProxy;
 use Symfony\Component\WebLink\HttpHeaderSerializer;
 use Symfony\Component\Workflow;
 use Symfony\Component\Workflow\WorkflowInterface;
@@ -409,6 +411,11 @@ class FrameworkExtension extends Extension
 
         if (!class_exists(Translator::class)) {
             $container->removeDefinition('form.type_extension.upload.validator');
+        }
+        if (!method_exists(CachingFactoryDecorator::class, 'reset')) {
+            $container->getDefinition('form.choice_list_factory.cached')
+                ->clearTag('kernel.reset')
+            ;
         }
     }
 
@@ -1100,6 +1107,12 @@ class FrameworkExtension extends Extension
         $loader->load('validator.xml');
 
         $validatorBuilder = $container->getDefinition('validator.builder');
+
+        if (class_exists(LegacyTranslatorProxy::class)) {
+            $calls = $validatorBuilder->getMethodCalls();
+            $calls[1] = ['setTranslator', [new Definition(LegacyTranslatorProxy::class, [new Reference('translator')])]];
+            $validatorBuilder->setMethodCalls($calls);
+        }
 
         $container->setParameter('validator.translation_domain', $config['translation_domain']);
 

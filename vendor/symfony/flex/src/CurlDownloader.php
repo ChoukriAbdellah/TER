@@ -27,10 +27,8 @@ class CurlDownloader
         'http' => [
             'method' => CURLOPT_CUSTOMREQUEST,
             'content' => CURLOPT_POSTFIELDS,
-            'proxy' => CURLOPT_PROXY,
         ],
         'ssl' => [
-            'ciphers' => CURLOPT_SSL_CIPHER_LIST,
             'cafile' => CURLOPT_CAINFO,
             'capath' => CURLOPT_CAPATH,
         ],

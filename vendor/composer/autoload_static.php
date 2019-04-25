@@ -4,15 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
+class ComposerStaticInit42706c8861c1def9f3b8a49c1beb3dd1
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -27,9 +25,9 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         ),
         'S' => 
         array (
+            'Symfony\\WebpackEncoreBundle\\' => 28,
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Flex\\' => 13,
             'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\Yaml\\' => 23,
@@ -61,7 +59,6 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
             'Symfony\\Component\\Asset\\' => 24,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
-            'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
             'Symfony\\Bundle\\MakerBundle\\' => 27,
@@ -87,7 +84,6 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         ),
         'E' => 
         array (
-            'Egulias\\EmailValidator\\' => 23,
             'EasyCorp\\EasyLog\\' => 17,
         ),
         'D' => 
@@ -97,6 +93,7 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
@@ -124,6 +121,10 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Symfony\\WebpackEncoreBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src',
+        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
@@ -131,10 +132,6 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Polyfill\\Intl\\Idn\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
         'Symfony\\Flex\\' => 
         array (
@@ -260,10 +257,6 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bundle',
         ),
-        'Symfony\\Bundle\\SwiftmailerBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/swiftmailer-bundle',
-        ),
         'Symfony\\Bundle\\SecurityBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/security-bundle',
@@ -328,10 +321,6 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Egulias\\EmailValidator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
-        ),
         'EasyCorp\\EasyLog\\' => 
         array (
             0 => __DIR__ . '/..' . '/easycorp/easy-log-handler/src',
@@ -355,6 +344,10 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Collections\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections',
         ),
         'Doctrine\\Common\\Cache\\' => 
         array (
@@ -414,10 +407,6 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
-            'Doctrine\\Common\\Collections\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
-            ),
         ),
     );
 
@@ -432,10 +421,10 @@ class ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf3ed2ce00c61c4e1e8ad5023a8728c07::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit42706c8861c1def9f3b8a49c1beb3dd1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit42706c8861c1def9f3b8a49c1beb3dd1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit42706c8861c1def9f3b8a49c1beb3dd1::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit42706c8861c1def9f3b8a49c1beb3dd1::$classMap;
 
         }, null, ClassLoader::class);
     }
