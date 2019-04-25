@@ -113,6 +113,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdCloisons($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des cloisons avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -167,6 +169,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdEvacuation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'évacuation des fumées avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -245,6 +249,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdMenuiseriesInt($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des menuiseries intérieures avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -263,33 +269,6 @@ class SecondOeuvreController extends AbstractController
         $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
-
-                // Enregistre l'étude de sol en base
-                /*
-                $prix = 0;
-
-                $coutFeraillage = 0;
-                if ($e->getSismicite() == true)
-                    $coutFeraillage += $this->getDoctrine()->getRepository(Prix::class)->findPrixByNom("sismicite");;
-
-                $idEtudeSol = $grosOeuvre->getIdEtudeSol();
-                $etudeSol = $this->getDoctrine()
-                    ->getRepository(EtudeSol::class)
-                    ->find($idEtudeSol);
-                $coutFeraillage += $etudeSol->getPrix();
-
-                $quantiteFeraillage = 0;
-
-                $idExcavation = $grosOeuvre->getIdExcavation();
-                $excavation = $this->getDoctrine()
-                    ->getRepository(Excavation::class)
-                    ->find($idExcavation);
-                // les mètres linéaires sont récupérés à partir de l'excavation
-                $metresLineaires = $excavation->getMursPeripherique() + $excavation->getMursRefont();
-
-                $quantiteFerraillage = $metresLineaires * (3 / 5);
-
-                $prix = $coutFeraillage * $quantiteFerraillage;*/
                 $prix = 0;
                 if($e->getTypeEscalier() == 'DROIT'){
                     $prix += $e->getDimensions()* $this->getDoctrine()
@@ -346,7 +325,9 @@ class SecondOeuvreController extends AbstractController
 
 				$secondOeuvre->setIdEscaliers($e->getId());
 				$em->persist($secondOeuvre);
-				$em->flush();
+                $em->flush();
+                
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire des escaliers avec succès !");
 
 				return $this->redirectToRoute('second-oeuvre', array('id' => $id));
 			}
@@ -445,6 +426,8 @@ class SecondOeuvreController extends AbstractController
             $secondOeuvre->setIdPlomberie($e->getId());
             $em->persist($secondOeuvre);
             $em->flush();
+
+            $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la plomberie avec succès !");
 
             return $this->redirectToRoute('second-oeuvre', array('id' => $id));
         }
@@ -549,6 +532,8 @@ class SecondOeuvreController extends AbstractController
             $em->persist($secondOeuvre);
             $em->flush();
 
+            $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'électricité avec succès !");
+
             return $this->redirectToRoute('second-oeuvre', array('id' => $id));
         }
 
@@ -614,6 +599,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdVentilation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la ventilation avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -663,6 +650,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdClimatisation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la climatisation avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -739,6 +728,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdDomotique($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de la domotique avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -788,6 +779,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdEnduitFacade($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'enduit de façade avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -839,6 +832,8 @@ class SecondOeuvreController extends AbstractController
                 $secondOeuvre->setIdIsolation($e->getId());
                 $em->persist($secondOeuvre);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire de l'isolation avec succès !");
      
                 return $this->redirectToRoute('second-oeuvre', array('id' => $id));
             }
@@ -890,6 +885,8 @@ class SecondOeuvreController extends AbstractController
         $secondOeuvre->setIdRevetement($e->getId());
         $em->persist($secondOeuvre);
         $em->flush();
+
+        $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire du revêtement avec succès !");
 
         return $this->redirectToRoute('second-oeuvre', array('id' => $id));
     }
