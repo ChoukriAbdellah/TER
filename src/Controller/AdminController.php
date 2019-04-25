@@ -25,7 +25,7 @@ class AdminController extends AbstractController
   {
             
   		    
-            /*$projets = $this->getDoctrine()
+            $projets = $this->getDoctrine()
             ->getRepository(Projet::class)
             ->findAll();
             $nbProjets=$this->getDoctrine()
@@ -44,9 +44,7 @@ class AdminController extends AbstractController
             array_push($data,$var);}
 
 		      	$newJsonString = json_encode($data);
-          file_put_contents('resources/assets/js/listeProjetsAdmin.json', $newJsonString);*/
-
-          $data = [];
+          file_put_contents('resources/assets/js/listeProjetsAdmin.json', $newJsonString);
 				
          
      
