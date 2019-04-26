@@ -374,6 +374,6 @@ class __TwigTemplate_b062cfd0ef1fca48b65804fbc70cac8ce937fa8adce13d24c34165f5cd1
     {% endblock %}
 
 </body>
-</html>", "layout.html.twig", "/opt/lampp/htdocs/Symfony/templates/layout.html.twig");
+</html>", "layout.html.twig", "/opt/lampp/htdocs/TER/templates/layout.html.twig");
     }
 }

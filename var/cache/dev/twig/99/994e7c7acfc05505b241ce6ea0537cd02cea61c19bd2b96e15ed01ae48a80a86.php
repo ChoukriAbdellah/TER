@@ -386,6 +386,6 @@ class __TwigTemplate_5a4c6981b73ef8fa6256bce7c84a687233eb5f8648ffa47092e929b6c7f
         
 
 
-{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/Symfony/templates/security/login.html.twig");
+{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/TER/templates/security/login.html.twig");
     }
 }

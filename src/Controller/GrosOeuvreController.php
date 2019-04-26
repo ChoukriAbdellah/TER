@@ -465,25 +465,40 @@ class GrosOeuvreController extends AbstractController
 
                 // Enregistre l'étude de sol en base
                 $prix = 0;
-                if($e->getMaterielUtilise() == 'tractopelle'){
-                  $prix = $this->getDoctrine()
+                if($e->getTypeSoubassement() == "Herisson"){
+                  $prix+= $this->getDoctrine()
                   ->getRepository(Prix::class)
-                  ->findPrixByNom("tractopelle");
+                  ->findPrixByNom("coup_herisson");
+                }
+                if($e->getTypeSoubassement() == "vide-sanitaire"){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("vide-sanitaire");
+                }
+                if($e->getTypeSoubassement() == "sous-sol"){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("sous-sol");
+                }
+                if($e->getTractopelle() != null){
+                  $prix += $this->getDoctrine()
+                  ->getRepository(Prix::class)
+                  ->findPrixByNom("coup_herisson");
                 }
 
-                if($e->getMaterielUtilise() == 'camion_benne'){
-                  $prix = $this->getDoctrine()
+                if($e->getCamionBenne() != null){
+                  $prix += $this->getDoctrine()
                   ->getRepository(Prix::class)
                   ->findPrixByNom("camion_benne");
                 }
 
-                if($e->getMaterielUtilise() == 'betonniere'){
-                  $prix = $this->getDoctrine()
+                if($e->getBetonniere() !=null){
+                  $prix += $this->getDoctrine()
                   ->getRepository(Prix::class)
                   ->findPrixByNom("betonniere");
                 }
-
                
+                
   
                 $e->setPrix($prix);
                 $em->persist($e);

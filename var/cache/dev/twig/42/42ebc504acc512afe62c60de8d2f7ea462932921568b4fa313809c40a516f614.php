@@ -119,82 +119,63 @@ class __TwigTemplate_6f5a3674c190e40c46938837c30218a752966a217d25b45a7edce85e669
 \t<div class=\"row\">
 \t\t\t\t\t\t\t<div class=\"col-xs-12\">
 \t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Soubassement: modification</h2>
+\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Soubassement: modification </h2>
 \t\t\t\t\t\t\t\t\t</header>
 
-                                    <div>
-                                    ";
-        // line 26
-        if (((isset($context["positionTerrain"]) || array_key_exists("positionTerrain", $context) ? $context["positionTerrain"] : (function () { throw new Twig_Error_Runtime('Variable "positionTerrain" does not exist.', 26, $this->source); })()) == "TERRAIN PLAT")) {
-            // line 27
-            echo "                                    Etant donné que vous avez un terrain de type ";
-            echo twig_escape_filter($this->env, (isset($context["positionTerrain"]) || array_key_exists("positionTerrain", $context) ? $context["positionTerrain"] : (function () { throw new Twig_Error_Runtime('Variable "positionTerrain" does not exist.', 27, $this->source); })()), "html", null, true);
-            echo ", on vous recommande un soubassement en hérisson :
-                                    <br></br>
-                                    Toute fois vous pouvez le modifier.
-                                    ";
-        }
-        // line 31
-        echo "                                    
-
-                                    
-                    
-                                    </div>
+      
 \t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 37
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 37, $this->source); })()), 'form_start');
+        // line 27
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 27, $this->source); })()), 'form_start');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 39
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 39, $this->source); })()), "type_soubassement", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Quel est le type de soubassement voulez vous ? "]);
-        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"col-sm-3 control-label\">Quel est le type de soubassement voulez vous ? <span class=\"required\"></span></label>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 41
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 41, $this->source); })()), "type_soubassement", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        // line 31
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 31, $this->source); })()), "type_soubassement", []), 'widget', ["id" => "chk", "attr" => ["class" => "form-control input-lg mb-md", "onClick" => "validate()"]]);
         echo "           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br/>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "tractopelle", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "cochez les matériaux utilisés  :"]);
-        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t 
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label id=\"teste4\" class=\"col-sm-3 control-label\">Cochez les matériaux utilisés <span class=\"required\">*</span></label>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\" id=\"teste1\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 46
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "tractopelle", []), 'row', ["attr" => ["class" => "radio-custom radio-primary"]]);
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 39, $this->source); })()), "tractopelle", []), 'row', ["attr" => ["class" => "radio-custom radio-primary"]]);
         echo "           
 \t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 50
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), "camion_benne", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => " "]);
+        // line 43
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 43, $this->source); })()), "camion_benne", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => " "]);
         echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\" id=\"teste2\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 52
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 52, $this->source); })()), "camion_benne", []), 'row', ["attr" => ["class" => "radio-custom radio-primary"]]);
+        // line 45
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "camion_benne", []), 'row', ["attr" => ["class" => "radio-custom radio-primary"]]);
         echo "           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div >
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 55
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 55, $this->source); })()), "betonniere", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => " "]);
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 48, $this->source); })()), "betonniere", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => " "]);
         echo "\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\" id=\"teste3\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 57
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 57, $this->source); })()), "betonniere", []), 'row', ["attr" => ["class" => "radio-custom radio-primary"]]);
+        // line 50
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), "betonniere", []), 'row', ["attr" => ["class" => "radio-custom radio-primary"]]);
         echo "           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t  <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
-        // line 61
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 61, $this->source); })()), 'form_end');
+        // line 55
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 55, $this->source); })()), 'form_end');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br>
@@ -219,7 +200,7 @@ class __TwigTemplate_6f5a3674c190e40c46938837c30218a752966a217d25b45a7edce85e669
 
     }
 
-    // line 78
+    // line 73
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -228,8 +209,26 @@ class __TwigTemplate_6f5a3674c190e40c46938837c30218a752966a217d25b45a7edce85e669
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 79
-        echo "\t<!-- Specific Page Vendor -->
+        // line 74
+        echo "\t\t<script>
+\t\t
+function validate(){
+    var checked = document.getElementById('chk').value;
+    if (checked != \"vide-sanitaire\"){
+          \tdocument.getElementById(\"teste1\").style.visibility='hidden';
+\t\t\t\t\t\tdocument.getElementById(\"teste2\").style.visibility='hidden';
+\t\t\t\t\t\tdocument.getElementById(\"teste3\").style.visibility='hidden';
+\t\t\t\t\t\t\tdocument.getElementById(\"teste4\").style.visibility='hidden';
+    }else{
+         document.getElementById(\"teste1\").style.visibility='visible';
+\t\t\t\t  document.getElementById(\"teste2\").style.visibility='visible';
+\t\t\t\t\t document.getElementById(\"teste3\").style.visibility='visible';
+\t\t\t\t\t  document.getElementById(\"teste4\").style.visibility='visible';
+    }
+}
+validate();
+\t\t</script>
+\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
@@ -255,7 +254,7 @@ class __TwigTemplate_6f5a3674c190e40c46938837c30218a752966a217d25b45a7edce85e669
 
     public function getDebugInfo()
     {
-        return array (  232 => 79,  223 => 78,  197 => 61,  190 => 57,  185 => 55,  179 => 52,  174 => 50,  167 => 46,  162 => 44,  156 => 41,  151 => 39,  146 => 37,  138 => 31,  130 => 27,  128 => 26,  118 => 18,  109 => 17,  91 => 15,  80 => 12,  71 => 11,  57 => 5,  48 => 4,  15 => 1,);
+        return array (  213 => 74,  204 => 73,  178 => 55,  170 => 50,  165 => 48,  159 => 45,  154 => 43,  147 => 39,  136 => 31,  129 => 27,  118 => 18,  109 => 17,  91 => 15,  80 => 12,  71 => 11,  57 => 5,  48 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -281,44 +280,38 @@ class __TwigTemplate_6f5a3674c190e40c46938837c30218a752966a217d25b45a7edce85e669
 \t<div class=\"row\">
 \t\t\t\t\t\t\t<div class=\"col-xs-12\">
 \t\t\t\t\t\t\t\t\t<header class=\"panel-heading\">
-\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Soubassement: modification</h2>
+\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Soubassement: modification </h2>
 \t\t\t\t\t\t\t\t\t</header>
 
-                                    <div>
-                                    {% if positionTerrain == 'TERRAIN PLAT' %}
-                                    Etant donné que vous avez un terrain de type {{positionTerrain}}, on vous recommande un soubassement en hérisson :
-                                    <br></br>
-                                    Toute fois vous pouvez le modifier.
-                                    {% endif %}
-                                    
-
-                                    
-                    
-                                    </div>
+      
 \t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.type_soubassement, \"Quel est le type de soubassement voulez vous ? \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"col-sm-3 control-label\">Quel est le type de soubassement voulez vous ? <span class=\"required\"></span></label>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.type_soubassement, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}           
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_widget(form.type_soubassement, {'id':'chk','attr': {'class': 'form-control input-lg mb-md','onClick':'validate()'}} ) }}           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br/>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.tractopelle, \"cochez les matériaux utilisés  :\", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t 
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label id=\"teste4\" class=\"col-sm-3 control-label\">Cochez les matériaux utilisés <span class=\"required\">*</span></label>
+
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\" id=\"teste1\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.tractopelle, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
 \t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.camion_benne, \" \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\" id=\"teste2\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.camion_benne, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div >
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_label(form.betonniere, \" \", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\" id=\"teste3\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.betonniere, {'attr': {'class': 'radio-custom radio-primary'}} ) }}           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t  <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Valider</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
@@ -336,14 +329,33 @@ class __TwigTemplate_6f5a3674c190e40c46938837c30218a752966a217d25b45a7edce85e669
 \t\t\t\t\t\t</div>
 
     {% endblock %}
-
+\t
+\t
     {% block javascript %}
+\t\t<script>
+\t\t
+function validate(){
+    var checked = document.getElementById('chk').value;
+    if (checked != \"vide-sanitaire\"){
+          \tdocument.getElementById(\"teste1\").style.visibility='hidden';
+\t\t\t\t\t\tdocument.getElementById(\"teste2\").style.visibility='hidden';
+\t\t\t\t\t\tdocument.getElementById(\"teste3\").style.visibility='hidden';
+\t\t\t\t\t\t\tdocument.getElementById(\"teste4\").style.visibility='hidden';
+    }else{
+         document.getElementById(\"teste1\").style.visibility='visible';
+\t\t\t\t  document.getElementById(\"teste2\").style.visibility='visible';
+\t\t\t\t\t document.getElementById(\"teste3\").style.visibility='visible';
+\t\t\t\t\t  document.getElementById(\"teste4\").style.visibility='visible';
+    }
+}
+validate();
+\t\t</script>
 \t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 
     {% endblock %}
-", "project/soubassement.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/soubassement.html.twig");
+", "project/soubassement.html.twig", "/opt/lampp/htdocs/TER/templates/project/soubassement.html.twig");
     }
 }

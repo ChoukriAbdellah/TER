@@ -1,7 +1,7 @@
 {
-  "public/resources/static/js/app.css": "public/resources/static/js/app.css",
-  "public/resources/static/js/app.js": "public/resources/static/js/app.js",
-  "public/resources/static/js/app2.css": "public/resources/static/js/app2.css",
-  "public/resources/static/js/app2.js": "public/resources/static/js/app2.js",
+  "public/resources/static/js/indexMembre.css": "public/resources/static/js/indexMembre.css",
+  "public/resources/static/js/indexMembre.js": "public/resources/static/js/indexMembre.js",
+  "public/resources/static/js/listeMembre.css": "public/resources/static/js/listeMembre.css",
+  "public/resources/static/js/listeMembre.js": "public/resources/static/js/listeMembre.js",
   "public/resources/static/js/runtime.js": "public/resources/static/js/runtime.js"
 }

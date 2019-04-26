@@ -38,17 +38,26 @@
 									</section>
 
 									<h3> Créer un nouveau membre </h3>
-									{{ form_start(form) }}
+									{# {{ form_start(form-create) }}
 															{{ form_row(form.username, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
 															{{ form_row(form.email, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Adresse e-mail'}} ) }}
 															{{ form_row(form.plainPassword.first, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Mot de passe'}} ) }}
 															{{ form_row(form.plainPassword.second, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Confirmer le mot de passe'}} ) }}
 											<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Créer</button>
+														   {{ form_end(form-create) }} #}
+										<h3 class="panel-title">Supprimer un utilisateur </h3>
+					
+															{{ form_start(form) }}
+															{{ form_row(form.removeName, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
+															<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Supprimer</button>
 														   {{ form_end(form) }}
-
+															 
 									<h3> Rechercher un membre </h3>
 
-			<div id="listeMembre" data-select="">
+		<div id="listeMembre" data-items="{{ data|json_encode }}">
+									
+		
+    							</div>
 									
 		
     							</div>

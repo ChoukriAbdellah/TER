@@ -22,98 +22,55 @@
 									</header>
 													<div class="form-group">
 													{{ form_start(form) }}
+													{{ form_widget(form.submit, { 'label': 'Ajouter un type d\'arbres' }) }}
 													<br><br>
-															{{ form_label(form.nb_pins, "Quel est le nombre de pins dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
-														<div class="col-sm-9">
-															{{ form_row(form.nb_pins, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
-                                                        </div>      
+													
+														
+                                  <label id="17" class="col-sm-3 control-label">Indiquez  la taille moyenne des pins."? <span class="required">*</span></label>
 
-                                                        {{ form_label(form.nb_sapins, "Quel est le nombre de sapins dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}													
-														<div class="col-sm-9">
-															{{ form_row(form.nb_sapins, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														</div>
-                                                        {{ form_label(form.nb_bouleaux, "Quel est le nombre de bouleaux dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                           <div class="col-sm-9">
-															{{ form_row(form.nb_bouleaux, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														</div>
-                                                          {{ form_label(form.nb_chenes, "Quel est le nombre de chenes dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                        <div class="col-sm-9">
-															{{ form_row(form.nb_chenes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														</div>
-                                                         {{ form_label(form.nb_erables, "Quel est le nombre d'erables dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                           <div class="col-sm-9">
-															{{ form_row(form.nb_erables, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														</div>
-                                                         {{ form_label(form.nb_frenes, "Quel est le nombre de frenes dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                           <div class="col-sm-9">
-															{{ form_row(form.nb_frenes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														</div>
-                                                         {{ form_label(form.nb_noyers, "Quel est le nombre de noyers dans votre terrain ?", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                           <div class="col-sm-9">
-															{{ form_row(form.nb_noyers, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														</div>
-                                                         {{ form_label(form.nb_autres, "Indiquez  le nombre d'arbre d'un autre type non cité.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                           <div class="col-sm-9">
-															    {{ form_row(form.nb_autres, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
-													
-														    </div>
-                                                            {{ form_label(form.taille_pins, "Indiquez  la taille moyenne des pins.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
-                                                            
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="18">
 															    {{ form_row(form.taille_pins, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
                                                                 </div> 
 
-                                                            {{ form_label(form.taille_sapins, "Indiquez  la taille moyenne des sapins.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="19" class="col-sm-3 control-label">Indiquez  la taille moyenne des sapins."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9"id="20">
 															    {{ form_row(form.taille_sapins, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
                                                                 </div>
                                                             
-                                                            {{ form_label(form.taille_bouleaux, "Indiquez  la taille moyenne des bouleaux.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="21" class="col-sm-3 control-label">Indiquez  la taille moyenne des bouleaux."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="22">
 															    {{ form_row(form.taille_bouleaux, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
                                                                 </div>
                                                            
-                                                            {{ form_label(form.taille_chenes, "Indiquez  la taille moyenne des chenes.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="23" class="col-sm-3 control-label">Indiquez  la taille moyenne des chenes."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="24">
 															    {{ form_row(form.taille_chenes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
                                                                 </div> 
                                                            
-                                                            {{ form_label(form.taille_erables, "Indiquez  la taille moyenne des erables.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="25" class="col-sm-3 control-label">Indiquez  la taille moyenne des erables."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="26">
 															    {{ form_row(form.taille_erables, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
                                                                 </div> 
                                                            
-                                                            {{ form_label(form.taille_frenes, "Indiquez  la taille moyenne des frenes.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="27" class="col-sm-3 control-label">Indiquez  la taille moyenne des frenes."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="28">
 															    {{ form_row(form.taille_frenes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
                                                                 </div> 
                                                            
-                                                            {{ form_label(form.taille_noyers, "Indiquez  la taille moyenne des noyers.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="29" class="col-sm-3 control-label">Indiquez  la taille moyenne des noyers."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="30">
 															    {{ form_row(form.taille_noyers, {'attr': {'class': 'form-control input-lg mb-md'}} ) }} 
                                                                 </div>
                                                             
-                                                            {{ form_label(form.taille_autres, "Indiquez  la taille moyenne d'arbre de d'un autre type.", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+                                  <label id="31" class="col-sm-3 control-label">Indiquez  la taille moyenne d'arbres d'autre type."? <span class="required">*</span></label>
                                                             
-                                                           <div class="col-sm-9">
+                                                           <div class="col-sm-9" id="32">
 															    {{ form_row(form.taille_autres, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
                                                                 </div>                           
 													
@@ -126,6 +83,53 @@
                                                                 </div>                           
 													
 														    </div> 
+																<label id="1" class="col-sm-3 control-label">Quel est le nombre de pins dans votre terrain <span class="required">*</span></label>
+														<div class="col-sm-9" id="2">
+															{{ form_row(form.nb_pins, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}
+                                                        </div>      
+
+                              <label id="3" class="col-sm-3 control-label">Quel est le nombre de sapins dans votre terrain ? <span class="required">*</span></label>
+
+														<div class="col-sm-9" id="4">
+															{{ form_row(form.nb_sapins, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														</div>
+                              <label id="5" class="col-sm-3 control-label">Quel est le nombre de bouleaux dans votre terrain ? <span class="required">*</span></label>
+                                                            
+                                                           <div class="col-sm-9"id="6">
+															{{ form_row(form.nb_bouleaux, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														</div>
+                                  <label id="7" class="col-sm-3 control-label">Quel est le nombre de chenes dans votre terrain ? <span class="required">*</span></label>
+                                                        
+                                                        <div class="col-sm-9" id="8">
+															{{ form_row(form.nb_chenes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														</div>
+                              <label id="9" class="col-sm-3 control-label">Quel est le nombre d'erables dans votre terrain ? <span class="required">*</span></label>
+                  
+                                                           <div class="col-sm-9" id="10">
+															{{ form_row(form.nb_erables, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														</div>
+                                  <label id="11" class="col-sm-3 control-label">Quel est le nombre de frenes dans votre terrain ? <span class="required">*</span></label>
+                                                            
+                                                           <div class="col-sm-9" id="12">
+															{{ form_row(form.nb_frenes, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														</div>
+                                  <label id="13" class="col-sm-3 control-label">Quel est le nombre de noyers dans votre terrain ? <span class="required">*</span></label>
+                                                            
+                                                           <div class="col-sm-9" id="14">
+															{{ form_row(form.nb_noyers, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														</div>		
+                                  <label id="15" class="col-sm-3 control-label">Quel est le nombre d'arbres d'autre type dans votre terrain ? <span class="required">*</span></label>
+                                                            
+                                                           <div class="col-sm-9" id="16">
+															    {{ form_row(form.nb_autres, {'attr': {'class': 'form-control input-lg mb-md'}} ) }}      
+													
+														    </div>
                                                             
                                                             
                                                             
@@ -133,10 +137,6 @@
                                                         {{ form_end(form) }}
 													</div>
 													<br>
-                                                    
-                                                    
-                                                    
-                                                    
 					
 						
 									</div>
@@ -152,6 +152,38 @@
     {% endblock %}
 
     {% block javascript %}
+		<script>
+		for(var $k=1; $k<=32;$k++){
+		idd=$k.toString();
+		document.getElementById(idd).style.visibility='hidden';
+		} 
+		
+		
+
+		  var $i=1;
+			var $j=2;
+			var $k=$i + 16;
+			var $l=$j + 16;
+		 function update(){
+		 id=$i.toString();
+		 id2=$j.toString();
+		 id3=$k.toString();
+		 id4=$l.toString();
+    var checked = document.getElementById(id).value;
+    document.getElementById(id).style.visibility='visible';
+		document.getElementById(id2).style.visibility='visible'; 
+		document.getElementById(id3).style.visibility='visible';
+		document.getElementById(id4).style.visibility='visible'; 
+		 $i=$i+2; 
+		 $j=$j+2;
+		 $k=$i + 16;
+		 $l=$j + 16;
+		 
+		
+}
+
+//validate();
+		</script>
 	<!-- Specific Page Vendor -->
 		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
 		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>

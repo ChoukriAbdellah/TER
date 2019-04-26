@@ -1284,6 +1284,6 @@ class __TwigTemplate_068c4666931b02716863fe31060a4dd3ff25c3ef07164f2eaab1a723517
 
 \t</body>
 </html>
-", "/dashboard-layout.html.twig", "/opt/lampp/htdocs/Symfony/templates/dashboard-layout.html.twig");
+", "/dashboard-layout.html.twig", "/opt/lampp/htdocs/TER/templates/dashboard-layout.html.twig");
     }
 }

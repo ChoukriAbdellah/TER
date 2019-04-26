@@ -34,6 +34,15 @@ class ProjetRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    public function findProjetsByName($value)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.nom = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult();
+        ;
+    }
 
     public function sumProjets()
     {

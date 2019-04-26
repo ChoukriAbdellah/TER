@@ -261,6 +261,6 @@ class __TwigTemplate_85b123a297bbea494f5b616e363968d8359681b43d2dd19009d39a95943
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 
-    {% endblock %}", "project/etude-sol.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/etude-sol.html.twig");
+    {% endblock %}", "project/etude-sol.html.twig", "/opt/lampp/htdocs/TER/templates/project/etude-sol.html.twig");
     }
 }

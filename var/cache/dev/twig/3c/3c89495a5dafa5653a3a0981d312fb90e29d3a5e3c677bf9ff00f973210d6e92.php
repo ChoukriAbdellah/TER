@@ -1358,6 +1358,6 @@ class __TwigTemplate_2c1ee77a813e9d976fb20d70efe6d6b36311e150c41826e943defac954f
 \t\t{% block javascripts %}
 
 \t\t{% endblock %}
-", "project/gros-oeuvre-view.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/gros-oeuvre-view.html.twig");
+", "project/gros-oeuvre-view.html.twig", "/opt/lampp/htdocs/TER/templates/project/gros-oeuvre-view.html.twig");
     }
 }

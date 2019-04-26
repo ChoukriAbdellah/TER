@@ -13,6 +13,9 @@ use App\Entity\Projet;
 use App\Entity\SecondOeuvre;
 
 use App\Form\UserType;
+use App\Form\ProjetType;
+use App\Form\RemoveProjetType;
+use App\Form\RemoveUserType;
 
 use App\Services\Mailer;
 
@@ -39,17 +42,44 @@ class AdminController extends AbstractController
            $user = $this->getDoctrine()
            ->getRepository(User::class)
            ->find($projets[$i]->getIdProprio());
+           if($user!=null){
            $var=array($projets[$i]->getId(),$projets[$i]->getNom(), $user->getUsername());
 
             array_push($data,$var);}
+           }
 
-		      	$newJsonString = json_encode($data);
+            $newJsonString = json_encode($data);
+            
           file_put_contents('resources/assets/js/listeProjetsAdmin.json', $newJsonString);
-				
-         
+
+				  $em = $this->getDoctrine()->getManager();
+          //$projet = $this->getProjet();
+          $form = $this->createForm(RemoveProjetType::class);       
+          $form->handleRequest($request);
+          
+            if ($form->isSubmitted() && $form->isValid()) {  
+              $removeProjetName = $form->get("removeName")->getData();
+              //$idUser=$em->loadUserByUsername($removeUserName)->getId();
+              $projetRemove = $this->getDoctrine()
+              ->getRepository(Projet::class)
+               ->findProjetsByName($removeProjetName);
+  
+              if ($projetRemove != NULL){
+              $em->remove($projetRemove); 
+              $em->flush(); 
+
+              $request->getSession()->getFlashBag()->add('success', "Vous avez supprimé ce projet avec succès !");
+              }
+              else{
+                $request->getSession()->getFlashBag()->add('danger', "Ce projet n'existe pas.");
+              }
+              return $this->redirectToRoute('listeAdmin');
+
+            }
+         //fin
      
             return $this->render(
-              'admin/listeProjetsAdmin.html.twig',array('data' =>$data) );	
+              'admin/listeProjetsAdmin.html.twig',array('form' => $form->createView(),'data' =>$data, 'nbProjet'=>$nbProjets) );	
   }
 
   
@@ -114,21 +144,30 @@ class AdminController extends AbstractController
           $newJsonString = json_encode($data);
           file_put_contents('resources/assets/js/listeMembresAdmin.json', $newJsonString);
       
-         /* $em = $this->getDoctrine()->getManager();
-          $user = $this->getUser();
-          $form = $this->createForm(RemoveUserType::class,$user);       
+          $em = $this->getDoctrine()->getManager();
+          $form = $this->createForm(RemoveUserType::class);       
           $form->handleRequest($request);
+          
             if ($form->isSubmitted() && $form->isValid()) {  
-              $removeUserName = $form->get("userName")->getData();
-              $em = $this->getDoctrine()
-              ->getRepository(User::class);
-              //$em->remove($em->loadUserByUsername($removeUserName));
-              $entityManager->remove($em->loadUserByUsername($removeUserName));
-              $entityManager->flush();
               
-             
-            
-        } */
+              $removeUserName = $form->get("removeName")->getData();
+              //$idUser=$em->loadUserByUsername($removeUserName)->getId();
+              $userRemove = $this->getDoctrine()
+              ->getRepository(User::class)
+               ->loadUserByUsername($removeUserName);
+  
+              if ($userRemove != NULL){
+              $em->remove($userRemove); 
+              $em->flush(); 
+
+              $request->getSession()->getFlashBag()->add('success', "Vous avez supprimé ce membre avec succès !");
+              }
+              else{
+                $request->getSession()->getFlashBag()->add('danger', "Cet identifiant ne correspond à aucun membre.");
+              }
+              return $this->redirectToRoute('listeMembreAdmin');
+
+            }
             return $this->render(
               'admin/listeMembresAdmin.html.twig',array('form' => $form->createView(), 'data'=>$data, 'nbUsers' => $nbUsers));
 			

@@ -67,6 +67,6 @@ class __TwigTemplate_9a0d567352760529b7799ec02a18096beac2a8a3f6c760bea9cf046713f
     {
         return new Twig_Source("{% for p in projets %}
     <li><a href=\"{{ path('gros-oeuvre', {'id': p.id}) }}\">{{ p.nom }}</a></li>
-{% endfor %}", "project/liste-projets.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/liste-projets.html.twig");
+{% endfor %}", "project/liste-projets.html.twig", "/opt/lampp/htdocs/TER/templates/project/liste-projets.html.twig");
     }
 }

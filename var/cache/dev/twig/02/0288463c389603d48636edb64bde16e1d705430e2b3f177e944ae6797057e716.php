@@ -148,6 +148,6 @@ class __TwigTemplate_82ff0538a5796e658055d6647276db850fa65e592449135cb02d6c42bd9
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "/opt/lampp/htdocs/Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "/opt/lampp/htdocs/TER/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
     }
 }

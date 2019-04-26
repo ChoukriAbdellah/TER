@@ -275,6 +275,6 @@ class __TwigTemplate_df975ba3d70c5ef64626fb5f719cf2d22acdc8369157a910b08747046aa
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 
-    {% endblock %}", "project/new-project.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/new-project.html.twig");
+    {% endblock %}", "project/new-project.html.twig", "/opt/lampp/htdocs/TER/templates/project/new-project.html.twig");
     }
 }

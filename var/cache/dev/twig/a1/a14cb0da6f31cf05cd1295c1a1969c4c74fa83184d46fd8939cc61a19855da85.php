@@ -1530,6 +1530,6 @@ class __TwigTemplate_a9f87d0b00c8a7e544e5433d0cef2278d24451011dec201a0a9b46c3a65
 \t\t{% block javascripts %}
 
 \t\t{% endblock %}
-", "project/second-oeuvre-view.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/second-oeuvre-view.html.twig");
+", "project/second-oeuvre-view.html.twig", "/opt/lampp/htdocs/TER/templates/project/second-oeuvre-view.html.twig");
     }
 }

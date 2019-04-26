@@ -291,6 +291,6 @@ class __TwigTemplate_56de6db0fb2e8fa23f9d296caf3ba50ca327ba36621c2c45da5e84dbfe3
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 
-    {% endblock %}", "project/charpente.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/charpente.html.twig");
+    {% endblock %}", "project/charpente.html.twig", "/opt/lampp/htdocs/TER/templates/project/charpente.html.twig");
     }
 }

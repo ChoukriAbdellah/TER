@@ -119,9 +119,48 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 
         // line 19
         echo "\t\t\t\t\t\t\t
-\t\t\t
+\t\t\t\t\t<section class=\"panel panel-featured-left panel-featured-quartenary\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"panel-body\">
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-summary\">
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-summary-col widget-summary-col-icon\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"summary-icon bg-quartenary\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-user\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-summary-col\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"summary\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"title\">Nombre total de projets</h4>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"info\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong class=\"amount\">";
+        // line 32
+        echo twig_escape_filter($this->env, (isset($context["nbProjet"]) || array_key_exists("nbProjet", $context) ? $context["nbProjet"] : (function () { throw new Twig_Error_Runtime('Variable "nbProjet" does not exist.', 32, $this->source); })()), "html", null, true);
+        echo "</strong>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</section>
+\t\t\t\t\t\t\t\t\t<h3 class=\"panel-title\">Supprimer un utilisateur </h3>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 41
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 41, $this->source); })()), 'form_start');
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 42
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), "removeName", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md", "placeholder" => "Identifiant"]]);
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Supprimer</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
+        // line 44
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), 'form_end');
+        echo "
 
-\t\t\t<div id=\"listeProjet\"  data-items=>
+\t\t\t<div id=\"listeProjet\"  data-items=\"";
+        // line 46
+        echo twig_escape_filter($this->env, json_encode((isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new Twig_Error_Runtime('Variable "data" does not exist.', 46, $this->source); })())), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -144,7 +183,7 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 
     }
 
-    // line 38
+    // line 62
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -153,22 +192,22 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 39
+        // line 63
         echo "\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 \t 
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 44
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/app.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 45
+        // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/app2.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 46
+        // line 70
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/runtime.js"), "html", null, true);
         echo "\"></script>
 
@@ -193,7 +232,7 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 
     public function getDebugInfo()
     {
-        return array (  172 => 46,  168 => 45,  164 => 44,  157 => 39,  148 => 38,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
+        return array (  211 => 70,  207 => 69,  203 => 68,  196 => 63,  187 => 62,  162 => 46,  157 => 44,  152 => 42,  148 => 41,  136 => 32,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -217,9 +256,33 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 
     {% block body %}
 \t\t\t\t\t\t\t
-\t\t\t
+\t\t\t\t\t<section class=\"panel panel-featured-left panel-featured-quartenary\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"panel-body\">
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-summary\">
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-summary-col widget-summary-col-icon\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"summary-icon bg-quartenary\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-user\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-summary-col\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"summary\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"title\">Nombre total de projets</h4>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"info\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong class=\"amount\">{{nbProjet}}</strong>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</section>
+\t\t\t\t\t\t\t\t\t<h3 class=\"panel-title\">Supprimer un utilisateur </h3>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.removeName, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Supprimer</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
 
-\t\t\t<div id=\"listeProjet\"  data-items=>
+\t\t\t<div id=\"listeProjet\"  data-items=\"{{ data|json_encode }}\">
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -245,6 +308,6 @@ class __TwigTemplate_beb887d14414b1e2f7b6f8aef45de5a72646ec4886ab44a5d7221177755
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/app2.js') }}\"></script>
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/runtime.js') }}\"></script>
 
-    {% endblock %}", "admin/listeProjetsAdmin.html.twig", "/opt/lampp/htdocs/Symfony/templates/admin/listeProjetsAdmin.html.twig");
+    {% endblock %}", "admin/listeProjetsAdmin.html.twig", "/opt/lampp/htdocs/TER/templates/admin/listeProjetsAdmin.html.twig");
     }
 }

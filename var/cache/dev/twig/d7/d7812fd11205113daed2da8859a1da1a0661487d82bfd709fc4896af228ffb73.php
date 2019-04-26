@@ -354,6 +354,6 @@ class __TwigTemplate_c9b46557b9fd46a5d326314aa2fdba1f9e0af58a519abd72235158a6ad7
 {% endblock %}
 
 
-", "registration/register.html.twig", "/opt/lampp/htdocs/Symfony/templates/registration/register.html.twig");
+", "registration/register.html.twig", "/opt/lampp/htdocs/TER/templates/registration/register.html.twig");
     }
 }

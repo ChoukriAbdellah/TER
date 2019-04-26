@@ -92,6 +92,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                         .'|menuiserie(*:703)'
                         .'|climatisation(*:724)'
                         .'|domotique(*:741)'
+                        .'|facture(*:756)'
                     .')'
                 .')/?$}sDu',
         ];
@@ -129,6 +130,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             703 => [[['_route' => 'menuiserie', '_controller' => 'App\\Controller\\GrosOeuvreController::menuiserie'], ['id'], null, null, false, false, null]],
             724 => [[['_route' => 'climatisation', '_controller' => 'App\\Controller\\SecondOeuvreController::climatisation'], ['id'], null, null, false, false, null]],
             741 => [[['_route' => 'domotique', '_controller' => 'App\\Controller\\SecondOeuvreController::domotique'], ['id'], null, null, false, false, null]],
+            756 => [[['_route' => 'facture', '_controller' => 'App\\Controller\\DashboardController::facture'], ['id'], null, null, false, false, null]],
         ];
     }
 }

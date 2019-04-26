@@ -144,34 +144,32 @@ class __TwigTemplate_b0a32ee68634f13d373f17d6a8a528c4c4a6dcfeb3cf78b636bb747f75a
 
 \t\t\t\t\t\t\t\t\t<h3> Créer un nouveau membre </h3>
 \t\t\t\t\t\t\t\t\t";
-        // line 41
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 41, $this->source); })()), 'form_start');
+        // line 48
+        echo "\t\t\t\t\t\t\t\t\t\t<h3 class=\"panel-title\">Supprimer un utilisateur </h3>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 50
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 50, $this->source); })()), 'form_start');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 42
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 42, $this->source); })()), "username", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md", "placeholder" => "Identifiant"]]);
+        // line 51
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 51, $this->source); })()), "removeName", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md", "placeholder" => "Identifiant"]]);
         echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 43, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md", "placeholder" => "Adresse e-mail"]]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md", "placeholder" => "Mot de passe"]]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md", "placeholder" => "Confirmer le mot de passe"]]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Créer</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Supprimer</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
-        // line 47
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 47, $this->source); })()), 'form_end');
+        // line 53
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 53, $this->source); })()), 'form_end');
         echo "
-
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t<h3> Rechercher un membre </h3>
 
-\t\t\t<div id=\"listeMembre\" data-select=\"\">
+\t\t<div id=\"listeMembre\" data-items=\"";
+        // line 57
+        echo twig_escape_filter($this->env, json_encode((isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new Twig_Error_Runtime('Variable "data" does not exist.', 57, $this->source); })())), "html", null, true);
+        echo "\">
+\t\t\t\t\t\t\t\t\t
+\t\t
+    \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -194,7 +192,7 @@ class __TwigTemplate_b0a32ee68634f13d373f17d6a8a528c4c4a6dcfeb3cf78b636bb747f75a
 
     }
 
-    // line 67
+    // line 76
     public function block_javascript($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -203,22 +201,22 @@ class __TwigTemplate_b0a32ee68634f13d373f17d6a8a528c4c4a6dcfeb3cf78b636bb747f75a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 68
+        // line 77
         echo "\t<!-- Specific Page Vendor -->
 \t\t<script src=\"assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js\"></script>
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 \t 
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 73
+        // line 82
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/listeMembre.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 74
+        // line 83
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/indexMembre.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 75
+        // line 84
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/static/js/runtime.js"), "html", null, true);
         echo "\"></script>
 
@@ -243,7 +241,7 @@ class __TwigTemplate_b0a32ee68634f13d373f17d6a8a528c4c4a6dcfeb3cf78b636bb747f75a
 
     public function getDebugInfo()
     {
-        return array (  222 => 75,  218 => 74,  214 => 73,  207 => 68,  198 => 67,  169 => 47,  164 => 45,  160 => 44,  156 => 43,  152 => 42,  148 => 41,  136 => 32,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
+        return array (  220 => 84,  216 => 83,  212 => 82,  205 => 77,  196 => 76,  168 => 57,  161 => 53,  156 => 51,  152 => 50,  148 => 48,  136 => 32,  121 => 19,  112 => 18,  94 => 16,  83 => 13,  74 => 12,  62 => 9,  57 => 6,  48 => 5,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -288,17 +286,26 @@ class __TwigTemplate_b0a32ee68634f13d373f17d6a8a528c4c4a6dcfeb3cf78b636bb747f75a
 \t\t\t\t\t\t\t\t\t</section>
 
 \t\t\t\t\t\t\t\t\t<h3> Créer un nouveau membre </h3>
-\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
+\t\t\t\t\t\t\t\t\t{# {{ form_start(form-create) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.username, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.email, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Adresse e-mail'}} ) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.plainPassword.first, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Mot de passe'}} ) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.plainPassword.second, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Confirmer le mot de passe'}} ) }}
 \t\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Créer</button>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form-create) }} #}
+\t\t\t\t\t\t\t\t\t\t<h3 class=\"panel-title\">Supprimer un utilisateur </h3>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_start(form) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{{ form_row(form.removeName, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\" type=\"submit\">Supprimer</button>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
-
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t<h3> Rechercher un membre </h3>
 
-\t\t\t<div id=\"listeMembre\" data-select=\"\">
+\t\t<div id=\"listeMembre\" data-items=\"{{ data|json_encode }}\">
+\t\t\t\t\t\t\t\t\t
+\t\t
+    \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t
 \t\t
     \t\t\t\t\t\t\t</div>
@@ -324,6 +331,6 @@ class __TwigTemplate_b0a32ee68634f13d373f17d6a8a528c4c4a6dcfeb3cf78b636bb747f75a
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/indexMembre.js') }}\"></script>
 \t\t<script type=\"text/javascript\" src=\"{{ asset('resources/static/js/runtime.js') }}\"></script>
 
-    {% endblock %}", "admin/listeMembresAdmin.html.twig", "/opt/lampp/htdocs/Symfony/templates/admin/listeMembresAdmin.html.twig");
+    {% endblock %}", "admin/listeMembresAdmin.html.twig", "/opt/lampp/htdocs/TER/templates/admin/listeMembresAdmin.html.twig");
     }
 }

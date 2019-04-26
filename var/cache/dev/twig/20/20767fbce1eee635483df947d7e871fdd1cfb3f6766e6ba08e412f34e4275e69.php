@@ -361,6 +361,6 @@ class __TwigTemplate_53defcfa3c5e8ccf48d7e8173ff2a421164901123fee753d53f968aeb5e
 \t\t<script src=\"assets/public/js/runtime.js\"></script>
 \t\t-->
 
-    {% endblock %}", "project/excavation.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/excavation.html.twig");
+    {% endblock %}", "project/excavation.html.twig", "/opt/lampp/htdocs/TER/templates/project/excavation.html.twig");
     }
 }

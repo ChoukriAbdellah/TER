@@ -377,6 +377,6 @@ class __TwigTemplate_47e18b08da58cd5eada5323aeeeb9a72081350f59347d1df1f9c77fc357
 \t\t<script src=\"assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js\"></script>
 \t\t<script src=\"assets/vendor/store-js/store.js\"></script>
 
-    {% endblock %}", "project/vrd.html.twig", "/opt/lampp/htdocs/Symfony/templates/project/vrd.html.twig");
+    {% endblock %}", "project/vrd.html.twig", "/opt/lampp/htdocs/TER/templates/project/vrd.html.twig");
     }
 }
