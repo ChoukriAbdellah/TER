@@ -8,26 +8,39 @@ use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 use App\Entity\Projet;
+use App\Entity\Prix;
 
 use App\Entity\SecondOeuvre;
 
 use App\Form\UserType;
+<<<<<<< HEAD
 use App\Form\ProjetType;
 use App\Form\RemoveProjetType;
 use App\Form\RemoveUserType;
+=======
+use App\Form\prixType;
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
 
 use App\Services\Mailer;
 
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+ /**
+  * Require ROLE_ADMIN for *every* controller method in this class.
+  *
+  * @IsGranted("ROLE_ADMIN")
+  */
+
 class AdminController extends AbstractController
 {   
-  public function projetAdmin( Request $request)
+
+  public function projetAdmin(Request $request)
   {
-            
-  		    
             $projets = $this->getDoctrine()
             ->getRepository(Projet::class)
             ->findAll();
@@ -173,6 +186,79 @@ class AdminController extends AbstractController
 			
   }
 
+  public function tablePrix( Request $request){
+
+    $liste=$this->getDoctrine()
+    ->getRepository(Prix::class)
+    ->findAll();
+     return $this->render('admin/listePrix.html.twig',array('liste'=> $liste ));
+
+  }
+
+public function modifPrix( $id,Request $request){
+    
+  $old= $this->getDoctrine()
+  ->getRepository(Prix::class)
+  ->find($id);
+  
+    
+    $elem = new Prix();
+    // instancie le formulaire avec les contraintes par défaut
+    $form = $this->createForm(prixType::class, $elem);        
+    $form->handleRequest($request);
+    if ($form->isSubmitted() && $form->isValid()) {  
+        $em = $this->getDoctrine()->getManager();
+
+          $nom= $elem->getNom();
+          $montant=$elem->getMontant();
+          
+          //$id = $request->attributes->get('id');
+          $old= $this->getDoctrine()
+          ->getRepository(Prix::class)
+          ->find($id);
+
+          $old->setNom($nom);
+          $old->setMontant($montant);
+          $em->persist($old);
+          $em->flush();
+
+    
+       return $this->redirectToRoute('listePrix');
+
+  }
+  return $this->render('admin/modifPrix.html.twig',array('form' => $form->createView(), 'old'=> $old));
+}
+public function suppPrix( $id,Request $request){
+  $em = $this->getDoctrine()->getManager();
+  
+  $old= $this->getDoctrine()
+  ->getRepository(Prix::class)
+  ->find($id);
+ 
 
 
+  $em->remove($old);
+  $em->flush();
+
+  return $this->redirectToRoute('listePrix');
+}
+public function ajoutPrix( Request $request){
+    $elem = new Prix();
+    // instancie le formulaire avec les contraintes par défaut
+    $form = $this->createForm(prixType::class, $elem);        
+    $form->handleRequest($request);
+    if ($form->isSubmitted() && $form->isValid()) {  
+        $em = $this->getDoctrine()->getManager();
+
+          
+         
+          $em->persist($elem);
+          $em->flush();
+
+    
+       return $this->redirectToRoute('listePrix');
+
+  }
+  return $this->render('admin/ajoutPrix.html.twig',array('form' => $form->createView()));
+}
 }
