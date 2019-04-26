@@ -1,10 +1,11 @@
 <?php return [PHP_INT_MAX, static function () {
 
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
-        $o = [
-            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
-            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
-        ],
+        $o = \Symfony\Component\VarExporter\Internal\Registry::unserialize([
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        ], [
+            1 => 'C:33:"Doctrine\\ORM\\Id\\SequenceGenerator":78:{a:2:{s:14:"allocationSize";i:1;s:12:"sequenceName";s:18:"electricite_id_seq";}}',
+        ]),
         null,
         [
             'stdClass' => [
@@ -26,7 +27,7 @@
                     ],
                 ],
                 'generatorType' => [
-                    4,
+                    2,
                 ],
                 'fieldMappings' => [
                     [
@@ -144,6 +145,13 @@
                 ],
                 'idGenerator' => [
                     $o[1],
+                ],
+                'sequenceGeneratorDefinition' => [
+                    [
+                        'sequenceName' => 'electricite_id_seq',
+                        'allocationSize' => 1,
+                        'initialValue' => 1,
+                    ],
                 ],
             ],
         ],
