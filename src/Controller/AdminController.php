@@ -17,13 +17,7 @@ use App\Entity\Prix;
 use App\Entity\SecondOeuvre;
 
 use App\Form\UserType;
-<<<<<<< HEAD
-use App\Form\ProjetType;
-use App\Form\RemoveProjetType;
-use App\Form\RemoveUserType;
-=======
 use App\Form\prixType;
->>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
 
 use App\Services\Mailer;
 
