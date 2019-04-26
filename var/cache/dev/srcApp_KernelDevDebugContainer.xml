@@ -21,6 +21,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
+      <parameter key="WebpackEncoreBundle">Symfony\WebpackEncoreBundle\WebpackEncoreBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -70,6 +71,10 @@
       <parameter key="SwiftmailerBundle" type="collection">
         <parameter key="path">/opt/lampp/htdocs/TER/vendor/symfony/swiftmailer-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
+      </parameter>
+      <parameter key="WebpackEncoreBundle" type="collection">
+        <parameter key="path">/opt/lampp/htdocs/Symfony/vendor/symfony/webpack-encore-bundle/src</parameter>
+        <parameter key="namespace">Symfony\WebpackEncoreBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -537,6 +542,9 @@
     <service id="App\Form\VrdType" class="App\Form\VrdType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\prixType" class="App\Form\prixType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\CharpenteRepository" class="App\Repository\CharpenteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -919,6 +927,7 @@
         <argument>App\Form\UserType</argument>
         <argument>App\Form\VentilationType</argument>
         <argument>App\Form\VrdType</argument>
+        <argument>App\Form\prixType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
@@ -1073,6 +1082,7 @@
         <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.webpack_encore" type="service" id="cache.webpack_encore" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
     <service id="cache.global_clearer" class="Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer" public="true">
@@ -1084,6 +1094,7 @@
         <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.webpack_encore" type="service" id="cache.webpack_encore" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
     <service id=".1_NativeFileSessionHandler~4zLkQBN" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
@@ -1157,7 +1168,11 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.CIUGCnG"/>
+=======
+      <argument type="service" id=".service_locator.x6eblJp"/>
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1261,9 +1276,12 @@
     <service id="assets.json_manifest_version_strategy" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy" public="false" abstract="true">
       <argument></argument>
     </service>
+    <service id="assets._version__default" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy" public="false">
+      <argument>/opt/lampp/htdocs/Symfony/public/build/manifest.json</argument>
+    </service>
     <service id="assets._default_package" class="Symfony\Component\Asset\PathPackage" public="false">
       <argument></argument>
-      <argument type="service" id="assets.empty_version_strategy"/>
+      <argument type="service" id="assets._version__default"/>
       <argument type="service" id="assets.context"/>
     </service>
     <service id=".1_PhpArrayAdapter~lgsOGaM" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
@@ -1451,6 +1469,10 @@
       <call method="addInstance">
         <argument>cache.security_expression_language</argument>
         <argument type="service" id="cache.security_expression_language"/>
+      </call>
+      <call method="addInstance">
+        <argument>cache.webpack_encore</argument>
+        <argument type="service" id="cache.webpack_encore"/>
       </call>
     </service>
     <service id=".1_ResolvedFormTypeFactory~HA6I0V_" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
@@ -2175,6 +2197,9 @@
         <argument type="service" id="twig.extension.debug.stopwatch"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="twig.extension.expression"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.httpkernel"/>
       </call>
       <call method="addExtension">
@@ -2197,6 +2222,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="webpack_encore.twig_entry_files_extension"/>
       </call>
       <call method="addGlobal">
         <argument>app</argument>
@@ -2348,6 +2376,9 @@
       <tag name="twig.extension"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument>true</argument>
+    </service>
+    <service id="twig.extension.expression" class="Symfony\Bridge\Twig\Extension\ExpressionExtension" public="false">
+      <tag name="twig.extension"/>
     </service>
     <service id="twig.extension.httpkernel" class="Symfony\Bridge\Twig\Extension\HttpKernelExtension" public="false">
       <tag name="twig.extension"/>
@@ -3097,11 +3128,12 @@
     <service id="sensio_framework_extra.converter.doctrine.orm" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter" public="false">
       <tag name="request.param_converter" converter="doctrine.orm"/>
       <argument type="service" id="doctrine" on-invalid="ignore"/>
-      <argument>null</argument>
+      <argument type="service" id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" on-invalid="null"/>
     </service>
     <service id="framework_extra_bundle.date_time_param_converter" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter" public="false">
       <tag name="request.param_converter" converter="datetime"/>
     </service>
+    <service id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" class="Symfony\Component\ExpressionLanguage\ExpressionLanguage" public="false"/>
     <service id="sensio_framework_extra.view.guesser" class="Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser" public="false">
       <argument type="service" id="kernel"/>
     </service>
@@ -3120,13 +3152,14 @@
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="framework_extra_bundle.argument_name_convertor"/>
-      <argument>null</argument>
+      <argument type="service" id="sensio_framework_extra.security.expression_language.default" on-invalid="null"/>
       <argument type="service" id="security.authentication.trust_resolver" on-invalid="null"/>
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
       <argument type="service" id="monolog.logger" on-invalid="null"/>
     </service>
+    <service id="sensio_framework_extra.security.expression_language.default" class="Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage" public="false"/>
     <service id="framework_extra_bundle.event.is_granted" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
@@ -3182,6 +3215,9 @@
       <argument type="service" id="security.encoder_factory.generic"/>
     </service>
     <service id="security.user_checker" class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
+    <service id="security.expression_language" class="Symfony\Component\Security\Core\Authorization\ExpressionLanguage" public="false">
+      <argument type="service" id="cache.security_expression_language"/>
+    </service>
     <service id="security.authentication_utils" class="Symfony\Component\Security\Http\Authentication\AuthenticationUtils" public="true">
       <argument type="service" id="request_stack"/>
     </service>
@@ -3195,6 +3231,13 @@
     <service id="security.access.role_hierarchy_voter" class="Symfony\Component\Security\Core\Authorization\Voter\RoleHierarchyVoter" public="false">
       <tag name="security.voter" priority="245"/>
       <argument type="service" id="security.role_hierarchy"/>
+    </service>
+    <service id="security.access.expression_voter" class="Symfony\Component\Security\Core\Authorization\Voter\ExpressionVoter" public="false">
+      <tag name="security.voter" priority="245"/>
+      <argument type="service" id="security.expression_language"/>
+      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="security.authorization_checker"/>
+      <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
     <service id="security.firewall.map" class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
       <argument type="service" id=".service_locator.ko2dQVn"/>
@@ -3928,6 +3971,53 @@
     <service id="swiftmailer.mailer.default.plugin.messagelogger" class="Swift_Plugins_MessageLogger" public="true">
       <tag name="swiftmailer.default.plugin"/>
     </service>
+    <service id=".1_ServiceLocator~P4gah9J" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="webpack_encore.entrypoint_lookup_collection" type="service" id="webpack_encore.entrypoint_lookup_collection"/>
+        <argument key="webpack_encore.tag_renderer" type="service" id="webpack_encore.tag_renderer"/>
+      </argument>
+    </service>
+    <service id="webpack_encore.entrypoint_lookup_collection" class="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollection" public="false">
+      <argument type="service" id=".service_locator._faFGeI"/>
+    </service>
+    <service id="webpack_encore.tag_renderer" class="Symfony\WebpackEncoreBundle\Asset\TagRenderer" public="false">
+      <argument type="service" id="webpack_encore.entrypoint_lookup_collection"/>
+      <argument type="service" id="assets.packages"/>
+      <argument type="collection"/>
+    </service>
+    <service id="webpack_encore.twig_entry_files_extension" class="Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id=".1_ServiceLocator~P4gah9J"/>
+    </service>
+    <service id="webpack_encore.entrypoint_lookup.cache_warmer" class="Symfony\WebpackEncoreBundle\CacheWarmer\EntrypointCacheWarmer" public="false">
+      <tag name="kernel.cache_warmer"/>
+      <argument type="collection">
+        <argument key="_default">/opt/lampp/htdocs/Symfony/public/build/entrypoints.json</argument>
+      </argument>
+      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/webpack_encore.cache.php</argument>
+      <argument type="service" id="cache.webpack_encore"/>
+    </service>
+    <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/webpack_encore.cache.php</argument>
+      <argument type="service" id="cache.webpack_encore"/>
+      <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
+    </service>
+    <service id="cache.webpack_encore" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="false">
+      <tag name="cache.pool"/>
+      <argument type="service" id="cache.webpack_encore.recorder_inner"/>
+    </service>
+    <service id="webpack_encore.entrypoint_lookup[_default]" class="Symfony\WebpackEncoreBundle\Asset\EntrypointLookup">
+      <argument>/opt/lampp/htdocs/Symfony/public/build/entrypoints.json</argument>
+      <argument>null</argument>
+      <argument>_default</argument>
+    </service>
+    <service id=".service_locator._faFGeI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="_default" type="service" id="webpack_encore.entrypoint_lookup[_default]"/>
+      </argument>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4019,6 +4109,8 @@
     <service id=".abstract.instanceof.App\Form\VentilationType" class="App\Form\VentilationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VrdType" class="App\Form\VrdType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\VrdType" class="App\Form\VrdType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\prixType" class="App\Form\prixType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\prixType" class="App\Form\prixType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CharpenteRepository" class="App\Repository\CharpenteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CharpenteRepository" class="App\Repository\CharpenteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClimatisationRepository" class="App\Repository\ClimatisationRepository" autowire="true" abstract="true"/>
@@ -4358,7 +4450,11 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.CIUGCnG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+=======
+    <service id=".service_locator.x6eblJp" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AccountType" type="service" id="App\Form\AccountType"/>
@@ -4393,6 +4489,7 @@
         <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
         <argument key="App\Form\VentilationType" type="service" id="App\Form\VentilationType"/>
         <argument key="App\Form\VrdType" type="service" id="App\Form\VrdType"/>
+        <argument key="App\Form\prixType" type="service" id="App\Form\prixType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
@@ -4558,6 +4655,10 @@
       <argument type="service" id="security.access.role_hierarchy_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>
+    <service id="debug.security.voter.security.access.expression_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
+      <argument type="service" id="security.access.expression_voter"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
     <service id="security.logout.handler.csrf_token_clearing" class="Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler" public="false">
       <argument type="service" id="security.csrf.token_storage"/>
     </service>
@@ -4714,6 +4815,7 @@
       <argument type="iterator">
         <argument type="service" id="debug.security.voter.security.access.authenticated_voter"/>
         <argument type="service" id="debug.security.voter.security.access.role_hierarchy_voter"/>
+        <argument type="service" id="debug.security.voter.security.access.expression_voter"/>
       </argument>
       <argument>affirmative</argument>
       <argument>false</argument>
@@ -4912,6 +5014,14 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
+    <service id="cache.webpack_encore.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
+      <argument>1dntQAyXN6</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/opt/lampp/htdocs/Symfony/var/cache/dev/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
     <service id=".service_locator.uxa.tru" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4986,6 +5096,8 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache" public="true"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache" public="true"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
+    <service id="sensio_framework_extra.converter.doctrine.orm.expression_language" alias="sensio_framework_extra.converter.doctrine.orm.expression_language.default" public="false"/>
+    <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
     <service id="Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface" alias="security.authorization_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface" alias="security.token_storage" public="false"/>
     <service id="Symfony\Component\Security\Core\Security" alias="security.helper" public="false"/>
@@ -5017,9 +5129,12 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
+    <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
+    <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.XzyijJy"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
+    <service id=".service_locator.tSKDlY7" alias=".1_ServiceLocator~P4gah9J" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver" public="false"/>

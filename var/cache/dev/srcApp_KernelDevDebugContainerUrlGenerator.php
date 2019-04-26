@@ -68,7 +68,16 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'revetement' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::revetement'], [], [['text', '/second-oeuvre/revetement'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'listeAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::projetAdmin'], [], [['text', '/dashboard/projetsAdmin']], [], []],
         'listeMembreAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::listeMembreAdmin'], [], [['text', '/dashboard/membresAdmin']], [], []],
+<<<<<<< HEAD
         'facture' => [['id'], ['_controller' => 'App\\Controller\\DashboardController::facture'], [], [['text', '/facture'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+=======
+        'listePrix' => [[], ['_controller' => 'App\\Controller\\AdminController::tablePrix'], [], [['text', '/dashboard/tablePrix']], [], []],
+        'modifPrix' => [['id'], ['_controller' => 'App\\Controller\\AdminController::modifPrix'], [], [['text', '/modifPrix'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard']], [], []],
+        'suppPrix' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppPrix'], [], [['text', '/suppPrix'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard']], [], []],
+        'ajoutPrix' => [[], ['_controller' => 'App\\Controller\\AdminController::ajoutPrix'], [], [['text', '/dashboard/ajoutPrix']], [], []],
+        'facture' => [['id'], ['_controller' => 'App\\Controller\\DashboardController::facture'], [], [['text', '/facture'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'impression' => [['id'], ['_controller' => 'App\\Controller\\DashboardController::impression'], [], [['text', '/facture.pdf'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

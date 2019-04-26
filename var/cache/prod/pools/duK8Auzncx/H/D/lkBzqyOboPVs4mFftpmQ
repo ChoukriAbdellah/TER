@@ -1,0 +1,130 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Plancher',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Plancher',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\PlancherRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'plancherVs' => [
+                            'fieldName' => 'plancherVs',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'plancher_vs',
+                        ],
+                        'plancherEtage' => [
+                            'fieldName' => 'plancherEtage',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'plancher_etage',
+                        ],
+                        'plancherTerrasse' => [
+                            'fieldName' => 'plancherTerrasse',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'plancher_terrasse',
+                        ],
+                        'longueurEntrevous' => [
+                            'fieldName' => 'longueurEntrevous',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'longueur_entrevous',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'plancher_vs' => 'plancherVs',
+                        'plancher_etage' => 'plancherEtage',
+                        'plancher_terrasse' => 'plancherTerrasse',
+                        'longueur_entrevous' => 'longueurEntrevous',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'plancherVs' => 'plancher_vs',
+                        'plancherEtage' => 'plancher_etage',
+                        'plancherTerrasse' => 'plancher_terrasse',
+                        'longueurEntrevous' => 'longueur_entrevous',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'plancher',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

@@ -1,0 +1,94 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Climatisation',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Climatisation',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\ClimatisationRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'TypeClimatisation' => [
+                            'fieldName' => 'TypeClimatisation',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_climatisation',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'type_climatisation' => 'TypeClimatisation',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'TypeClimatisation' => 'type_climatisation',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'climatisation',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

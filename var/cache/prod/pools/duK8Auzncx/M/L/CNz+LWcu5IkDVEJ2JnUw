@@ -1,0 +1,118 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Ventilation',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Ventilation',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\VentilationRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'typeVentilation' => [
+                            'fieldName' => 'typeVentilation',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_ventilation',
+                        ],
+                        'surfaceChambreSalon' => [
+                            'fieldName' => 'surfaceChambreSalon',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'surface_chambre_salon',
+                        ],
+                        'surfaceCuisineWc' => [
+                            'fieldName' => 'surfaceCuisineWc',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'surface_cuisine_wc',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'type_ventilation' => 'typeVentilation',
+                        'surface_chambre_salon' => 'surfaceChambreSalon',
+                        'surface_cuisine_wc' => 'surfaceCuisineWc',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'typeVentilation' => 'type_ventilation',
+                        'surfaceChambreSalon' => 'surface_chambre_salon',
+                        'surfaceCuisineWc' => 'surface_cuisine_wc',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'ventilation',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

@@ -746,9 +746,14 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (176, 'isolation_p', 7),
 (177, 'revet_clas', 15),
 (178, 'revet_motif', 22),
+<<<<<<< HEAD
 (179, 'vide-sanitaire', 500),
 (180, 'sous-sol', 90),
 (181, 'CALCAIRE', 1200);
+=======
+(179, 'CALCAIRE', 1200),
+(180, 'zebi', 4000);
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
 
 -- --------------------------------------------------------
 
@@ -782,6 +787,7 @@ INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Structure de la table `remove_user`
 --
 
@@ -793,6 +799,8 @@ CREATE TABLE `remove_user` (
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
 -- Table structure for table `revetement`
 --
 

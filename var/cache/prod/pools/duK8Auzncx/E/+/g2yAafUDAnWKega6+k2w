@@ -1,0 +1,106 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Revetement',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Revetement',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\RevetementRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                        'surfRevetClassique' => [
+                            'fieldName' => 'surfRevetClassique',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'surf_revet_classique',
+                        ],
+                        'surfRevetMotif' => [
+                            'fieldName' => 'surfRevetMotif',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'surf_revet_motif',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'prix' => 'prix',
+                        'surf_revet_classique' => 'surfRevetClassique',
+                        'surf_revet_motif' => 'surfRevetMotif',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'prix' => 'prix',
+                        'surfRevetClassique' => 'surf_revet_classique',
+                        'surfRevetMotif' => 'surf_revet_motif',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'revetement',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];
