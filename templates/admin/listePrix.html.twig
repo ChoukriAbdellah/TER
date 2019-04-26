@@ -1,0 +1,77 @@
+{% extends "/dashboard-layout.html.twig" %}
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2> Table des prix</h2>
+				{% endblock %}
+
+				{% block pageactuelle %} Table des prix {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Table des prix</h2>
+									</header>
+																<div class="panel-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-md">
+										<a href="{{ path('ajoutPrix') }}"> <button id="addToTable" class="btn btn-primary">Ajouter <i class="fa fa-plus"></i></button> </a>
+										</div>
+									</div>
+								</div>
+								<table class="table table-bordered table-striped mb-none" id="datatable-editable">
+									<thead>
+										<tr>
+                                            <th>id </th>
+											<th>Nom de l'objet ou du facteur</th>
+											<th>Prix</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+                                        {% for e in liste %}
+                                   
+										<tr class="gradeX">
+											<td>{{ e.id}}</td>
+											<td>{{ e.nom}}</td>
+											<td>{{ e.montant}}</td>
+											<td class="actions">
+												
+												<a href="{{ path('modifPrix', {'id': e.id}) }}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+												<a href="{{ path('suppPrix', {'id': e.id}) }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+											</td>
+										</tr>
+										 {% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</section>
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
+
+    {% endblock %}
