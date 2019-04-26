@@ -45,6 +45,7 @@ use App\Entity\User;
 use App\Form\AccountType;
 
 
+
 class DashboardController extends AbstractController
 {
   public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder)

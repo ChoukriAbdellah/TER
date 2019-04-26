@@ -1,0 +1,142 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Domotique',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Domotique',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\DomotiqueRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'regularisationChauffage' => [
+                            'fieldName' => 'regularisationChauffage',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'regularisation_chauffage',
+                        ],
+                        'eclairageAuto' => [
+                            'fieldName' => 'eclairageAuto',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'eclairage_auto',
+                        ],
+                        'ouvertureFermetureAuto' => [
+                            'fieldName' => 'ouvertureFermetureAuto',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'ouverture_fermeture_auto',
+                        ],
+                        'autonomieEau' => [
+                            'fieldName' => 'autonomieEau',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'autonomie_eau',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                        'detecteurEtAlarme' => [
+                            'fieldName' => 'detecteurEtAlarme',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => true,
+                            'precision' => 0,
+                            'columnName' => 'detecteur_et_alarme',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'regularisation_chauffage' => 'regularisationChauffage',
+                        'eclairage_auto' => 'eclairageAuto',
+                        'ouverture_fermeture_auto' => 'ouvertureFermetureAuto',
+                        'autonomie_eau' => 'autonomieEau',
+                        'prix' => 'prix',
+                        'detecteur_et_alarme' => 'detecteurEtAlarme',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'regularisationChauffage' => 'regularisation_chauffage',
+                        'eclairageAuto' => 'eclairage_auto',
+                        'ouvertureFermetureAuto' => 'ouverture_fermeture_auto',
+                        'autonomieEau' => 'autonomie_eau',
+                        'prix' => 'prix',
+                        'detecteurEtAlarme' => 'detecteur_et_alarme',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'domotique',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

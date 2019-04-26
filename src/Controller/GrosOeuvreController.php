@@ -33,13 +33,19 @@ use App\Entity\Elevation;
 use App\Entity\Menuiserie;
 use App\Entity\Toiture;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 use App\Entity\Prix;
 
 use App\Repository\ProjetRepository;
 use App\Repository\GrosOeuvreRepository;
 
+
+
 class GrosOeuvreController extends AbstractController
 {
+
   public function etudeSol($id, Request $request)
   {
             // création du formulaire

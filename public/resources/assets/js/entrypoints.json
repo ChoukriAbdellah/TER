@@ -1,0 +1,22 @@
+{
+  "entrypoints": {
+    "listeMembre": {
+      "js": [
+        "public/resources/static/js/runtime.js",
+        "public/resources/static/js/listeMembre.js"
+      ],
+      "css": [
+        "public/resources/static/js/listeMembre.css"
+      ]
+    },
+    "indexMembre": {
+      "js": [
+        "public/resources/static/js/runtime.js",
+        "public/resources/static/js/indexMembre.js"
+      ],
+      "css": [
+        "public/resources/static/js/indexMembre.css"
+      ]
+    }
+  }
+}

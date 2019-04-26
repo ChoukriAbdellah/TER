@@ -1,0 +1,178 @@
+<?php return [PHP_INT_MAX, static function () {
+
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'App\\Entity\\Plomberie',
+                ],
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Plomberie',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\PlomberieRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => [
+                            'fieldName' => 'id',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'id' => true,
+                            'columnName' => 'id',
+                        ],
+                        'nbMetreTuyau' => [
+                            'fieldName' => 'nbMetreTuyau',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_metre_tuyau',
+                        ],
+                        'typeTuyau' => [
+                            'fieldName' => 'typeTuyau',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_tuyau',
+                        ],
+                        'nbRobinets' => [
+                            'fieldName' => 'nbRobinets',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_robinets',
+                        ],
+                        'nbWC' => [
+                            'fieldName' => 'nbWC',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_wc',
+                        ],
+                        'typeChauffageEau' => [
+                            'fieldName' => 'typeChauffageEau',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_chauffage_eau',
+                        ],
+                        'typeCompteur' => [
+                            'fieldName' => 'typeCompteur',
+                            'type' => 'string',
+                            'scale' => 0,
+                            'length' => 255,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'type_compteur',
+                        ],
+                        'nbBaignoire' => [
+                            'fieldName' => 'nbBaignoire',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_baignoire',
+                        ],
+                        'nbDouche' => [
+                            'fieldName' => 'nbDouche',
+                            'type' => 'integer',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'nb_douche',
+                        ],
+                        'prix' => [
+                            'fieldName' => 'prix',
+                            'type' => 'float',
+                            'scale' => 0,
+                            'length' => null,
+                            'unique' => false,
+                            'nullable' => false,
+                            'precision' => 0,
+                            'columnName' => 'prix',
+                        ],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'nb_metre_tuyau' => 'nbMetreTuyau',
+                        'type_tuyau' => 'typeTuyau',
+                        'nb_robinets' => 'nbRobinets',
+                        'nb_wc' => 'nbWC',
+                        'type_chauffage_eau' => 'typeChauffageEau',
+                        'type_compteur' => 'typeCompteur',
+                        'nb_baignoire' => 'nbBaignoire',
+                        'nb_douche' => 'nbDouche',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'nbMetreTuyau' => 'nb_metre_tuyau',
+                        'typeTuyau' => 'type_tuyau',
+                        'nbRobinets' => 'nb_robinets',
+                        'nbWC' => 'nb_wc',
+                        'typeChauffageEau' => 'type_chauffage_eau',
+                        'typeCompteur' => 'type_compteur',
+                        'nbBaignoire' => 'nb_baignoire',
+                        'nbDouche' => 'nb_douche',
+                        'prix' => 'prix',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'plomberie',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[1],
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+
+}];

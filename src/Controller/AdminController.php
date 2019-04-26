@@ -8,6 +8,9 @@ use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 use App\Entity\Projet;
 use App\Entity\Prix;
 
@@ -21,12 +24,17 @@ use App\Services\Mailer;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+ /**
+  * Require ROLE_ADMIN for *every* controller method in this class.
+  *
+  * @IsGranted("ROLE_ADMIN")
+  */
+
 class AdminController extends AbstractController
 {   
-  public function projetAdmin( Request $request)
+
+  public function projetAdmin(Request $request)
   {
-            
-  		    
             $projets = $this->getDoctrine()
             ->getRepository(Projet::class)
             ->findAll();
@@ -193,10 +201,6 @@ public function suppPrix( $id,Request $request){
   return $this->redirectToRoute('listePrix');
 }
 public function ajoutPrix( Request $request){
-    
-  
-  
-    
     $elem = new Prix();
     // instancie le formulaire avec les contraintes par défaut
     $form = $this->createForm(prixType::class, $elem);        

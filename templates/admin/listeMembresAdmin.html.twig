@@ -37,6 +37,7 @@
 										</div>
 									</section>
 
+
 									<h3> Créer un nouveau membre </h3>
 									{{ form_start(form) }}
 															{{ form_row(form.username, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
@@ -48,7 +49,11 @@
 
 									<h3> Rechercher un membre </h3>
 
-			<div id="listeMembre" data-select="">
+			<div id="listeMembre" data-items="{{ data|json_encode }}">
+									
+		
+    							</div>
+									</div>	
 									
 		
     							</div>

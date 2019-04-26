@@ -3,7 +3,9 @@
 	{% block head %}
 
 	<!-- Specific Page Vendor CSS -->
-	<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+	<link rel="stylesheet" href="{{ asset('assets/vendor/pnotify/pnotify.custom.css') }}" />
+	<link rel="stylesheet" href="{{ asset('assets/vendor/select2/select2.css') }}" />
+	<link rel="stylesheet" href="{{ asset('assets/vendor/jquery-datatables-bs3/assets/css/datatables.css') }}" />
 
 	{% endblock %}
 
@@ -40,7 +42,7 @@
 									<tbody>
                                         {% for e in liste %}
                                    
-										<tr class="gradeX">
+										<tr class="gradeA">
 											<td>{{ e.id}}</td>
 											<td>{{ e.nom}}</td>
 											<td>{{ e.montant}}</td>
@@ -50,6 +52,8 @@
 												<a href="{{ path('suppPrix', {'id': e.id}) }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
 											</td>
 										</tr>
+
+										
 										 {% endfor %}
 									</tbody>
 								</table>
@@ -70,8 +74,11 @@
 
     {% block javascript %}
 	<!-- Specific Page Vendor -->
-		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
-		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
-		<script src="assets/vendor/store-js/store.js"></script>
+		<script src="{{ asset('assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js') }}"></script>
+		<script src="{{ asset('assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js') }}"></script>
+		<script src="{{ asset('assets/vendor/store-js/store.js') }}"></script>
+		<script src="{{ asset('resources/assets/vendor/select2/select2.js') }}"></script>
+		<script src="{{ asset('resources/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js') }}"></script>
+		<script src="{{ asset('resources/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js') }}"></script>
 
     {% endblock %}
