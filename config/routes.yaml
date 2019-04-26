@@ -134,5 +134,9 @@ ajoutPrix:
     path:       /dashboard/ajoutPrix
     controller: App\Controller\AdminController::ajoutPrix
 
+facture:
+    path:       /dashboard/my-project/{id}/facture
+    controller: App\Controller\DashboardController::facture
+
 logout:
     path: /deconnexion 
