@@ -98,8 +98,12 @@
 																						</td>
 																						<td>
 																							<ul class="pager">
-																								<a href="{{path('facture', {'id': projets[p].id}) }}"> <button class="mb-xs mt-xs mr-xs btn btn-lg btn-default"
+																								{% if  data[p]  == 23 %}
+																								<a href="{{path('facture', {'id': projets[p].id}) }}"> <button class="label label-success"
 																																						   type="button">Facture</button></a>
+																								{% else %}
+																								<span>Non disponible</span>
+																								{% endif %}
 																							</ul>
 																						</td>
 																					</tr>
