@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2019 at 12:29 PM
+-- Generation Time: Apr 26, 2019 at 11:36 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -234,10 +234,7 @@ INSERT INTO `etude_sol` (`id`, `type_sol`, `prix`) VALUES
 (6, 'ARGILEUX', 1000),
 (7, 'ARGILEUX', 1000),
 (8, 'HUMIFERE', 1100),
-(11, 'HUMIFERE', 1100),
-(12, 'ARGILEUX', 1000),
-(13, 'CALCAIRE', 1200),
-(14, 'CALCAIRE', 1200);
+(11, 'HUMIFERE', 1100);
 
 -- --------------------------------------------------------
 
@@ -343,11 +340,7 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 (12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (14, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 11, NULL, NULL, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 12, 3, NULL, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 13, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 14, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(15, 11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -464,9 +457,10 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190423154803', '2019-04-23 15:48:13'),
 ('20190423162427', '2019-04-23 16:24:35'),
 ('20190423170953', '2019-04-23 17:10:01'),
-('20190424155034', '2019-04-26 15:33:40'),
-('20190426152650', '2019-04-26 15:34:37'),
-('20190426192516', '2019-04-26 19:25:25');
+('20190426140807', '2019-04-26 14:21:04'),
+('20190426143420', '2019-04-26 14:34:27'),
+('20190426153947', '2019-04-26 15:40:02'),
+('20190426154451', '2019-04-26 15:44:58');
 
 -- --------------------------------------------------------
 
@@ -527,23 +521,23 @@ INSERT INTO `plomberie` (`id`, `nb_metre_tuyau`, `type_tuyau`, `nb_robinets`, `n
 
 CREATE TABLE `preparation_et_acces` (
   `id` int(11) NOT NULL,
-  `nb_pins` int(11) DEFAULT NULL,
-  `nb_sapins` int(11) DEFAULT NULL,
-  `nb_bouleaux` int(11) DEFAULT NULL,
-  `nb_chenes` int(11) DEFAULT NULL,
-  `nb_erables` int(11) DEFAULT NULL,
-  `nb_frenes` int(11) DEFAULT NULL,
-  `nb_noyers` int(11) DEFAULT NULL,
-  `nb_autres` int(11) DEFAULT NULL,
-  `taille_pins` double DEFAULT NULL,
-  `taille_sapins` double DEFAULT NULL,
-  `taille_bouleaux` double DEFAULT NULL,
-  `taille_chenes` double DEFAULT NULL,
-  `taille_erables` double DEFAULT NULL,
-  `taille_frenes` double DEFAULT NULL,
-  `taille_noyers` double DEFAULT NULL,
-  `taille_autres` double DEFAULT NULL,
-  `position_terrain` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nb_pins` int(11) NOT NULL,
+  `nb_sapins` int(11) NOT NULL,
+  `nb_bouleaux` int(11) NOT NULL,
+  `nb_chenes` int(11) NOT NULL,
+  `nb_erables` int(11) NOT NULL,
+  `nb_frenes` int(11) NOT NULL,
+  `nb_noyers` int(11) NOT NULL,
+  `nb_autres` int(11) NOT NULL,
+  `taille_pins` double NOT NULL,
+  `taille_sapins` double NOT NULL,
+  `taille_bouleaux` double NOT NULL,
+  `taille_chenes` double NOT NULL,
+  `taille_erables` double NOT NULL,
+  `taille_frenes` double NOT NULL,
+  `taille_noyers` double NOT NULL,
+  `taille_autres` double NOT NULL,
+  `position_terrain` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -553,10 +547,7 @@ CREATE TABLE `preparation_et_acces` (
 
 INSERT INTO `preparation_et_acces` (`id`, `nb_pins`, `nb_sapins`, `nb_bouleaux`, `nb_chenes`, `nb_erables`, `nb_frenes`, `nb_noyers`, `nb_autres`, `taille_pins`, `taille_sapins`, `taille_bouleaux`, `taille_chenes`, `taille_erables`, `taille_frenes`, `taille_noyers`, `taille_autres`, `position_terrain`, `prix`) VALUES
 (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'TERRAIN PLAT', 0),
-(2, 15, 4, 0, 0, 0, 7, 0, 4, 10, 10, 15, 5, 0, 4, 0, 0, 'RELIEF MONTANT', 3982.45),
-(3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PENTE MONTANTE', 3602.45),
-(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 55, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'RELIEF MONTANT', 4077.45),
-(5, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 60, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PENTE DESCENDANTE', 4097.45);
+(2, 15, 4, 0, 0, 0, 7, 0, 4, 10, 10, 15, 5, 0, 4, 0, 0, 'RELIEF MONTANT', 3982.45);
 
 -- --------------------------------------------------------
 
@@ -746,14 +737,8 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (176, 'isolation_p', 7),
 (177, 'revet_clas', 15),
 (178, 'revet_motif', 22),
-<<<<<<< HEAD
-(179, 'vide-sanitaire', 500),
-(180, 'sous-sol', 90),
-(181, 'CALCAIRE', 1200);
-=======
 (179, 'CALCAIRE', 1200),
 (180, 'zebi', 4000);
->>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
 
 -- --------------------------------------------------------
 
@@ -763,44 +748,29 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 
 CREATE TABLE `projet` (
   `id` int(11) NOT NULL,
-  `id_proprio` int(11) NOT NULL,
   `id_gros_oeuvre` int(11) NOT NULL,
   `id_second_oeuvre` int(11) NOT NULL,
-  `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_proprio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `projet`
 --
 
-INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, `nom`) VALUES
-(6, 5, 7, 7, 'Villa sur Montpellier'),
-(8, 2, 9, 9, 'Villa Turin'),
-(9, 2, 10, 10, 'Villa Madrid'),
-(10, 2, 11, 11, 'Test test'),
-(11, 4, 12, 12, 'heythem'),
-(12, 6, 15, 15, 'Maison de l\'admin'),
-(13, 2, 16, 16, 'un projet teste'),
-(14, 6, 17, 17, 'projet nano'),
-(15, 6, 18, 18, 'teste projet');
+INSERT INTO `projet` (`id`, `id_gros_oeuvre`, `id_second_oeuvre`, `nom`, `id_proprio`) VALUES
+(1, 1, 1, 'Maison', 0),
+(6, 7, 7, 'Villa sur Montpellier', 0),
+(7, 8, 8, 'Villa Montpellier', 0),
+(8, 9, 9, 'Villa Turin', 0),
+(9, 10, 10, 'Villa Madrid', 0),
+(10, 11, 11, 'Test test', 0),
+(11, 12, 12, 'heythem', 0),
+(12, 15, 15, 'Maison de l\'admin', 0);
 
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
--- Structure de la table `remove_user`
---
-
-CREATE TABLE `remove_user` (
-  `id` int(11) NOT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
-=======
->>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
 -- Table structure for table `revetement`
 --
 
@@ -855,11 +825,7 @@ INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revet
 (12, 2, 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (13, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (14, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(15, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -883,9 +849,7 @@ CREATE TABLE `soubassement` (
 
 INSERT INTO `soubassement` (`id`, `type_soubassement`, `materiel_utilise`, `prix`, `tractopelle`, `camion_benne`, `betonniere`) VALUES
 (4, 'sous-sol', NULL, 0, '1', '1', ''),
-(5, 'vide-sanitaire', NULL, 0, '1', '1', ''),
-(6, 'vide-sanitaire', NULL, 1360, '1', '1', '1'),
-(7, 'vide-sanitaire', NULL, 590, '1', '', '');
+(5, 'vide-sanitaire', NULL, 0, '1', '1', '');
 
 -- --------------------------------------------------------
 
@@ -1067,7 +1031,18 @@ ALTER TABLE `fondation`
 -- Indexes for table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_charp` (`id_charpente`),
+  ADD KEY `fk_elev` (`id_elevation`),
+  ADD KEY `fk_etd_sol` (`id_etude_sol`),
+  ADD KEY `fk_excav` (`id_excavation`),
+  ADD KEY `fk_fond` (`id_fondations`),
+  ADD KEY `fk_min` (`id_menuiseries_ext`),
+  ADD KEY `fk_plancher` (`id_plancher`),
+  ADD KEY `fk_prep` (`id_prep_terrain`),
+  ADD KEY `fk_soub` (`id_soubassement`),
+  ADD KEY `fk_toit` (`id_toiture`),
+  ADD KEY `fk_vrd` (`id_vrd`);
 
 --
 -- Indexes for table `isolation`
@@ -1133,7 +1108,19 @@ ALTER TABLE `revetement`
 -- Indexes for table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_clim` (`id_climatisation`),
+  ADD KEY `fk_cloison` (`id_cloisons`),
+  ADD KEY `fk_dom` (`id_domotique`),
+  ADD KEY `fk_elec` (`id_electricite`),
+  ADD KEY `fk_end` (`id_enduit_facade`),
+  ADD KEY `fk_escal` (`id_escaliers`),
+  ADD KEY `fk_evac` (`id_evacuation`),
+  ADD KEY `fk_isol` (`id_isolation`),
+  ADD KEY `fk_men_i` (`id_menuiseries_int`),
+  ADD KEY `fk_plomb` (`id_plomberie`),
+  ADD KEY `fk_revet` (`id_revetement`),
+  ADD KEY `fk_vent` (`id_ventilation`);
 
 --
 -- Indexes for table `soubassement`
@@ -1211,7 +1198,7 @@ ALTER TABLE `elevation`
 -- AUTO_INCREMENT for table `enduit`
 --
 ALTER TABLE `enduit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `escaliers`
@@ -1223,7 +1210,7 @@ ALTER TABLE `escaliers`
 -- AUTO_INCREMENT for table `etude_sol`
 --
 ALTER TABLE `etude_sol`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `evacuation_fumees`
@@ -1247,13 +1234,13 @@ ALTER TABLE `fondation`
 -- AUTO_INCREMENT for table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `isolation`
 --
 ALTER TABLE `isolation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `menuiserie`
@@ -1283,7 +1270,7 @@ ALTER TABLE `plomberie`
 -- AUTO_INCREMENT for table `preparation_et_acces`
 --
 ALTER TABLE `preparation_et_acces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `prix`
@@ -1295,31 +1282,25 @@ ALTER TABLE `prix`
 -- AUTO_INCREMENT for table `projet`
 --
 ALTER TABLE `projet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT pour la table `remove_user`
---
-ALTER TABLE `remove_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `revetement`
 --
 ALTER TABLE `revetement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `soubassement`
 --
 ALTER TABLE `soubassement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `toiture`
@@ -1331,7 +1312,7 @@ ALTER TABLE `toiture`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ventilation`
@@ -1344,6 +1325,43 @@ ALTER TABLE `ventilation`
 --
 ALTER TABLE `vrd`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `gros_oeuvre`
+--
+ALTER TABLE `gros_oeuvre`
+  ADD CONSTRAINT `fk_charp` FOREIGN KEY (`id_charpente`) REFERENCES `charpente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_elev` FOREIGN KEY (`id_elevation`) REFERENCES `elevation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_etd_sol` FOREIGN KEY (`id_etude_sol`) REFERENCES `etude_sol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_excav` FOREIGN KEY (`id_excavation`) REFERENCES `excavation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_fond` FOREIGN KEY (`id_fondations`) REFERENCES `fondation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_min` FOREIGN KEY (`id_menuiseries_ext`) REFERENCES `menuiserie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_plancher` FOREIGN KEY (`id_plancher`) REFERENCES `plancher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_prep` FOREIGN KEY (`id_prep_terrain`) REFERENCES `preparation_et_acces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_soub` FOREIGN KEY (`id_soubassement`) REFERENCES `soubassement` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_toit` FOREIGN KEY (`id_toiture`) REFERENCES `toiture` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_vrd` FOREIGN KEY (`id_vrd`) REFERENCES `vrd` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `second_oeuvre`
+--
+ALTER TABLE `second_oeuvre`
+  ADD CONSTRAINT `fk_clim` FOREIGN KEY (`id_climatisation`) REFERENCES `climatisation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_cloison` FOREIGN KEY (`id_cloisons`) REFERENCES `cloison` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_dom` FOREIGN KEY (`id_domotique`) REFERENCES `domotique` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_elec` FOREIGN KEY (`id_electricite`) REFERENCES `electricite` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_end` FOREIGN KEY (`id_enduit_facade`) REFERENCES `enduit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_escal` FOREIGN KEY (`id_escaliers`) REFERENCES `escaliers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_evac` FOREIGN KEY (`id_evacuation`) REFERENCES `evacuation_fumees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_isol` FOREIGN KEY (`id_isolation`) REFERENCES `isolation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_men_i` FOREIGN KEY (`id_menuiseries_int`) REFERENCES `menuiseries_int` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_plomb` FOREIGN KEY (`id_plomberie`) REFERENCES `plomberie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_revet` FOREIGN KEY (`id_revetement`) REFERENCES `revetement` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_vent` FOREIGN KEY (`id_ventilation`) REFERENCES `ventilation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
