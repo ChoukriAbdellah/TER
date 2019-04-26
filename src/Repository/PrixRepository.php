@@ -48,4 +48,5 @@ class PrixRepository extends ServiceEntityRepository
         // returns an array of arrays (i.e. a raw data set)
         return $prix;
     }
+    
 }

@@ -121,10 +121,26 @@ listeAdmin:
 listeMembreAdmin:
     path:       /dashboard/membresAdmin
     controller: App\Controller\AdminController::listeMembreAdmin
+listePrix:
+    path:       /dashboard/tablePrix
+    controller: App\Controller\AdminController::tablePrix
+modifPrix:
+    path:       /dashboard/{id}/modifPrix
+    controller: App\Controller\AdminController::modifPrix
+suppPrix:
+    path:       /dashboard/{id}/suppPrix
+    controller: App\Controller\AdminController::suppPrix
+ajoutPrix:
+    path:       /dashboard/ajoutPrix
+    controller: App\Controller\AdminController::ajoutPrix
 
 facture:
     path:       /dashboard/my-project/{id}/facture
     controller: App\Controller\DashboardController::facture
+
+impression:
+    path:       /dashboard/my-project/{id}/facture.pdf
+    controller: App\Controller\DashboardController::impression
 
 logout:
     path: /deconnexion 

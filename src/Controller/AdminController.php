@@ -9,10 +9,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 use App\Entity\Projet;
+use App\Entity\Prix;
 
 use App\Entity\SecondOeuvre;
 
 use App\Form\UserType;
+use App\Form\prixType;
 
 use App\Services\Mailer;
 
@@ -134,6 +136,83 @@ class AdminController extends AbstractController
 			
   }
 
+  public function tablePrix( Request $request){
+
+    $liste=$this->getDoctrine()
+    ->getRepository(Prix::class)
+    ->findAll();
+     return $this->render('admin/listePrix.html.twig',array('liste'=> $liste ));
+
+  }
+
+public function modifPrix( $id,Request $request){
+    
+  $old= $this->getDoctrine()
+  ->getRepository(Prix::class)
+  ->find($id);
+  
+    
+    $elem = new Prix();
+    // instancie le formulaire avec les contraintes par défaut
+    $form = $this->createForm(prixType::class, $elem);        
+    $form->handleRequest($request);
+    if ($form->isSubmitted() && $form->isValid()) {  
+        $em = $this->getDoctrine()->getManager();
+
+          $nom= $elem->getNom();
+          $montant=$elem->getMontant();
+          
+          //$id = $request->attributes->get('id');
+          $old= $this->getDoctrine()
+          ->getRepository(Prix::class)
+          ->find($id);
+
+          $old->setNom($nom);
+          $old->setMontant($montant);
+          $em->persist($old);
+          $em->flush();
+
+    
+       return $this->redirectToRoute('listePrix');
+
+  }
+  return $this->render('admin/modifPrix.html.twig',array('form' => $form->createView(), 'old'=> $old));
+}
+public function suppPrix( $id,Request $request){
+  $em = $this->getDoctrine()->getManager();
+  
+  $old= $this->getDoctrine()
+  ->getRepository(Prix::class)
+  ->find($id);
+ 
 
 
+  $em->remove($old);
+  $em->flush();
+
+  return $this->redirectToRoute('listePrix');
+}
+public function ajoutPrix( Request $request){
+    
+  
+  
+    
+    $elem = new Prix();
+    // instancie le formulaire avec les contraintes par défaut
+    $form = $this->createForm(prixType::class, $elem);        
+    $form->handleRequest($request);
+    if ($form->isSubmitted() && $form->isValid()) {  
+        $em = $this->getDoctrine()->getManager();
+
+          
+         
+          $em->persist($elem);
+          $em->flush();
+
+    
+       return $this->redirectToRoute('listePrix');
+
+  }
+  return $this->render('admin/ajoutPrix.html.twig',array('form' => $form->createView()));
+}
 }
