@@ -9,28 +9,42 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 
 class PreparationEtAccesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('nb_pins', IntegerType::class, ['label' => false])
-        ->add('nb_sapins', IntegerType::class, ['label' => false])
-        ->add('nb_bouleaux', IntegerType::class, ['label' => false])
-        ->add('nb_chenes', IntegerType::class, ['label' => false])
-        ->add('nb_erables', IntegerType::class, ['label' => false])
-        ->add('nb_frenes', IntegerType::class, ['label' => false])
-        ->add('nb_noyers', IntegerType::class, ['label' => false])
-        ->add('nb_autres', IntegerType::class, ['label' => false])
-        ->add('taille_pins', NumberType::class, ['label' => false])
-        ->add('taille_sapins', NumberType::class, ['label' => false])
-        ->add('taille_bouleaux', NumberType::class, ['label' => false])
-        ->add('taille_chenes', NumberType::class, ['label' => false])
-        ->add('taille_erables', NumberType::class, ['label' => false])
-        ->add('taille_frenes', NumberType::class, ['label' => false])
-        ->add('taille_noyers', NumberType::class, ['label' => false])
-        ->add('taille_autres', NumberType::class, ['label' => false])
+        ->add('submit', ButtonType::class, array(
+            'attr' => array(
+                'class' => 'btn btn-primary btn-block' ,'onClick'=>'update()','id'=>'chk','label' => 'false'
+            )
+        ))
+        /*->add('choixArbre', ChoiceType::class,[
+            'choices' => [
+            'PVC' => 'PVC',
+            'Cuivre' => 'CUIVRE',
+            'Acier' => 'ACIER'
+            ],
+            'label' => false
+        ]);*/
+        ->add('nb_pins', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_sapins', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_bouleaux', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_chenes', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_erables', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_frenes', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_noyers', IntegerType::class, ['label' => false,'required' => false])
+        ->add('nb_autres', IntegerType::class, ['label' => false,'required' => false])
+        ->add('taille_pins', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_sapins', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_bouleaux', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_chenes', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_erables', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_frenes', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_noyers', NumberType::class, ['label' => false,'required' => false])
+        ->add('taille_autres', NumberType::class, ['label' => false,'required' => false])
         ->add('positionTerrain', ChoiceType::class,[
             'choices' => [
             'Pente montante' => 'PENTE MONTANTE',
@@ -45,18 +59,7 @@ class PreparationEtAccesType extends AbstractType
         ]
     );
        
-         //taille_pins
-           /* ->add('typeSol', ChoiceType::class,[
-                'choices' => [
-                'Sol argileux' => 'ARGILEUX',
-                'Sol calcaire' => 'CALCAIRE',
-                'Sol humifère' => 'HUMIFERE',
-                'Sol limoneux' => 'LIMONEUX',
-                'Sol sableux' => 'SABLEUX'
-                ],
-                'label' => false
-            ]
-        );*/
+        
     }
  
     public function configureOptions(OptionsResolver $resolver)

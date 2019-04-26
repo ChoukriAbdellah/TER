@@ -17,7 +17,31 @@
 
     {% block body %}
 							
-			
+					<section class="panel panel-featured-left panel-featured-quartenary">
+										<div class="panel-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-quartenary">
+														<i class="fa fa-user"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Nombre total de projets</h4>
+														<div class="info">
+															<strong class="amount">{{nbProjet}}</strong>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<h3 class="panel-title">Supprimer un utilisateur </h3>
+					
+															{{ form_start(form) }}
+															{{ form_row(form.removeName, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
+															<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Supprimer</button>
+														   {{ form_end(form) }}
 
 			<div id="listeProjet"  data-items="{{ data|json_encode }}">
 									

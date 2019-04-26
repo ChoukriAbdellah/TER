@@ -1,21 +1,21 @@
 {
   "entrypoints": {
-    "app": {
+    "listeMembre": {
       "js": [
         "public/resources/static/js/runtime.js",
-        "public/resources/static/js/app.js"
+        "public/resources/static/js/listeMembre.js"
       ],
       "css": [
-        "public/resources/static/js/app.css"
+        "public/resources/static/js/listeMembre.css"
       ]
     },
-    "app2": {
+    "indexMembre": {
       "js": [
         "public/resources/static/js/runtime.js",
-        "public/resources/static/js/app2.js"
+        "public/resources/static/js/indexMembre.js"
       ],
       "css": [
-        "public/resources/static/js/app2.css"
+        "public/resources/static/js/indexMembre.css"
       ]
     }
   }
