@@ -737,8 +737,7 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (176, 'isolation_p', 7),
 (177, 'revet_clas', 15),
 (178, 'revet_motif', 22),
-(179, 'CALCAIRE', 1200),
-(180, 'zebi', 4000);
+(179, 'CALCAIRE', 1200);
 
 -- --------------------------------------------------------
 
