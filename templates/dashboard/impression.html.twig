@@ -1,30 +1,25 @@
-{% extends "/dashboard-layout.html.twig" %}
-
 		{% block head %}
 
-		{{ parent() }}
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css') }}" />
-		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css') }}" />
-		<link rel="stylesheet" href="{{ asset('resources/assets/vendor/morris/morris.css') }}" />
+
+			<!-- Web Fonts  -->
+			<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+
+			<!-- Vendor CSS -->
+			<link rel="stylesheet" href="{{ asset('resources/assets/vendor/bootstrap/css/bootstrap.css') }}" />
+
+			<!-- Invoice Print Style -->
+			<link rel="stylesheet" href="{{ asset('resources/stylesheets/invoice-print.css') }}" />
 
 		{% endblock %}
 				{% block title %}
 				<h2> Facture </h2>
 				{% endblock %}
 
-				{% block pageactuelle %} Ma facture {% endblock %}
-
 					{% block body %}
 
-					<div class="row">
-							<div class="col-xs-12">
 
-								<!-- start: page -->
-
-								<section class="panel">
-									<div class="panel-body">
 										<div class="invoice">
 											<header class="clearfix">
 												<div class="row">
@@ -319,49 +314,15 @@
 												</div>
 											</div>
 										</div>
+						
 
-										<div class="text-right mr-lg">
-											<a href="#" class="btn btn-default">Envoyer</a>
-											<a href="{{path('impression', {'id': id}) }}" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Imprimer</a>
-										</div>
-									</div>
-								</section>
-
-								<!-- end: page -->
-
-								</section>
-							</div>
-						</div>
 
 					{% endblock %}
 
 		{% block javascripts %}
 
-		<!-- Specific Page Vendor -->
-		<script src="{{ asset('resources/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jquery-appear/jquery.appear.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jquery-easypiechart/jquery.easypiechart.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/flot/jquery.flot.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/flot-tooltip/jquery.flot.tooltip.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/flot/jquery.flot.pie.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/flot/jquery.flot.categories.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/flot/jquery.flot.resize.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jquery-sparkline/jquery.sparkline.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/raphael/raphael.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/morris/morris.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/gauge/gauge.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/snap-svg/snap.svg.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/liquid-meter/liquid.meter.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/jquery.vmap.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/jquery.vmap.world.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js') }}"></script>
-		<script src="{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js') }}"></script>
-
+			<script>
+				window.print();
+			</script>
 		{% endblock %}
+

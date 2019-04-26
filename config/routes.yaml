@@ -126,5 +126,9 @@ facture:
     path:       /dashboard/my-project/{id}/facture
     controller: App\Controller\DashboardController::facture
 
+impression:
+    path:       /dashboard/my-project/{id}/facture.pdf
+    controller: App\Controller\DashboardController::impression
+
 logout:
     path: /deconnexion 
