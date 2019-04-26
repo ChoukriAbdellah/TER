@@ -122,5 +122,9 @@ listeMembreAdmin:
     path:       /dashboard/membresAdmin
     controller: App\Controller\AdminController::listeMembreAdmin
 
+facture:
+    path:       /dashboard/my-project/{id}/facture
+    controller: App\Controller\DashboardController::facture
+
 logout:
     path: /deconnexion 
