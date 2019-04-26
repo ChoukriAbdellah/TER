@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  ven. 26 avr. 2019 à 22:36
--- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.3.3
+-- Host: localhost
+-- Generation Time: Apr 26, 2019 at 12:29 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `TER`
+-- Database: `TER`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `charpente`
+-- Table structure for table `charpente`
 --
 
 CREATE TABLE `charpente` (
@@ -37,7 +37,7 @@ CREATE TABLE `charpente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `charpente`
+-- Dumping data for table `charpente`
 --
 
 INSERT INTO `charpente` (`id`, `type_charpente`, `forme_charpente`, `nb_mc`, `prix`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `charpente` (`id`, `type_charpente`, `forme_charpente`, `nb_mc`, `pr
 -- --------------------------------------------------------
 
 --
--- Structure de la table `climatisation`
+-- Table structure for table `climatisation`
 --
 
 CREATE TABLE `climatisation` (
@@ -58,7 +58,7 @@ CREATE TABLE `climatisation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `climatisation`
+-- Dumping data for table `climatisation`
 --
 
 INSERT INTO `climatisation` (`id`, `type_climatisation`, `prix`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `climatisation` (`id`, `type_climatisation`, `prix`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cloison`
+-- Table structure for table `cloison`
 --
 
 CREATE TABLE `cloison` (
@@ -85,7 +85,7 @@ CREATE TABLE `cloison` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `cloison`
+-- Dumping data for table `cloison`
 --
 
 INSERT INTO `cloison` (`id`, `prix`, `cloisons_amovibles`, `cloisons_seches`, `cloisons_pieces_humides`, `cloisons_verre`, `cloisons_japonaises`, `claustra_interieur`, `cloisons_vitrees_style_atelier`, `cloisons_vegetales`) VALUES
@@ -95,7 +95,7 @@ INSERT INTO `cloison` (`id`, `prix`, `cloisons_amovibles`, `cloisons_seches`, `c
 -- --------------------------------------------------------
 
 --
--- Structure de la table `domotique`
+-- Table structure for table `domotique`
 --
 
 CREATE TABLE `domotique` (
@@ -109,7 +109,7 @@ CREATE TABLE `domotique` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `domotique`
+-- Dumping data for table `domotique`
 --
 
 INSERT INTO `domotique` (`id`, `regularisation_chauffage`, `eclairage_auto`, `ouverture_fermeture_auto`, `autonomie_eau`, `prix`, `detecteur_et_alarme`) VALUES
@@ -119,7 +119,7 @@ INSERT INTO `domotique` (`id`, `regularisation_chauffage`, `eclairage_auto`, `ou
 -- --------------------------------------------------------
 
 --
--- Structure de la table `electricite`
+-- Table structure for table `electricite`
 --
 
 CREATE TABLE `electricite` (
@@ -134,7 +134,7 @@ CREATE TABLE `electricite` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `electricite`
+-- Dumping data for table `electricite`
 --
 
 INSERT INTO `electricite` (`id`, `prix`, `nb_chauffage`, `nb_interrupteur`, `nb_sortie_lumieres`, `nb_prise_electrique`, `nb_volet_roulant`, `dimension_cable`) VALUES
@@ -144,7 +144,7 @@ INSERT INTO `electricite` (`id`, `prix`, `nb_chauffage`, `nb_interrupteur`, `nb_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `elevation`
+-- Table structure for table `elevation`
 --
 
 CREATE TABLE `elevation` (
@@ -161,7 +161,7 @@ CREATE TABLE `elevation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `elevation`
+-- Dumping data for table `elevation`
 --
 
 INSERT INTO `elevation` (`id`, `nb_poutres`, `longueur_poutre`, `taille_poutre`, `type_materiaux_mur`, `hauteur_mur`, `nombre_fenetre`, `type_fenetre`, `type_linteaux`, `prix`) VALUES
@@ -171,7 +171,7 @@ INSERT INTO `elevation` (`id`, `nb_poutres`, `longueur_poutre`, `taille_poutre`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `enduit`
+-- Table structure for table `enduit`
 --
 
 CREATE TABLE `enduit` (
@@ -181,10 +181,19 @@ CREATE TABLE `enduit` (
   `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `enduit`
+--
+
+INSERT INTO `enduit` (`id`, `nb_couches`, `surface`, `prix`) VALUES
+(1, 3, 25, 187),
+(2, 3, 25, 187),
+(3, 4, 120, 1200);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `escaliers`
+-- Table structure for table `escaliers`
 --
 
 CREATE TABLE `escaliers` (
@@ -196,7 +205,7 @@ CREATE TABLE `escaliers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `escaliers`
+-- Dumping data for table `escaliers`
 --
 
 INSERT INTO `escaliers` (`id`, `type_escalier`, `materiaux`, `dimensions`, `prix`) VALUES
@@ -207,7 +216,7 @@ INSERT INTO `escaliers` (`id`, `type_escalier`, `materiaux`, `dimensions`, `prix
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etude_sol`
+-- Table structure for table `etude_sol`
 --
 
 CREATE TABLE `etude_sol` (
@@ -217,7 +226,7 @@ CREATE TABLE `etude_sol` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `etude_sol`
+-- Dumping data for table `etude_sol`
 --
 
 INSERT INTO `etude_sol` (`id`, `type_sol`, `prix`) VALUES
@@ -233,7 +242,7 @@ INSERT INTO `etude_sol` (`id`, `type_sol`, `prix`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `evacuation_fumees`
+-- Table structure for table `evacuation_fumees`
 --
 
 CREATE TABLE `evacuation_fumees` (
@@ -245,7 +254,7 @@ CREATE TABLE `evacuation_fumees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `evacuation_fumees`
+-- Dumping data for table `evacuation_fumees`
 --
 
 INSERT INTO `evacuation_fumees` (`id`, `materieau_utilise`, `forme`, `type_cheminee`, `prix`) VALUES
@@ -255,7 +264,7 @@ INSERT INTO `evacuation_fumees` (`id`, `materieau_utilise`, `forme`, `type_chemi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `excavation`
+-- Table structure for table `excavation`
 --
 
 CREATE TABLE `excavation` (
@@ -271,7 +280,7 @@ CREATE TABLE `excavation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `excavation`
+-- Dumping data for table `excavation`
 --
 
 INSERT INTO `excavation` (`id`, `type_terrassement`, `materiel_utilise`, `cout_sol_plan`, `murs_peripherique`, `murs_refont`, `profondeur_fouille`, `largeur_fouille`, `prix`) VALUES
@@ -282,7 +291,7 @@ INSERT INTO `excavation` (`id`, `type_terrassement`, `materiel_utilise`, `cout_s
 -- --------------------------------------------------------
 
 --
--- Structure de la table `fondation`
+-- Table structure for table `fondation`
 --
 
 CREATE TABLE `fondation` (
@@ -292,7 +301,7 @@ CREATE TABLE `fondation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `fondation`
+-- Dumping data for table `fondation`
 --
 
 INSERT INTO `fondation` (`id`, `sismicite`, `prix`) VALUES
@@ -302,7 +311,7 @@ INSERT INTO `fondation` (`id`, `sismicite`, `prix`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `gros_oeuvre`
+-- Table structure for table `gros_oeuvre`
 --
 
 CREATE TABLE `gros_oeuvre` (
@@ -321,7 +330,7 @@ CREATE TABLE `gros_oeuvre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `gros_oeuvre`
+-- Dumping data for table `gros_oeuvre`
 --
 
 INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavation`, `id_fondations`, `id_soubassement`, `id_vrd`, `id_plancher`, `id_elevation`, `id_charpente`, `id_toiture`, `id_menuiseries_ext`) VALUES
@@ -343,7 +352,7 @@ INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavati
 -- --------------------------------------------------------
 
 --
--- Structure de la table `isolation`
+-- Table structure for table `isolation`
 --
 
 CREATE TABLE `isolation` (
@@ -353,10 +362,21 @@ CREATE TABLE `isolation` (
   `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `isolation`
+--
+
+INSERT INTO `isolation` (`id`, `surface_thermique`, `surface_phonique`, `prix`) VALUES
+(1, 25, 190, 125),
+(2, 25, 190, 125),
+(3, 25, 190, 1455),
+(4, 50, 26, 432),
+(5, 80, 70, 890);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `menuiserie`
+-- Table structure for table `menuiserie`
 --
 
 CREATE TABLE `menuiserie` (
@@ -368,7 +388,7 @@ CREATE TABLE `menuiserie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `menuiserie`
+-- Dumping data for table `menuiserie`
 --
 
 INSERT INTO `menuiserie` (`id`, `dimensions_bois_rouge`, `dimensions_bois_hetre`, `dimensions_aluminium`, `prix`) VALUES
@@ -378,7 +398,7 @@ INSERT INTO `menuiserie` (`id`, `dimensions_bois_rouge`, `dimensions_bois_hetre`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `menuiseries_int`
+-- Table structure for table `menuiseries_int`
 --
 
 CREATE TABLE `menuiseries_int` (
@@ -398,7 +418,7 @@ CREATE TABLE `menuiseries_int` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `menuiseries_int`
+-- Dumping data for table `menuiseries_int`
 --
 
 INSERT INTO `menuiseries_int` (`id`, `portes_pleines`, `portes_vitrees`, `portes_battantes`, `portes_coulissantes`, `portes_placard_pliantes`, `portes_placard_battantes`, `portes_placard_coulissantes`, `materieau_rampes`, `taille_rampes`, `materieau_balustrades`, `taille_balustrades`, `prix`) VALUES
@@ -408,7 +428,7 @@ INSERT INTO `menuiseries_int` (`id`, `portes_pleines`, `portes_vitrees`, `portes
 -- --------------------------------------------------------
 
 --
--- Structure de la table `migration_versions`
+-- Table structure for table `migration_versions`
 --
 
 CREATE TABLE `migration_versions` (
@@ -417,7 +437,7 @@ CREATE TABLE `migration_versions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `migration_versions`
+-- Dumping data for table `migration_versions`
 --
 
 INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
@@ -451,7 +471,7 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plancher`
+-- Table structure for table `plancher`
 --
 
 CREATE TABLE `plancher` (
@@ -464,7 +484,7 @@ CREATE TABLE `plancher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `plancher`
+-- Dumping data for table `plancher`
 --
 
 INSERT INTO `plancher` (`id`, `plancher_vs`, `plancher_etage`, `plancher_terrasse`, `longueur_entrevous`, `prix`) VALUES
@@ -475,7 +495,7 @@ INSERT INTO `plancher` (`id`, `plancher_vs`, `plancher_etage`, `plancher_terrass
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plomberie`
+-- Table structure for table `plomberie`
 --
 
 CREATE TABLE `plomberie` (
@@ -492,7 +512,7 @@ CREATE TABLE `plomberie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `plomberie`
+-- Dumping data for table `plomberie`
 --
 
 INSERT INTO `plomberie` (`id`, `nb_metre_tuyau`, `type_tuyau`, `nb_robinets`, `nb_wc`, `type_chauffage_eau`, `type_compteur`, `nb_baignoire`, `nb_douche`, `prix`) VALUES
@@ -502,7 +522,7 @@ INSERT INTO `plomberie` (`id`, `nb_metre_tuyau`, `type_tuyau`, `nb_robinets`, `n
 -- --------------------------------------------------------
 
 --
--- Structure de la table `preparation_et_acces`
+-- Table structure for table `preparation_et_acces`
 --
 
 CREATE TABLE `preparation_et_acces` (
@@ -528,7 +548,7 @@ CREATE TABLE `preparation_et_acces` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `preparation_et_acces`
+-- Dumping data for table `preparation_et_acces`
 --
 
 INSERT INTO `preparation_et_acces` (`id`, `nb_pins`, `nb_sapins`, `nb_bouleaux`, `nb_chenes`, `nb_erables`, `nb_frenes`, `nb_noyers`, `nb_autres`, `taille_pins`, `taille_sapins`, `taille_bouleaux`, `taille_chenes`, `taille_erables`, `taille_frenes`, `taille_noyers`, `taille_autres`, `position_terrain`, `prix`) VALUES
@@ -541,7 +561,7 @@ INSERT INTO `preparation_et_acces` (`id`, `nb_pins`, `nb_sapins`, `nb_bouleaux`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `prix`
+-- Table structure for table `prix`
 --
 
 CREATE TABLE `prix` (
@@ -551,12 +571,11 @@ CREATE TABLE `prix` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `prix`
+-- Dumping data for table `prix`
 --
 
 INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
-(1, 'ARGILEUX', 1000),
-(2, 'CALCAIRE', 1200),
+(1, 'ARGILEUX', 100),
 (3, 'HUMIFERE', 1100),
 (4, 'LIMONEUX', 1300),
 (5, 'SABLEUX', 950),
@@ -728,12 +747,13 @@ INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
 (177, 'revet_clas', 15),
 (178, 'revet_motif', 22),
 (179, 'vide-sanitaire', 500),
-(180, 'sous-sol', 90);
+(180, 'sous-sol', 90),
+(181, 'CALCAIRE', 1200);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `projet`
+-- Table structure for table `projet`
 --
 
 CREATE TABLE `projet` (
@@ -745,7 +765,7 @@ CREATE TABLE `projet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `projet`
+-- Dumping data for table `projet`
 --
 
 INSERT INTO `projet` (`id`, `id_proprio`, `id_gros_oeuvre`, `id_second_oeuvre`, `nom`) VALUES
@@ -773,7 +793,7 @@ CREATE TABLE `remove_user` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `revetement`
+-- Table structure for table `revetement`
 --
 
 CREATE TABLE `revetement` (
@@ -783,10 +803,18 @@ CREATE TABLE `revetement` (
   `surf_revet_motif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `revetement`
+--
+
+INSERT INTO `revetement` (`id`, `prix`, `surf_revet_classique`, `surf_revet_motif`) VALUES
+(1, 1695, 25, 60),
+(2, 2435, 45, 80);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `second_oeuvre`
+-- Table structure for table `second_oeuvre`
 --
 
 CREATE TABLE `second_oeuvre` (
@@ -806,7 +834,7 @@ CREATE TABLE `second_oeuvre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `second_oeuvre`
+-- Dumping data for table `second_oeuvre`
 --
 
 INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revetement`, `id_cloisons`, `id_evacuation`, `id_menuiseries_int`, `id_escaliers`, `id_plomberie`, `id_electricite`, `id_ventilation`, `id_climatisation`, `id_domotique`) VALUES
@@ -828,7 +856,7 @@ INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revet
 -- --------------------------------------------------------
 
 --
--- Structure de la table `soubassement`
+-- Table structure for table `soubassement`
 --
 
 CREATE TABLE `soubassement` (
@@ -842,7 +870,7 @@ CREATE TABLE `soubassement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `soubassement`
+-- Dumping data for table `soubassement`
 --
 
 INSERT INTO `soubassement` (`id`, `type_soubassement`, `materiel_utilise`, `prix`, `tractopelle`, `camion_benne`, `betonniere`) VALUES
@@ -854,7 +882,7 @@ INSERT INTO `soubassement` (`id`, `type_soubassement`, `materiel_utilise`, `prix
 -- --------------------------------------------------------
 
 --
--- Structure de la table `toiture`
+-- Table structure for table `toiture`
 --
 
 CREATE TABLE `toiture` (
@@ -866,7 +894,7 @@ CREATE TABLE `toiture` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `toiture`
+-- Dumping data for table `toiture`
 --
 
 INSERT INTO `toiture` (`id`, `type_toit`, `deg_pente`, `renforcement`, `prix`) VALUES
@@ -876,7 +904,7 @@ INSERT INTO `toiture` (`id`, `type_toit`, `deg_pente`, `renforcement`, `prix`) V
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -892,7 +920,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`, `date_inscription`, `password_requested_at`, `token`) VALUES
@@ -906,7 +934,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ventilation`
+-- Table structure for table `ventilation`
 --
 
 CREATE TABLE `ventilation` (
@@ -918,7 +946,7 @@ CREATE TABLE `ventilation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `ventilation`
+-- Dumping data for table `ventilation`
 --
 
 INSERT INTO `ventilation` (`id`, `type_ventilation`, `surface_chambre_salon`, `surface_cuisine_wc`, `prix`) VALUES
@@ -928,7 +956,7 @@ INSERT INTO `ventilation` (`id`, `type_ventilation`, `surface_chambre_salon`, `s
 -- --------------------------------------------------------
 
 --
--- Structure de la table `vrd`
+-- Table structure for table `vrd`
 --
 
 CREATE TABLE `vrd` (
@@ -944,7 +972,7 @@ CREATE TABLE `vrd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `vrd`
+-- Dumping data for table `vrd`
 --
 
 INSERT INTO `vrd` (`id`, `distance_eau_potable`, `pompe_relevage`, `fosse_septique`, `micro_station`, `etude_hydrogeologique`, `distance_electricite`, `distance_telephonique`, `prix`) VALUES
@@ -952,173 +980,167 @@ INSERT INTO `vrd` (`id`, `distance_eau_potable`, `pompe_relevage`, `fosse_septiq
 (2, 50, 1, 0, 1, 1, 50, 50, 52500);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `charpente`
+-- Indexes for table `charpente`
 --
 ALTER TABLE `charpente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `climatisation`
+-- Indexes for table `climatisation`
 --
 ALTER TABLE `climatisation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `cloison`
+-- Indexes for table `cloison`
 --
 ALTER TABLE `cloison`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `domotique`
+-- Indexes for table `domotique`
 --
 ALTER TABLE `domotique`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `electricite`
+-- Indexes for table `electricite`
 --
 ALTER TABLE `electricite`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `elevation`
+-- Indexes for table `elevation`
 --
 ALTER TABLE `elevation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `enduit`
+-- Indexes for table `enduit`
 --
 ALTER TABLE `enduit`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `escaliers`
+-- Indexes for table `escaliers`
 --
 ALTER TABLE `escaliers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `etude_sol`
+-- Indexes for table `etude_sol`
 --
 ALTER TABLE `etude_sol`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `evacuation_fumees`
+-- Indexes for table `evacuation_fumees`
 --
 ALTER TABLE `evacuation_fumees`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `excavation`
+-- Indexes for table `excavation`
 --
 ALTER TABLE `excavation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `fondation`
+-- Indexes for table `fondation`
 --
 ALTER TABLE `fondation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `gros_oeuvre`
+-- Indexes for table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `isolation`
+-- Indexes for table `isolation`
 --
 ALTER TABLE `isolation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `menuiserie`
+-- Indexes for table `menuiserie`
 --
 ALTER TABLE `menuiserie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `menuiseries_int`
+-- Indexes for table `menuiseries_int`
 --
 ALTER TABLE `menuiseries_int`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `migration_versions`
+-- Indexes for table `migration_versions`
 --
 ALTER TABLE `migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
--- Index pour la table `plancher`
+-- Indexes for table `plancher`
 --
 ALTER TABLE `plancher`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `plomberie`
+-- Indexes for table `plomberie`
 --
 ALTER TABLE `plomberie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `preparation_et_acces`
+-- Indexes for table `preparation_et_acces`
 --
 ALTER TABLE `preparation_et_acces`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `prix`
+-- Indexes for table `prix`
 --
 ALTER TABLE `prix`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `projet`
+-- Indexes for table `projet`
 --
 ALTER TABLE `projet`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `remove_user`
---
-ALTER TABLE `remove_user`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `revetement`
+-- Indexes for table `revetement`
 --
 ALTER TABLE `revetement`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `second_oeuvre`
+-- Indexes for table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `soubassement`
+-- Indexes for table `soubassement`
 --
 ALTER TABLE `soubassement`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `toiture`
+-- Indexes for table `toiture`
 --
 ALTER TABLE `toiture`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -1126,143 +1148,143 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
--- Index pour la table `ventilation`
+-- Indexes for table `ventilation`
 --
 ALTER TABLE `ventilation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `vrd`
+-- Indexes for table `vrd`
 --
 ALTER TABLE `vrd`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `charpente`
+-- AUTO_INCREMENT for table `charpente`
 --
 ALTER TABLE `charpente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `climatisation`
+-- AUTO_INCREMENT for table `climatisation`
 --
 ALTER TABLE `climatisation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `cloison`
+-- AUTO_INCREMENT for table `cloison`
 --
 ALTER TABLE `cloison`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `domotique`
+-- AUTO_INCREMENT for table `domotique`
 --
 ALTER TABLE `domotique`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `electricite`
+-- AUTO_INCREMENT for table `electricite`
 --
 ALTER TABLE `electricite`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `elevation`
+-- AUTO_INCREMENT for table `elevation`
 --
 ALTER TABLE `elevation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `enduit`
+-- AUTO_INCREMENT for table `enduit`
 --
 ALTER TABLE `enduit`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `escaliers`
+-- AUTO_INCREMENT for table `escaliers`
 --
 ALTER TABLE `escaliers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `etude_sol`
+-- AUTO_INCREMENT for table `etude_sol`
 --
 ALTER TABLE `etude_sol`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT pour la table `evacuation_fumees`
+-- AUTO_INCREMENT for table `evacuation_fumees`
 --
 ALTER TABLE `evacuation_fumees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `excavation`
+-- AUTO_INCREMENT for table `excavation`
 --
 ALTER TABLE `excavation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `fondation`
+-- AUTO_INCREMENT for table `fondation`
 --
 ALTER TABLE `fondation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `gros_oeuvre`
+-- AUTO_INCREMENT for table `gros_oeuvre`
 --
 ALTER TABLE `gros_oeuvre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT pour la table `isolation`
+-- AUTO_INCREMENT for table `isolation`
 --
 ALTER TABLE `isolation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `menuiserie`
+-- AUTO_INCREMENT for table `menuiserie`
 --
 ALTER TABLE `menuiserie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `menuiseries_int`
+-- AUTO_INCREMENT for table `menuiseries_int`
 --
 ALTER TABLE `menuiseries_int`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `plancher`
+-- AUTO_INCREMENT for table `plancher`
 --
 ALTER TABLE `plancher`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `plomberie`
+-- AUTO_INCREMENT for table `plomberie`
 --
 ALTER TABLE `plomberie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `preparation_et_acces`
+-- AUTO_INCREMENT for table `preparation_et_acces`
 --
 ALTER TABLE `preparation_et_acces`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `prix`
+-- AUTO_INCREMENT for table `prix`
 --
 ALTER TABLE `prix`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
--- AUTO_INCREMENT pour la table `projet`
+-- AUTO_INCREMENT for table `projet`
 --
 ALTER TABLE `projet`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
@@ -1274,43 +1296,43 @@ ALTER TABLE `remove_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `revetement`
+-- AUTO_INCREMENT for table `revetement`
 --
 ALTER TABLE `revetement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `second_oeuvre`
+-- AUTO_INCREMENT for table `second_oeuvre`
 --
 ALTER TABLE `second_oeuvre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT pour la table `soubassement`
+-- AUTO_INCREMENT for table `soubassement`
 --
 ALTER TABLE `soubassement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pour la table `toiture`
+-- AUTO_INCREMENT for table `toiture`
 --
 ALTER TABLE `toiture`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT pour la table `ventilation`
+-- AUTO_INCREMENT for table `ventilation`
 --
 ALTER TABLE `ventilation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `vrd`
+-- AUTO_INCREMENT for table `vrd`
 --
 ALTER TABLE `vrd`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
