@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  mer. 24 avr. 2019 à 22:36
--- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.3.3
+-- Host: localhost
+-- Generation Time: Apr 26, 2019 at 11:36 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,28 +19,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  'TER'
+-- Database: `TER`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'charpente'
+-- Table structure for table `charpente`
 --
 
-CREATE TABLE 'charpente' (
-  'id' int(11) NOT NULL,
-  'type_charpente' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'forme_charpente' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'nb_mc' double NOT NULL,
-  'prix' float NOT NULL
+CREATE TABLE `charpente` (
+  `id` int(11) NOT NULL,
+  `type_charpente` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `forme_charpente` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nb_mc` double NOT NULL,
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'charpente'
+-- Dumping data for table `charpente`
 --
 
-INSERT INTO 'charpente' ('id', 'type_charpente', 'forme_charpente', 'nb_mc', 'prix') VALUES
+INSERT INTO `charpente` (`id`, `type_charpente`, `forme_charpente`, `nb_mc`, `prix`) VALUES
 (1, 'METALLIQUE', 'L', 40, 0),
 (2, 'METALLIQUE', 'L', 20, 0),
 (3, 'charpente_metallique', 'charpente_4_pentes', 25, 1295);
@@ -48,144 +48,144 @@ INSERT INTO 'charpente' ('id', 'type_charpente', 'forme_charpente', 'nb_mc', 'pr
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'climatisation'
+-- Table structure for table `climatisation`
 --
 
-CREATE TABLE 'climatisation' (
-  'id' int(11) NOT NULL,
-  'type_climatisation' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `climatisation` (
+  `id` int(11) NOT NULL,
+  `type_climatisation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'climatisation'
+-- Dumping data for table `climatisation`
 --
 
-INSERT INTO 'climatisation' ('id', 'type_climatisation', 'prix') VALUES
+INSERT INTO `climatisation` (`id`, `type_climatisation`, `prix`) VALUES
 (1, 'Monobloc_windows', 600),
 (2, 'split_mural', 1000);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'cloison'
+-- Table structure for table `cloison`
 --
 
-CREATE TABLE 'cloison' (
-  'id' int(11) NOT NULL,
-  'prix' double NOT NULL,
-  'cloisons_amovibles' double DEFAULT NULL,
-  'cloisons_seches' double DEFAULT NULL,
-  'cloisons_pieces_humides' double DEFAULT NULL,
-  'cloisons_verre' double DEFAULT NULL,
-  'cloisons_japonaises' double DEFAULT NULL,
-  'claustra_interieur' double DEFAULT NULL,
-  'cloisons_vitrees_style_atelier' double DEFAULT NULL,
-  'cloisons_vegetales' double DEFAULT NULL
+CREATE TABLE `cloison` (
+  `id` int(11) NOT NULL,
+  `prix` double NOT NULL,
+  `cloisons_amovibles` double DEFAULT NULL,
+  `cloisons_seches` double DEFAULT NULL,
+  `cloisons_pieces_humides` double DEFAULT NULL,
+  `cloisons_verre` double DEFAULT NULL,
+  `cloisons_japonaises` double DEFAULT NULL,
+  `claustra_interieur` double DEFAULT NULL,
+  `cloisons_vitrees_style_atelier` double DEFAULT NULL,
+  `cloisons_vegetales` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'cloison'
+-- Dumping data for table `cloison`
 --
 
-INSERT INTO 'cloison' ('id', 'prix', 'cloisons_amovibles', 'cloisons_seches', 'cloisons_pieces_humides', 'cloisons_verre', 'cloisons_japonaises', 'claustra_interieur', 'cloisons_vitrees_style_atelier', 'cloisons_vegetales') VALUES
+INSERT INTO `cloison` (`id`, `prix`, `cloisons_amovibles`, `cloisons_seches`, `cloisons_pieces_humides`, `cloisons_verre`, `cloisons_japonaises`, `claustra_interieur`, `cloisons_vitrees_style_atelier`, `cloisons_vegetales`) VALUES
 (4, 4180.05, 5, 14, 18, 17, 25, 0, 0, 0),
 (5, 3451.35, 0, 8, 0, 20, 15, 0, 17, 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'domotique'
+-- Table structure for table `domotique`
 --
 
-CREATE TABLE 'domotique' (
-  'id' int(11) NOT NULL,
-  'regularisation_chauffage' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'eclairage_auto' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'ouverture_fermeture_auto' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'autonomie_eau' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'prix' double NOT NULL,
-  'detecteur_et_alarme' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+CREATE TABLE `domotique` (
+  `id` int(11) NOT NULL,
+  `regularisation_chauffage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `eclairage_auto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ouverture_fermeture_auto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `autonomie_eau` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prix` double NOT NULL,
+  `detecteur_et_alarme` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'domotique'
+-- Dumping data for table `domotique`
 --
 
-INSERT INTO 'domotique' ('id', 'regularisation_chauffage', 'eclairage_auto', 'ouverture_fermeture_auto', 'autonomie_eau', 'prix', 'detecteur_et_alarme') VALUES
+INSERT INTO `domotique` (`id`, `regularisation_chauffage`, `eclairage_auto`, `ouverture_fermeture_auto`, `autonomie_eau`, `prix`, `detecteur_et_alarme`) VALUES
 (1, '', '1', '1', '', 3899, '1'),
 (2, '1', '', '', '1', 2799, '1');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'electricite'
+-- Table structure for table `electricite`
 --
 
-CREATE TABLE 'electricite' (
-  'id' int(11) NOT NULL,
-  'prix' double NOT NULL,
-  'nb_chauffage' int(11) NOT NULL,
-  'nb_interrupteur' int(11) NOT NULL,
-  'nb_sortie_lumieres' int(11) NOT NULL,
-  'nb_prise_electrique' int(11) NOT NULL,
-  'nb_volet_roulant' int(11) NOT NULL,
-  'dimension_cable' double NOT NULL
+CREATE TABLE `electricite` (
+  `id` int(11) NOT NULL,
+  `prix` double NOT NULL,
+  `nb_chauffage` int(11) NOT NULL,
+  `nb_interrupteur` int(11) NOT NULL,
+  `nb_sortie_lumieres` int(11) NOT NULL,
+  `nb_prise_electrique` int(11) NOT NULL,
+  `nb_volet_roulant` int(11) NOT NULL,
+  `dimension_cable` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'electricite'
+-- Dumping data for table `electricite`
 --
 
-INSERT INTO 'electricite' ('id', 'prix', 'nb_chauffage', 'nb_interrupteur', 'nb_sortie_lumieres', 'nb_prise_electrique', 'nb_volet_roulant', 'dimension_cable') VALUES
+INSERT INTO `electricite` (`id`, `prix`, `nb_chauffage`, `nb_interrupteur`, `nb_sortie_lumieres`, `nb_prise_electrique`, `nb_volet_roulant`, `dimension_cable`) VALUES
 (1, 5853, 2, 15, 8, 4, 10, 15),
 (2, 7819, 5, 12, 7, 8, 7, 10);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'elevation'
+-- Table structure for table `elevation`
 --
 
-CREATE TABLE 'elevation' (
-  'id' int(11) NOT NULL,
-  'nb_poutres' int(11) NOT NULL,
-  'longueur_poutre' double NOT NULL,
-  'taille_poutre' double NOT NULL,
-  'type_materiaux_mur' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'hauteur_mur' double NOT NULL,
-  'nombre_fenetre' int(11) NOT NULL,
-  'type_fenetre' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'type_linteaux' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'prix' float NOT NULL
+CREATE TABLE `elevation` (
+  `id` int(11) NOT NULL,
+  `nb_poutres` int(11) NOT NULL,
+  `longueur_poutre` double NOT NULL,
+  `taille_poutre` double NOT NULL,
+  `type_materiaux_mur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hauteur_mur` double NOT NULL,
+  `nombre_fenetre` int(11) NOT NULL,
+  `type_fenetre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_linteaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'elevation'
+-- Dumping data for table `elevation`
 --
 
-INSERT INTO 'elevation' ('id', 'nb_poutres', 'longueur_poutre', 'taille_poutre', 'type_materiaux_mur', 'hauteur_mur', 'nombre_fenetre', 'type_fenetre', 'type_linteaux', 'prix') VALUES
+INSERT INTO `elevation` (`id`, `nb_poutres`, `longueur_poutre`, `taille_poutre`, `type_materiaux_mur`, `hauteur_mur`, `nombre_fenetre`, `type_fenetre`, `type_linteaux`, `prix`) VALUES
 (2, 10, 10, 10, 'Stuporeux', 10, 4, 'fgfdgfd', 'gdfgfdg', 0),
 (3, 15, 10, 10, 'Bloc_pense', 10, 4, 'fenetre_battante', '3', 268);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'enduit'
+-- Table structure for table `enduit`
 --
 
-CREATE TABLE 'enduit' (
-  'id' int(11) NOT NULL,
-  'nb_couches' int(11) NOT NULL,
-  'surface' int(11) NOT NULL,
-  'prix' int(11) NOT NULL
+CREATE TABLE `enduit` (
+  `id` int(11) NOT NULL,
+  `nb_couches` int(11) NOT NULL,
+  `surface` int(11) NOT NULL,
+  `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'enduit'
+-- Dumping data for table `enduit`
 --
 
-INSERT INTO 'enduit' ('id', 'nb_couches', 'surface', 'prix') VALUES
+INSERT INTO `enduit` (`id`, `nb_couches`, `surface`, `prix`) VALUES
 (1, 3, 25, 187),
 (2, 3, 25, 187),
 (3, 4, 120, 1200);
@@ -193,22 +193,22 @@ INSERT INTO 'enduit' ('id', 'nb_couches', 'surface', 'prix') VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'escaliers'
+-- Table structure for table `escaliers`
 --
 
-CREATE TABLE 'escaliers' (
-  'id' int(11) NOT NULL,
-  'type_escalier' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'materiaux' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'dimensions' double NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `escaliers` (
+  `id` int(11) NOT NULL,
+  `type_escalier` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `materiaux` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dimensions` double NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'escaliers'
+-- Dumping data for table `escaliers`
 --
 
-INSERT INTO 'escaliers' ('id', 'type_escalier', 'materiaux', 'dimensions', 'prix') VALUES
+INSERT INTO `escaliers` (`id`, `type_escalier`, `materiaux`, `dimensions`, `prix`) VALUES
 (1, 'DROIT', 'BOISTENDRE', 10, 510),
 (2, 'DROIT', 'BOISTENDRE', 1445, 73695),
 (3, 'HELIDOIDAL', 'BOISEXOTIQUE', 15, 1065);
@@ -216,20 +216,20 @@ INSERT INTO 'escaliers' ('id', 'type_escalier', 'materiaux', 'dimensions', 'prix
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'etude_sol'
+-- Table structure for table `etude_sol`
 --
 
-CREATE TABLE 'etude_sol' (
-  'id' int(11) NOT NULL,
-  'type_sol' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `etude_sol` (
+  `id` int(11) NOT NULL,
+  `type_sol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'etude_sol'
+-- Dumping data for table `etude_sol`
 --
 
-INSERT INTO 'etude_sol' ('id', 'type_sol', 'prix') VALUES
+INSERT INTO `etude_sol` (`id`, `type_sol`, `prix`) VALUES
 (5, 'ARGILEUX', 1000),
 (6, 'ARGILEUX', 1000),
 (7, 'ARGILEUX', 1000),
@@ -239,48 +239,48 @@ INSERT INTO 'etude_sol' ('id', 'type_sol', 'prix') VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'evacuation_fumees'
+-- Table structure for table `evacuation_fumees`
 --
 
-CREATE TABLE 'evacuation_fumees' (
-  'id' int(11) NOT NULL,
-  'materieau_utilise' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'forme' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'type_cheminee' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `evacuation_fumees` (
+  `id` int(11) NOT NULL,
+  `materieau_utilise` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `forme` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_cheminee` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'evacuation_fumees'
+-- Dumping data for table `evacuation_fumees`
 --
 
-INSERT INTO 'evacuation_fumees' ('id', 'materieau_utilise', 'forme', 'type_cheminee', 'prix') VALUES
+INSERT INTO `evacuation_fumees` (`id`, `materieau_utilise`, `forme`, `type_cheminee`, `prix`) VALUES
 (2, 'CHEMINEE_CERAMIQUE', 'CHEMINEE_SUSPENDUE', 'CHEMINEE_4_FACES', 3310),
 (3, 'CHEMINEE_CERAMIQUE', 'CHEMINEE_SUSPENDUE', 'CHEMINEE_PANORAMIQUE', 3360);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'excavation'
+-- Table structure for table `excavation`
 --
 
-CREATE TABLE 'excavation' (
-  'id' int(11) NOT NULL,
-  'type_terrassement' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'materiel_utilise' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'cout_sol_plan' double DEFAULT NULL,
-  'murs_peripherique' double DEFAULT NULL,
-  'murs_refont' double DEFAULT NULL,
-  'profondeur_fouille' double DEFAULT NULL,
-  'largeur_fouille' double DEFAULT NULL,
-  'prix' float NOT NULL
+CREATE TABLE `excavation` (
+  `id` int(11) NOT NULL,
+  `type_terrassement` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `materiel_utilise` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cout_sol_plan` double DEFAULT NULL,
+  `murs_peripherique` double DEFAULT NULL,
+  `murs_refont` double DEFAULT NULL,
+  `profondeur_fouille` double DEFAULT NULL,
+  `largeur_fouille` double DEFAULT NULL,
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'excavation'
+-- Dumping data for table `excavation`
 --
 
-INSERT INTO 'excavation' ('id', 'type_terrassement', 'materiel_utilise', 'cout_sol_plan', 'murs_peripherique', 'murs_refont', 'profondeur_fouille', 'largeur_fouille', 'prix') VALUES
+INSERT INTO `excavation` (`id`, `type_terrassement`, `materiel_utilise`, `cout_sol_plan`, `murs_peripherique`, `murs_refont`, `profondeur_fouille`, `largeur_fouille`, `prix`) VALUES
 (1, 'FILANTE', NULL, NULL, 10, 10, 10, 10, 0),
 (2, 'LONGRINES', NULL, NULL, 10, 10, 10, 10, 0),
 (3, 'LONGRINES', NULL, NULL, 10, 10, 15, 15, 1615);
@@ -288,49 +288,49 @@ INSERT INTO 'excavation' ('id', 'type_terrassement', 'materiel_utilise', 'cout_s
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'fondation'
+-- Table structure for table `fondation`
 --
 
-CREATE TABLE 'fondation' (
-  'id' int(11) NOT NULL,
-  'sismicite' tinyint(1) NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `fondation` (
+  `id` int(11) NOT NULL,
+  `sismicite` tinyint(1) NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'fondation'
+-- Dumping data for table `fondation`
 --
 
-INSERT INTO 'fondation' ('id', 'sismicite', 'prix') VALUES
+INSERT INTO `fondation` (`id`, `sismicite`, `prix`) VALUES
 (3, 1, 0),
 (4, 1, 1380);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'gros_oeuvre'
+-- Table structure for table `gros_oeuvre`
 --
 
-CREATE TABLE 'gros_oeuvre' (
-  'id' int(11) NOT NULL,
-  'id_etude_sol' int(11) DEFAULT NULL,
-  'id_prep_terrain' int(11) DEFAULT NULL,
-  'id_excavation' int(11) DEFAULT NULL,
-  'id_fondations' int(11) DEFAULT NULL,
-  'id_soubassement' int(11) DEFAULT NULL,
-  'id_vrd' int(11) DEFAULT NULL,
-  'id_plancher' int(11) DEFAULT NULL,
-  'id_elevation' int(11) DEFAULT NULL,
-  'id_charpente' int(11) DEFAULT NULL,
-  'id_toiture' int(11) DEFAULT NULL,
-  'id_menuiseries_ext' int(11) DEFAULT NULL
+CREATE TABLE `gros_oeuvre` (
+  `id` int(11) NOT NULL,
+  `id_etude_sol` int(11) DEFAULT NULL,
+  `id_prep_terrain` int(11) DEFAULT NULL,
+  `id_excavation` int(11) DEFAULT NULL,
+  `id_fondations` int(11) DEFAULT NULL,
+  `id_soubassement` int(11) DEFAULT NULL,
+  `id_vrd` int(11) DEFAULT NULL,
+  `id_plancher` int(11) DEFAULT NULL,
+  `id_elevation` int(11) DEFAULT NULL,
+  `id_charpente` int(11) DEFAULT NULL,
+  `id_toiture` int(11) DEFAULT NULL,
+  `id_menuiseries_ext` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'gros_oeuvre'
+-- Dumping data for table `gros_oeuvre`
 --
 
-INSERT INTO 'gros_oeuvre' ('id', 'id_etude_sol', 'id_prep_terrain', 'id_excavation', 'id_fondations', 'id_soubassement', 'id_vrd', 'id_plancher', 'id_elevation', 'id_charpente', 'id_toiture', 'id_menuiseries_ext') VALUES
+INSERT INTO `gros_oeuvre` (`id`, `id_etude_sol`, `id_prep_terrain`, `id_excavation`, `id_fondations`, `id_soubassement`, `id_vrd`, `id_plancher`, `id_elevation`, `id_charpente`, `id_toiture`, `id_menuiseries_ext`) VALUES
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
@@ -345,21 +345,21 @@ INSERT INTO 'gros_oeuvre' ('id', 'id_etude_sol', 'id_prep_terrain', 'id_excavati
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'isolation'
+-- Table structure for table `isolation`
 --
 
-CREATE TABLE 'isolation' (
-  'id' int(11) NOT NULL,
-  'surface_thermique' int(11) NOT NULL,
-  'surface_phonique' int(11) NOT NULL,
-  'prix' int(11) NOT NULL
+CREATE TABLE `isolation` (
+  `id` int(11) NOT NULL,
+  `surface_thermique` int(11) NOT NULL,
+  `surface_phonique` int(11) NOT NULL,
+  `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'isolation'
+-- Dumping data for table `isolation`
 --
 
-INSERT INTO 'isolation' ('id', 'surface_thermique', 'surface_phonique', 'prix') VALUES
+INSERT INTO `isolation` (`id`, `surface_thermique`, `surface_phonique`, `prix`) VALUES
 (1, 25, 190, 125),
 (2, 25, 190, 125),
 (3, 25, 190, 1455),
@@ -369,71 +369,71 @@ INSERT INTO 'isolation' ('id', 'surface_thermique', 'surface_phonique', 'prix') 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'menuiserie'
+-- Table structure for table `menuiserie`
 --
 
-CREATE TABLE 'menuiserie' (
-  'id' int(11) NOT NULL,
-  'dimensions_bois_rouge' int(11) NOT NULL,
-  'dimensions_bois_hetre' int(11) NOT NULL,
-  'dimensions_aluminium' int(11) NOT NULL,
-  'prix' int(11) NOT NULL
+CREATE TABLE `menuiserie` (
+  `id` int(11) NOT NULL,
+  `dimensions_bois_rouge` int(11) NOT NULL,
+  `dimensions_bois_hetre` int(11) NOT NULL,
+  `dimensions_aluminium` int(11) NOT NULL,
+  `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'menuiserie'
+-- Dumping data for table `menuiserie`
 --
 
-INSERT INTO 'menuiserie' ('id', 'dimensions_bois_rouge', 'dimensions_bois_hetre', 'dimensions_aluminium', 'prix') VALUES
+INSERT INTO `menuiserie` (`id`, `dimensions_bois_rouge`, `dimensions_bois_hetre`, `dimensions_aluminium`, `prix`) VALUES
 (1, 15, 15, 15, 525),
 (2, 10, 20, 15, 560);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'menuiseries_int'
+-- Table structure for table `menuiseries_int`
 --
 
-CREATE TABLE 'menuiseries_int' (
-  'id' int(11) NOT NULL,
-  'portes_pleines' int(11) NOT NULL,
-  'portes_vitrees' int(11) NOT NULL,
-  'portes_battantes' int(11) NOT NULL,
-  'portes_coulissantes' int(11) NOT NULL,
-  'portes_placard_pliantes' int(11) NOT NULL,
-  'portes_placard_battantes' int(11) NOT NULL,
-  'portes_placard_coulissantes' int(11) NOT NULL,
-  'materieau_rampes' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'taille_rampes' double NOT NULL,
-  'materieau_balustrades' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'taille_balustrades' double NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `menuiseries_int` (
+  `id` int(11) NOT NULL,
+  `portes_pleines` int(11) NOT NULL,
+  `portes_vitrees` int(11) NOT NULL,
+  `portes_battantes` int(11) NOT NULL,
+  `portes_coulissantes` int(11) NOT NULL,
+  `portes_placard_pliantes` int(11) NOT NULL,
+  `portes_placard_battantes` int(11) NOT NULL,
+  `portes_placard_coulissantes` int(11) NOT NULL,
+  `materieau_rampes` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `taille_rampes` double NOT NULL,
+  `materieau_balustrades` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `taille_balustrades` double NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'menuiseries_int'
+-- Dumping data for table `menuiseries_int`
 --
 
-INSERT INTO 'menuiseries_int' ('id', 'portes_pleines', 'portes_vitrees', 'portes_battantes', 'portes_coulissantes', 'portes_placard_pliantes', 'portes_placard_battantes', 'portes_placard_coulissantes', 'materieau_rampes', 'taille_rampes', 'materieau_balustrades', 'taille_balustrades', 'prix') VALUES
+INSERT INTO `menuiseries_int` (`id`, `portes_pleines`, `portes_vitrees`, `portes_battantes`, `portes_coulissantes`, `portes_placard_pliantes`, `portes_placard_battantes`, `portes_placard_coulissantes`, `materieau_rampes`, `taille_rampes`, `materieau_balustrades`, `taille_balustrades`, `prix`) VALUES
 (1, 4, 2, 1, 1, 0, 0, 4, 'RAMPE_CERAMIQUE', 12, 'BALUSTRADE_CERAMIQUE', 6, 6910),
 (2, 1, 0, 5, 4, 4, 0, 0, 'RAMPE_MARBRE', 8, 'BALUSTRADE_MARBRE', 8, 7480);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'migration_versions'
+-- Table structure for table `migration_versions`
 --
 
-CREATE TABLE 'migration_versions' (
-  'version' varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'executed_at' datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)'
+CREATE TABLE `migration_versions` (
+  `version` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `executed_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'migration_versions'
+-- Dumping data for table `migration_versions`
 --
 
-INSERT INTO 'migration_versions' ('version', 'executed_at') VALUES
+INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20190311184326', '2019-03-20 18:22:33'),
 ('20190320182218', '2019-03-20 18:22:33'),
 ('20190325212809', '2019-03-25 21:28:58'),
@@ -456,28 +456,32 @@ INSERT INTO 'migration_versions' ('version', 'executed_at') VALUES
 ('20190423153031', '2019-04-23 15:30:40'),
 ('20190423154803', '2019-04-23 15:48:13'),
 ('20190423162427', '2019-04-23 16:24:35'),
-('20190423170953', '2019-04-23 17:10:01');
+('20190423170953', '2019-04-23 17:10:01'),
+('20190426140807', '2019-04-26 14:21:04'),
+('20190426143420', '2019-04-26 14:34:27'),
+('20190426153947', '2019-04-26 15:40:02'),
+('20190426154451', '2019-04-26 15:44:58');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'plancher'
+-- Table structure for table `plancher`
 --
 
-CREATE TABLE 'plancher' (
-  'id' int(11) NOT NULL,
-  'plancher_vs' double NOT NULL,
-  'plancher_etage' double NOT NULL,
-  'plancher_terrasse' double NOT NULL,
-  'longueur_entrevous' double NOT NULL,
-  'prix' float NOT NULL
+CREATE TABLE `plancher` (
+  `id` int(11) NOT NULL,
+  `plancher_vs` double NOT NULL,
+  `plancher_etage` double NOT NULL,
+  `plancher_terrasse` double NOT NULL,
+  `longueur_entrevous` double NOT NULL,
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'plancher'
+-- Dumping data for table `plancher`
 --
 
-INSERT INTO 'plancher' ('id', 'plancher_vs', 'plancher_etage', 'plancher_terrasse', 'longueur_entrevous', 'prix') VALUES
+INSERT INTO `plancher` (`id`, `plancher_vs`, `plancher_etage`, `plancher_terrasse`, `longueur_entrevous`, `prix`) VALUES
 (1, 20, 40, 10, 4, 0),
 (2, 20, 20, 20, 4, 0),
 (3, 25, 25, 25, 10, 4950);
@@ -485,85 +489,84 @@ INSERT INTO 'plancher' ('id', 'plancher_vs', 'plancher_etage', 'plancher_terrass
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'plomberie'
+-- Table structure for table `plomberie`
 --
 
-CREATE TABLE 'plomberie' (
-  'id' int(11) NOT NULL,
-  'nb_metre_tuyau' double NOT NULL,
-  'type_tuyau' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'nb_robinets' int(11) NOT NULL,
-  'nb_wc' int(11) NOT NULL,
-  'type_chauffage_eau' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'type_compteur' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'nb_baignoire' int(11) NOT NULL,
-  'nb_douche' int(11) NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `plomberie` (
+  `id` int(11) NOT NULL,
+  `nb_metre_tuyau` double NOT NULL,
+  `type_tuyau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nb_robinets` int(11) NOT NULL,
+  `nb_wc` int(11) NOT NULL,
+  `type_chauffage_eau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_compteur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nb_baignoire` int(11) NOT NULL,
+  `nb_douche` int(11) NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'plomberie'
+-- Dumping data for table `plomberie`
 --
 
-INSERT INTO 'plomberie' ('id', 'nb_metre_tuyau', 'type_tuyau', 'nb_robinets', 'nb_wc', 'type_chauffage_eau', 'type_compteur', 'nb_baignoire', 'nb_douche', 'prix') VALUES
+INSERT INTO `plomberie` (`id`, `nb_metre_tuyau`, `type_tuyau`, `nb_robinets`, `nb_wc`, `type_chauffage_eau`, `type_compteur`, `nb_baignoire`, `nb_douche`, `prix`) VALUES
 (1, 10, 'CUIVRE', 3, 3, 'BALLONEAU', 'VOLUMETRIQUE', 1, 2, 7290),
 (2, 10, 'ACIER', 3, 2, 'CHAUDIERE', 'VOLUMETRIQUE', 1, 3, 9390);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'preparation_et_acces'
+-- Table structure for table `preparation_et_acces`
 --
 
-CREATE TABLE 'preparation_et_acces' (
-  'id' int(11) NOT NULL,
-  'nb_pins' int(11) NOT NULL,
-  'nb_sapins' int(11) NOT NULL,
-  'nb_bouleaux' int(11) NOT NULL,
-  'nb_chenes' int(11) NOT NULL,
-  'nb_erables' int(11) NOT NULL,
-  'nb_frenes' int(11) NOT NULL,
-  'nb_noyers' int(11) NOT NULL,
-  'nb_autres' int(11) NOT NULL,
-  'taille_pins' double NOT NULL,
-  'taille_sapins' double NOT NULL,
-  'taille_bouleaux' double NOT NULL,
-  'taille_chenes' double NOT NULL,
-  'taille_erables' double NOT NULL,
-  'taille_frenes' double NOT NULL,
-  'taille_noyers' double NOT NULL,
-  'taille_autres' double NOT NULL,
-  'position_terrain' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'prix' float NOT NULL
+CREATE TABLE `preparation_et_acces` (
+  `id` int(11) NOT NULL,
+  `nb_pins` int(11) NOT NULL,
+  `nb_sapins` int(11) NOT NULL,
+  `nb_bouleaux` int(11) NOT NULL,
+  `nb_chenes` int(11) NOT NULL,
+  `nb_erables` int(11) NOT NULL,
+  `nb_frenes` int(11) NOT NULL,
+  `nb_noyers` int(11) NOT NULL,
+  `nb_autres` int(11) NOT NULL,
+  `taille_pins` double NOT NULL,
+  `taille_sapins` double NOT NULL,
+  `taille_bouleaux` double NOT NULL,
+  `taille_chenes` double NOT NULL,
+  `taille_erables` double NOT NULL,
+  `taille_frenes` double NOT NULL,
+  `taille_noyers` double NOT NULL,
+  `taille_autres` double NOT NULL,
+  `position_terrain` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'preparation_et_acces'
+-- Dumping data for table `preparation_et_acces`
 --
 
-INSERT INTO 'preparation_et_acces' ('id', 'nb_pins', 'nb_sapins', 'nb_bouleaux', 'nb_chenes', 'nb_erables', 'nb_frenes', 'nb_noyers', 'nb_autres', 'taille_pins', 'taille_sapins', 'taille_bouleaux', 'taille_chenes', 'taille_erables', 'taille_frenes', 'taille_noyers', 'taille_autres', 'position_terrain', 'prix') VALUES
+INSERT INTO `preparation_et_acces` (`id`, `nb_pins`, `nb_sapins`, `nb_bouleaux`, `nb_chenes`, `nb_erables`, `nb_frenes`, `nb_noyers`, `nb_autres`, `taille_pins`, `taille_sapins`, `taille_bouleaux`, `taille_chenes`, `taille_erables`, `taille_frenes`, `taille_noyers`, `taille_autres`, `position_terrain`, `prix`) VALUES
 (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'TERRAIN PLAT', 0),
 (2, 15, 4, 0, 0, 0, 7, 0, 4, 10, 10, 15, 5, 0, 4, 0, 0, 'RELIEF MONTANT', 3982.45);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'prix'
+-- Table structure for table `prix`
 --
 
-CREATE TABLE 'prix' (
-  'id' int(11) NOT NULL,
-  'nom' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'montant' double NOT NULL
+CREATE TABLE `prix` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `montant` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'prix'
+-- Dumping data for table `prix`
 --
 
-INSERT INTO 'prix' ('id', 'nom', 'montant') VALUES
-(1, 'ARGILEUX', 1000),
-(2, 'CALCAIRE', 1200),
+INSERT INTO `prix` (`id`, `nom`, `montant`) VALUES
+(1, 'ARGILEUX', 100),
 (3, 'HUMIFERE', 1100),
 (4, 'LIMONEUX', 1300),
 (5, 'SABLEUX', 950),
@@ -733,84 +736,86 @@ INSERT INTO 'prix' ('id', 'nom', 'montant') VALUES
 (175, 'isolation_t', 5),
 (176, 'isolation_p', 7),
 (177, 'revet_clas', 15),
-(178, 'revet_motif', 22);
+(178, 'revet_motif', 22),
+(179, 'CALCAIRE', 1200),
+(180, 'zebi', 4000);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'projet'
+-- Table structure for table `projet`
 --
 
-CREATE TABLE 'projet' (
-  'id' int(11) NOT NULL,
-  'id_proprio' int(11) NOT NULL,
-  'id_gros_oeuvre' int(11) NOT NULL,
-  'id_second_oeuvre' int(11) NOT NULL,
-  'nom' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+CREATE TABLE `projet` (
+  `id` int(11) NOT NULL,
+  `id_gros_oeuvre` int(11) NOT NULL,
+  `id_second_oeuvre` int(11) NOT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_proprio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'projet'
+-- Dumping data for table `projet`
 --
 
-INSERT INTO 'projet' ('id', 'id_proprio', 'id_gros_oeuvre', 'id_second_oeuvre', 'nom') VALUES
-(1, 1, 1, 1, 'Maison'),
-(6, 5, 7, 7, 'Villa sur Montpellier'),
-(7, 1, 8, 8, 'Villa Montpellier'),
-(8, 2, 9, 9, 'Villa Turin'),
-(9, 2, 10, 10, 'Villa Madrid'),
-(10, 2, 11, 11, 'Test test'),
-(11, 4, 12, 12, 'heythem'),
-(12, 6, 15, 15, 'Maison de l\'admin');
+INSERT INTO `projet` (`id`, `id_gros_oeuvre`, `id_second_oeuvre`, `nom`, `id_proprio`) VALUES
+(1, 1, 1, 'Maison', 0),
+(6, 7, 7, 'Villa sur Montpellier', 0),
+(7, 8, 8, 'Villa Montpellier', 0),
+(8, 9, 9, 'Villa Turin', 0),
+(9, 10, 10, 'Villa Madrid', 0),
+(10, 11, 11, 'Test test', 0),
+(11, 12, 12, 'heythem', 0),
+(12, 15, 15, 'Maison de l\'admin', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'revetement'
+-- Table structure for table `revetement`
 --
 
-CREATE TABLE 'revetement' (
-  'id' int(11) NOT NULL,
-  'prix' int(11) NOT NULL,
-  'surf_revet_classique' int(11) NOT NULL,
-  'surf_revet_motif' int(11) NOT NULL
+CREATE TABLE `revetement` (
+  `id` int(11) NOT NULL,
+  `prix` int(11) NOT NULL,
+  `surf_revet_classique` int(11) NOT NULL,
+  `surf_revet_motif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'revetement'
+-- Dumping data for table `revetement`
 --
 
-INSERT INTO 'revetement' ('id', 'prix', 'surf_revet_classique', 'surf_revet_motif') VALUES
+INSERT INTO `revetement` (`id`, `prix`, `surf_revet_classique`, `surf_revet_motif`) VALUES
 (1, 1695, 25, 60),
 (2, 2435, 45, 80);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'second_oeuvre'
+-- Table structure for table `second_oeuvre`
 --
 
-CREATE TABLE 'second_oeuvre' (
-  'id' int(11) NOT NULL,
-  'id_enduit_facade' int(11) DEFAULT NULL,
-  'id_isolation' int(11) DEFAULT NULL,
-  'id_revetement' int(11) DEFAULT NULL,
-  'id_cloisons' int(11) DEFAULT NULL,
-  'id_evacuation' int(11) DEFAULT NULL,
-  'id_menuiseries_int' int(11) DEFAULT NULL,
-  'id_escaliers' int(11) DEFAULT NULL,
-  'id_plomberie' int(11) DEFAULT NULL,
-  'id_electricite' int(11) DEFAULT NULL,
-  'id_ventilation' int(11) DEFAULT NULL,
-  'id_climatisation' int(11) DEFAULT NULL,
-  'id_domotique' int(11) DEFAULT NULL
+CREATE TABLE `second_oeuvre` (
+  `id` int(11) NOT NULL,
+  `id_enduit_facade` int(11) DEFAULT NULL,
+  `id_isolation` int(11) DEFAULT NULL,
+  `id_revetement` int(11) DEFAULT NULL,
+  `id_cloisons` int(11) DEFAULT NULL,
+  `id_evacuation` int(11) DEFAULT NULL,
+  `id_menuiseries_int` int(11) DEFAULT NULL,
+  `id_escaliers` int(11) DEFAULT NULL,
+  `id_plomberie` int(11) DEFAULT NULL,
+  `id_electricite` int(11) DEFAULT NULL,
+  `id_ventilation` int(11) DEFAULT NULL,
+  `id_climatisation` int(11) DEFAULT NULL,
+  `id_domotique` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'second_oeuvre'
+-- Dumping data for table `second_oeuvre`
 --
 
-INSERT INTO 'second_oeuvre' ('id', 'id_enduit_facade', 'id_isolation', 'id_revetement', 'id_cloisons', 'id_evacuation', 'id_menuiseries_int', 'id_escaliers', 'id_plomberie', 'id_electricite', 'id_ventilation', 'id_climatisation', 'id_domotique') VALUES
+INSERT INTO `second_oeuvre` (`id`, `id_enduit_facade`, `id_isolation`, `id_revetement`, `id_cloisons`, `id_evacuation`, `id_menuiseries_int`, `id_escaliers`, `id_plomberie`, `id_electricite`, `id_ventilation`, `id_climatisation`, `id_domotique`) VALUES
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -825,72 +830,72 @@ INSERT INTO 'second_oeuvre' ('id', 'id_enduit_facade', 'id_isolation', 'id_revet
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'soubassement'
+-- Table structure for table `soubassement`
 --
 
-CREATE TABLE 'soubassement' (
-  'id' int(11) NOT NULL,
-  'type_soubassement' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'materiel_utilise' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'prix' float NOT NULL,
-  'tractopelle' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'camion_benne' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  'betonniere' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+CREATE TABLE `soubassement` (
+  `id` int(11) NOT NULL,
+  `type_soubassement` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `materiel_utilise` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prix` float NOT NULL,
+  `tractopelle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `camion_benne` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `betonniere` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'soubassement'
+-- Dumping data for table `soubassement`
 --
 
-INSERT INTO 'soubassement' ('id', 'type_soubassement', 'materiel_utilise', 'prix', 'tractopelle', 'camion_benne', 'betonniere') VALUES
+INSERT INTO `soubassement` (`id`, `type_soubassement`, `materiel_utilise`, `prix`, `tractopelle`, `camion_benne`, `betonniere`) VALUES
 (4, 'sous-sol', NULL, 0, '1', '1', ''),
 (5, 'vide-sanitaire', NULL, 0, '1', '1', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'toiture'
+-- Table structure for table `toiture`
 --
 
-CREATE TABLE 'toiture' (
-  'id' int(11) NOT NULL,
-  'type_toit' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'deg_pente' int(11) NOT NULL,
-  'renforcement' tinyint(1) NOT NULL,
-  'prix' int(11) NOT NULL
+CREATE TABLE `toiture` (
+  `id` int(11) NOT NULL,
+  `type_toit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deg_pente` int(11) NOT NULL,
+  `renforcement` tinyint(1) NOT NULL,
+  `prix` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'toiture'
+-- Dumping data for table `toiture`
 --
 
-INSERT INTO 'toiture' ('id', 'type_toit', 'deg_pente', 'renforcement', 'prix') VALUES
+INSERT INTO `toiture` (`id`, `type_toit`, `deg_pente`, `renforcement`, `prix`) VALUES
 (1, 'CLASSIQUE', 15, 1, 100),
 (2, 'CLASSIQUE', 20, 1, 115);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'user'
+-- Table structure for table `user`
 --
 
-CREATE TABLE 'user' (
-  'id' int(11) NOT NULL,
-  'username' varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'password' varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'email' varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'is_active' tinyint(1) NOT NULL,
-  'roles' longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
-  'date_inscription' datetime NOT NULL,
-  'password_requested_at' datetime DEFAULT NULL,
-  'token' varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+  `date_inscription` datetime NOT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'user'
+-- Dumping data for table `user`
 --
 
-INSERT INTO 'user' ('id', 'username', 'password', 'email', 'is_active', 'roles', 'date_inscription', 'password_requested_at', 'token') VALUES
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `is_active`, `roles`, `date_inscription`, `password_requested_at`, `token`) VALUES
 (2, 'cr7', '$2y$13$TQKjgNT8ixAoBAeXowqnfOIU841JFIVW6NAZ1WNwvLlIJQH36ojUS', 'cronaldo@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '0000-00-00 00:00:00', NULL, NULL),
 (4, 'test', '$2y$13$p0a4.oDf2cLtTitSFNbER.rs9WiIWf4r57h.bb7gP.uoiVo1ElQA6', 'test@mail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 16:49:28', NULL, NULL),
 (5, 'CHK-34', '$2y$13$CH7AEoG7v7Jv.VonXVv12Ox0Dn5/6ZKLh9V2/NWv73n9yHWMn785W', 'choukri@gmail.com', 1, 'a:1:{i:0;s:9:\"ROLE_USER\";}', '2019-03-26 18:57:39', NULL, NULL),
@@ -901,402 +906,462 @@ INSERT INTO 'user' ('id', 'username', 'password', 'email', 'is_active', 'roles',
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'ventilation'
+-- Table structure for table `ventilation`
 --
 
-CREATE TABLE 'ventilation' (
-  'id' int(11) NOT NULL,
-  'type_ventilation' varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  'surface_chambre_salon' int(11) NOT NULL,
-  'surface_cuisine_wc' int(11) NOT NULL,
-  'prix' double NOT NULL
+CREATE TABLE `ventilation` (
+  `id` int(11) NOT NULL,
+  `type_ventilation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surface_chambre_salon` int(11) NOT NULL,
+  `surface_cuisine_wc` int(11) NOT NULL,
+  `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'ventilation'
+-- Dumping data for table `ventilation`
 --
 
-INSERT INTO 'ventilation' ('id', 'type_ventilation', 'surface_chambre_salon', 'surface_cuisine_wc', 'prix') VALUES
+INSERT INTO `ventilation` (`id`, `type_ventilation`, `surface_chambre_salon`, `surface_cuisine_wc`, `prix`) VALUES
 (1, 'ventilation_double_flux', 25, 30, 1550),
 (2, 'ventilation_double_flux', 10, 15, 1250);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table 'vrd'
+-- Table structure for table `vrd`
 --
 
-CREATE TABLE 'vrd' (
-  'id' int(11) NOT NULL,
-  'distance_eau_potable' double DEFAULT NULL,
-  'pompe_relevage' tinyint(1) DEFAULT NULL,
-  'fosse_septique' tinyint(1) DEFAULT NULL,
-  'micro_station' tinyint(1) DEFAULT NULL,
-  'etude_hydrogeologique' tinyint(1) DEFAULT NULL,
-  'distance_electricite' double NOT NULL,
-  'distance_telephonique' double NOT NULL,
-  'prix' float NOT NULL
+CREATE TABLE `vrd` (
+  `id` int(11) NOT NULL,
+  `distance_eau_potable` double DEFAULT NULL,
+  `pompe_relevage` tinyint(1) DEFAULT NULL,
+  `fosse_septique` tinyint(1) DEFAULT NULL,
+  `micro_station` tinyint(1) DEFAULT NULL,
+  `etude_hydrogeologique` tinyint(1) DEFAULT NULL,
+  `distance_electricite` double NOT NULL,
+  `distance_telephonique` double NOT NULL,
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table 'vrd'
+-- Dumping data for table `vrd`
 --
 
-INSERT INTO 'vrd' ('id', 'distance_eau_potable', 'pompe_relevage', 'fosse_septique', 'micro_station', 'etude_hydrogeologique', 'distance_electricite', 'distance_telephonique', 'prix') VALUES
+INSERT INTO `vrd` (`id`, `distance_eau_potable`, `pompe_relevage`, `fosse_septique`, `micro_station`, `etude_hydrogeologique`, `distance_electricite`, `distance_telephonique`, `prix`) VALUES
 (1, 10, 0, 1, 1, 0, 10, 10, 0),
 (2, 50, 1, 0, 1, 1, 50, 50, 52500);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table 'charpente'
+-- Indexes for table `charpente`
 --
-ALTER TABLE 'charpente'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `charpente`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'climatisation'
+-- Indexes for table `climatisation`
 --
-ALTER TABLE 'climatisation'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `climatisation`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'cloison'
+-- Indexes for table `cloison`
 --
-ALTER TABLE 'cloison'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `cloison`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'domotique'
+-- Indexes for table `domotique`
 --
-ALTER TABLE 'domotique'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `domotique`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'electricite'
+-- Indexes for table `electricite`
 --
-ALTER TABLE 'electricite'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `electricite`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'elevation'
+-- Indexes for table `elevation`
 --
-ALTER TABLE 'elevation'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `elevation`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'enduit'
+-- Indexes for table `enduit`
 --
-ALTER TABLE 'enduit'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `enduit`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'escaliers'
+-- Indexes for table `escaliers`
 --
-ALTER TABLE 'escaliers'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `escaliers`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'etude_sol'
+-- Indexes for table `etude_sol`
 --
-ALTER TABLE 'etude_sol'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `etude_sol`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'evacuation_fumees'
+-- Indexes for table `evacuation_fumees`
 --
-ALTER TABLE 'evacuation_fumees'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `evacuation_fumees`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'excavation'
+-- Indexes for table `excavation`
 --
-ALTER TABLE 'excavation'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `excavation`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'fondation'
+-- Indexes for table `fondation`
 --
-ALTER TABLE 'fondation'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `fondation`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'gros_oeuvre'
+-- Indexes for table `gros_oeuvre`
 --
-ALTER TABLE 'gros_oeuvre'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `gros_oeuvre`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_charp` (`id_charpente`),
+  ADD KEY `fk_elev` (`id_elevation`),
+  ADD KEY `fk_etd_sol` (`id_etude_sol`),
+  ADD KEY `fk_excav` (`id_excavation`),
+  ADD KEY `fk_fond` (`id_fondations`),
+  ADD KEY `fk_min` (`id_menuiseries_ext`),
+  ADD KEY `fk_plancher` (`id_plancher`),
+  ADD KEY `fk_prep` (`id_prep_terrain`),
+  ADD KEY `fk_soub` (`id_soubassement`),
+  ADD KEY `fk_toit` (`id_toiture`),
+  ADD KEY `fk_vrd` (`id_vrd`);
 
 --
--- Index pour la table 'isolation'
+-- Indexes for table `isolation`
 --
-ALTER TABLE 'isolation'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `isolation`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'menuiserie'
+-- Indexes for table `menuiserie`
 --
-ALTER TABLE 'menuiserie'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `menuiserie`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'menuiseries_int'
+-- Indexes for table `menuiseries_int`
 --
-ALTER TABLE 'menuiseries_int'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `menuiseries_int`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'migration_versions'
+-- Indexes for table `migration_versions`
 --
-ALTER TABLE 'migration_versions'
-  ADD PRIMARY KEY ('version');
+ALTER TABLE `migration_versions`
+  ADD PRIMARY KEY (`version`);
 
 --
--- Index pour la table 'plancher'
+-- Indexes for table `plancher`
 --
-ALTER TABLE 'plancher'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `plancher`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'plomberie'
+-- Indexes for table `plomberie`
 --
-ALTER TABLE 'plomberie'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `plomberie`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'preparation_et_acces'
+-- Indexes for table `preparation_et_acces`
 --
-ALTER TABLE 'preparation_et_acces'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `preparation_et_acces`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'prix'
+-- Indexes for table `prix`
 --
-ALTER TABLE 'prix'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `prix`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'projet'
+-- Indexes for table `projet`
 --
-ALTER TABLE 'projet'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `projet`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'revetement'
+-- Indexes for table `revetement`
 --
-ALTER TABLE 'revetement'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `revetement`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'second_oeuvre'
+-- Indexes for table `second_oeuvre`
 --
-ALTER TABLE 'second_oeuvre'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `second_oeuvre`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_clim` (`id_climatisation`),
+  ADD KEY `fk_cloison` (`id_cloisons`),
+  ADD KEY `fk_dom` (`id_domotique`),
+  ADD KEY `fk_elec` (`id_electricite`),
+  ADD KEY `fk_end` (`id_enduit_facade`),
+  ADD KEY `fk_escal` (`id_escaliers`),
+  ADD KEY `fk_evac` (`id_evacuation`),
+  ADD KEY `fk_isol` (`id_isolation`),
+  ADD KEY `fk_men_i` (`id_menuiseries_int`),
+  ADD KEY `fk_plomb` (`id_plomberie`),
+  ADD KEY `fk_revet` (`id_revetement`),
+  ADD KEY `fk_vent` (`id_ventilation`);
 
 --
--- Index pour la table 'soubassement'
+-- Indexes for table `soubassement`
 --
-ALTER TABLE 'soubassement'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `soubassement`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'toiture'
+-- Indexes for table `toiture`
 --
-ALTER TABLE 'toiture'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `toiture`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'user'
+-- Indexes for table `user`
 --
-ALTER TABLE 'user'
-  ADD PRIMARY KEY ('id'),
-  ADD UNIQUE KEY 'UNIQ_8D93D649F85E0677' ('username'),
-  ADD UNIQUE KEY 'UNIQ_8D93D649E7927C74' ('email');
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`),
+  ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
--- Index pour la table 'ventilation'
+-- Indexes for table `ventilation`
 --
-ALTER TABLE 'ventilation'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `ventilation`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table 'vrd'
+-- Indexes for table `vrd`
 --
-ALTER TABLE 'vrd'
-  ADD PRIMARY KEY ('id');
+ALTER TABLE `vrd`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table 'charpente'
+-- AUTO_INCREMENT for table `charpente`
 --
-ALTER TABLE 'charpente'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `charpente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'climatisation'
+-- AUTO_INCREMENT for table `climatisation`
 --
-ALTER TABLE 'climatisation'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `climatisation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'cloison'
+-- AUTO_INCREMENT for table `cloison`
 --
-ALTER TABLE 'cloison'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `cloison`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table 'domotique'
+-- AUTO_INCREMENT for table `domotique`
 --
-ALTER TABLE 'domotique'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `domotique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'electricite'
+-- AUTO_INCREMENT for table `electricite`
 --
-ALTER TABLE 'electricite'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `electricite`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'elevation'
+-- AUTO_INCREMENT for table `elevation`
 --
-ALTER TABLE 'elevation'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `elevation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'enduit'
+-- AUTO_INCREMENT for table `enduit`
 --
-ALTER TABLE 'enduit'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `enduit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'escaliers'
+-- AUTO_INCREMENT for table `escaliers`
 --
-ALTER TABLE 'escaliers'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `escaliers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'etude_sol'
+-- AUTO_INCREMENT for table `etude_sol`
 --
-ALTER TABLE 'etude_sol'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `etude_sol`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT pour la table 'evacuation_fumees'
+-- AUTO_INCREMENT for table `evacuation_fumees`
 --
-ALTER TABLE 'evacuation_fumees'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `evacuation_fumees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'excavation'
+-- AUTO_INCREMENT for table `excavation`
 --
-ALTER TABLE 'excavation'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `excavation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'fondation'
+-- AUTO_INCREMENT for table `fondation`
 --
-ALTER TABLE 'fondation'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `fondation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table 'gros_oeuvre'
+-- AUTO_INCREMENT for table `gros_oeuvre`
 --
-ALTER TABLE 'gros_oeuvre'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `gros_oeuvre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT pour la table 'isolation'
+-- AUTO_INCREMENT for table `isolation`
 --
-ALTER TABLE 'isolation'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `isolation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table 'menuiserie'
+-- AUTO_INCREMENT for table `menuiserie`
 --
-ALTER TABLE 'menuiserie'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `menuiserie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'menuiseries_int'
+-- AUTO_INCREMENT for table `menuiseries_int`
 --
-ALTER TABLE 'menuiseries_int'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `menuiseries_int`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'plancher'
+-- AUTO_INCREMENT for table `plancher`
 --
-ALTER TABLE 'plancher'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `plancher`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table 'plomberie'
+-- AUTO_INCREMENT for table `plomberie`
 --
-ALTER TABLE 'plomberie'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `plomberie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'preparation_et_acces'
+-- AUTO_INCREMENT for table `preparation_et_acces`
 --
-ALTER TABLE 'preparation_et_acces'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `preparation_et_acces`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'prix'
+-- AUTO_INCREMENT for table `prix`
 --
-ALTER TABLE 'prix'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+ALTER TABLE `prix`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
--- AUTO_INCREMENT pour la table 'projet'
+-- AUTO_INCREMENT for table `projet`
 --
-ALTER TABLE 'projet'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `projet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT pour la table 'revetement'
+-- AUTO_INCREMENT for table `revetement`
 --
-ALTER TABLE 'revetement'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `revetement`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'second_oeuvre'
+-- AUTO_INCREMENT for table `second_oeuvre`
 --
-ALTER TABLE 'second_oeuvre'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `second_oeuvre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT pour la table 'soubassement'
+-- AUTO_INCREMENT for table `soubassement`
 --
-ALTER TABLE 'soubassement'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `soubassement`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table 'toiture'
+-- AUTO_INCREMENT for table `toiture`
 --
-ALTER TABLE 'toiture'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `toiture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'user'
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE 'user'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT pour la table 'ventilation'
+-- AUTO_INCREMENT for table `ventilation`
 --
-ALTER TABLE 'ventilation'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `ventilation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table 'vrd'
+-- AUTO_INCREMENT for table `vrd`
 --
-ALTER TABLE 'vrd'
-  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `vrd`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `gros_oeuvre`
+--
+ALTER TABLE `gros_oeuvre`
+  ADD CONSTRAINT `fk_charp` FOREIGN KEY (`id_charpente`) REFERENCES `charpente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_elev` FOREIGN KEY (`id_elevation`) REFERENCES `elevation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_etd_sol` FOREIGN KEY (`id_etude_sol`) REFERENCES `etude_sol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_excav` FOREIGN KEY (`id_excavation`) REFERENCES `excavation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_fond` FOREIGN KEY (`id_fondations`) REFERENCES `fondation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_min` FOREIGN KEY (`id_menuiseries_ext`) REFERENCES `menuiserie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_plancher` FOREIGN KEY (`id_plancher`) REFERENCES `plancher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_prep` FOREIGN KEY (`id_prep_terrain`) REFERENCES `preparation_et_acces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_soub` FOREIGN KEY (`id_soubassement`) REFERENCES `soubassement` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_toit` FOREIGN KEY (`id_toiture`) REFERENCES `toiture` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_vrd` FOREIGN KEY (`id_vrd`) REFERENCES `vrd` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `second_oeuvre`
+--
+ALTER TABLE `second_oeuvre`
+  ADD CONSTRAINT `fk_clim` FOREIGN KEY (`id_climatisation`) REFERENCES `climatisation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_cloison` FOREIGN KEY (`id_cloisons`) REFERENCES `cloison` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_dom` FOREIGN KEY (`id_domotique`) REFERENCES `domotique` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_elec` FOREIGN KEY (`id_electricite`) REFERENCES `electricite` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_end` FOREIGN KEY (`id_enduit_facade`) REFERENCES `enduit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_escal` FOREIGN KEY (`id_escaliers`) REFERENCES `escaliers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_evac` FOREIGN KEY (`id_evacuation`) REFERENCES `evacuation_fumees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_isol` FOREIGN KEY (`id_isolation`) REFERENCES `isolation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_men_i` FOREIGN KEY (`id_menuiseries_int`) REFERENCES `menuiseries_int` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_plomb` FOREIGN KEY (`id_plomberie`) REFERENCES `plomberie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_revet` FOREIGN KEY (`id_revetement`) REFERENCES `revetement` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_vent` FOREIGN KEY (`id_ventilation`) REFERENCES `ventilation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

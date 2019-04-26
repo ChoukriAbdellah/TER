@@ -10,6 +10,9 @@
                 'type' => [
                     'integer',
                 ],
+                'nullable' => [
+                    true,
+                ],
             ],
         ],
         [

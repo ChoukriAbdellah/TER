@@ -74,6 +74,7 @@
 																					<th>Projets</th>
 																					<th>Statut</th>
 																					<th>Progression</th>
+																					<th>Facture</th>
 																				</tr>
 																			</thead>
 																			<tbody>
@@ -95,8 +96,19 @@
 																								</div>
 																							</div>
 																						</td>
+																						<td>
+																							<ul class="pager">
+																								{% if  data[p]  == 23 %}
+																								<a href="{{path('facture', {'id': projets[p].id}) }}"> <button class="label label-success"
+																																						   type="button">Facture</button></a>
+																								{% else %}
+																								<span>Non disponible</span>
+																								{% endif %}
+																							</ul>
+																						</td>
 																					</tr>
 																					<tr>
+
 																				{% endfor %}
 																			{% endif %}
 																					
@@ -140,6 +152,7 @@
 														   {{ form_end(form) }}
 													</div>
 													<br>
+
 					
 						
 									</div>

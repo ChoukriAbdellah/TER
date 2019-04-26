@@ -1,0 +1,328 @@
+		{% block head %}
+
+
+		<!-- Specific Page Vendor CSS -->
+
+			<!-- Web Fonts  -->
+			<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+
+			<!-- Vendor CSS -->
+			<link rel="stylesheet" href="{{ asset('resources/assets/vendor/bootstrap/css/bootstrap.css') }}" />
+
+			<!-- Invoice Print Style -->
+			<link rel="stylesheet" href="{{ asset('resources/stylesheets/invoice-print.css') }}" />
+
+		{% endblock %}
+				{% block title %}
+				<h2> Facture </h2>
+				{% endblock %}
+
+					{% block body %}
+
+
+										<div class="invoice">
+											<header class="clearfix">
+												<div class="row">
+													<div class="col-sm-6 mt-md">
+														<h2 class="h2 mt-none mb-sm text-dark text-bold"></h2>
+														<h4 class="h4 m-none text-dark text-bold">{{ nom }}</h4>
+													</div>
+													<div class="col-sm-6 text-right mt-md mb-md">
+														<address class="ib mr-xlg">
+															Estimation Themes Ltd
+															<br/>
+															Faculté des Sciences, Montpellier, France
+															<br/>
+															Téléphone: 04 67 14 36 76
+															<br/>
+															estimation@gmail.com
+															<br/>
+														<div class="ib">
+															<img src={{ asset('resources/img/estimation.svg') }} alt="OKLER Themes" />
+														</div>
+													</div>
+												</div>
+											</header>
+											<div class="bill-info">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="bill-to">
+															<p class="h5 mb-xs text-dark text-semibold">À :</p>
+															<address>
+																{{ user.username }}
+																<br/>
+																{{ user.email }}
+															</address>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="bill-data text-right">
+															<p class="mb-none">
+																<span class="text-dark">Date:</span>
+																<span class="value">{{ "now"|date("d/m/Y") }}</span>
+															</p>
+															<p class="mb-none">
+																<span class="text-dark">À régler avant le : </span>
+																{% set tomorrow = 'now'|date_modify("+30 day") %}
+																<span class="value">{{ tomorrow|date("d/m/Y") }}</span>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="table-responsive">
+												<table class="table invoice-items">
+													<thead>
+													<tr class="h4 text-dark">
+														<th id="cell-id"     class="text-semibold">#</th>
+														<th id="cell-item"   class="text-semibold">Objet</th>
+														<th id="cell-desc"   class="text-semibold"></th>
+														<th id="cell-price"  class="text-center text-semibold"></th>
+														<th id="cell-qty"    class="text-center text-semibold"></th>
+														<th id="cell-total"  class="text-center text-semibold">Total</th>
+													</tr>
+													</thead>
+													<tbody>
+													<tr>
+														<td>Gros Oeuvre</td>
+														<td class="text-semibold text-dark"></td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+													</tr>
+
+													<tr>
+														<td>000001</td>
+														<td class="text-semibold text-dark">Etude sol </td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixEtudeSol }} €</td>
+													</tr>
+													<tr>
+														<td>000002</td>
+														<td class="text-semibold text-dark">Preparation et accès au terrain</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixPrepTerrain }} €</td>
+													</tr>
+													<tr>
+														<td>000003</td>
+														<td class="text-semibold text-dark">Excavation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixExcavation }} €</td>
+													</tr>
+													<tr>
+														<td>000004</td>
+														<td class="text-semibold text-dark">Fondation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixFondation }} €</td>
+													</tr>
+													<tr>
+														<td>000005</td>
+														<td class="text-semibold text-dark">Soubassement</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixSoubassement }} €</td>
+													</tr>
+													<tr>
+														<td>000006</td>
+														<td class="text-semibold text-dark">Vrd</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixVrd }} €</td>
+													</tr>
+													<tr>
+														<td>000007</td>
+														<td class="text-semibold text-dark">Le plancher</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixPlancher }} €</td>
+													</tr>
+													<tr>
+														<td>000008</td>
+														<td class="text-semibold text-dark">L'élevation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixElevation }} €</td>
+													</tr>
+													<tr>
+														<td>000009</td>
+														<td class="text-semibold text-dark">Charpente</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixCharpente }} €</td>
+													</tr>
+													<tr>
+														<td>000010</td>
+														<td class="text-semibold text-dark">Toiture</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixToiture }} €</td>
+													</tr>
+													<tr>
+														<td>000011</td>
+														<td class="text-semibold text-dark">Menuiserie</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixMenuiserie }} €</td>
+													</tr>
+													<tr>
+														<td>Second Oeuvre</td>
+														<td class="text-semibold text-dark"></td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+													</tr>
+													<tr>
+														<td>000012</td>
+														<td class="text-semibold text-dark">Enduit</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixEnduit }} €</td>
+													</tr>
+													<tr>
+														<td>000013</td>
+														<td class="text-semibold text-dark">Isolation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixIsolation }} €</td>
+													</tr>
+													<tr>
+														<td>000014</td>
+														<td class="text-semibold text-dark">Revetement</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixRevetement }} €</td>
+													</tr>
+													<tr>
+														<td>000015</td>
+														<td class="text-semibold text-dark">Cloison</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixCloison }} €</td>
+													</tr>
+													<tr>
+														<td>000016</td>
+														<td class="text-semibold text-dark">Evacuation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixEvacuation }} €</td>
+													</tr>
+													<tr>
+														<td>000017</td>
+														<td class="text-semibold text-dark">Menuiserie intérieure</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixMenuiseriesInt }} €</td>
+													</tr>
+													<tr>
+														<td>000018</td>
+														<td class="text-semibold text-dark">Escaliers</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixEscaliers }} €</td>
+													</tr>
+													<tr>
+														<td>000019</td>
+														<td class="text-semibold text-dark">Plomberie</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixPlomberie }} €</td>
+													</tr>
+													<tr>
+														<td>000020</td>
+														<td class="text-semibold text-dark">Electricité</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixElectricite }} €</td>
+													</tr>
+													<tr>
+														<td>000021</td>
+														<td class="text-semibold text-dark">Ventilation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixVentilation }} €</td>
+													</tr>
+													<tr>
+														<td>000022</td>
+														<td class="text-semibold text-dark">Climatisation</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixClimatisation }} €</td>
+													</tr>
+													<tr>
+														<td>000023</td>
+														<td class="text-semibold text-dark">Domotique</td>
+														<td></td>
+														<td class="text-center"></td>
+														<td class="text-center"></td>
+														<td class="text-center">{{ prixDomotique }} €</td>
+													</tr>
+
+
+													</tbody>
+												</table>
+											</div>
+
+											<div class="invoice-summary">
+												<div class="row">
+													<div class="col-sm-4 col-sm-offset-8">
+														<table class="table h5 text-dark">
+															<tbody>
+															<tr class="b-top-none">
+																<td colspan="2">Hors TVA</td>
+																<td class="text-left">{{ prixTotal }} €</td>
+															</tr>
+															<tr>
+																<td colspan="2">TVA</td>
+																<td class="text-left">{{ tva }} €</td>
+															</tr>
+															<tr class="h4">
+																<td colspan="2">Somme Total</td>
+																<td class="text-left">{{ prixTotal + tva }} €</td>
+															</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+
+					{% endblock %}
+
+		{% block javascripts %}
+
+			<script>
+				window.print();
+			</script>
+		{% endblock %}
+

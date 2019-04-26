@@ -1,0 +1,62 @@
+
+
+{% extends "/dashboard-layout.html.twig" %}
+
+	{% block head %}
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="{{ asset('assets/vendor/pnotify/pnotify.custom.css') }}" />
+	<link rel="stylesheet" href="{{ asset('assets/vendor/select2/select2.css') }}" />
+	<link rel="stylesheet" href="{{ asset('assets/vendor/jquery-datatables-bs3/assets/css/datatables.css') }}" />
+
+	{% endblock %}
+
+				{% block title %}
+				<h2> Créer un membre</h2>
+				{% endblock %}
+
+				{% block pageactuelle %} Créer un membre {% endblock %}
+
+    {% block body %}
+
+	<div class="row">
+							<div class="col-xs-12">
+									<header class="panel-heading">
+									<h2 class="panel-title">Créer un membre</h2>
+									</header>
+																<div class="panel-body">
+
+                                                                									 {{ form_start(form) }}
+															{{ form_row(form.username, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
+															{{ form_row(form.email, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Adresse e-mail'}} ) }}
+															{{ form_row(form.plainPassword.first, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Mot de passe'}} ) }}
+															{{ form_row(form.plainPassword.second, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Confirmer le mot de passe'}} ) }}
+											<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Créer</button>
+														   {{ form_end(form) }} 
+
+
+							</div>
+						</section>
+						
+									</div>
+									<div class="panel-footer">
+										<ul class="pager">
+
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+
+    {% endblock %}
+
+    {% block javascript %}
+	<!-- Specific Page Vendor -->
+		<script src="{{ asset('assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js') }}"></script>
+		<script src="{{ asset('assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js') }}"></script>
+		<script src="{{ asset('assets/vendor/store-js/store.js') }}"></script>
+		<script src="{{ asset('resources/assets/vendor/select2/select2.js') }}"></script>
+		<script src="{{ asset('resources/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js') }}"></script>
+		<script src="{{ asset('resources/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js') }}"></script>
+
+    {% endblock %}

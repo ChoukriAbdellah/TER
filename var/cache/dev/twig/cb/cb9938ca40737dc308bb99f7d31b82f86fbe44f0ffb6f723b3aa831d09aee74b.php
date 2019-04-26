@@ -225,66 +225,81 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Projets</th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Statut</th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Progression</th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Facture</th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tbody>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 80
-        if (((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new Twig_Error_Runtime('Variable "i" does not exist.', 80, $this->source); })()) > 0)) {
-            // line 81
+        // line 81
+        if (((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new Twig_Error_Runtime('Variable "i" does not exist.', 81, $this->source); })()) > 0)) {
+            // line 82
             echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(0, ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new Twig_Error_Runtime('Variable "i" does not exist.', 81, $this->source); })()) - 1)));
+            $context['_seq'] = twig_ensure_traversable(range(0, ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new Twig_Error_Runtime('Variable "i" does not exist.', 82, $this->source); })()) - 1)));
             foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-                // line 82
+                // line 83
                 echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 84
+                // line 85
                 echo twig_escape_filter($this->env, $context["p"], "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 85
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["projets"]) || array_key_exists("projets", $context) ? $context["projets"] : (function () { throw new Twig_Error_Runtime('Variable "projets" does not exist.', 85, $this->source); })()), $context["p"], [], "array"), "nom", []), "html", null, true);
+                // line 86
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["projets"]) || array_key_exists("projets", $context) ? $context["projets"] : (function () { throw new Twig_Error_Runtime('Variable "projets" does not exist.', 86, $this->source); })()), $context["p"], [], "array"), "nom", []), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-                // line 86
-                if ((twig_get_attribute($this->env, $this->source, (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new Twig_Error_Runtime('Variable "data" does not exist.', 86, $this->source); })()), $context["p"], [], "array") == 23)) {
-                    // line 87
+                // line 87
+                if ((twig_get_attribute($this->env, $this->source, (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new Twig_Error_Runtime('Variable "data" does not exist.', 87, $this->source); })()), $context["p"], [], "array") == 23)) {
+                    // line 88
                     echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><span class=\"label label-success\">Terminé</span></td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
                 } else {
-                    // line 89
+                    // line 90
                     echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><span class=\"label label-warning\">En cours</span></td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
                 }
-                // line 91
+                // line 92
                 echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress progress-sm progress-half-rounded m-none mt-xs light\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar progress-bar-primary\" role=\"progressbar\" aria-valuenow=";
-                // line 93
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["dataPourcentage"]) || array_key_exists("dataPourcentage", $context) ? $context["dataPourcentage"] : (function () { throw new Twig_Error_Runtime('Variable "dataPourcentage" does not exist.', 93, $this->source); })()), $context["p"], [], "array"), "html", null, true);
-                echo " aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["dataPourcentage"]) || array_key_exists("dataPourcentage", $context) ? $context["dataPourcentage"] : (function () { throw new Twig_Error_Runtime('Variable "dataPourcentage" does not exist.', 93, $this->source); })()), $context["p"], [], "array"), "html", null, true);
-                echo "%;\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
                 // line 94
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["dataPourcentage"]) || array_key_exists("dataPourcentage", $context) ? $context["dataPourcentage"] : (function () { throw new Twig_Error_Runtime('Variable "dataPourcentage" does not exist.', 94, $this->source); })()), $context["p"], [], "array"), "html", null, true);
+                echo " aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["dataPourcentage"]) || array_key_exists("dataPourcentage", $context) ? $context["dataPourcentage"] : (function () { throw new Twig_Error_Runtime('Variable "dataPourcentage" does not exist.', 94, $this->source); })()), $context["p"], [], "array"), "html", null, true);
+                echo "%;\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                // line 95
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["dataPourcentage"]) || array_key_exists("dataPourcentage", $context) ? $context["dataPourcentage"] : (function () { throw new Twig_Error_Runtime('Variable "dataPourcentage" does not exist.', 95, $this->source); })()), $context["p"], [], "array"), "html", null, true);
                 echo " %
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
+<<<<<<< HEAD
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t <ul class=\"pager\">
+=======
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 101
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("facture", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["projets"]) || array_key_exists("projets", $context) ? $context["projets"] : (function () { throw new Twig_Error_Runtime('Variable "projets" does not exist.', 101, $this->source); })()), $context["p"], [], "array"), "id", [])]), "html", null, true);
+                echo "\"> <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   type=\"button\">Facture</button></a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>
+
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 101
+            // line 109
             echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         }
-        // line 102
+        // line 110
         echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</table>
@@ -301,61 +316,62 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t<h2 class=\"panel-title\">Modification du mot de passe</h2>
 \t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 117
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 117, $this->source); })()), 'form_start');
+        // line 125
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 125, $this->source); })()), 'form_start');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 120
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 120, $this->source); })()), "oldPassword", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Quel est votre ancien mot de passe ? "]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 122
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 122, $this->source); })()), "oldPassword", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 124
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 124, $this->source); })()), "plainPassword", []), "first", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label", "placeholder" => "Mot de passe"], "label" => "Quel est votre nouveau mot de passe ? "]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 126
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 126, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
-        echo "
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t";
         // line 128
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 128, $this->source); })()), "plainPassword", []), "second", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Répetez le mot de passe ? "]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 128, $this->source); })()), "oldPassword", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Quel est votre ancien mot de passe ? "]);
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t";
         // line 130
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 130, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 130, $this->source); })()), "oldPassword", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 132
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 132, $this->source); })()), "plainPassword", []), "first", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label", "placeholder" => "Mot de passe"], "label" => "Quel est votre nouveau mot de passe ? "]);
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 134
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 134, $this->source); })()), "plainPassword", []), "first", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 136
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 136, $this->source); })()), "plainPassword", []), "second", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Répetez le mot de passe ? "]);
+        echo "
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t";
+        // line 138
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 138, $this->source); })()), "plainPassword", []), "second", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 133
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 133, $this->source); })()), "email", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Voulez vous changer l'email ? (faculatif)  "]);
+        // line 141
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 141, $this->source); })()), "email", []), 'label', ["label_attr" => ["class" => "col-sm-3 control-label"], "label" => "Voulez vous changer l'email ? (faculatif)  "]);
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-sm-9\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-        // line 135
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 135, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
+        // line 143
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 143, $this->source); })()), "email", []), 'row', ["attr" => ["class" => "form-control input-lg mb-md"]]);
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 
 
 
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   ";
-        // line 140
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 140, $this->source); })()), 'form_end');
+        // line 148
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 148, $this->source); })()), 'form_end');
         echo "
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br>
+
 \t\t\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
@@ -377,7 +393,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
     }
 
-    // line 157
+    // line 166
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -386,107 +402,107 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 158
+        // line 167
         echo "
 \t\t<!-- Specific Page Vendor -->
 \t\t<script src=\"";
-        // line 160
+        // line 169
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 161
+        // line 170
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 162
+        // line 171
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-appear/jquery.appear.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 163
+        // line 172
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 164
+        // line 173
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 165
+        // line 174
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 166
+        // line 175
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 167
+        // line 176
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 168
+        // line 177
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.categories.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 169
+        // line 178
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/flot/jquery.flot.resize.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 170
+        // line 179
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jquery-sparkline/jquery.sparkline.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 171
+        // line 180
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/raphael/raphael.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 172
+        // line 181
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/morris/morris.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 173
+        // line 182
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/gauge/gauge.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 174
+        // line 183
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/snap-svg/snap.svg.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 175
+        // line 184
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/liquid-meter/liquid.meter.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 176
+        // line 185
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/jquery.vmap.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 177
+        // line 186
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 178
+        // line 187
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/jquery.vmap.world.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 179
+        // line 188
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 180
+        // line 189
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 181
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 182
+        // line 191
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 183
+        // line 192
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src=\"";
-        // line 184
+        // line 193
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"), "html", null, true);
         echo "\"></script>
 
@@ -511,7 +527,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 
     public function getDebugInfo()
     {
-        return array (  490 => 184,  486 => 183,  482 => 182,  478 => 181,  474 => 180,  470 => 179,  466 => 178,  462 => 177,  458 => 176,  454 => 175,  450 => 174,  446 => 173,  442 => 172,  438 => 171,  434 => 170,  430 => 169,  426 => 168,  422 => 167,  418 => 166,  414 => 165,  410 => 164,  406 => 163,  402 => 162,  398 => 161,  394 => 160,  390 => 158,  381 => 157,  355 => 140,  347 => 135,  342 => 133,  336 => 130,  331 => 128,  326 => 126,  321 => 124,  316 => 122,  311 => 120,  305 => 117,  288 => 102,  285 => 101,  272 => 94,  266 => 93,  262 => 91,  258 => 89,  254 => 87,  252 => 86,  248 => 85,  244 => 84,  240 => 82,  235 => 81,  233 => 80,  201 => 50,  197 => 48,  191 => 46,  189 => 45,  186 => 44,  180 => 42,  178 => 41,  175 => 40,  169 => 38,  167 => 37,  164 => 36,  158 => 34,  156 => 33,  153 => 32,  147 => 30,  145 => 29,  134 => 20,  125 => 19,  107 => 17,  96 => 14,  87 => 13,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
+        return array (  502 => 193,  498 => 192,  494 => 191,  490 => 190,  486 => 189,  482 => 188,  478 => 187,  474 => 186,  470 => 185,  466 => 184,  462 => 183,  458 => 182,  454 => 181,  450 => 180,  446 => 179,  442 => 178,  438 => 177,  434 => 176,  430 => 175,  426 => 174,  422 => 173,  418 => 172,  414 => 171,  410 => 170,  406 => 169,  402 => 167,  393 => 166,  366 => 148,  358 => 143,  353 => 141,  347 => 138,  342 => 136,  337 => 134,  332 => 132,  327 => 130,  322 => 128,  316 => 125,  299 => 110,  296 => 109,  282 => 101,  273 => 95,  267 => 94,  263 => 92,  259 => 90,  255 => 88,  253 => 87,  249 => 86,  245 => 85,  241 => 83,  236 => 82,  234 => 81,  201 => 50,  197 => 48,  191 => 46,  189 => 45,  186 => 44,  180 => 42,  178 => 41,  175 => 40,  169 => 38,  167 => 37,  164 => 36,  158 => 34,  156 => 33,  153 => 32,  147 => 30,  145 => 29,  134 => 20,  125 => 19,  107 => 17,  96 => 14,  87 => 13,  74 => 10,  70 => 9,  66 => 8,  60 => 5,  57 => 4,  48 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -592,6 +608,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Projets</th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Statut</th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Progression</th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<th>Facture</th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tbody>
@@ -613,8 +630,19 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>
+<<<<<<< HEAD
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t <ul class=\"pager\">
+=======
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"pager\">
+>>>>>>> 0f12bb4f331e966a7ef2b453fa89c448ddeb0d08
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"{{path('facture', {'id': projets[p].id}) }}\"> <button class=\"mb-xs mt-xs mr-xs btn btn-lg btn-default\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   type=\"button\">Facture</button></a>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>
+
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endfor %}
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
@@ -658,6 +686,7 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   {{ form_end(form) }}
 \t\t\t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<br>
+
 \t\t\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</div>
@@ -701,6 +730,6 @@ class __TwigTemplate_b27d0f0971d579b33d3ec3760665e377e4355cf445cf4ecfa1caa29d793
 \t\t<script src=\"{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js') }}\"></script>
 \t\t<script src=\"{{ asset('resources/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js') }}\"></script>
 
-\t\t{% endblock %}", "dashboard/index.html.twig", "/opt/lampp/htdocs/Symfony/templates/dashboard/index.html.twig");
+\t\t{% endblock %}", "dashboard/index.html.twig", "/opt/lampp/htdocs/TER/templates/dashboard/index.html.twig");
     }
 }

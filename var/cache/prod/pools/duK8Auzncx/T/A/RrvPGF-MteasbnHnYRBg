@@ -1,11 +1,10 @@
 <?php return [PHP_INT_MAX, static function () {
 
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
-        $o = \Symfony\Component\VarExporter\Internal\Registry::unserialize([
-            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
-        ], [
-            1 => 'C:33:"Doctrine\\ORM\\Id\\SequenceGenerator":76:{a:2:{s:14:"allocationSize";i:1;s:12:"sequenceName";s:16:"etude_sol_id_seq";}}',
-        ]),
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
         null,
         [
             'stdClass' => [
@@ -27,7 +26,7 @@
                     ],
                 ],
                 'generatorType' => [
-                    2,
+                    4,
                 ],
                 'fieldMappings' => [
                     [
@@ -85,13 +84,6 @@
                 ],
                 'idGenerator' => [
                     $o[1],
-                ],
-                'sequenceGeneratorDefinition' => [
-                    [
-                        'sequenceName' => 'etude_sol_id_seq',
-                        'allocationSize' => 1,
-                        'initialValue' => 1,
-                    ],
                 ],
             ],
         ],

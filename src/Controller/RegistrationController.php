@@ -33,7 +33,8 @@ class RegistrationController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
- 
+
+            $request->getSession()->getFlashBag()->add('success', "Vous vous êtes inscrit. Vous pouvez maintenant vous connecter !");
             return $this->redirectToRoute('connexion');
         }
  

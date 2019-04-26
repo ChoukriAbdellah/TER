@@ -67,7 +67,14 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'isolation' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::isolation'], [], [['text', '/second-oeuvre/isolation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'revetement' => [['id'], ['_controller' => 'App\\Controller\\SecondOeuvreController::revetement'], [], [['text', '/second-oeuvre/revetement'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'listeAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::projetAdmin'], [], [['text', '/dashboard/projetsAdmin']], [], []],
+        'createMember' => [[], ['_controller' => 'App\\Controller\\AdminController::createMember'], [], [['text', '/dashboard/creer-un-membre']], [], []],
         'listeMembreAdmin' => [[], ['_controller' => 'App\\Controller\\AdminController::listeMembreAdmin'], [], [['text', '/dashboard/membresAdmin']], [], []],
+        'listePrix' => [[], ['_controller' => 'App\\Controller\\AdminController::tablePrix'], [], [['text', '/dashboard/tablePrix']], [], []],
+        'modifPrix' => [['id'], ['_controller' => 'App\\Controller\\AdminController::modifPrix'], [], [['text', '/modifPrix'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard']], [], []],
+        'suppPrix' => [['id'], ['_controller' => 'App\\Controller\\AdminController::suppPrix'], [], [['text', '/suppPrix'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard']], [], []],
+        'ajoutPrix' => [[], ['_controller' => 'App\\Controller\\AdminController::ajoutPrix'], [], [['text', '/dashboard/ajoutPrix']], [], []],
+        'facture' => [['id'], ['_controller' => 'App\\Controller\\DashboardController::facture'], [], [['text', '/facture'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
+        'impression' => [['id'], ['_controller' => 'App\\Controller\\DashboardController::impression'], [], [['text', '/facture.pdf'], ['variable', '/', '[^/]++', 'id', true], ['text', '/dashboard/my-project']], [], []],
         'logout' => [[], [], [], [['text', '/deconnexion']], [], []],
     ];
         }

@@ -36,6 +36,7 @@ class GrosOeuvreRepository extends ServiceEntityRepository
     }
     */
 
+
     public function findNbFormulairesByGrosOeuvre($id)
     {
         $conn = $this->getEntityManager()->getConnection();
@@ -56,9 +57,22 @@ class GrosOeuvreRepository extends ServiceEntityRepository
         $stmt->execute(['id' => $id]);
         $tab = $stmt->fetch();
         $nb = $tab['notnulls'];
-    
+
         // returns an array of arrays (i.e. a raw data set)
         return $nb;
+    }
+
+    public function findPrixEtudeSolByGrosOeuvre($id)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'select `prix` AS prix from etude_sol where id = :id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $tab = $stmt->fetch();
+        $prix = $tab['prix'];
+
+        // returns an array of arrays (i.e. a raw data set)
+        return $prix;
     }
 
    /* public function findById($value): ?Projet
