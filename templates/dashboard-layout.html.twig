@@ -129,11 +129,19 @@
 										</a>
 									</li>
 									{% if is_granted('ROLE_ADMIN') %}
+
+									<li class="nav-active">
+										<a href="{{ path('createMember') }}">
+											<i class="fa fa-user" aria-hidden="true"></i>
+											<span>Créer un nouveau membre</span>
+										</a>
+									</li>
+
 																		
 									<li class="nav-active">
 										<a href="{{ path('listeMembreAdmin') }}">
 											<i class="fa fa-user" aria-hidden="true"></i>
-											<span>Membres</span>
+											<span>Liste des membres</span>
 										</a>
 									</li>
 

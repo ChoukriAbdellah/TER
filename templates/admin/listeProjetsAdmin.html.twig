@@ -36,12 +36,14 @@
 											</div>
 										</div>
 									</section>
-									<h3 class="panel-title">Supprimer un utilisateur </h3>
+									<h3>Supprimer un projet </h3>
 					
 															{{ form_start(form) }}
-															{{ form_row(form.removeName, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Identifiant'}} ) }}
+															{{ form_row(form.removeName, {'attr': {'class': 'form-control input-lg mb-md', 'placeholder': 'Nom du projet'}} ) }}
 															<button class="mb-xs mt-xs mr-xs btn btn-lg btn-default" type="submit">Supprimer</button>
 														   {{ form_end(form) }}
+
+															 <h3>Rechercher un projet </h3>
 
 			<div id="listeProjet"  data-items="{{ data|json_encode }}">
 									

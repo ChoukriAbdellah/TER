@@ -19,6 +19,9 @@ use App\Entity\SecondOeuvre;
 use App\Form\UserType;
 use App\Form\prixType;
 
+use App\Form\RemoveUserType;
+use App\Form\RemoveProjetType;
+
 use App\Services\Mailer;
 
 use App\Entity\User;
@@ -89,28 +92,8 @@ class AdminController extends AbstractController
               'admin/listeProjetsAdmin.html.twig',array('form' => $form->createView(),'data' =>$data, 'nbProjet'=>$nbProjets) );	
   }
 
-  
-
-    public function listeMembreAdmin( Request $request, Mailer $mailer, UserPasswordEncoderInterface $passwordEncoder)
+  public function createMember( Request $request, Mailer $mailer, UserPasswordEncoderInterface $passwordEncoder)
   {
- 
-            $users = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->findAll();
-             $nbUsers=$this->getDoctrine()
-             ->getRepository(User::class)
-            ->sumUsers();
-
-            $data = [];
-
-            for ($i = 0; $i <$nbUsers ; $i++) {
-            
-              $var=array($users[$i]->getUserName(),$users[$i]->getEmail());
-               array_push($data,$var);
-           }
-             $newJsonString = json_encode($data);
-             file_put_contents('resources/assets/js/listeMembresAdmin.json', $newJsonString);
-
             
              // Création d'un membre ------
 
@@ -139,15 +122,35 @@ class AdminController extends AbstractController
             $mailer->sendMessage('ter.fds.2019@gmail.com', $user->getEmail(), 'Votre compte sur Estimation.com', $bodyMail);
             $request->getSession()->getFlashBag()->add('success', "Vous avez crée ce membre avec succès ! Ses identifiants lui ont été transmis par mail.");
 
-                return $this->redirectToRoute('listeMembreAdmin');
+                return $this->redirectToRoute('createMember');
             }
-           
-          
-          for ($i = 0; $i <$nbUsers ; $i++) {
+
+            return $this->render(
+              'admin/create-member.html.twig',array('form' => $form->createView()));
+
+            }
+			
+
+    public function listeMembreAdmin( Request $request, Mailer $mailer, UserPasswordEncoderInterface $passwordEncoder)
+  {
+ 
+            $users = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->findAll();
+             $nbUsers=$this->getDoctrine()
+             ->getRepository(User::class)
+            ->sumUsers();
+
+            $data = [];
+
+            for ($i = 0; $i <$nbUsers ; $i++) {
             
-           $var=array($users[$i]->getUserName(),$users[$i]->getEmail());
-            array_push($data,$var);
-        }
+              $var=array($users[$i]->getUserName(),$users[$i]->getEmail());
+               array_push($data,$var);
+           }
+             $newJsonString = json_encode($data);
+             file_put_contents('resources/assets/js/listeMembresAdmin.json', $newJsonString);
+          
           $newJsonString = json_encode($data);
           file_put_contents('resources/assets/js/listeMembresAdmin.json', $newJsonString);
       

@@ -118,6 +118,10 @@ listeAdmin:
     path:       /dashboard/projetsAdmin
     controller: App\Controller\AdminController::projetAdmin
 
+createMember:
+    path:       /dashboard/creer-un-membre
+    controller: App\Controller\AdminController::createMember
+
 listeMembreAdmin:
     path:       /dashboard/membresAdmin
     controller: App\Controller\AdminController::listeMembreAdmin
