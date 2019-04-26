@@ -91,6 +91,24 @@ $catalogue = new MessageCatalogue('uk', array (
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Завантажений файл занадто великий. Будь-ласка, спробуйте завантажити файл меншого розміру.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF значення недопустиме. Будь-ласка, спробуйте відправити форму знову.',
   ),
+  'security' => 
+  array (
+    'An authentication exception occurred.' => 'Помилка автентифікації.',
+    'Authentication credentials could not be found.' => 'Автентифікаційні дані не знайдено.',
+    'Authentication request could not be processed due to a system problem.' => 'Запит на автентифікацію не може бути опрацьовано у зв’язку з проблемою в системі.',
+    'Invalid credentials.' => 'Невірні автентифікаційні дані.',
+    'Cookie has already been used by someone else.' => 'Хтось інший вже використав цей сookie.',
+    'Not privileged to request the resource.' => 'Відсутні права на запит цього ресурсу.',
+    'Invalid CSRF token.' => 'Невірний токен CSRF.',
+    'No authentication provider found to support the authentication token.' => 'Не знайдено провайдера автентифікації, що підтримує токен автентифікаціії.',
+    'No session available, it either timed out or cookies are not enabled.' => 'Сесія недоступна, її час вийшов, або cookies вимкнено.',
+    'No token could be found.' => 'Токен не знайдено.',
+    'Username could not be found.' => 'Ім’я користувача не знайдено.',
+    'Account has expired.' => 'Термін дії облікового запису вичерпано.',
+    'Credentials have expired.' => 'Термін дії автентифікаційних даних вичерпано.',
+    'Account is disabled.' => 'Обліковий запис відключено.',
+    'Account is locked.' => 'Обліковий запис заблоковано.',
+  ),
 ));
 
 $catalogueEn = new MessageCatalogue('en', array (
@@ -179,6 +197,13 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This value should be a multiple of {{ compared_value }}.' => 'This value should be a multiple of {{ compared_value }}.',
     'This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}.' => 'This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}.',
     'This value should be valid JSON.' => 'This value should be valid JSON.',
+    'This collection should contain only unique elements.' => 'This collection should contain only unique elements.',
+    'This value should be positive.' => 'This value should be positive.',
+    'This value should be either positive or zero.' => 'This value should be either positive or zero.',
+    'This value should be negative.' => 'This value should be negative.',
+    'This value should be either negative or zero.' => 'This value should be either negative or zero.',
+    'This value is not a valid timezone.' => 'This value is not a valid timezone.',
+    'This password has been leaked in a data breach, it must not be used. Please use another password.' => 'This password has been leaked in a data breach, it must not be used. Please use another password.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
