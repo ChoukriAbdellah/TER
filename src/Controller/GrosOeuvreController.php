@@ -1037,7 +1037,7 @@ class GrosOeuvreController extends AbstractController
 
                 $request->getSession()->getFlashBag()->add('success', "Vous avez terminé le formulaire du plancher avec succès !");
      
-                return $this->redirectToRoute('my-project', array('id' => $id));
+                return $this->redirectToRoute('gros-oeuvre', array('id' => $id));
             }
 
 
